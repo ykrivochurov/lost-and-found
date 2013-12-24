@@ -1,0 +1,23 @@
+<!--*****************Модальное окно загрузки документов на странице создания митинга******************************-->
+<div class="modal-header">
+    <h4>{{'meeting.question.document.header'|translate}}{{documents.question.number}}</h4>
+</div>
+<div class="modal-body">
+    <div class="fileupload fileupload-new" data-provides="fileupload" ng-repeat="file in documents.files">
+        <div class="input-append">
+            <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div>
+            <span class="btn btn-file">
+                <span class="fileupload-new">{{'meeting.question.document.selectFile'|translate}}</span>
+                <span class="fileupload-exists">{{'meeting.question.document.changeFile'|translate}}</span>
+                <input type="file" name="documents"/></span>
+            <span class="btn" ng-click="removeDocumentInput(file)">{{'meeting.question.document.removeInput'|translate}}</span>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <a href="" ng-click="addDocumentInput()"><i class="icon-plus-sign"></i>{{'meeting.question.document.addInput'|translate}}</a>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-show="documents.files.length > 0" ng-click="uploadDocuments()">
+        {{'meeting.question.document.upload'|translate}}</button>
+    <button class="btn btn-warning cancel" ng-click="documentsModalClose()">{{'common.cancel'|translate}}</button>
+</div>

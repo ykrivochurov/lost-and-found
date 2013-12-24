@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="3 seconds">
+    <contextName>etr-server</contextName>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{32} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${catalina.home}/logs/board-meeting.log</File>
+        <encoder>
+            <pattern>%d %p [%c] - %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>3</maxIndex>
+            <FileNamePattern>${catalina.home}/logs/board-meeting.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>15MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <jmxConfigurator/>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="logfile"/>
+    </root>
+
+    <logger name="org.springframework.web.client.RestTemplate" level="ERROR"/>
+    <logger name="ru.eastbanctech" level="ALL"/>
+    <logger name="javapns" level="ALL"/>
+    <logger name="org.springframework" level="DEBUG"/>
+
+    <logger name="org.springframework.security.ldap.authentication" level="DEBUG"/>
+    <logger name="org.springframework.security.ldap.search" level="DEBUG"/>
+    <logger name="org.springframework.security" level="DEBUG"/>
+
+
+
+</configuration>

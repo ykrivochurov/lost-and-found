@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+It works!
+
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/underscorejs/1.4.4/underscore.min.js"></script>
+<script src="webjars/angularjs/1.1.4/angular.min.js"></script>
+<script src="js/libs/i18n-3.0.0.rc3.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/I18nAdapter.js"></script>
+<script src="js/I18nAngular.js"></script>
+<script>
+    function initI18n() {
+        var i18n = new I18nAdapter(['en_US', 'ru_RU'], 'ru_RU');
+        i18n.setLocale('ru-ru', ['js/i18n/ru-ru/messages.json']);
+        window.i18nAdapter = i18n;
+    }
+
+    initI18n();
+</script>
+</body>
+</html>

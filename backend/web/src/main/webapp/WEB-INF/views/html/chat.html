@@ -1,0 +1,10 @@
+<div style="margin-left: 100px;">
+    <a href="#/home" class="thumb">home</a><br/>
+</div>
+<div ng-repeat="comment in comments" style="margin-left: 100px;">
+    <b>{{comment.author.login}}</b>: {{comment.text}}
+</div>
+<br/>
+<form novalidate class="simple-form" style="margin-left: 100px;">
+    <textarea ng-model="comment.text"></textarea>
+</form>

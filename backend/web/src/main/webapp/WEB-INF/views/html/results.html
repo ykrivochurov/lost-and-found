@@ -1,0 +1,86 @@
+<div class="row-fluid">
+    <div class="span6">
+        <h3>{{'results.title'|translate}}</h3>
+    </div>
+    <div class="span3">
+        <button class="btn {{(question.number > 1) ? '' : 'disabled'}}"
+                ng-click="goToPrevQuestion()"><i class="icon-chevron-left"></i>{{'results.prevQuestion'|translate}}</button>
+    </div>
+    <div class="span3">
+        <button class="btn {{(question.number < question.meeting.questionsCount) ? '' : 'disabled'}}"
+                ng-click="goToNextQuestion()">{{'results.nextQuestion'|translate}}<i class="icon-chevron-right"></i></button>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div>
+        <span>{{'meeting.title'|translate}}: </span>
+        <a href="" ng-click="goToMeeting(question.meeting.id)">{{question.meeting.name}}</a>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <h4>
+        <span>{{'meeting.question.question'|translate}} {{'meeting.question.number'|translate}} </span>
+        <span>{{question.number}}</span>
+    </h4>
+</div></br>
+
+<div class="row-fluid">
+    <pre class="span10 offset1">{{question.question}}</pre>
+</div>
+
+<div class="row-fluid">
+    <h4>
+        <span>{{'meeting.question.solution'|translate}}</span>
+    </h4>
+</div></br>
+
+<div class="row-fluid">
+    <pre class="span10 offset1">{{question.solution}}</pre>
+</div>
+
+<div class="row-fluid">
+    <h4>
+        <span>{{'meeting.question.voting.voted'|translate}} "{{'meeting.question.voting.for'|translate}}": </span>
+        <span>{{yesVotes}}</span>
+    </h4>
+</div>
+
+<div class="row-fluid">
+    <ul class="unstyled span10 offset1">
+        <li ng-repeat="user in yesUsers">
+            <span><i class="icon-user"></i>{{user.firstName}} {{user.middleName}} {{user.lastName}}</span>
+        </li>
+    </ul>
+</div></br>
+
+<div class="row-fluid">
+    <h4>
+        <span>{{'meeting.question.voting.voted'|translate}} "{{'meeting.question.voting.against'|translate}}": </span>
+        <span>{{noVotes}}</span>
+    </h4>
+</div>
+
+<div class="row-fluid">
+    <ul class="unstyled span10 offset1">
+        <li ng-repeat="user in noUsers">
+            <span><i class="icon-user"></i>{{user.firstName}} {{user.middleName}} {{user.lastName}}</span>
+        </li>
+    </ul>
+</div></br>
+
+<div class="row-fluid">
+    <h4>
+        <span>{{'meeting.question.voting.abstain'|translate}}: </span>
+        <span>{{abstainVotes}}</span>
+    </h4>
+</div>
+
+<div class="row-fluid">
+    <ul class="unstyled span10 offset1">
+        <li ng-repeat="user in abstainUsers">
+            <span><i class="icon-user"></i>{{user.firstName}} {{user.middleName}} {{user.lastName}}</span>
+        </li>
+    </ul>
+</div></br>

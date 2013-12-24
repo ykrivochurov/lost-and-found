@@ -1,0 +1,12 @@
+<!--*****************Модальное окно выбора компании на домашней странице*************************************-->
+<div class="modal-header">
+    <h4>{{'home.chooseCompany'|translate}}</h4>
+</div>
+<div class="modal-body">
+    <ul class="nav nav-list">
+        <li><a href="" ng-repeat="company in companies" ng-click="close(company.id)">{{company.name}}</a></li>
+    </ul>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning cancel" ng-click="close()">{{'common.cancel'|translate}}</button>
+</div>

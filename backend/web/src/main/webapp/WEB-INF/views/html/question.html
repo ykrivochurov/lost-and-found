@@ -1,0 +1,121 @@
+<div class="row-fluid" xmlns="http://www.w3.org/1999/html">
+    <h4 class="offset2">{{'meeting.title'|translate}}</h4>
+</div>
+
+<div class="row-fluid">
+    <div class="row-fluid">
+        <span class="span2">{{'meeting.name'|translate}}:</span>
+        <span class="span7">{{question.meeting.name}}</span>
+    </div>
+    <div class="row-fluid">
+        <span class="span2">{{'meeting.dateAndTime'|translate}}:</span>
+        <span class="span2"><i class="icon-calendar"></i>{{question.meeting.dateAndTime | date:'dd/MM/yyyy'}}</span>
+        <span class="span2"><i class="icon-time"></i>{{question.meeting.dateAndTime | date:'HH:mm'}}</span>
+    </div>
+    <div class="row-fluid">
+        <span class="span2">{{'meeting.address'|translate}}:</span>
+        <span class="span7">{{question.meeting.address}}</span>
+    </div>
+</div>
+
+<hr>
+
+<div class="row-fluid">
+    <h4 class="offset2">
+        <span>{{'meeting.question.question'|translate}} {{'meeting.question.number'|translate}} </span>
+        <span>{{question.number}}</span>
+    </h4>
+</div></br>
+
+<div class="row-fluid">
+    <div class="span8">
+        <div class="row-fluid">
+            <span class="span1">{{'meeting.question.question'|translate}}:</span>
+            <pre class="span10 offset1">{{question.question}}</pre>
+        </div>
+        <div class="row-fluid">
+            <span class="span1">{{'meeting.question.solution'|translate}}:</span>
+            <pre class="span10 offset1">{{question.solution}}</pre>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="row-fluid">
+            <span><i class="icon-folder-open"></i>{{'meeting.question.documents'|translate}}</span>
+        </div></br>
+        <div class="row-fluid">
+            <ul class="unstyled">
+                <li ng-repeat="resource in question.resources">
+                    <small class="muted"><i class="icon-tag"></i>{{resource.creationDate | date:'dd/MM/yyyy'}}</small>
+                    <a href="api/questions/document/{{resource.id}}">{{resource.name}} </a>
+                    <a href="" ng-click="removeDocument(resource)">
+                        <i class="icon-remove" tooltip="{{'common.remove'|translate}}"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="row-fluid">
+            <ul class="unstyled">
+                <li ng-show="question.resources.length > 0">
+                    <i class="icon-hdd"></i><a href="api/questions/document/zipped/{{question.id}}">{{'meeting.question.save_all'|translate}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row-fluid">
+            <button class="btn" ng-click="addDocuments()"><i class="icon-plus-sign"></i>{{'meeting.question.add_document'|translate}}</button>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row-fluid">
+    <h4 class="offset2">{{'meeting.question.comments'|translate}}</h4>
+</div></br>
+
+<div id="commentsArea" class="row-fluid pre-scrollable">
+    <div class="span8 offset2">
+        <div ng-repeat="comment in question.comments" ng-init="scrollCommentsAreaDown()" class="well row-fluid">
+            <div class="span11">
+                <div class="row-fluid">
+                    <span class="offset3">{{comment.creationDate | date:'dd/MM/yyyy'}}    {{comment.creationDate | date:'HH:mm'}}</span>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <b>{{comment.author.firstName}} {{comment.author.lastName}}:</b>
+                    </div>
+                    <div class="span9">
+                        <pre>{{comment.text}}</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="span1" ng-show="comment.notVisited">
+                <span class="badge badge-info">{{'question.newComment'|translate}}</span>
+            </div>
+        </div>
+    </div>
+</div></br>
+
+<div class="row-fluid">
+    <div class="span8 offset2">
+        <form novalidate class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="message">{{'question.inputComment'|translate}}:</label>
+                <div class="controls">
+                    <textarea class="field span12" placeholder="{{'question.toComment'|translate}}" id="message"
+                              ng-model="newComment.text" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls text-right">
+                    <button type="submit" class="btn btn-success" ng-click="submitComment()">
+                        {{'question.submitComment'|translate}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="control-group">
+    <div class="controls">
+        <button class="btn" ng-click="goBack()">{{'common.back'|translate}}</button>
+    </div>
+</div>

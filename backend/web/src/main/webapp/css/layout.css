@@ -1,0 +1,48 @@
+/* Layout */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E9E9E9;
+    font-family: 'NotoSerif', Arial, sans-serif;
+}
+
+.b-body {
+    border-left: 1px solid #B4B4B4;
+    border-right: 1px solid #B4B4B4;
+    border-bottom: 1px solid #B4B4B4;
+    min-height: 500px;
+    position: relative;
+    width: 1015px;
+    margin: 45px auto 80px auto;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 5px rgba(180, 180, 180, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(180, 180, 180, 0.5);
+    box-shadow: 0 0 5px rgba(180, 180, 180, 0.5);
+}
+
+.b-body-top {
+    height: 5px;
+    background-color: #333333;
+}
+
+.b-body-bottom {
+    height: 10px;
+    background-color: #333333;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.b-body-section {
+    margin: 40px 50px;
+}
+
+.b-body-block {
+    margin: 0 auto;
+    padding: 0 10px;
+    width: 960px;
+}
+
+/* end of Layout */

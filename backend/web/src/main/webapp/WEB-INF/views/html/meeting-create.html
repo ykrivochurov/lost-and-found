@@ -1,0 +1,170 @@
+<div class="row-fluid header-block">
+    <div class="span2">
+        <h1>{{'meeting.title'|translate}}</h1>
+    </div>
+</div>
+<form novalidate class="form-horizontal" name="meetingForm" ng-submit="save(meeting)">
+    <div class="control-group" ng-class="{error:meetingForm.name.$invalid && meetingNotValid}">
+        <label class="control-label" for="meetingName">{{'meeting.name'|translate}}:</label>
+        <div class="controls">
+            <input id="meetingName" name="name" type="text" ng-model="meeting.name" required autofocus/>
+            <span class="help-inline" ng-show="meetingForm.name.$invalid && meetingNotValid">
+                {{'meeting.errors.emptyField'|translate}}</span>
+        </div>
+    </div>
+    <div class="control-group" ng-class="{error:(meetingForm.date.$invalid || meetingForm.time.$invalid) && meetingNotValid}">
+        <label class="control-label" for="meetingDate">{{'meeting.dateAndTime'|translate}}:</label>
+        <div class="controls">
+            <div class="input-append">
+                <input id="meetingDate" name="date" class="input-small" data-date-format="dd/mm/yyyy" bs-datepicker type="text" ng-model="date" required/>
+                <span class="btn" data-toggle="datepicker">
+                    <i class="icon-calendar"></i>
+                </span>
+            </div>
+            <div class="input-append">
+                <input id="meetingTime" name="time" class="input-mini" type="text" data-show-meridian="false" bs-timepicker ng-model="time" required/>
+                <span class="btn" data-toggle="timepicker">
+                    <i class="icon-time"></i>
+                </span>
+            </div>
+            <span class="help-inline" ng-show="(meetingForm.date.$invalid || meetingForm.time.$invalid) && meetingNotValid">
+                {{'meeting.errors.dateAndTime'|translate}}</span>
+        </div>
+    </div>
+    <div class="control-group" ng-class="{error:meetingForm.address.$invalid && meetingNotValid}">
+        <label class="control-label" for="meetingAddress">{{'meeting.address'|translate}}:</label>
+        <div class="controls">
+            <input id="meetingAddress" name="address" type="text" ng-model="meeting.address" required/>
+            <span class="help-inline" ng-show="meetingForm.address.$invalid && meetingNotValid">
+                {{'meeting.errors.emptyField'|translate}}</span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="presence">{{'meeting.personalPresence'|translate}}:</label>
+        <div class="controls" id="presence">
+            <label class="radio">
+                <input type="radio" ng-model="meeting.personalPresence" ng-value="true">
+                {{'meeting.personalPresenceOnline'|translate}}
+            </label>
+            <label class="radio">
+                <input type="radio" ng-model="meeting.personalPresence" ng-value="false">
+                {{'meeting.personalPresenceOffline'|translate}}
+            </label>
+        </div>
+
+    </div>
+    <div class="control-group">
+        <label class="control-label">{{'meeting.company'|translate}}:</label>
+        <div class="controls readonly">
+            {{meeting.company.name}}
+        </div>
+    </div>
+    <div class="control-group" ng-class="{error:meetingNotValid && meeting.committees.length == 0}">
+        <label class="control-label">{{'meeting.committees'|translate}}</label>
+        <div class="controls">
+            <label class="checkbox" ng-repeat="committee in committees">
+                <input type="checkbox" ng-model="committee.checked" ng-checked="isCommitteeChecked(committee)"
+                       ng-change="selectCommittee(committee)"> {{committee.name}}
+            </label>
+        </div>
+        <span class="help-inline" ng-show="meetingNotValid && meeting.committees.length == 0">
+                {{'meeting.errors.chooseCommittee'|translate}}</span>
+    </div>
+</form>
+<h4>{{'meeting.agenda'|translate}}</h4>
+<hr>
+<a href="" ng-click="createQuestion()" ng-show="newQuestion == null"><i class="icon-plus-sign"></i>{{'meeting.add_question'|translate}}</a>
+<div ng-show="newQuestion != null">
+    <form novalidate class="form-horizontal" name="questionForm">
+        <div class="control-group">
+            <div class="controls">
+                <button class="btn btn-success btn-small" ng-click="saveQuestion()">{{'meeting.question.final-add'|translate}}</button>
+                <button class="btn btn-small" ng-click="removeNewQuestion()">{{'meeting.question.cancel'|translate}}</button>
+            </div>
+        </div>
+        <div class="control-group" ng-class="{error:questionForm.question.$invalid && questionNotValid}">
+            <label class="control-label">{{'meeting.question.question'|translate}}</label>
+            <div class="controls">
+                <textarea rows="3" name="question" class="span6" ng-model="newQuestion.question" ng-Minlength="3" ng-Maxlength="2000" required></textarea>
+                <span class="help-inline" ng-show="questionForm.question.$error.required && questionNotValid">{{'meeting.errors.emptyField'|translate}}</span>
+                <span class="help-inline" ng-show="questionForm.question.$error.minlength && questionNotValid">{{'meeting.question.errors.minLength'|translate}}</span>
+                <span class="help-inline" ng-show="questionForm.question.$error.maxlength && questionNotValid">{{'meeting.question.errors.maxLength'|translate}}</span>
+            </div>
+        </div>
+        <div class="control-group" ng-class="{error:questionForm.solution.$invalid && questionNotValid}">
+            <label class="control-label">{{'meeting.question.solution'|translate}}</label>
+            <div class="controls">
+                <textarea rows="3" name="solution" class="span6" ng-model="newQuestion.solution" ng-Minlength="3" ng-Maxlength="2000" required></textarea>
+                <span class="help-inline" ng-show="questionForm.solution.$error.required && questionNotValid">{{'meeting.errors.emptyField'|translate}}</span>
+                <span class="help-inline" ng-show="questionForm.solution.$error.minlength && questionNotValid">{{'meeting.question.errors.minLength'|translate}}</span>
+                <span class="help-inline" ng-show="questionForm.solution.$error.maxlength && questionNotValid">{{'meeting.question.errors.maxLength'|translate}}</span>
+            </div>
+        </div>
+        <div class="control-group" ng-class="{error:questionForm.committee.$invalid && questionNotValid}">
+            <div class="controls">
+                <select name="committee" required class="span3" data-ng-model="newQuestion.committee"
+                        data-ng-options="committee.name for committee in meeting.committees">
+                    <option value="">{{'meeting.question.committee'|translate}}</option>
+                </select>
+                <input type="text" name="performer" placeholder="{{'meeting.question.performer'|translate}}" ng-model="newQuestion.performerUser">
+                <span class="help-inline" ng-show="questionForm.committee.$invalid && questionNotValid">{{'meeting.question.errors.committee'|translate}}</span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <ul id="sortable" class="unstyled" dnd-list="changedQuestion">
+        <li ng-repeat="question in meeting.questions">
+            <h4 class="clearfix well">
+                <span class="span2 text-right">{{question.number}}.</span>
+                <span class="span2">{{'meeting.question.question'|translate}}</span>
+            </h4>
+            <div class="span8 offset2">
+                <span>{{question.question}}</span><br/>
+                <h4>{{'meeting.question.solution'|translate}}</h4>
+                <span>{{question.solution}}</span>
+                <div class="row-fluid top-buffer">
+                    <span class="span6"><i class="icon-briefcase" tooltip="{{'common.committeeTooltip'|translate}}"></i>
+                        {{question.committee.name}}</span>
+                    <span class="span6"><i class="icon-user" tooltip="{{'meeting.question.performer'|translate}}"></i>
+                        {{question.performerUser}}</span>
+                </div>
+                <hr>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <ul class="unstyled">
+                            <li>
+                                <i class="icon-folder-open"></i>{{'meeting.question.documents'|translate}}
+                            </li>
+                            <li>
+                                <i class="icon-plus-sign"></i><a href="" ng-click="addDocuments(question)">{{'meeting.question.add_document'|translate}}</a>
+                            </li>
+                            <li ng-show="question.resources.length > 0">
+                                <i class="icon-hdd"></i><a href="api/questions/document/zipped/{{question.id}}">{{'meeting.question.save_all'|translate}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="span9">
+                        <ul class="unstyled">
+                            <li ng-repeat="resource in question.resources">
+                                <small class="muted"><i class="icon-tag"></i>{{resource.creationDate | date:'dd/MM/yyyy'}}</small>
+                                <a href="api/questions/document/{{resource.id}}">{{resource.name}} </a>
+                                <a href="" ng-click="removeDocument(question, resource)"><i class="icon-remove" tooltip="{{'common.remove'|translate}}"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+</div>
+<hr>
+<div class="control-group">
+    <div class="controls">
+        <button class="btn btn-primary" ng-click="save()">{{'meeting.save'|translate}}</button>
+        <button class="btn" ng-click="goBack()">{{'common.back'|translate}}</button>
+    </div>
+</div>
+
