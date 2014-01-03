@@ -11,13 +11,13 @@
     </appender>
 
     <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${catalina.home}/logs/board-meeting.log</File>
+        <File>${catalina.home}/logs/laf.log</File>
         <encoder>
             <pattern>%d %p [%c] - %m%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
             <maxIndex>3</maxIndex>
-            <FileNamePattern>${catalina.home}/logs/board-meeting.log.%i</FileNamePattern>
+            <FileNamePattern>${catalina.home}/logs/laf.log.%i</FileNamePattern>
         </rollingPolicy>
         <triggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">

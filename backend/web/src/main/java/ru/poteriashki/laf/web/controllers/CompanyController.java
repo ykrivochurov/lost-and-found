@@ -1,23 +1,9 @@
 package ru.poteriashki.laf.web.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import ru.poteriashki.laf.core.repositories.CompanyRepository;
-import ru.poteriashki.laf.core.model.Company;
-import ru.poteriashki.laf.core.model.CompanyStatus;
-import ru.poteriashki.laf.core.service.ICompanyService;
-import ru.poteriashki.laf.core.service.ServiceException;
-import ru.poteriashki.laf.web.config.jsonview.ResponseView;
-
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * User: y.krivochurov
@@ -28,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping(value = "/api/companies", produces = MediaType.APPLICATION_JSON_VALUE)
 @PreAuthorize("hasRole(T(ru.poteriashki.laf.core.model.UserRole).ROLE_SECRETARY.name())")
 public class CompanyController {
+/*
 
     @Autowired
     private CompanyRepository companyRepository;
@@ -89,4 +76,5 @@ public class CompanyController {
         companyService.delete(companyId);
     }
 
+*/
 }

@@ -1,4 +1,4 @@
-angular.module('board').
+angular.module('laf').
     factory('CompanyService', function ($resource) {
         return {
             crud: $resource('api/companies/:companyId/:statusUserCtrl/:newStatus',

@@ -16,7 +16,6 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
-    <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
@@ -106,20 +105,15 @@
     <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf:2.0.18" level="project" />
     <orderEntry type="library" name="Maven: ognl:ognl:3.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.thymeleaf:thymeleaf-spring3:2.0.11" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:jquery:1.9.1" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:jquery-ui:1.9.1" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:bootstrap-datepicker:1.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:bootstrap-timepicker:0.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:bootstrap:2.3.1-1" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:angular-strap:0.7.4" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:angularjs:1.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:backbonejs:1.0.0-1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jquery:2.0.3-1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jquery-ui:1.10.3" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:angularjs:1.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:underscorejs:1.4.4" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:angular-ui-bootstrap:0.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:momentjs:2.0.0-1" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jasny-bootstrap:2.3.0-j5-1" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars:fullcalendar:1.6.4" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:bootstrap:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:angular-ui:0.4.0-1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:angular-ui-bootstrap:0.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:6.8.7" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />

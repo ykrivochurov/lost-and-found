@@ -217,31 +217,7 @@
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>bootstrap-datepicker</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap-timepicker</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>angular-strap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>backbonejs</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
             <artifactId>angularjs</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>angular-ui-bootstrap</artifactId>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
@@ -257,11 +233,15 @@
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>fullcalendar</artifactId>
+            <artifactId>angular-ui</artifactId>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>angular-ui</artifactId>
+            <artifactId>bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>angular-ui-bootstrap</artifactId>
         </dependency>
 
         <!-- Testing -->

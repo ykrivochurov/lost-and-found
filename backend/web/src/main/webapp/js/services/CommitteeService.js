@@ -1,4 +1,4 @@
-angular.module('board').
+angular.module('laf').
     factory('CommitteeService', function ($resource) {
         return {
             crud: $resource('api/committees/:committeeId/:userCtrl:statusCtrl/:newStatus',

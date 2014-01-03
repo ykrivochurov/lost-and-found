@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import ru.poteriashki.laf.core.config.BaseConfiguration;
 import ru.eastbanctech.reports.config.ReportsServiceConfig;
 import ru.eastbanctech.resources.config.MongoConnectionConfig;
 import ru.eastbanctech.resources.config.MongoResourceServiceConfig;
+import ru.poteriashki.laf.core.config.BaseConfiguration;
 
 /**
  * @author Yuri Bulkin <y.bulkin@eastbanctech.ru>
@@ -21,8 +21,8 @@ import ru.eastbanctech.resources.config.MongoResourceServiceConfig;
 @ComponentScan(basePackages = {"ru.poteriashki.laf.web.controllers"},
         excludeFilters = {@ComponentScan.Filter(Configuration.class)})
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@Import({TestPropHolderConfig.class, BaseConfiguration.class, TestPersistenceJPAConfig.class, LdapSecurityConfig.class,
-        MongoConnectionConfig.class, MongoResourceServiceConfig.class, LocalizationConfig.class,
+@Import({TestPropHolderConfig.class, BaseConfiguration.class,
+        MongoConnectionConfig.class, MongoResourceServiceConfig.class,
         ReportsServiceConfig.class})
 @PropertySource("classpath:test.properties")
 public class TestMvcConfig extends WebMvcConfigurerAdapter {

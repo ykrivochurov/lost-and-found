@@ -1,4 +1,4 @@
-angular.module('board').
+angular.module('laf').
     factory('DocumentService', function ($resource, $http) {
         return {
             upload: function (formData, success, fail) {

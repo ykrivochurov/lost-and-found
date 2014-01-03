@@ -1,25 +1,8 @@
 package ru.poteriashki.laf.web.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import ru.poteriashki.laf.core.model.Comment;
-import ru.poteriashki.laf.core.model.Question;
-import ru.poteriashki.laf.core.model.User;
-import ru.poteriashki.laf.core.service.ICommentService;
-import ru.poteriashki.laf.core.service.ServiceException;
-import ru.poteriashki.laf.web.config.jsonview.ResponseView;
-import ru.poteriashki.laf.web.security.SecurityHelper;
-
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * User: y.krivochurov
@@ -29,6 +12,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/api/comments", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CommentController {
+/*
 
     @Autowired
     private ICommentService commentService;
@@ -58,4 +42,5 @@ public class CommentController {
         User user = SecurityHelper.getCurrentUser();
         commentService.delete(id, user);
     }
+*/
 }

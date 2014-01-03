@@ -18,6 +18,8 @@ public class LostItem extends BaseEntity {
 
     private Date when;
 
+    private Date creationDate;
+
     private Set<String> tags;
 
     private boolean finished = false;
@@ -25,6 +27,10 @@ public class LostItem extends BaseEntity {
     private User author;
 
     private Set<String> photosIds;
+
+    private Double[] location;
+
+    private boolean showPrivateInfo = false;
 
     public String getWhat() {
         return what;
@@ -80,5 +86,29 @@ public class LostItem extends BaseEntity {
 
     public void setPhotosIds(Set<String> photosIds) {
         this.photosIds = photosIds;
+    }
+
+    public Double[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Double[] location) {
+        this.location = location;
+    }
+
+    public boolean isShowPrivateInfo() {
+        return showPrivateInfo;
+    }
+
+    public void setShowPrivateInfo(boolean showPrivateInfo) {
+        this.showPrivateInfo = showPrivateInfo;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 }

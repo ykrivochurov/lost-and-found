@@ -2,184 +2,169 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Category.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/CategoryRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/FoundItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/FoundItemRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/impl/GridFSDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/IGridFSDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/LostItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/LostItemRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/MessageRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PersistenceMongoConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/UserRepository.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/config/PersistenceJPAConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/CommentRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/CommitteeRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/CompanyRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/CustomNamingStrategy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/MeetingRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/MeetingRepositoryCustom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/NotificationRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/QuestionRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/ResourceRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/UserPositionInCompanyRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/UserRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/UserVisitQuestionRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/VoteRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dao/impl/MeetingRepositoryImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dtos/BaseView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dtos/MeetingDTO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/dtos/MeetingFilterDTO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Comment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Committee.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/CommitteeStatus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Company.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/CompanyStatus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Meeting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/MeetingStatus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Notification.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Question.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/QuestionStatus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Resource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/UserPositionInCompany.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/UserRole.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/UserVisitQuestion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/Vote.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/VoteState.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/VotingResult.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/ICommentService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/ICommitteeService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/ICompanyService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/ILdapUserImportService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/IMeetingService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/INotificationService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/IQuestionService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/IUserPositionInCompanyService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/IUserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/IVotingService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/CommentService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/CommitteeService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/CompanyService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/LdapUserImportService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/MeetingService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/NotificationService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/QuestionService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/UserPositionInCompanyService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/UserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/impl/VotingService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/resources/agendaTemplate.jrxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/resources/dbinit.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/resources/ldap.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/config/TestPersistenceJPAConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/dao/CommentRepositoryTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/dao/CompanyRepositoryTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/CommentServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/CommitteeServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/CompanyServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/LdapUserImportServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/MeetingServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/NotificationServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/QuestionServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/UserPositionInCompanyServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/VotingServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/util/TestHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/LdapSecurityConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/SecurityConfig.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/config/BaseConfiguration.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/BaseConfiguration.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/config/InitConfiguration.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/InitConfiguration.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/config/PropHolderConfig.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PropHolderConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/init/InitData.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/BaseEntity.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/BaseEntity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/model/IEntity.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/IEntity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/ErrorType.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ErrorType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/ru/eastbanctech/board/core/service/ServiceException.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ServiceException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/config/TestPropHolderConfig.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/config/TestPropHolderConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/dao/UserRepositoryTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/dao/UserRepositoryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/eastbanctech/board/service/UserServiceTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/ApplicationContext.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/ApplicationContext.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/CustomHttpSessionEventPublisher.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/CustomHttpSessionEventPublisher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/LocalizationConfig.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/LocalizationConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/SecurityWebApplicationInitializer.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/SecurityWebApplicationInitializer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/ThymeleafConfig.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/ThymeleafConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/WebAppInitializer.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebAppInitializer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebMvcConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/jsonview/DataView.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/DataView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/jsonview/JsonViewSupportFactoryBean.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/JsonViewSupportFactoryBean.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/jsonview/PojoView.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/PojoView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/jsonview/ResponseView.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/ResponseView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/jsonview/ViewAwareJsonMessageConverter.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/ViewAwareJsonMessageConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/config/jsonview/ViewInjectingReturnValueHandler.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/ViewInjectingReturnValueHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/AccessController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/AccessController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/BaseController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/BaseController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/CommentController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CommentController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/CommitteeController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CommitteeController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/CompanyController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CompanyController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/MainController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/MainController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/MeetingController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/MeetingController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/QuestionController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/QuestionController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/RestResponseEntityExceptionHandler.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/RestResponseEntityExceptionHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/UserController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/UserController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/UserPositionInCompanyController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/UserPositionInCompanyController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/VotingController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/VotingController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/dtos/ExceptionDTO.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/ExceptionDTO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/dtos/HomeDTO.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/HomeDTO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/dtos/LoginStatus.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/LoginStatus.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/controllers/dtos/ValidationErrorDTO.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/ValidationErrorDTO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/CustomUserDetails.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/CustomUserDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/CustomUserDetailsService.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/CustomUserDetailsService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/ExpiredSessionFilter.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/ExpiredSessionFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/LdapUserDetailsContextMapper.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/LdapUserDetailsContextMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/RestAuthenticationEntryPoint.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/RestAuthenticationEntryPoint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/RestAuthenticationFailureHandler.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/RestAuthenticationFailureHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/RestAuthenticationSuccessHandler.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/RestAuthenticationSuccessHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/eastbanctech/board/web/security/SecurityHelper.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/SecurityHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/test/java/ru/eastbanctech/board/web/config/TestMvcConfig.java" afterPath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestMvcConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/test/java/ru/eastbanctech/board/web/config/TestPersistenceJPAConfig.java" afterPath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestPersistenceJPAConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/test/java/ru/eastbanctech/board/web/config/TestPropHolderConfig.java" afterPath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestPropHolderConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/test/java/ru/eastbanctech/board/web/security/SecurityLayerTest.java" afterPath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/security/SecurityLayerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/core/src/main/resources/application.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/forward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/repository/CategoryRepositoryTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/jquery.scrollbars.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/libs/jquery.scrollbars.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/CustomHttpSessionEventPublisher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/LocalizationConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/SecurityWebApplicationInitializer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/DataView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/JsonViewSupportFactoryBean.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/PojoView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/ResponseView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/ViewAwareJsonMessageConverter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/jsonview/ViewInjectingReturnValueHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/AccessController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CommitteeController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/MainController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/MeetingController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/QuestionController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/RestResponseEntityExceptionHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/UserController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/UserPositionInCompanyController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/VotingController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/ExceptionDTO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/HomeDTO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/LoginStatus.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/dtos/ValidationErrorDTO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/CustomUserDetails.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/CustomUserDetailsService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/ExpiredSessionFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/LdapUserDetailsContextMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/RestAuthenticationEntryPoint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/RestAuthenticationFailureHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/RestAuthenticationSuccessHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/SecurityHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/chat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/company-management.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home-calendar-modal-content.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home-modal-content.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/meeting-create-modal-content.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/meeting-create.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/meeting.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/question.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/templates/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/calendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/fonts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_glass_75_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-bg_inset-soft_95_fef1ec_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/images/ui-icons_f6cf3b_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/jquery-ui-1.10.0.custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/jquery-ui(bootstrap-style)/jquery.ui.1.10.0.ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/layout.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/popover.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_calendar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_calendar_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_clock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_flag.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_mail.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_message.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_nok.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_note.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_on_top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_person.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_person_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_questions.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_questions_mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_razvernut.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_svernut.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_to_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_to_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_zasedania.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/libs/jquery-ui/jquery-1.9.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/libs/jquery-ui/jquery-ui-1.10.3.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/libs/jquery.tablesorter.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestPersistenceJPAConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/security/SecurityLayerTest.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/dao/UserRepositoryTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/repository/UserRepositoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/AccessService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/AccessService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/ApplicationContext.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/ApplicationContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CommentController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CommentController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/CommentService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/CommentService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/CommitteeService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/CommitteeService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CompanyController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CompanyController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/CompanyService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/CompanyService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/DocumentService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/DocumentService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/FoundItem.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/FoundItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/HomeService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/HomeService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/LostItem.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/LostItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/MeetingService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/MeetingService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/PositionService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/PositionService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/QuestionService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/QuestionService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestMvcConfig.java" afterPath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestMvcConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebAppInitializer.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebAppInitializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebMvcConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/app.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/core.iml" afterPath="$PROJECT_DIR$/core/core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/resources/logback.xml" afterPath="$PROJECT_DIR$/core/src/test/resources/logback.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/logback.xml" afterPath="$PROJECT_DIR$/web/src/main/resources/logback.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.ipr" afterPath="$PROJECT_DIR$/lost-and-found.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/pom.xml" afterPath="$PROJECT_DIR$/core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/resources/test.properties" afterPath="$PROJECT_DIR$/core/src/test/resources/test.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pom.xml" afterPath="$PROJECT_DIR$/web/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/reset.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/reset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/test/resources/test.properties" afterPath="$PROJECT_DIR$/web/src/test/resources/test.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web.iml" afterPath="$PROJECT_DIR$/web/web.iml" />
     </list>
     <ignored path="lost-and-found.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/gsa/GSAUtil.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387905061269" ignored="false" />
-    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387995875130" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387976824533" ignored="false" />
+    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388642882679" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388407468951" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community-feed.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/DiscussionFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityServletUtils.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/MyCommunitiesFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388208192850" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/MyCommunitiesFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388389319801" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityMembersServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityDeleteServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/LeaveJoinCommunityServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityPostServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityPostServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388208192850" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/AllCommunitiesServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/MyCommunitiesServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/apps/redcross/components/community_components/community_feed/community_feed.jsp" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387975930255" ignored="false" />
-    <file path="/community_feed.jsp" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387970306986" ignored="false" />
-    <file path="/community.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387975624389" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387967550320" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/apps/redcross/components/community_components/community_feed/community_feed.jsp" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388389319801" ignored="false" />
+    <file path="/community_feed.jsp" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388378684376" ignored="false" />
+    <file path="/community.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388406041606" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388058028351" ignored="false" />
     <file path="/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387967507139" ignored="false" />
-    <file path="/fragment.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387963861245" ignored="false" />
-    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387993138923" ignored="false" />
+    <file path="/fragment.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388471861566" ignored="false" />
+    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388682700923" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharacterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387960551535" ignored="false" />
     <file path="/CharacterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387960443390" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/main/java/org/redcross/dao/impl/DiscussionDaoImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387976489059" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/test/java/org/redcross/dao/impl/PostDaoTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387976710804" ignored="false" />
-    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/main/java/org/redcross/dao/impl/CommunityDaoImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387976937843" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/main/java/org/redcross/dao/impl/DiscussionDaoImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388061105891" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/test/java/org/redcross/dao/impl/PostDaoTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388208192850" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/main/java/org/redcross/dao/impl/CommunityDaoImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388394037196" ignored="false" />
     <file path="/WebMvcConfig.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387984361811" ignored="false" />
-    <file path="/LostItem.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387989620469" ignored="false" />
-    <file path="/FoundItem.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387989474390" ignored="false" />
+    <file path="/LostItem.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388760148613" ignored="false" />
+    <file path="/FoundItem.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388760171389" ignored="false" />
     <file path="/IEntity.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387987200892" ignored="false" />
     <file path="/BaseEntity.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387987224754" ignored="false" />
     <file path="/User.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387993480448" ignored="false" />
@@ -192,12 +177,44 @@
     <file path="/LostItemRepository.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387991918905" ignored="false" />
     <file path="/UserRepository.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387995537287" ignored="false" />
     <file path="/MessageRepository.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387992439976" ignored="false" />
-    <file path="/InitData.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387993260157" ignored="false" />
+    <file path="/InitData.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387997004877" ignored="false" />
     <file path="/test.properties" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387993397886" ignored="false" />
-    <file path="/pom.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387993603371" ignored="false" />
-    <file path="/UserRepositoryTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387994440875" ignored="false" />
+    <file path="/pom.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388473870838" ignored="false" />
+    <file path="/UserRepositoryTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387997207946" ignored="false" />
     <file path="/BaseConfiguration.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387995416580" ignored="false" />
     <file path="$PROJECT_DIR$/../../universo/backend/src/main/java/de/eastbanctech/universo/config/PersistenceMongoConfig.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387995948493" ignored="false" />
+    <file path="/CategoryRepositoryTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387997889590" ignored="false" />
+    <file path="/CommunityDaoImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388234941147" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/main/java/org/redcross/dao/CommunityDao.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388389319802" ignored="false" />
+    <file path="/ILostAndFoundService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388032837463" ignored="false" />
+    <file path="/LostAndFoundService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388111510622" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/test/java/org/redcross/dao/impl/CommunityTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388208192850" ignored="false" />
+    <file path="/CommunityTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388037425860" ignored="false" />
+    <file path="/CommunityDao.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388037247114" ignored="false" />
+    <file path="/CommunityFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388061747361" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/service/impl/CommunityFeedServiceImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388389319801" ignored="false" />
+    <file path="/CommunityFeedServiceImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388235590673" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/main/java/org/redcross/dao/model/Discussion.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388208192850" ignored="false" />
+    <file path="/Discussion.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388037965530" ignored="false" />
+    <file path="/CommunityPostServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388059366275" ignored="false" />
+    <file path="/a.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388060921605" ignored="false" />
+    <file path="/a.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388060963596" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/workflows/communities/CommunityActivateProcess.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388143676012" ignored="false" />
+    <file path="/CommunityActivateProcess.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388141339760" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/CommunityConstants.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388143676012" ignored="false" />
+    <file path="/CommunityConstants.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388141058545" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/config/src/main/resources/qa.properties" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388208192850" ignored="false" />
+    <file path="/qa.properties" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388207266341" ignored="false" />
+    <file path="/MyCommunitiesFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388236053833" ignored="false" />
+    <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/service/CommunityFeedService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388235603255" ignored="false" />
+    <file path="/ApplicationContext.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388420552680" ignored="false" />
+    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388763649315" ignored="false" />
+    <file path="/index.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388676548403" ignored="false" />
+    <file path="/logback.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388473853913" ignored="false" />
+    <file path="/fonts.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388474155651" ignored="false" />
+    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388763433585" ignored="false" />
+    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388763713392" ignored="false" />
+    <file path="/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388676882917" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +274,66 @@
     <favorites_list name="lost-and-found" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="348" column="28" selection-start="6922" selection-end="6922" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="65" column="0" selection-start="3474" selection-end="3474" vertical-scroll-proportion="0.43972835">
+              <folding>
+                <element signature="n#style#0;n#div#4;n#div#4;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#4;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="221" column="0" selection-start="5501" selection-end="5501" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#373#2104#0" expanded="false" />
+                <element signature="e#379#640#0" expanded="false" />
+                <element signature="e#1013#1195#0" expanded="false" />
+                <element signature="e#1201#1402#0" expanded="false" />
+                <element signature="e#1408#1522#0" expanded="false" />
+                <element signature="e#2072#2100#0" expanded="false" />
+                <element signature="e#2128#3084#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="154" column="29" selection-start="4792" selection-end="4805" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="45" selection-start="490" selection-end="515" vertical-scroll-proportion="-4.375">
+              <folding>
+                <marker date="1388676556000" expanded="true" signature="644:681" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -275,22 +351,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/dao/impl/GridFSDao.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PropHolderConfig.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/dao/CategoryRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/dao/FoundItemRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/dao/LostItemRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/dao/MessageRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
-        <option value="$PROJECT_DIR$/core/src/test/resources/test.properties" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/User.java" />
-        <option value="$PROJECT_DIR$/core/pom.xml" />
-        <option value="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/dao/UserRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/dao/UserRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/BaseConfiguration.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/UserRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PersistenceMongoConfig.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/PositionService.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/QuestionService.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/fonts.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/reset.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/libs/jquery.scrollbars.min.js" />
+        <option value="$PROJECT_DIR$/web/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/app.js" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/LostItem.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/FoundItem.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/jquery.scrollbars.min.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
       </list>
     </option>
   </component>
@@ -383,12 +459,30 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -410,27 +504,109 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
+              <option name="myItemId" value="backend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -508,198 +684,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dtos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsonview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -719,140 +703,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -875,10 +725,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -921,56 +767,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repositories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1020,123 +816,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="init" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Tests">
           <PATH>
@@ -1152,21 +843,28 @@
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
-  <component name="RunManager" selected="TestNG.UserRepositoryTest.testCreate">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/main/webapp/img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.jetty">
     <configuration default="false" name="UserRepositoryTest.testCreate" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ru.poteriashki.laf.dao.*" />
+          <option name="PATTERN" value="ru.poteriashki.laf.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1175,7 +873,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="ru.poteriashki.laf.dao" />
-      <option name="MAIN_CLASS_NAME" value="ru.poteriashki.laf.dao.UserRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="ru.poteriashki.laf.repository.UserRepositoryTest" />
       <option name="METHOD_NAME" value="testCreate" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -1204,10 +902,139 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="UserRepositoryTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.poteriashki.laf.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="core" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="ru.poteriashki.laf.dao" />
+      <option name="MAIN_CLASS_NAME" value="ru.poteriashki.laf.repository.UserRepositoryTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CategoryRepositoryTest.testLoad" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.poteriashki.laf.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="core" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="ru.poteriashki.laf.repository" />
+      <option name="MAIN_CLASS_NAME" value="ru.poteriashki.laf.repository.CategoryRepositoryTest" />
+      <option name="METHOD_NAME" value="testLoad" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" value="" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ru.poteriashki.laf" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.poteriashki.laf.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="core" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="ru.poteriashki.laf" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="jetty:run" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/web" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -1274,6 +1101,13 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1295,12 +1129,56 @@
       <patterns />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.UserRepositoryTest.testCreate" />
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="false" name="jetty" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="jetty:run" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/web" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Maven.jetty" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.UserRepositoryTest.testCreate" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.UserRepositoryTest" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.CategoryRepositoryTest.testLoad" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.ru.poteriashki.laf" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.UserRepositoryTest.testCreate" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="TestNG.ru.poteriashki.laf" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.CategoryRepositoryTest.testLoad" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.UserRepositoryTest" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.UserRepositoryTest.testCreate" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1332,36 +1210,41 @@
       <created>1387903058578</created>
       <updated>1387903058578</updated>
     </task>
+    <task id="LOCAL-00001" summary="Renaming.&#10;Base core model and configuration.">
+      <created>1387996907187</created>
+      <updated>1387996907188</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32655245" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39908257" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39908257" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24554294" sideWeight="0.60091746" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21555915" sideWeight="0.67344755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32721713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1406,7 +1289,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renaming.&#10;Base core model and configuration." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1420,133 +1303,142 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Renaming.&#10;Base core model and configuration." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/icon_menu2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/search2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/search.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="84" selection-start="542" selection-end="542" vertical-scroll-proportion="0.37956205">
+        <state line="245" column="0" selection-start="8483" selection-end="8483" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.6/angularjs-1.2.6.jar!/META-INF/resources/webjars/angularjs/1.2.6/angular-animate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="0" selection-start="3830" selection-end="3978" vertical-scroll-proportion="-12.692307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="29" selection-start="4792" selection-end="4805" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="457" column="0" selection-start="18165" selection-end="18165" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/InitConfiguration.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.6/angularjs-1.2.6.jar!/META-INF/resources/webjars/angularjs/1.2.6/angular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="552" column="0" selection-start="13895" selection-end="13895" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1387443040000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1387443040000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/3.2.5.RELEASE/spring-test-3.2.5.RELEASE.jar!/org/springframework/test/context/testng/AbstractTestNGSpringContextTests.class">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/LostItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/3.2.5.RELEASE/spring-test-3.2.5.RELEASE-sources.jar!/org/springframework/test/context/testng/AbstractTestNGSpringContextTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="22" selection-start="3026" selection-end="3026" vertical-scroll-proportion="-3.7445254">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.5.1.RELEASE/spring-data-commons-1.5.1.RELEASE-sources.jar!/org/springframework/data/repository/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="17" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.5.1.RELEASE/spring-data-commons-1.5.1.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="74" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.5.1.RELEASE/spring-data-commons-1.5.1.RELEASE-sources.jar!/org/springframework/data/repository/PagingAndSortingRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="84" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/dao/UserRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="18" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
+        <state line="106" column="35" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/BaseConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/FoundItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="247" selection-end="247" vertical-scroll-proportion="0.28767124">
+        <state line="106" column="35" selection-start="2081" selection-end="2081" vertical-scroll-proportion="0.8194888">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE.jar!/org/springframework/data/mongodb/config/AbstractMongoConfiguration.class">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/jquery.scrollbars.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
+        <state line="6" column="415" selection-start="522" selection-end="522" vertical-scroll-proportion="0.14681892">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.5.1.RELEASE/spring-data-commons-1.5.1.RELEASE-sources.jar!/org/springframework/data/annotation/Persistent.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.48245615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE-sources.jar!/org/springframework/data/mongodb/core/mapping/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="18" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.5614035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE-sources.jar!/org/springframework/data/mongodb/config/AbstractMongoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="74" selection-start="6759" selection-end="6759" vertical-scroll-proportion="1.1367781">
+        <state line="7" column="45" selection-start="490" selection-end="515" vertical-scroll-proportion="-4.375">
           <folding>
-            <element signature="e#6508#6518#0" expanded="true" />
+            <marker date="1388676556000" expanded="true" signature="644:681" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE-sources.jar!/org/springframework/data/mongodb/repository/config/EnableMongoRepositories.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="18" selection-start="1802" selection-end="1802" vertical-scroll-proportion="0.011363637">
+        <state line="348" column="28" selection-start="6922" selection-end="6922" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PersistenceMongoConfig.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1243" selection-end="1243" vertical-scroll-proportion="1.6027397">
+        <state line="221" column="0" selection-start="5501" selection-end="5501" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#373#2104#0" expanded="false" />
+            <element signature="e#379#640#0" expanded="false" />
+            <element signature="e#1013#1195#0" expanded="false" />
+            <element signature="e#1201#1402#0" expanded="false" />
+            <element signature="e#1408#1522#0" expanded="false" />
+            <element signature="e#2072#2100#0" expanded="false" />
+            <element signature="e#2128#3084#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="0" selection-start="3474" selection-end="3474" vertical-scroll-proportion="0.43972835">
+          <folding>
+            <element signature="n#style#0;n#div#4;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#4;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

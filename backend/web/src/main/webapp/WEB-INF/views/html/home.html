@@ -1,197 +1,99 @@
-<div class="home-wrapper"><div class="row-fluid header-block">
-    <div class="span12">
-        <div class="row-fluid">
-            <div class="span6">
-                <h1>{{'common.appName'|translate}}</h1>
-            </div>
-            <div class="span6">
-                <div class="row-fluid">
-                    <div class="span3 offset3">
-                        <span class="badge badge-info"><i class="icon-comment icon-white"
-                              tooltip="{{'home.comment.unread'|translate}}"></i>{{dto.unreadCommentsCount}}</span>
-                    </div>
-                    <div class="span3">
-                        <span class="badge badge-info"><i class="icon-envelope icon-white"
-                              tooltip="{{'home.notification.unread'|translate}}"></i>{{dto.unreadNotificationsCount}}</span>
-                    </div>
-                    <div class="span3" ng-show="isSecretary">
-                        <a href="#/companies/"><i class="icon-folder-open"></i>{{'home.companies'|translate}}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row-fluid">
-    <div class="span12 inline status-filter-list">
-        <div class="">{{'home.meeting.status_label'|translate}}</div>
-        <div ng-repeat="status in statuses">
-            <label title="{{status.hint|translate}}" class="checkbox">
-                <input type="checkbox" ng-model="status.checked" ng-checked="status.checked" value="{{status.name}}"/>
-                {{status.label|translate}}
-            </label>
-        </div>
-    </div>
-</div>
+<div class="home-wrapper">
+    <div class="left-panel" ng-show="!isCollapsed">
+        <div class="top-logo">
+            <img class="img-logo" src="/img/logo_01.png">
+            <img class="text-logo" src="/img/logo2.png">
 
-<div>
-    <div class="company-list">
-        <div ng-show="companies.length > 1">
-            <div ng-repeat="company in companies" class="company-item">
-                <label class="checkbox">
-                    <input type="checkbox" ng-model="company.checked" ng-checked="company.checked" value="{{company.id}}"/>
-                    {{company.name}}
-                </label>
+            <div class="hr">&nbsp;</div>
+            <span class="city">{{currentCity}}</span>
+        </div>
+        <div class="start-form clearfix">
+            <input type="text" name="where" placeholder="Где" ng-model="laf.where">
+            <input type="text" name="what" placeholder="Что" ng-model="laf.what"
+                   typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
+            <input type="text" name="when" placeholder="Когда" datepicker-popup="{{dateFormat}}" show-button-bar="false"
+                   show-weeks="false" datepicker-append-to-body="true" ng-model="laf.when">
+
+            <div class="buttons clearfix">
+                <button class="l-button">Я ПОТЕРЯЛ</button>
+                <button class="r-button">Я НАШЕЛ</button>
             </div>
         </div>
-        <div ng-show="companies.length == 1" class="company-item">{{companies[0].name}}</div>
+
+        <div class="musor">&nbsp;</div>
     </div>
-    <div class="date-period-selector">
-        <div class="control-group">
-            <label class="control-label">{{'home.meeting.date'|translate}}</label>
-            <div class="controls">
-                <div class="date-period-item">
-                    <input type="text" data-date-format="dd/mm/yyyy" bs-datepicker
-                           ng-model="meetingFilter.fromDate" placeholder="{{'home.meeting.from_date'|translate}}">
-                </div>
-                <div class="date-period-item">
-                    <input type="text" data-date-format="dd/mm/yyyy" bs-datepicker
-                           ng-model="meetingFilter.toDate" placeholder="{{'home.meeting.to_date'|translate}}">
-                </div>
-                <div class="date-period-item">
-                <button ng-click="applyFilter()" class="btn">{{'home.meeting.filter_apply'|translate}}</button>
-                </div>
-            </div>
+    <div class="map-panel"></div>
+    <div class="right-panel-show" ng-click="isCollapsed = !isCollapsed" ng-show="!isCollapsed"></div>
+    <div class="right-panel-hide" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed"></div>
+    <div class="right-panel" ng-show="isCollapsed">
+        <div class="top-buttons clearfix">
+            <button ng-click="lafListSelect('lost')" class="lost-b active">
+                <span>Утеряно</span>
+            </button>
+            <button ng-click="lafListSelect('found')" class="found-b">
+                <span>Найдено</span>
+            </button>
         </div>
-    </div>
-    <div class="clearfix"></div>
-</div>
-
-<div ng-show="isSecretary">
-    <a href="" class="add-button" ng-click="createMeeting()">{{'home.meeting.create'|translate}}</a>
-</div>
-
-<div class="header-with-icon">
-    <i class="icon-calendar"></i><h1 class="header-block">{{'home.meeting.calendar'|translate}}</h1>
-</div>
-
-<div home-calendar="calendarDto" id="calendarHome"></div></br>
-<ul class="inline">
-    <li ng-repeat="status in statuses" class="color-legend-item">
-        <div class="color-legend {{status.style}}"></div>
-        <span>{{status.label|translate}}</span>
-    </li>
-</ul>
-
-<div class="header-with-icon">
-    <i class="icon-zasedania"></i><h1 class="header-block">{{'home.meeting.meetings'|translate}}</h1>
-    <a href="" class="{{showSearchResults ? 'collapse-area-on' : 'collapse-area-off'}}" data-toggle="collapse" data-target="#filteredMeetings" ng-click="showSearchResults = !showSearchResults"></a>
-    <span class="search-results-count">{{'home.searchCount'|translate}} {{dto.filteredMeetings.length}}</span>
-</div>
-
-<div id="filteredMeetings" class="collapse in">
-    <div class="meeting-block filtered-meetings" ng-repeat="meeting in dto.filteredMeetings">
-        <div class="meeting-info" xls-popover="'popover.html'" data-content="{{meeting}}" data-selector=".icon-zasedania"
-             data-placement="auto right" data-trigger="hover">
+        <div class="search-block left-margin">
+            <span ng-click="clearCategorySelection()">
+                <img src="/img/icon_menu2.png" alt="" tooltip="Вернуться к списку категорий"
+                     tooltip-placement="right" tooltip-trigger="mouseenter">
+            </span>
+            <input type="text" placeholder="Подробности" ng-model="searchQuery"
+                   typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
+        </div>
+        <div class="selected-category left-margin" ng-show="selectedCategory != null"><span class="name">{{selectedCategory.name}}</span>
+            <span class="tag" ng-show="selectedTag != null">/&nbsp;&nbsp;{{selectedTag.name}}&nbsp;&nbsp;{{selectedTag.count}}</span>
+        </div>
+        <div class="details-block left-margin" ng-show="selectedItem != null">
+            <div class="creation-date">
+                <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
+                <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
+                <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
+            </div>
+            <div class="clearfix">
+                <div class="picture"></div>
+                <div class="what">{{selectedItem.what}}</div>
+            </div>
+            <div class="where">{{selectedItem.where}}</div>
+            <div class="">{{selectedItem.when}}</div>
             <div>
-                <span class="from-now">({{meeting.dateAndTime | fromNow:selectedLocale}})</span></br>
-                <span class="day">{{meeting.dateAndTime | date:'dd'}}</span>
-                <span class="date">{{meeting.dateAndTime | date:'MMMM yyyy'}}</span>
-                <span class="time">[ {{meeting.dateAndTime | date:'HH:mm'}} ]</span>
+                <span class="tags-label" ng-show="item.tags.length > 0">Tags:</span>
+                <span class="tags" ng-show="item.tags.length > 0">{{joinTags(selectedItem.tags)}}</span>
             </div>
-            <div class="meeting-name"><a href="" ng-click="goToMeeting(meeting)">{{meeting.name}}</a></div>
-            <div class="meeting-address">{{meeting.address}}</div>
-            <div class="meeting-status">({{getStatusLabel(meeting.status)|translate}})</div>
-    <span class="members">
-        <i class="icon-user" tooltip="{{'common.usersCountTooltip'|translate}}"></i>
-        {{meeting.usersCount}}</span>
-    <span class="questions">
-        <i class="icon-folder-close" tooltip="{{'common.questionsCountTooltip'|translate}}"></i>
-        {{meeting.questionsCount}}</span>
-            <div class="clearfix"></div>
         </div>
-        <div ng-show="{{($index%2)}}" class="clearfix"></div>
-    </div>
-    <div class="clearfix"></div>
-</div>
-
-<div class="header-with-icon">
-    <i class="icon-clock"></i><h1 class="header-block">{{'home.meeting.nearest'|translate}}</h1>
-    <a href="" class="scroll-area" ng-click="goToTop()">{{'home.onToLink'|translate}}</a>
-    <div class="header-info"><span>{{dto.nearestMeetings.length}}</span></div>
-</div>
-
-<div class="meeting-block" ng-repeat="meeting in dto.nearestMeetings">
-    <div class="meeting-icon">
-        <i class="icon-flag"></i>
-    </div>
-    <div class="meeting-info">
-        <div>
-            <span class="from-now">({{meeting.dateAndTime | fromNow:selectedLocale}})</span></br>
-            <span class="day">{{meeting.dateAndTime | date:'dd'}}</span>
-            <span class="date">{{meeting.dateAndTime | date:'MMMM yyyy'}}</span>
-            <span class="time">[ {{meeting.dateAndTime | date:'HH:mm'}} ]</span>
+        <div class="scroll-content" ng-show="showSelectedCategory" style="height: 100%;">
+            <div class="laf-item left-margin" ng-repeat="item in lostAndFoundItems" ng-click="openItem(item)">
+                <div class="when">
+                    <span class="day">{{item.creationDate | date:'dd'}}</span>
+                    <span class="month">{{item.creationDate | date:'MMMM'}}</span>
+                    <span class="year">{{item.creationDate | date:'yyyy'}}</span>
+                </div>
+                <div class="what" ng-click="openItem(item)">{{item.what}}</div>
+                <!--todo каждый тэг отдельно кликабельный!!-->
+                <div><span class="tags-label" ng-show="item.tags.length > 0">Tags:</span><span class="tags"
+                                                                                               ng-show="item.tags.length > 0">{{joinTags(item.tags)}}</span>
+                </div>
+            </div>
+            <!--todo кнопка исчо или безконечный скролл-->
         </div>
-        <div class="meeting-name"><a href="" ng-click="goToMeeting(meeting)">{{meeting.name}}</a></div>
-        <div class="meeting-address">{{meeting.address}}</div>
-        <div class="meeting-status">({{getStatusLabel(meeting.status)|translate}})</div>
-    <span class="members">
-        <i class="icon-user" tooltip="{{'common.usersCountTooltip'|translate}}"></i>
-        {{meeting.usersCount}}</span>
-    <span class="questions">
-        <i class="icon-folder-close" tooltip="{{'common.questionsCountTooltip'|translate}}"></i>
-        {{meeting.questionsCount}}</span>
-        <div class="clearfix"></div>
+        <div class="scroll-content" ng-show="showCategoriesList" style="height: 100%;">
+            <div ng-repeat="category in categories" class="clearfix category-section left-margin">
+                <div class="category" ng-click="selectCategoryAndTag(category.name, null)">{{category.name}}</div>
+                <div class="tag-w-count clearfix" ng-repeat="tag in category.tags"
+                     ng-click="selectCategoryAndTag(category, tag)">
+                <span class="tag-icon">
+                    <span class="tag-icon-tc">
+                        <img src="{{getIconByTag(tag.name)}}" alt="">
+                    </span>
+                </span>
+                <span class="tag-name">
+                    <span class="tag-name-tc">
+                        <span>{{tag.name}}&nbsp;<span class="tag-count">{{tag.count}}</span></span>
+                    </span>
+                </span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div ng-show="{{($index%2)}}" class="clearfix"></div>
-</div>
-<div class="clearfix"></div>
-
-
-<div class="header-with-icon">
-    <i class="icon-message"></i><h1 class="header-block">{{'home.comment.unread'|translate}}</h1>
-    <a href="" class="scroll-area" ng-click="goToTop()">{{'home.onToLink'|translate}}</a>
-    <div class="header-info"><span>{{dto.unreadCommentsCount}}</span></div>
-</div>
-
-<div class="notifications">
-    <div class="notification" ng-repeat="commentCount in dto.unreadComments">
-        <i class="icon-nok"></i>
-        {{commentCount[0].lastModify | date: 'dd MMMM yyyy'}} - {{commentCount[0].meeting.name}} - <a href="" ng-click="showQuestionDetails(commentCount[0])">{{'home.comment.questionPrefix'|translate}}&nbsp;{{commentCount[0].number}}
-        - {{commentCount[1]}} {{'home.comment.new'|translate}}</a>
-    </div>
-    <div class="empty-list" ng-show="dto.unreadComments == null || dto.unreadComments.length <= 0">
-        {{'home.comment.empty'|translate}}
-    </div>
-</div>
-
-<div class="header-with-icon">
-    <i class="icon-mail"></i><h1 class="header-block">{{'home.notification.unread'|translate}}</h1>
-    <a href="" class="scroll-area" ng-click="goToTop()">{{'home.onToLink'|translate}}</a>
-    <div class="header-info"><span>{{dto.unreadNotificationsCount}}</span></div>
-</div>
-
-<div class="notifications">
-    <div class="notification" ng-repeat="notification in dto.unreadNotifications">
-        <i class="icon-nok"></i>
-        {{notification.text}}
-    </div>
-    <div class="empty-list" ng-show="dto.unreadNotifications == null || dto.unreadNotifications.length <= 0">
-        {{'home.notification.empty'|translate}}
-    </div>
-</div>
-
-</div>
-
-<div id="popoverContent" class="hidden">
-    <div class="meeting-name"><a class="go-to-meeting" href="">{{meetingForPopover.name}}</a></div>
-    <div class="meeting-address">{{meetingForPopover.address}}</div>
-    <div class="meeting-status">({{getStatusLabel(meetingForPopover.status)|translate}})</div>
-    <span class="members">
-        <i class="icon-user" tooltip="{{'common.usersCountTooltip'|translate}}"></i>
-        {{meetingForPopover.usersCount}}</span>
-    <span class="questions">
-        <i class="icon-folder-close" tooltip="{{'common.questionsCountTooltip'|translate}}"></i>
-        {{meetingForPopover.questionsCount}}</span>
-    <div class="clearfix"></div>
 </div>

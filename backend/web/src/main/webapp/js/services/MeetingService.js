@@ -1,4 +1,4 @@
-angular.module('board').
+angular.module('laf').
     factory('MeetingService', function ($resource) {
         return {
             crud: $resource('api/meetings/:filtered:meetingId', {meetingId: '@meetingId'},

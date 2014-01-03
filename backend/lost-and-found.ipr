@@ -3,7 +3,7 @@
   <component name="ArtifactManager">
     <artifact type="war" name="web:war">
       <output-path>$PROJECT_DIR$/web/target</output-path>
-      <root id="archive" name="board.war">
+      <root id="archive" name="laf.war">
         <element id="artifact" artifact-name="web:war exploded" />
       </root>
     </artifact>
@@ -97,20 +97,15 @@
             <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:2.0.18" />
             <element id="library" level="project" name="Maven: ognl:ognl:3.0.6" />
             <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring3:2.0.11" />
-            <element id="library" level="project" name="Maven: org.webjars:jquery:1.9.1" />
-            <element id="library" level="project" name="Maven: org.webjars:jquery-ui:1.9.1" />
-            <element id="library" level="project" name="Maven: org.webjars:bootstrap-datepicker:1.0.1" />
-            <element id="library" level="project" name="Maven: org.webjars:bootstrap-timepicker:0.2.2" />
-            <element id="library" level="project" name="Maven: org.webjars:bootstrap:2.3.1-1" />
-            <element id="library" level="project" name="Maven: org.webjars:angular-strap:0.7.4" />
-            <element id="library" level="project" name="Maven: org.webjars:angularjs:1.2.2" />
-            <element id="library" level="project" name="Maven: org.webjars:backbonejs:1.0.0-1" />
+            <element id="library" level="project" name="Maven: org.webjars:jquery:2.0.3-1" />
+            <element id="library" level="project" name="Maven: org.webjars:jquery-ui:1.10.3" />
+            <element id="library" level="project" name="Maven: org.webjars:angularjs:1.2.6" />
             <element id="library" level="project" name="Maven: org.webjars:underscorejs:1.4.4" />
-            <element id="library" level="project" name="Maven: org.webjars:angular-ui-bootstrap:0.3.0" />
             <element id="library" level="project" name="Maven: org.webjars:momentjs:2.0.0-1" />
             <element id="library" level="project" name="Maven: org.webjars:jasny-bootstrap:2.3.0-j5-1" />
-            <element id="library" level="project" name="Maven: org.webjars:fullcalendar:1.6.4" />
+            <element id="library" level="project" name="Maven: org.webjars:bootstrap:3.0.3" />
             <element id="library" level="project" name="Maven: org.webjars:angular-ui:0.4.0-1" />
+            <element id="library" level="project" name="Maven: org.webjars:angular-ui-bootstrap:0.9.0" />
           </element>
         </element>
       </root>
@@ -1253,26 +1248,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/thymeleaf/thymeleaf/2.0.18/thymeleaf-2.0.18-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.webjars:angular-strap:0.7.4">
+    <library name="Maven: org.webjars:angular-ui-bootstrap:0.9.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-strap/0.7.4/angular-strap-0.7.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-ui-bootstrap/0.9.0/angular-ui-bootstrap-0.9.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-strap/0.7.4/angular-strap-0.7.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-ui-bootstrap/0.9.0/angular-ui-bootstrap-0.9.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-strap/0.7.4/angular-strap-0.7.4-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.webjars:angular-ui-bootstrap:0.3.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-ui-bootstrap/0.3.0/angular-ui-bootstrap-0.3.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-ui-bootstrap/0.3.0/angular-ui-bootstrap-0.3.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-ui-bootstrap/0.3.0/angular-ui-bootstrap-0.3.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-ui-bootstrap/0.9.0/angular-ui-bootstrap-0.9.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.webjars:angular-ui:0.4.0-1">
@@ -1286,70 +1270,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angular-ui/0.4.0-1/angular-ui-0.4.0-1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.webjars:angularjs:1.2.2">
+    <library name="Maven: org.webjars:angularjs:1.2.6">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.2/angularjs-1.2.2.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.6/angularjs-1.2.6.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.2/angularjs-1.2.2-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.6/angularjs-1.2.6-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.2/angularjs-1.2.2-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/angularjs/1.2.6/angularjs-1.2.6-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.webjars:backbonejs:1.0.0-1">
+    <library name="Maven: org.webjars:bootstrap:3.0.3">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/backbonejs/1.0.0-1/backbonejs-1.0.0-1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap/3.0.3/bootstrap-3.0.3.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/backbonejs/1.0.0-1/backbonejs-1.0.0-1-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap/3.0.3/bootstrap-3.0.3-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/backbonejs/1.0.0-1/backbonejs-1.0.0-1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.webjars:bootstrap-datepicker:1.0.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap-datepicker/1.0.1/bootstrap-datepicker-1.0.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap-datepicker/1.0.1/bootstrap-datepicker-1.0.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap-datepicker/1.0.1/bootstrap-datepicker-1.0.1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.webjars:bootstrap-timepicker:0.2.2">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap-timepicker/0.2.2/bootstrap-timepicker-0.2.2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap-timepicker/0.2.2/bootstrap-timepicker-0.2.2-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap-timepicker/0.2.2/bootstrap-timepicker-0.2.2-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.webjars:bootstrap:2.3.1-1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap/2.3.1-1/bootstrap-2.3.1-1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap/2.3.1-1/bootstrap-2.3.1-1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap/2.3.1-1/bootstrap-2.3.1-1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.webjars:fullcalendar:1.6.4">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/fullcalendar/1.6.4/fullcalendar-1.6.4.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/fullcalendar/1.6.4/fullcalendar-1.6.4-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/fullcalendar/1.6.4/fullcalendar-1.6.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/bootstrap/3.0.3/bootstrap-3.0.3-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.webjars:jasny-bootstrap:2.3.0-j5-1">
@@ -1363,26 +1303,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jasny-bootstrap/2.3.0-j5-1/jasny-bootstrap-2.3.0-j5-1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.webjars:jquery-ui:1.9.1">
+    <library name="Maven: org.webjars:jquery-ui:1.10.3">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery-ui/1.9.1/jquery-ui-1.9.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery-ui/1.10.3/jquery-ui-1.10.3.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery-ui/1.9.1/jquery-ui-1.9.1-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery-ui/1.10.3/jquery-ui-1.10.3-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery-ui/1.9.1/jquery-ui-1.9.1-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery-ui/1.10.3/jquery-ui-1.10.3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.webjars:jquery:1.9.1">
+    <library name="Maven: org.webjars:jquery:2.0.3-1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/1.9.1/jquery-1.9.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/2.0.3-1/jquery-2.0.3-1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/1.9.1/jquery-1.9.1-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/2.0.3-1/jquery-2.0.3-1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/1.9.1/jquery-1.9.1-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/2.0.3-1/jquery-2.0.3-1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.webjars:momentjs:2.0.0-1">

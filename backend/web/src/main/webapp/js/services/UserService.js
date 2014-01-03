@@ -1,4 +1,4 @@
-angular.module('board').
+angular.module('laf').
     factory('UserService', function ($resource) {
         return {
             crud: $resource('api/users/:userId:compOrComm/:compOrCommId',

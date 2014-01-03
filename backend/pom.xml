@@ -394,7 +394,6 @@
             </dependency>
 
 
-
             <!-- Servlet -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -414,47 +413,17 @@
             <dependency>
                 <groupId>org.webjars</groupId>
                 <artifactId>jquery</artifactId>
-                <version>1.9.1</version>
+                <version>2.0.3-1</version>
             </dependency>
             <dependency>
                 <groupId>org.webjars</groupId>
                 <artifactId>jquery-ui</artifactId>
-                <version>1.9.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>bootstrap</artifactId>
-                <version>2.3.1-1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>bootstrap-datepicker</artifactId>
-                <version>1.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>bootstrap-timepicker</artifactId>
-                <version>0.2.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>angular-strap</artifactId>
-                <version>0.7.4</version>
-            </dependency>
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>backbonejs</artifactId>
-                <version>1.0.0-1</version>
+                <version>1.10.3</version>
             </dependency>
             <dependency>
                 <groupId>org.webjars</groupId>
                 <artifactId>angularjs</artifactId>
-                <version>1.2.2</version>
-            </dependency>
-            <dependency>
-                <groupId>org.webjars</groupId>
-                <artifactId>angular-ui-bootstrap</artifactId>
-                <version>0.3.0</version>
+                <version>1.2.6</version>
             </dependency>
             <dependency>
                 <groupId>org.webjars</groupId>
@@ -473,13 +442,18 @@
             </dependency>
             <dependency>
                 <groupId>org.webjars</groupId>
-                <artifactId>fullcalendar</artifactId>
-                <version>1.6.4</version>
+                <artifactId>angular-ui</artifactId>
+                <version>0.4.0-1</version>
             </dependency>
             <dependency>
                 <groupId>org.webjars</groupId>
-                <artifactId>angular-ui</artifactId>
-                <version>0.4.0-1</version>
+                <artifactId>bootstrap</artifactId>
+                <version>3.0.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>angular-ui-bootstrap</artifactId>
+                <version>0.9.0</version>
             </dependency>
 
             <!-- Test -->
@@ -524,7 +498,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-                    <warName>board</warName>
+                    <warName>laf</warName>
                 </configuration>
             </plugin>
             <plugin>

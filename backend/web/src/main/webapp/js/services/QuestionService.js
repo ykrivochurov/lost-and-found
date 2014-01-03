@@ -1,4 +1,4 @@
-angular.module('board').
+angular.module('laf').
     factory('QuestionService', function ($resource) {
         return {
             crud: $resource('api/questions/:questionId/:meeting/:meetingId/:number/:questNumber',
