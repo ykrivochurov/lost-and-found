@@ -1,7 +1,7 @@
-function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $animate) {
+function HomeController($scope, $modal, $timeout, $animate) {
   $scope.currentCity = 'Новосибирск';
   $scope.dateFormat = 'dd/MM/yyyy';
-  $scope.isCollapsed = true;
+  $scope.isCollapsed = false;
   $scope.categoriesListType = 'lost';
   $scope.laf = {when: '', where: '', what: ''};
   $scope.whatDict = ['ключи', 'телефон', 'кошелек', 'сумку', 'варежку'];
@@ -54,6 +54,15 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
         {
           name: 'Кошелек',
           count: 8
+        }
+      ]
+    },
+    {
+      name: 'Рег. Номер',
+      tags: [
+        {
+          name: 'Рег. Номер',
+          count: 3
         }
       ]
     },
@@ -113,6 +122,35 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
       ]
     },
     {
+      name: 'Украшения',
+      tags: [
+        {
+          name: 'Сережки',
+          count: 1
+        },
+        {
+          name: 'Кольцо',
+          count: 2
+        },
+        {
+          name: 'Браслет',
+          count: 4
+        },
+        {
+          name: 'Цепочка',
+          count: 1
+        },
+        {
+          name: 'Кулон',
+          count: 3
+        },
+        {
+          name: 'Часы',
+          count: 1
+        },
+      ]
+    },
+    {
       name: 'Другое'
     }
   ];
@@ -135,7 +173,14 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
     'Планшет': '/img/categories/Gadget_05.png',
     'Плеер': '/img/categories/Gadget_01.png',
     'Видеокамера': '/img/categories/Gadget_04.png',
-    'Фотоаппарат': '/img/categories/Gadget_03.png'
+    'Фотоаппарат': '/img/categories/Gadget_03.png',
+    'Рег. Номер': '/img/categories/Auto_01.png',
+    'Сережки': '/img/categories/Y_01.png',
+    'Кольцо': '/img/categories/Y_02.png',
+    'Браслет': '/img/categories/Y_04.png',
+    'Цепочка': '/img/categories/Y_05.png',
+    'Кулон': '/img/categories/Y_03.png',
+    'Часы': '/img/categories/Y_06.png'
 //    'Ноутбук': '/img/categories/'
   };
   $scope.searchQuery = null;
@@ -166,6 +211,7 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
     $scope.lostAndFoundItems = [];
     for (var i = 0; i < 3; i++) {
       $scope.lostAndFoundItems.push({
+        id: 'one_' + i,
         what: 'Паспорт на имя Человека',
         where: 'г. Новосибирск, ул. Кутателадзе 4г',
         when: new Date().getTime(),
@@ -178,9 +224,13 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
           phone: '+79236431122'
         },
         photosIds: [],
-        location: []
+        location: [],
+        money: false,
+        hasPrev: i != 0,
+        hasNext: true
       });
       $scope.lostAndFoundItems.push({
+        id: 'two_' + i,
         what: 'Ключи от гаража',
         where: 'г. Новосибирск, Советский район',
         when: new Date().getTime(),
@@ -193,9 +243,13 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
           phone: ''
         },
         photosIds: [],
-        location: []
+        location: [],
+        money: true,
+        hasPrev: true,
+        hasNext: true
       });
       $scope.lostAndFoundItems.push({
+        id: 'three_' + i,
         what: 'Плеер',
         where: 'г. Новосибирск, ул. Полевая 3',
         when: new Date().getTime(),
@@ -208,9 +262,17 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
           phone: ''
         },
         photosIds: [],
-        location: []
+        location: [],
+        money: false,
+        hasPrev: true,
+        hasNext: i != 2
       });
     }
+  };
+
+  $scope.goToSelectedCategory = function () {
+    $scope.selectedItem = null;
+    $scope.showSelectedCategory = true;
   };
 
   $scope.clearCategorySelection = function () {
@@ -227,11 +289,59 @@ function HomeController($scope, $filter, $location, $anchorScroll, $timeout, $an
     $scope.showSelectedCategory = false;
   };
 
+  $scope.openNextItem = function (selectedItem, prev) {
+    for (var i = 0; i < $scope.lostAndFoundItems.length; i++) {
+      var item = $scope.lostAndFoundItems[i];
+      if (item.id == selectedItem.id) {
+        if (prev && item.hasPrev) {
+          $scope.selectedItem = $scope.lostAndFoundItems[i - 1];
+          return;
+        }
+        if (!prev && item.hasNext) {
+          $scope.selectedItem = $scope.lostAndFoundItems[i + 1];
+          return;
+        }
+        $scope.goToSelectedCategory();
+      }
+    }
+  };
+
   $scope.joinTags = function (tags) {
     if (angular.isArray(tags) && tags.length > 0) {
       return tags.join(', ');
     }
     return null;
+  };
+
+  $scope.createItem = function (itemType) {
+    var modalInstance = $modal.open({
+      templateUrl: 'create-item-modal.html',
+      controller: CreateItemModalCtrl,
+      resolve: {
+        itemType: function () {
+          return itemType;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (itemType) {
+      $scope.itemType = itemType;
+    }, function () {
+      console.log('Modal dismissed at: ' + new Date());
+    });
+  };
+
+  var CreateItemModalCtrl = function ($scope, $modalInstance, itemType) {
+
+    $scope.itemType = itemType;
+
+    $scope.ok = function () {
+      $modalInstance.close(itemType);
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
   };
 
   //todo investigate

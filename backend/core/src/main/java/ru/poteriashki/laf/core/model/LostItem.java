@@ -32,6 +32,8 @@ public class LostItem extends BaseEntity {
 
     private boolean showPrivateInfo = false;
 
+    private boolean money = false;
+
     public String getWhat() {
         return what;
     }
@@ -110,5 +112,13 @@ public class LostItem extends BaseEntity {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public boolean isMoney() {
+        return money;
+    }
+
+    public void setMoney(boolean money) {
+        this.money = money;
     }
 }
