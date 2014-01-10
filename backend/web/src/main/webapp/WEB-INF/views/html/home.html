@@ -15,17 +15,17 @@
                    show-weeks="false" datepicker-append-to-body="true" ng-model="laf.when">
 
             <div class="buttons clearfix">
-                <button class="l-button" ng-click="createItem('found')">Я ПОТЕРЯЛ</button>
-                <button class="r-button" ng-click="createItem('lost')">Я НАШЕЛ</button>
+                <button class="l-button" ng-click="createItem('lost')">Я ПОТЕРЯЛ</button>
+                <button class="r-button" ng-click="createItem('found')">Я НАШЕЛ</button>
             </div>
         </div>
         <div class="show-list clearfix"><div class="dashed-text" ng-click="isCollapsed = !isCollapsed">Перейти к списку объявлений</div></div>
         <div class="musor">&nbsp;</div>
     </div>
-    <div class="map-panel"></div>
+    <div id="map-panel" class="map-panel"></div>
     <div class="right-panel-show" ng-click="isCollapsed = !isCollapsed" ng-show="!isCollapsed"></div>
     <div class="right-panel-hide" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed"></div>
-    <div class="right-panel" ng-show="isCollapsed">
+    <div class="right-panel animate-switch" ng-show="isCollapsed" ng-switch on="isCollapsed">
         <div class="top-buttons clearfix">
             <button ng-click="lafListSelect('lost')" class="lost-b active">
                 <span>Утеряно</span>
@@ -144,5 +144,58 @@
 </div>
 
 <script type="text/ng-template" id="create-item-modal.html">
-    <div>test: {{itemType}}</div>
+
+    <div class="ci-popup creation-form {{itemType}}">
+        <div class="creation-date">
+            <span class="day">{{laf.creationDate | date:'dd'}}</span>
+            <span class="month">{{laf.creationDate | date:'MMMM'}}</span>
+            <span class="year">{{laf.creationDate | date:'yyyy'}}</span>
+        </div>
+        <div class="clearfix">
+            <div class="what">
+                <textarea ng-model="laf.what" placeholder="Что"></textarea>
+            </div>
+            <div class="picture-block">
+                <span>Загрузить фото</span>
+                <div class="picture">
+                    <span class="img-va-helper"></span>
+                    <img src="/img/icon_camera.png">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="where">
+                <span>где {{itemType == 'lost' ? 'утеряно' : 'найдено'}}</span>
+                <div>
+                    <input type="text" ng-model="laf.where" placeholder="Где">
+                </div>
+            </div>
+            <div class="when">
+                <span>когда {{itemType == 'lost' ? 'утеряно' : 'найдено'}}</span>
+                <div>
+                    <input type="text" ng-model="laf.when" placeholder="Когда" datepicker-popup="{{dateFormat}}" show-button-bar="false"
+                           show-weeks="false" datepicker-append-to-body="true">
+                </div>
+            </div>
+        </div>
+        <div class="tags clearfix">
+            <div class="tags-wrapper" ng-show="laf.tags.length > 0">
+                <span class="tags-label">Tags:</span>
+                <span ng-repeat="tag in laf.tags">{{$index != 0 ? ', ' : ''}}{{tag.name}}</span>
+            </div>
+            <div class="add-tag-button dropdown-toggle">
+                Добавить тег
+            </div>
+            <ul class="dropdown-menu">
+                <li ng-repeat="category in categories">
+                    {{category.name}}
+                    <a ng-repeat="tag in category.tags" ng-click="addTag(tag)">{{tag.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix login-buttons">
+            <button class="vk-login">Войти через аккаунт Vkontakte</button>
+            <button class="fb-login">Войти через аккаунт Facebook</button>
+        </div>
+    </div>
 </script>

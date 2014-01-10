@@ -43,7 +43,7 @@ var app = angular.module('laf', ['ngRoute', 'I18nAngular', 'servicesModule', 'et
       when('/meeting/:meetingId', {templateUrl: 'meeting', controller: MeetingDetailController}).
       when('/companies', {templateUrl: 'company-management', controller: CompaniesController}).
       when('/home', {templateUrl: 'home', controller: HomeController}).
-      otherwise({redirectTo: '/login'});
+      otherwise({redirectTo: '/home'});
   }]);
 
 app.directive('dndList', function () {

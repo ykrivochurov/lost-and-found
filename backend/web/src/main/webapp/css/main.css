@@ -98,6 +98,13 @@ button:focus {
 
 /* Home page */
 
+#map-panel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
 .home-wrapper .left-panel {
     /*background-color: rgb(55, 55, 55);*/
     background: url('/img/left_bar_gr_bg.png') repeat-y rgb(55, 55, 55);
@@ -105,6 +112,7 @@ button:focus {
     min-height: 100%;
     position: relative;
     float: left;
+    z-index: 10;
 }
 
 .home-wrapper .left-panel .top-logo {
@@ -240,6 +248,21 @@ button:focus {
     position: relative;
     float: right;
 }
+
+.home-wrapper .right-panel-show-setup,
+.home-wrapper .right-panel-hide-setup {
+    -webkit-transition:all linear 0.3s;
+    -moz-transition:all linear 0.3s;
+    -ms-transition:all linear 0.3s;
+    -o-transition:all linear 0.3s;
+    transition:all linear 0.3s;
+}
+
+.right-panel-show-setup { opacity:0; height: 0; }
+.right-panel-show-setup.right-panel-show-start { opacity:1; height: 100px; }
+
+.right-panel-hide-setup { opacity:1; height: 0; }
+.right-panel-hide-setup.right-panel-hide-start { opacity:0; height: 100px; }
 
 .home-wrapper .right-panel .left-margin {
     margin-left: 45px;
@@ -395,7 +418,7 @@ button:focus {
     cursor: pointer;
 }
 
-.home-wrapper .details-block .creation-date,
+.app-wrapper .creation-date,
 .home-wrapper .laf-item .when {
     color: #ffffff;
     margin-top: 12px;
@@ -406,13 +429,13 @@ button:focus {
     color: rgb(231, 198, 109);
 }
 
-.home-wrapper .details-block .creation-date .day,
+.app-wrapper .creation-date .day,
 .home-wrapper .laf-item .when .day {
     font-size: 220%;
     margin-right: 5px;
 }
 
-.home-wrapper .details-block .creation-date .month,
+.app-wrapper .creation-date .month,
 .home-wrapper .laf-item .when .month {
     margin-right: 5px;
 }
@@ -628,7 +651,253 @@ button:focus {
 
 /* end Home page */
 
+/* Create item popup */
+.app-wrapper .modal-dialog {
+    width: 880px;
+}
+
+.app-wrapper .modal-content {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+}
+
+.app-wrapper .modal-backdrop.in {
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.ci-popup {
+    width: 880px;
+    background-color: rgb(55, 55, 55);
+    border-top: 1px solid;
+    padding: 15px 35px 45px 35px;
+    color: #ffffff;
+}
+
+.ci-popup .creation-date {
+    color: rgb(128, 128, 128);
+    margin-top: 0;
+    margin-left: 30px;
+}
+
+.ci-popup.found {
+    border-top-color: rgb(95, 197, 183);
+}
+
+.ci-popup.lost {
+    border-top-color: rgb(242, 108, 79);
+}
+
+.app-wrapper .creation-form .picture {
+    float: left;
+    width: 102px;
+    height: 102px;
+    border: 1px solid white;
+    margin-right: 25px;
+    margin-top: 9px;
+    vertical-align: middle;
+    background-color: rgb(70, 70, 70);
+    text-align: center;
+}
+
+.app-wrapper .creation-form .picture img {
+    max-width: 90px;
+    max-height: 90px;
+    vertical-align: middle;
+    margin-left: -4px;
+}
+
+.app-wrapper .creation-form .picture-block {
+    width: 100px;
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    color: rgb(206, 178, 101);
+    font-size: 80%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.app-wrapper .creation-form .what {
+    padding-left: 30px;
+    position: relative;
+}
+
+.app-wrapper .creation-form.lost .what {
+    background: url('../img/icon_01.png') no-repeat transparent 5px 15px;
+}
+
+.app-wrapper .creation-form.found .what {
+    background: url('../img/icon_01_0.png') no-repeat transparent 5px 15px;
+}
+
+.app-wrapper .creation-form .what textarea {
+    width: 640px;
+    height: 100px;
+    font-size: 150%;
+    padding: 8px 15px;
+}
+
+.app-wrapper .creation-form.lost .where {
+    background: url('../img/icon_03.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form.found .where {
+    background: url('../img/icon_03_0.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form .where {
+    float: left;
+    padding-left: 30px;
+}
+
+.app-wrapper .creation-form .where input {
+    padding: 9px 12px;
+    width: 396px;
+}
+
+.app-wrapper .creation-form.lost .when {
+    background: url('../img/icon_02.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form.found .when {
+    background: url('../img/icon_02_0.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form .when {
+    float: left;
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.app-wrapper .creation-form .when input {
+    padding: 9px 12px;
+    width: 156px;
+}
+
+.app-wrapper .creation-form .where,
+.app-wrapper .creation-form .when {
+    margin-top: 15px;
+}
+
+.app-wrapper .creation-form .where>span,
+.app-wrapper .creation-form .when>span {
+    color: rgb(192, 192, 192);
+    font-size: 80%;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.app-wrapper .creation-form .tags {
+    border-bottom: 1px solid rgb(95, 95, 95);
+    border-top: 1px solid rgb(95, 95, 95);
+    margin-left: 30px;
+    padding: 10px 3px;
+    margin-top: 20px;
+    width: 640px;
+    color: rgb(206, 178, 101);
+}
+
+.app-wrapper .creation-form .tags .tags-wrapper {
+    float: left;
+    width: 490px;
+    margin-right: 20px;
+}
+
+.app-wrapper .creation-form .tags .tags-label {
+    margin-right: 5px;
+    display: inline-block;
+    color: #ffffff;
+}
+
+.app-wrapper .creation-form .tags .add-tag-button {
+    background: url('../img/add.png') no-repeat transparent 0 1px;
+    color: rgb(206, 178, 101);
+    padding-left: 30px;
+    cursor: pointer;
+    float: left;
+}
+
+.app-wrapper .creation-form .tags .dropdown-menu {
+    background-color: rgb(55, 55, 55);
+    border-radius: 0;
+    color: #ffffff;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.app-wrapper .creation-form .tags .dropdown-menu span {
+    font-weight: bold;
+}
+
+.app-wrapper .creation-form .tags .dropdown-menu a:hover {
+    background-color: transparent;
+    outline-offset: -2px;
+    outline: rgb(237, 170, 46) auto 5px;
+}
+
+.app-wrapper .creation-form .tags .dropdown-menu a {
+    display: block;
+    margin-left: 5px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.app-wrapper .creation-form .vk-login,
+.app-wrapper .creation-form .fb-login {
+    color: #ffffff;
+    padding-left: 45px;
+}
+
+.app-wrapper .creation-form .login-buttons {
+    margin-left: 30px;
+    margin-top: 15px;
+    width: 640px;
+}
+
+.app-wrapper .creation-form.lost .vk-login {
+    background: url('../img/share_vkontacte.png') no-repeat rgb(242, 108, 79) 10px 50%;
+}
+
+.app-wrapper .creation-form.lost .fb-login {
+    background: url('../img/share_facebook.png') no-repeat rgb(242, 108, 79) 10px 50%;
+}
+
+.app-wrapper .creation-form.found .vk-login {
+    background: url('../img/share_vkontacte.png') no-repeat rgb(95, 197, 183) 10px 50%;
+}
+
+.app-wrapper .creation-form.found .fb-login {
+    background: url('../img/share_facebook.png') no-repeat rgb(95, 197, 183) 10px 50%;
+}
+
+.app-wrapper .creation-form .vk-login,
+.app-wrapper .creation-form .fb-login {
+    width: 48%;
+    font-size: 120%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.app-wrapper .creation-form .vk-login {
+    float: left;
+}
+
+.app-wrapper .creation-form .fb-login {
+    float: right;
+}
+
 /* Datepicker */
+.app-wrapper .dropdown-menu {
+    z-index: 1160;
+}
+
 input[bs-datepicker] {
     width: 170px;
     background: url('../img/icon_calendar_mini.png') no-repeat #fff 95% 45%;

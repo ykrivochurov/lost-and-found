@@ -1,9 +1,10 @@
-function HomeController($scope, $modal, $timeout, $animate) {
+function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) {
+  $scope.map = 'Новосибирск';
   $scope.currentCity = 'Новосибирск';
   $scope.dateFormat = 'dd/MM/yyyy';
   $scope.isCollapsed = false;
   $scope.categoriesListType = 'lost';
-  $scope.laf = {when: '', where: '', what: ''};
+  $scope.laf = {when: '', where: '', what: '', creationDate: new Date().getTime(), tags: []};
   $scope.whatDict = ['ключи', 'телефон', 'кошелек', 'сумку', 'варежку'];
   $scope.categories = [
     {
@@ -306,13 +307,6 @@ function HomeController($scope, $modal, $timeout, $animate) {
     }
   };
 
-  $scope.joinTags = function (tags) {
-    if (angular.isArray(tags) && tags.length > 0) {
-      return tags.join(', ');
-    }
-    return null;
-  };
-
   $scope.createItem = function (itemType) {
     var modalInstance = $modal.open({
       templateUrl: 'create-item-modal.html',
@@ -320,20 +314,39 @@ function HomeController($scope, $modal, $timeout, $animate) {
       resolve: {
         itemType: function () {
           return itemType;
+        },
+        laf: function () {
+          return $scope.laf;
+        },
+        whatDict: function () {
+          return $scope.whatDict;
+        },
+        categories: function () {
+          return $scope.categories;
         }
       }
     });
 
-    modalInstance.result.then(function (itemType) {
-      $scope.itemType = itemType;
+    modalInstance.result.then(function (itemType, laf) {
+//      $scope.itemType = itemType;
+//      $scope.laf = laf;
     }, function () {
       console.log('Modal dismissed at: ' + new Date());
     });
   };
 
-  var CreateItemModalCtrl = function ($scope, $modalInstance, itemType) {
+  var CreateItemModalCtrl = function ($scope, $modalInstance, itemType, laf, whatDict, categories) {
 
+    $scope.laf = laf;
     $scope.itemType = itemType;
+    $scope.whatDict = whatDict;
+    $scope.categories = categories;
+
+    $scope.addTag = function (tag) {
+      if ($scope.laf.tags.indexOf(tag) == -1) {
+        $scope.laf.tags.push(tag);
+      }
+    };
 
     $scope.ok = function () {
       $modalInstance.close(itemType);
@@ -349,8 +362,77 @@ function HomeController($scope, $modal, $timeout, $animate) {
     $animate.addClass(angular.element(event.target), 'hide-to-right');
   };
 
+  // All about map
+  $scope.$watch('laf.where', _.debounce(function() {
+//    $scope.typed = $scope.typing;
+//    $scope.$apply();
+  }, 500));
+
+  $scope.initMap = function () {
+    //current location
+    var location = GeoLocationService.location();
+    location.then(function (loc) {
+      var coords = [loc.latitude, loc.longitude];
+      $scope.locationPlacemark = new ymaps.Placemark(coords, {}, {
+        iconImageHref: '/img/icon_03.png',
+        iconImageSize: [24, 24],
+        iconImageOffset: [-12, -12]
+      });
+
+      $scope.getAddress(coords);
+
+      $scope.map = new ymaps.Map('map-panel', {
+        center: coords,
+        zoom: loc.zoom || 9,
+        behaviors: ['default', 'scrollZoom']
+      });
+
+      $scope.map.geoObjects.add($scope.locationPlacemark);
+      $scope.map.container.fitToViewport();
+      $scope.map.events.add('click', function (e) {
+        var clickCoords = e.get('coordPosition');
+        $scope.locationPlacemark.geometry.setCoordinates(clickCoords);
+        $scope.getAddress(clickCoords);
+      });
+    });
+  };
+
+  $scope.getAddress = function (coords) {
+    ymaps.geocode(coords).then(function (res) {
+      var firstGeoObject = res.geoObjects.get(0);
+      $scope.laf.where = firstGeoObject.properties.get('text');
+      if (!$scope.$$phase) {
+        $scope.$apply();
+      }
+      console.log('$scope.laf.where ' + $scope.laf.where);
+//      myPlacemark.properties
+//        .set({
+//          iconContent: firstGeoObject.properties.get('name'),
+//          balloonContent: firstGeoObject.properties.get('text')
+//        })
+    });
+  };
+
   $timeout(function () {
+    console.log('after timeout');
+    console.log(ymaps);
+    ymaps.ready($scope.initMap);
     //todo doesn't work
     $('.scroll-content').scrollbars();
   });
+}
+
+
+function joinTags(tags) {
+  if (angular.isArray(tags) && tags.length > 0) {
+    return tags.join(', ');
+  }
+  return null;
+}
+
+function joinTagsObjects(tags) {
+  if (angular.isArray(tags) && tags.length > 0) {
+    return tags.join(', ');
+  }
+  return null;
 }
