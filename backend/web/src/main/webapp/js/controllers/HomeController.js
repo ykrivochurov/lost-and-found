@@ -210,6 +210,7 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     $scope.selectedCategory = category;
     $scope.selectedTag = tag;
     $scope.lostAndFoundItems = [];
+
     for (var i = 0; i < 3; i++) {
       $scope.lostAndFoundItems.push({
         id: 'one_' + i,
@@ -269,6 +270,10 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
         hasNext: i != 2
       });
     }
+    $timeout(function () {
+      // recalculate scroll heights
+      $scope.calcScrollHeights();
+    });
   };
 
   $scope.goToSelectedCategory = function () {
@@ -419,23 +424,21 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     return null;
   };
 
-  $scope.categoriesHeightCalc = function () {
-    var topButtonsHeight = angular.element('.top-buttons').outerHeight();
-    var searchBlockHeight = angular.element('.search-block').outerHeight();
-    var bodyHeight = angular.element('body').outerHeight();
-    console.log('topB: ' + topButtonsHeight + ' searchB: ' + searchBlockHeight + ' body: ' + bodyHeight);
-    $scope.categoriesBlockHeight = bodyHeight - topButtonsHeight - searchBlockHeight - 50;
-    console.log('calculated height: ' + $scope.categoriesBlockHeight);
+  $scope.calcScrollHeights = function () {
+    var topButtonsHeight = angular.element('.top-buttons').outerHeight(true);
+    var searchBlockHeight = angular.element('.search-block').outerHeight(true);
+    var selectedCategoryBlockHeight = angular.element('.selected-category').outerHeight(true);
+    var bodyHeight = angular.element('body').outerHeight(true);
+    $scope.categoriesBlockHeight = bodyHeight - topButtonsHeight - searchBlockHeight;
+    $scope.itemsListHeight = bodyHeight - topButtonsHeight - searchBlockHeight - selectedCategoryBlockHeight;
   };
 
   $timeout(function () {
-    console.log('after timeout');
-    console.log(ymaps);
+    $scope.calcScrollHeights();
     ymaps.ready($scope.initMap);
     //todo doesn't work
     $('.scroll-content').scrollbars();
 //    $('.nano').nanoScroller();
-    $scope.categoriesHeightCalc();
   });
 
 }
