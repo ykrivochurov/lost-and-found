@@ -455,6 +455,11 @@
                 <artifactId>angular-ui-bootstrap</artifactId>
                 <version>0.9.0</version>
             </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>nanoScrollerJS</artifactId>
+                <version>0.7.6</version>
+            </dependency>
 
             <!-- Test -->
             <dependency>

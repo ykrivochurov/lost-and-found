@@ -114,6 +114,7 @@
     <orderEntry type="library" name="Maven: org.webjars:bootstrap:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:angular-ui:0.4.0-1" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:angular-ui-bootstrap:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:nanoScrollerJS:0.7.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:6.8.7" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />

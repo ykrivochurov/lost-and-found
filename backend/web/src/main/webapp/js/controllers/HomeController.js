@@ -357,13 +357,8 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     };
   };
 
-  //todo investigate
-  $scope.hideWithAnimation = function (event) {
-    $animate.addClass(angular.element(event.target), 'hide-to-right');
-  };
-
   // All about map
-  $scope.$watch('laf.where', _.debounce(function() {
+  $scope.$watch('laf.where', _.debounce(function () {
 //    $scope.typed = $scope.typing;
 //    $scope.$apply();
   }, 500));
@@ -413,21 +408,36 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     });
   };
 
+  $scope.collapse = function () {
+    $scope.isCollapsed = !$scope.isCollapsed;
+  };
+
+  $scope.joinTags = function (tags) {
+    if (angular.isArray(tags) && tags.length > 0) {
+      return tags.join(', ');
+    }
+    return null;
+  };
+
+  $scope.categoriesHeightCalc = function () {
+    var topButtonsHeight = angular.element('.top-buttons').outerHeight();
+    var searchBlockHeight = angular.element('.search-block').outerHeight();
+    var bodyHeight = angular.element('body').outerHeight();
+    console.log('topB: ' + topButtonsHeight + ' searchB: ' + searchBlockHeight + ' body: ' + bodyHeight);
+    $scope.categoriesBlockHeight = bodyHeight - topButtonsHeight - searchBlockHeight - 50;
+    console.log('calculated height: ' + $scope.categoriesBlockHeight);
+  };
+
   $timeout(function () {
     console.log('after timeout');
     console.log(ymaps);
     ymaps.ready($scope.initMap);
     //todo doesn't work
     $('.scroll-content').scrollbars();
+//    $('.nano').nanoScroller();
+    $scope.categoriesHeightCalc();
   });
-}
 
-
-function joinTags(tags) {
-  if (angular.isArray(tags) && tags.length > 0) {
-    return tags.join(', ');
-  }
-  return null;
 }
 
 function joinTagsObjects(tags) {

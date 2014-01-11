@@ -1,5 +1,6 @@
-<div class="home-wrapper">
-    <div class="left-panel" ng-show="!isCollapsed">
+<div class="home-wrapper animate-switch-container">
+    <div class="left-panel animate-show" ng-show="!isCollapsed">
+        <div class="right-panel-show" ng-click="collapse()"></div>
         <div class="top-logo">
             <img class="img-logo" src="/img/logo_01.png">
             <img class="text-logo" src="/img/logo2.png">
@@ -19,13 +20,12 @@
                 <button class="r-button" ng-click="createItem('found')">Я НАШЕЛ</button>
             </div>
         </div>
-        <div class="show-list clearfix"><div class="dashed-text" ng-click="isCollapsed = !isCollapsed">Перейти к списку объявлений</div></div>
+        <div class="show-list clearfix"><div class="dashed-text" ng-click="collapse()">Перейти к списку объявлений</div></div>
         <div class="musor">&nbsp;</div>
     </div>
     <div id="map-panel" class="map-panel"></div>
-    <div class="right-panel-show" ng-click="isCollapsed = !isCollapsed" ng-show="!isCollapsed"></div>
-    <div class="right-panel-hide" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed"></div>
-    <div class="right-panel animate-switch" ng-show="isCollapsed" ng-switch on="isCollapsed">
+    <div class="right-panel animate-show" ng-show="isCollapsed">
+        <div class="right-panel-hide" ng-click="collapse()"></div>
         <div class="top-buttons clearfix">
             <button ng-click="lafListSelect('lost')" class="lost-b active">
                 <span>Утеряно</span>
@@ -106,39 +106,45 @@
             </div>
             <div class="next-laf-item" ng-show="selectedItem.hasNext" ng-click="openNextItem(selectedItem, false)"><img src="/img/bottom.png" alt="prev"></div>
         </div>
-        <div class="scroll-content" ng-show="showSelectedCategory" style="height: 100%;">
-            <div class="laf-item left-margin" ng-repeat="item in lostAndFoundItems" ng-click="openItem(item)">
-                <div class="when">
-                    <span class="day">{{item.creationDate | date:'dd'}}</span>
-                    <span class="month">{{item.creationDate | date:'MMMM'}}</span>
-                    <span class="year">{{item.creationDate | date:'yyyy'}}</span>
-                    <span class="money" ng-show="item.money" tooltip="За вознаграждение!" tooltip-placement="left">&nbsp;</span>
+        <div class="nano" style="max-height: 600px;" ng-show="showSelectedCategory">
+            <div class="content scroll-content" ng-show="showSelectedCategory">
+                <div class="laf-item left-margin" ng-repeat="item in lostAndFoundItems" ng-click="openItem(item)">
+                    <div class="when">
+                        <span class="day">{{item.creationDate | date:'dd'}}</span>
+                        <span class="month">{{item.creationDate | date:'MMMM'}}</span>
+                        <span class="year">{{item.creationDate | date:'yyyy'}}</span>
+                        <span class="money" ng-show="item.money" tooltip="За вознаграждение!" tooltip-placement="left">&nbsp;</span>
+                    </div>
+                    <div class="what" ng-click="openItem(item)">{{item.what}}</div>
+                    <!--todo каждый тэг отдельно кликабельный!!-->
+                    <div><span class="tags-label" ng-show="item.tags.length > 0">Tags:</span><span class="tags"
+                                                                                                   ng-show="item.tags.length > 0">{{joinTags(item.tags)}}</span>
+                    </div>
                 </div>
-                <div class="what" ng-click="openItem(item)">{{item.what}}</div>
-                <!--todo каждый тэг отдельно кликабельный!!-->
-                <div><span class="tags-label" ng-show="item.tags.length > 0">Tags:</span><span class="tags"
-                                                                                               ng-show="item.tags.length > 0">{{joinTags(item.tags)}}</span>
-                </div>
+                <!--todo кнопка исчо или безконечный скролл-->
             </div>
-            <!--todo кнопка исчо или безконечный скролл-->
+            <div class="nano-bottom"></div>
         </div>
-        <div class="scroll-content" ng-show="showCategoriesList" style="height: 100%;">
-            <div ng-repeat="category in categories" class="clearfix category-section left-margin">
-                <div class="category" ng-click="selectCategoryAndTag(category, null)">{{category.name}}</div>
-                <div class="tag-w-count clearfix" ng-repeat="tag in category.tags"
-                     ng-click="selectCategoryAndTag(category, tag)">
-                <span class="tag-icon">
-                    <span class="tag-icon-tc">
-                        <img src="{{getIconByTag(tag.name)}}" alt="">
+        <div class="nano" style="height: {{categoriesBlockHeight}};" ng-show="showCategoriesList">
+            <div class="scroll-content" ng-show="showCategoriesList">
+                <div ng-repeat="category in categories" class="clearfix category-section left-margin">
+                    <div class="category" ng-click="selectCategoryAndTag(category, null)">{{category.name}}</div>
+                    <div class="tag-w-count clearfix" ng-repeat="tag in category.tags"
+                         ng-click="selectCategoryAndTag(category, tag)">
+                    <span class="tag-icon">
+                        <span class="tag-icon-tc">
+                            <img src="{{getIconByTag(tag.name)}}" alt="">
+                        </span>
                     </span>
-                </span>
-                <span class="tag-name">
-                    <span class="tag-name-tc">
-                        <span>{{tag.name}}&nbsp;<span class="tag-count">{{tag.count}}</span></span>
+                    <span class="tag-name">
+                        <span class="tag-name-tc">
+                            <span>{{tag.name}}&nbsp;<span class="tag-count">{{tag.count}}</span></span>
+                        </span>
                     </span>
-                </span>
+                    </div>
                 </div>
             </div>
+            <div class="nano-bottom"></div>
         </div>
     </div>
 </div>

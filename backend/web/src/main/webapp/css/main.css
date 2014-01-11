@@ -1,4 +1,9 @@
 @import "reset.css";
+@import "animation.css";
+
+body {
+    overflow: hidden;
+}
 
 .app-wrapper input[type="text"],
 .app-wrapper input[type="password"],
@@ -209,17 +214,17 @@ button:focus {
 .home-wrapper .right-panel-show {
     height: 35px;
     width: 35px;
-    background: url('/img/icon_menu.png') no-repeat rgb(55, 55, 55) center center;
+    background: url('/img/search.png') no-repeat rgb(55, 55, 55) center center;
     position: absolute;
     top: 20px;
-    right: 50px;
+    right: -50px;
     z-index: 100;
 }
 
 .home-wrapper .right-panel-hide {
     height: 35px;
     width: 35px;
-    background: url('/img/forward.png') no-repeat rgb(55, 55, 55) center center;
+    background: url('/img/icon_menu.png') no-repeat rgb(55, 55, 55) center center;
     position: absolute;
     top: 20px;
     right: 530px;
@@ -244,25 +249,13 @@ button:focus {
     background: url('/img/right_bar_gr_bg.png') repeat-y rgb(55, 55, 55);
     width: 490px;
     height: 100%;
-    overflow: auto;
     position: relative;
     float: right;
 }
 
-.home-wrapper .right-panel-show-setup,
-.home-wrapper .right-panel-hide-setup {
-    -webkit-transition:all linear 0.3s;
-    -moz-transition:all linear 0.3s;
-    -ms-transition:all linear 0.3s;
-    -o-transition:all linear 0.3s;
-    transition:all linear 0.3s;
+.home-wrapper .right-panel .scroll-content {
+    overflow: hidden;
 }
-
-.right-panel-show-setup { opacity:0; height: 0; }
-.right-panel-show-setup.right-panel-show-start { opacity:1; height: 100px; }
-
-.right-panel-hide-setup { opacity:1; height: 0; }
-.right-panel-hide-setup.right-panel-hide-start { opacity:0; height: 100px; }
 
 .home-wrapper .right-panel .left-margin {
     margin-left: 45px;
@@ -801,6 +794,7 @@ button:focus {
     margin-top: 20px;
     width: 640px;
     color: rgb(206, 178, 101);
+    position: relative;
 }
 
 .app-wrapper .creation-form .tags .tags-wrapper {
@@ -824,7 +818,7 @@ button:focus {
 }
 
 .app-wrapper .creation-form .tags .dropdown-menu {
-    background-color: rgb(55, 55, 55);
+    background-color: rgb(70, 70, 70);
     border-radius: 0;
     color: #ffffff;
     padding: 10px;
@@ -918,3 +912,21 @@ overflow: hidden;
 -webkit-transition: 5s linear all;
 transition: 5s linear all;
 */
+
+.nano {
+    overflow: auto;
+}
+
+.nano-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background: -moz-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, rgba(55, 55, 55, 0.95)), color-stop(100%, rgba(55, 55, 55, 0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* IE10+ */
+    background: linear-gradient(to top, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0); /* IE6-9 */
+}
