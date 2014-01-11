@@ -273,6 +273,7 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     $timeout(function () {
       // recalculate scroll heights
       $scope.calcScrollHeights();
+      $('.items-list-scroll').nanoScroller();
     });
   };
 
@@ -437,8 +438,9 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     $scope.calcScrollHeights();
     ymaps.ready($scope.initMap);
     //todo doesn't work
-    $('.scroll-content').scrollbars();
-//    $('.nano').nanoScroller();
+    $timeout(function () {
+      $('.categories-list-scroll').nanoScroller();
+    });
   });
 
 }

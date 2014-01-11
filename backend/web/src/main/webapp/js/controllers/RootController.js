@@ -41,7 +41,7 @@ function RootController($scope, $location, UserService, AccessService) {
         $scope.user = UserService.crud.get({userId: "current"});
     };
 
-    $scope.loggedIn();
+//    $scope.loggedIn();
 
     $scope.logout = function () {
         AccessService.logout.do();

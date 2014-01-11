@@ -106,7 +106,7 @@
             </div>
             <div class="next-laf-item" ng-show="selectedItem.hasNext" ng-click="openNextItem(selectedItem, false)"><img src="/img/bottom.png" alt="prev"></div>
         </div>
-        <div class="nano" style="height: {{itemsListHeight}}px" ng-show="showSelectedCategory">
+        <div class="nano items-list-scroll" style="height: {{itemsListHeight}}px" ng-show="showSelectedCategory">
             <div class="content scroll-content" ng-show="showSelectedCategory">
                 <div class="laf-item left-margin" ng-repeat="item in lostAndFoundItems" ng-click="openItem(item)">
                     <div class="when">
@@ -125,8 +125,8 @@
             </div>
             <div class="nano-bottom"></div>
         </div>
-        <div class="nano" style="height: {{categoriesBlockHeight}}px" ng-show="showCategoriesList">
-            <div class="scroll-content" ng-show="showCategoriesList">
+        <div class="nano categories-list-scroll" style="height: {{categoriesBlockHeight}}px" ng-show="showCategoriesList">
+            <div class="content scroll-content" ng-show="showCategoriesList">
                 <div ng-repeat="category in categories" class="clearfix category-section left-margin">
                     <div class="category" ng-click="selectCategoryAndTag(category, null)">{{category.name}}</div>
                     <div class="tag-w-count clearfix" ng-repeat="tag in category.tags"
