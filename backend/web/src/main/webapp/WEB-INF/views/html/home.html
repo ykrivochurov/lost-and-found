@@ -1,6 +1,6 @@
 <div class="home-wrapper animate-switch-container">
     <div class="left-panel animate-show" ng-show="!isCollapsed">
-        <div class="right-panel-show" ng-click="collapse()"></div>
+        <div class="right-panel-show {{!isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
         <div class="top-logo">
             <img class="img-logo" src="/img/logo_01.png">
             <img class="text-logo" src="/img/logo2.png">
@@ -25,7 +25,7 @@
     </div>
     <div id="map-panel" class="map-panel"></div>
     <div class="right-panel animate-show" ng-show="isCollapsed">
-        <div class="right-panel-hide" ng-click="collapse()"></div>
+        <div class="right-panel-hide  {{isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
         <div class="top-buttons clearfix">
             <button ng-click="lafListSelect('lost')" class="lost-b active">
                 <span>Утеряно</span>

@@ -221,6 +221,10 @@ button:focus {
     z-index: 100;
 }
 
+.home-wrapper .right-panel-show.back {
+    background: url('/img/back.png') no-repeat rgb(55, 55, 55) center center;
+}
+
 .home-wrapper .right-panel-hide {
     height: 35px;
     width: 35px;
@@ -229,6 +233,10 @@ button:focus {
     top: 20px;
     right: 530px;
     z-index: 100;
+}
+
+.home-wrapper .right-panel-hide.back {
+    background: url('/img/forward.png') no-repeat rgb(55, 55, 55) center center;
 }
 
 .home-wrapper .left-panel.ui-show {
@@ -324,7 +332,7 @@ button:focus {
     float: left;
     font-size: 180%;
     color: #ffffff;
-    padding: 5px 12px;
+    padding: 0 12px 5px 12px;
 }
 
 .home-wrapper .top-buttons .found-b:focus,
@@ -334,12 +342,14 @@ button:focus {
 
 .home-wrapper .top-buttons .found-b,
 .home-wrapper .top-buttons .lost-b {
-    background-color: transparent;
+    background-color: rgb(37, 37, 37);
+    border-top: 3px solid rgb(37, 37, 37);
+    color: rgb(117, 117, 117);
 }
 
 .home-wrapper .top-buttons .lost-b span,
 .home-wrapper .top-buttons .found-b span {
-    border-bottom: 1px dashed #ffffff;
+    border-bottom: 1px dashed rgb(117, 117, 117);
 }
 
 .home-wrapper .top-buttons .lost-b.active span,
@@ -348,11 +358,15 @@ button:focus {
 }
 
 .home-wrapper .top-buttons .lost-b.active {
-    background-color: rgb(242, 108, 78);
+    color: #ffffff;
+    background-color: transparent;
+    border-top: 3px solid rgb(242, 108, 78);
 }
 
 .home-wrapper .top-buttons .found-b.active {
-    background-color: rgb(95, 197, 183);
+    color: #ffffff;
+    background-color: transparent;
+    border-top: 3px solid rgb(95, 197, 183);
 }
 
 .home-wrapper .search-block {
@@ -924,54 +938,61 @@ transition: 5s linear all;
 }
 
 .nano {
-    position : relative;
-    overflow : hidden;
+    position: relative;
+    overflow: hidden;
 }
+
 .nano .content {
-    position      : absolute;
-    overflow      : scroll;
-    overflow-x    : hidden;
-    top           : 0;
-    right         : 0;
-    bottom        : 0;
-    left          : 0;
+    position: absolute;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
+
 .nano .content:focus {
     outline: thin dotted;
 }
+
 .nano .content::-webkit-scrollbar {
     visibility: hidden;
 }
+
 .has-scrollbar .content::-webkit-scrollbar {
     visibility: visible;
 }
+
 .nano > .pane {
-    background : rgba(0,0,0,.25);
-    position   : absolute;
-    width      : 10px;
-    right      : 0;
-    top        : 0;
-    bottom     : 0;
-    visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
-    opacity    : .01;
-    -webkit-transition    : .2s;
-    -moz-transition       : .2s;
-    -o-transition         : .2s;
-    transition            : .2s;
-    -moz-border-radius    : 5px;
-    -webkit-border-radius : 5px;
-    border-radius         : 5px;
+    background: rgba(0, 0, 0, .25);
+    position: absolute;
+    width: 10px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    visibility: hidden\9; /* Target only IE7 and IE8 with this hack */
+    opacity: .01;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
+
 .nano > .pane > .slider {
     background: #444;
-    background: rgba(0,0,0,.5);
-    position              : relative;
-    margin                : 0 1px;
-    -moz-border-radius    : 3px;
-    -webkit-border-radius : 3px;
-    border-radius         : 3px;
+    background: rgba(0, 0, 0, .5);
+    position: relative;
+    margin: 0 1px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
+
 .nano:hover > .pane, .pane.active, .pane.flashed {
-    visibility : visible\9; /* Target only IE7 and IE8 with this hack */
-    opacity    : 0.99;
+    visibility: visible\9; /* Target only IE7 and IE8 with this hack */
+    opacity: 0.99;
 }

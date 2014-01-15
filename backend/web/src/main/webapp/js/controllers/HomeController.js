@@ -1,5 +1,6 @@
 function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) {
   $scope.map = 'Новосибирск';
+  $scope.currentCountry = 'Россия';
   $scope.currentCity = 'Новосибирск';
   $scope.dateFormat = 'dd/MM/yyyy';
   $scope.isCollapsed = false;
@@ -373,6 +374,7 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     //current location
     var location = GeoLocationService.location();
     location.then(function (loc) {
+      console.log(loc);
       var coords = [loc.latitude, loc.longitude];
       $scope.locationPlacemark = new ymaps.Placemark(coords, {}, {
         iconImageHref: '/img/icon_03.png',
@@ -382,18 +384,26 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
 
       $scope.getAddress(coords);
 
-      $scope.map = new ymaps.Map('map-panel', {
-        center: coords,
-        zoom: loc.zoom || 9,
-        behaviors: ['default', 'scrollZoom']
-      });
+      var cityObjects = ymaps.geoQuery(ymaps.geocode($scope.currentCountry + ', ' + $scope.currentCity, {kind: 'locality'}));
 
-      $scope.map.geoObjects.add($scope.locationPlacemark);
-      $scope.map.container.fitToViewport();
-      $scope.map.events.add('click', function (e) {
-        var clickCoords = e.get('coordPosition');
-        $scope.locationPlacemark.geometry.setCoordinates(clickCoords);
-        $scope.getAddress(clickCoords);
+      cityObjects.then(function () {
+        var bounds = cityObjects.get(0).properties.get('boundedBy');
+        console.log('loc.zoom ' + loc.zoom);
+        $scope.map = new ymaps.Map('map-panel', {
+          center: coords,
+          zoom: 15,
+          behaviors: ['default', 'scrollZoom']
+        }, {
+          restrictMapArea: bounds
+        });
+
+        $scope.map.geoObjects.add($scope.locationPlacemark);
+        $scope.map.container.fitToViewport();
+        $scope.map.events.add('click', function (e) {
+          var clickCoords = e.get('coordPosition');
+          $scope.locationPlacemark.geometry.setCoordinates(clickCoords);
+          $scope.getAddress(clickCoords);
+        });
       });
     });
   };
@@ -401,7 +411,9 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
   $scope.getAddress = function (coords) {
     ymaps.geocode(coords).then(function (res) {
       var firstGeoObject = res.geoObjects.get(0);
-      $scope.laf.where = firstGeoObject.properties.get('text');
+      $scope.laf.where = firstGeoObject.properties.get('name') + ', ' + firstGeoObject.properties.get('description');
+//      $scope.laf.where = firstGeoObject.properties.get('text');
+      console.log(firstGeoObject);
       if (!$scope.$$phase) {
         $scope.$apply();
       }
