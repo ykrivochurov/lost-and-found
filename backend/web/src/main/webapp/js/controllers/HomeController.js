@@ -1,4 +1,4 @@
-function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService) {
+function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService) {
   $scope.lafBusy = false;
   $scope.cities = [
     {
@@ -387,37 +387,130 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
 //    $scope.$apply();
   }, 500));
 
+  $scope.DGisMap;
+  $scope.currentLocationMarker;
+  $scope.activeBallon;
+
   $scope.initMap = function () {
     $(function () {
-      var DGisMap = new DG.Map('map-panel');
-      DGisMap.setCenter(new DG.GeoPoint($scope.currentCity.coords.lng, $scope.currentCity.coords.lat), 15);
-      DGisMap.onCurrentLocation = function (longitude, latitude) {
-        $scope.getAddress(DGisMap, longitude, latitude)
+      $scope.DGisMap = new DG.Map('map-panel');
+      //выкл стандартных балунов
+      $scope.DGisMap.geoclicker.disable();
+      $scope.DGisMap.setCenter(new DG.GeoPoint($scope.currentCity.coords.lng, $scope.currentCity.coords.lat), 15);
+      $scope.currentLocationMarker = new DG.Markers.Common({
+        geoPoint: new DG.GeoPoint($scope.currentCity.coords.lng, $scope.currentCity.coords.lat)});
+      $scope.DGisMap.markers.add($scope.currentLocationMarker);
+
+      $scope.DGisMap.onCurrentLocation = function (longitude, latitude) {
+        $scope.currentLocationMarker.setPosition(new DG.GeoPoint(longitude, latitude));
+        $scope.getAddress($scope.DGisMap, longitude, latitude)
       };
+      //обработка клика по карте
+      $scope.DGisMap.addEventListener($scope.DGisMap.getContainerId(), 'DgClick', function (e) {
+        var geoPoint = e.getGeoPoint();
+        if (UtilsService.isNotEmpty($scope.activeBallon)) {
+          $scope.activeBallon.hide();
+        }
+        //определение нового адреса
+        $scope.getAddress($scope.DGisMap, geoPoint.lon, geoPoint.lat, function () {
+          if (UtilsService.isEmpty($scope.activeBallon)) {
+            $scope.activeBallon = new DG.Balloons.Common({
+              geoPoint: geoPoint,
+              contentHtml: $scope.laf.where
+            });
+            $scope.DGisMap.balloons.add($scope.activeBallon);
+          } else {
+            $scope.activeBallon.setContent($scope.laf.where);
+            $scope.activeBallon.setPosition(geoPoint);
+            $scope.activeBallon.show();
+          }
+          geoPoint.where = $scope.laf.where;
+          console.log(geoPoint);
+        });
+        //перемещение маркера в новое место клика
+        $scope.currentLocationMarker.setPosition(geoPoint);
+      });
       $scope.lafBusyMessage = $sce.trustAsHtml('Определение текущего<br/>местоположения...');
       $scope.lafBusy = true;
-      GeoLocationService.location(DGisMap);
+      GeoLocationService.location($scope.DGisMap);
+      $scope.rebuildMarkers();
+      $scope.DGisMap.addEventListener($scope.DGisMap.getContainerId(), 'DgMapMove', function (e) {
+        //todo нужна задержка в несколько сек до запроса маркеров!
+
+      });
+      $scope.DGisMap.addEventListener($scope.DGisMap.getContainerId(), 'DgZoomChange', function (e) {
+        //todo нужна задержка в несколько сек до запроса маркеров!
+      });
     });
 
   };
 
-  $scope.getAddress = function (mapObj, lng, lat) {
+//  todo $scope.DGisMap.setBoundsRestrictions(cityBounds , false, false);
+
+  $scope.rebuildMarkers = function () {
+    $scope.removeMarkers();
+    var bounds = $scope.DGisMap.getBounds();
+    var filterParams = {
+      leftTop: bounds.getLeftTop(),
+      rightBottom: bounds.getRightBottom(),
+      type: $scope.categoriesListType
+    };//todo selected category and tag
+    var items = ItemsService.crud.getItemsByBounds(filterParams, function () {
+    });
+    for (var i = 0; i < items.length; i++) {
+      $scope.createMarker(items[i]);
+    }
+  };
+
+  $scope.removeMarkers = function () {
+    var groupNames = ['1', '2', '3', '4'];
+    for (var i = 0; i < groupNames.length; i++) {
+      $scope.DGisMap.markers.removeGroup(groupNames[i]);
+    }
+  };
+
+  $scope.createMarker = function (item) {
+    var marker = new DG.Markers.MarkerWithBalloon({
+      geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+      icon: new DG.Icon($scope.tagsIcons[item.tags[0]], new DG.Size(29, 29)),
+      balloonOptions: {
+        geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+        contentHtml: item.what
+      }
+    });
+    $scope.DGisMap.markers.add(marker, item.mainCategory.name);
+  };
+
+  $scope.getAddress = function (mapObj, lng, lat, callback) {
+    var unknownWhere = 'Неизвестное место на карте';
     mapObj.geocoder.get(new DG.GeoPoint(lng, lat),
       {
         types: ['house', 'street', 'district'],
-        radius: 50,
+        radius: 200,
         limit: 1,
         success: function (geocoderObjects) {
           $scope.lafBusy = false;
           var geocoderObject = geocoderObjects[0];
-          console.log(geocoderObject.getName());
-          $scope.laf.where = geocoderObject.getName();
+          var showBalloon = false;
+          if (UtilsService.isNotBlank(geocoderObject.getName())) {
+            $scope.laf.where = geocoderObject.getName();
+            showBalloon = true;
+          } else {
+            $scope.laf.where = unknownWhere;
+          }
           if (!$scope.$$phase) {
             $scope.$apply();
+          }
+          if (showBalloon && UtilsService.isFunction(callback)) {
+            callback();
           }
         },
         failure: function (code, message) {
           $scope.lafBusy = false;
+          $scope.laf.where = unknownWhere;
+          if (!$scope.$$phase) {
+            $scope.$apply();
+          }
           console.log(code + ' ' + message);
         }
       });

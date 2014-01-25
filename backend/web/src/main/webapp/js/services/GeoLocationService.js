@@ -9,8 +9,6 @@ angular.module('laf').
             DGisMap.setCenter(new DG.GeoPoint(longitude, latitude));
             DGisMap.setZoom(DGisMap.getMaxZoom());
 
-            var marker = new DG.Markers.Common({geoPoint: new DG.GeoPoint(longitude, latitude) });
-            DGisMap.markers.add(marker);
             if (UtilsService.isFunction(DGisMap.onCurrentLocation)) {
               DGisMap.onCurrentLocation(longitude, latitude);
             }

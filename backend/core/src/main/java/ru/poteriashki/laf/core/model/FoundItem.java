@@ -34,6 +34,16 @@ public class FoundItem extends BaseEntity {
 
     private boolean money = false;
 
+    private Category mainCategory;
+
+    public Category getMainCategory() {
+        return mainCategory;
+    }
+
+    public void setMainCategory(Category mainCategory) {
+        this.mainCategory = mainCategory;
+    }
+
     public String getWhat() {
         return what;
     }
