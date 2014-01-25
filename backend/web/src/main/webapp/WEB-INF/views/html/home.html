@@ -6,12 +6,20 @@
             <img class="text-logo" src="/img/logo2.png">
 
             <div class="hr">&nbsp;</div>
-            <span class="city">{{currentCity}}</span>
+            <span class="city">{{currentCity.name}}</span>
         </div>
         <div class="start-form clearfix">
             <input type="text" name="where" placeholder="Где" ng-model="laf.where">
-            <input type="text" name="what" placeholder="Что" ng-model="laf.what"
-                   typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
+            <!--<input type="text" class="dropdown-toggle" name="what" placeholder="Что" ng-model="laf.what">-->
+            <div class="what">
+                <div class="dropdown-toggle">{{laf.tags[0] ? laf.tags[0].name : 'Что'}}</div>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="category in categories">
+                        {{category.name}}
+                        <a ng-repeat="tag in category.tags" ng-click="laf.tags = [tag]">{{tag.name}}</a>
+                    </li>
+                </ul>
+            </div>
             <input type="text" name="when" placeholder="Когда" datepicker-popup="{{dateFormat}}" show-button-bar="false"
                    show-weeks="false" datepicker-append-to-body="true" ng-model="laf.when">
 
@@ -20,7 +28,9 @@
                 <button class="r-button" ng-click="createItem('found')">Я НАШЕЛ</button>
             </div>
         </div>
-        <div class="show-list clearfix"><div class="dashed-text" ng-click="collapse()">Перейти к списку объявлений</div></div>
+        <div class="show-list clearfix">
+            <div class="dashed-text" ng-click="collapse()">Перейти к списку объявлений</div>
+        </div>
         <div class="musor">&nbsp;</div>
     </div>
     <div id="map-panel" class="map-panel"></div>
@@ -42,11 +52,13 @@
             <input type="text" placeholder="Подробности" ng-model="searchQuery"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
         </div>
-        <div class="selected-category left-margin clearfix" tooltip="Вернуться к объявлений" ng-show="selectedCategory != null" ng-click="goToSelectedCategory()"><span class="name">{{selectedCategory.name}}</span>
+        <div class="selected-category left-margin clearfix" tooltip="Вернуться к объявлений"
+             ng-show="selectedCategory != null" ng-click="goToSelectedCategory()"><span class="name">{{selectedCategory.name}}</span>
             <span class="tag" ng-show="selectedTag != null">/&nbsp;&nbsp;{{selectedTag.name}}&nbsp;&nbsp;{{selectedTag.count}}</span>
         </div>
         <div class="details-block left-margin" ng-show="selectedItem != null">
-            <div class="prev-laf-item" ng-show="selectedItem.hasPrev" ng-click="openNextItem(selectedItem, true)"><img src="/img/top.png" alt="prev"></div>
+            <div class="prev-laf-item" ng-show="selectedItem.hasPrev" ng-click="openNextItem(selectedItem, true)"><img
+                    src="/img/top.png" alt="prev"></div>
             <div class="creation-date">
                 <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
                 <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
@@ -83,7 +95,8 @@
                 <div class="clearfix">
                     <div class="icon-label-b person-b">
                         <div class="label-b">контактное лицо</div>
-                        <div class="text-b">{{selectedItem.author.firstName}}&nbsp;{{selectedItem.author.lastName}}</div>
+                        <div class="text-b">{{selectedItem.author.firstName}}&nbsp;{{selectedItem.author.lastName}}
+                        </div>
                     </div>
                 </div>
                 <div class="clearfix">
@@ -104,7 +117,8 @@
                 <img src="/img/share_vkontacte.png" alt="ВКонтакте">
                 <img src="/img/share_facebook.png" alt="Facebook">
             </div>
-            <div class="next-laf-item" ng-show="selectedItem.hasNext" ng-click="openNextItem(selectedItem, false)"><img src="/img/bottom.png" alt="prev"></div>
+            <div class="next-laf-item" ng-show="selectedItem.hasNext" ng-click="openNextItem(selectedItem, false)"><img
+                    src="/img/bottom.png" alt="prev"></div>
         </div>
         <div class="nano items-list-scroll" style="height: {{itemsListHeight}}px" ng-show="showSelectedCategory">
             <div class="content scroll-content" ng-show="showSelectedCategory">
@@ -125,7 +139,8 @@
             </div>
             <div class="nano-bottom"></div>
         </div>
-        <div class="nano categories-list-scroll" style="height: {{categoriesBlockHeight}}px" ng-show="showCategoriesList">
+        <div class="nano categories-list-scroll" style="height: {{categoriesBlockHeight}}px"
+             ng-show="showCategoriesList">
             <div class="content scroll-content" ng-show="showCategoriesList">
                 <div ng-repeat="category in categories" class="clearfix category-section left-margin">
                     <div class="category" ng-click="selectCategoryAndTag(category, null)">{{category.name}}</div>
@@ -149,6 +164,13 @@
     </div>
 </div>
 
+<div ng-show="lafBusy" class="laf-busy">
+    <div class="laf-busy-wrapper">
+        <div class="laf-busy-text" ng-bind-html="lafBusyMessage">
+        </div>
+    </div>
+</div>
+
 <script type="text/ng-template" id="create-item-modal.html">
 
     <div class="ci-popup creation-form {{itemType}}">
@@ -163,6 +185,7 @@
             </div>
             <div class="picture-block">
                 <span>Загрузить фото</span>
+
                 <div class="picture">
                     <span class="img-va-helper"></span>
                     <img src="/img/icon_camera.png">
@@ -172,14 +195,17 @@
         <div class="clearfix">
             <div class="where">
                 <span>где {{itemType == 'lost' ? 'утеряно' : 'найдено'}}</span>
+
                 <div>
                     <input type="text" ng-model="laf.where" placeholder="Где">
                 </div>
             </div>
             <div class="when">
                 <span>когда {{itemType == 'lost' ? 'утеряно' : 'найдено'}}</span>
+
                 <div>
-                    <input type="text" ng-model="laf.when" placeholder="Когда" datepicker-popup="{{dateFormat}}" show-button-bar="false"
+                    <input type="text" ng-model="laf.when" placeholder="Когда" datepicker-popup="{{dateFormat}}"
+                           show-button-bar="false"
                            show-weeks="false" datepicker-append-to-body="true">
                 </div>
             </div>

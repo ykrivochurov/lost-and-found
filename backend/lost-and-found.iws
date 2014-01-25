@@ -1,62 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/00.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Bag_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Key_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Key_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Money_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Money_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/bg_musor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_01_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_02_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_03_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_04_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_05_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_06_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_07_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_camera.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/left_bar_gr_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/logo2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/logo_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design/p-04b_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../design/p-05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/right_bar_gr_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/search2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/share_facebook.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/share_twitt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/share_vkontacte.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/top.png" />
+    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="WIP">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/UtilsService.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/libs/geolocation-service.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
     </list>
@@ -69,7 +20,7 @@
     <ignored path="web/catalina.home_IS_UNDEFINED/logs/laf.log.1" />
     <ignored path="web/catalina.home_IS_UNDEFINED/logs/laf.log" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/gsa/GSAUtil.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387905061269" ignored="false" />
-    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389749792750" ignored="false" />
+    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389866003438" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388407468951" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community-feed.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/DiscussionFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
@@ -88,7 +39,7 @@
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388058028351" ignored="false" />
     <file path="/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387967507139" ignored="false" />
     <file path="/fragment.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388471861566" ignored="false" />
-    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389720272773" ignored="false" />
+    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390637086176" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharacterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387960551535" ignored="false" />
@@ -142,16 +93,16 @@
     <file path="/MyCommunitiesFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388236053833" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/service/CommunityFeedService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388235603255" ignored="false" />
     <file path="/ApplicationContext.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388420552680" ignored="false" />
-    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389749993813" ignored="false" />
-    <file path="/index.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389443707837" ignored="false" />
+    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390632731585" ignored="false" />
+    <file path="/index.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390626361978" ignored="false" />
     <file path="/logback.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388473853913" ignored="false" />
     <file path="/fonts.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388474155651" ignored="false" />
-    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389750106890" ignored="false" />
-    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389748278984" ignored="false" />
+    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390632343107" ignored="false" />
+    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390632543364" ignored="false" />
     <file path="/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389327132545" ignored="false" />
     <file path="/1.t" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388941577565" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389704037420" ignored="false" />
-    <file path="/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389701290211" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389865979124" ignored="false" />
+    <file path="/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389852287693" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/mask.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389245834471" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/profile_kasko_policies_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389588673696" ignored="false" />
     <file path="/profile_kasko_policies_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389588644424" ignored="false" />
@@ -162,15 +113,15 @@
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/1.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389707126768" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/select_country_main.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389254262786" ignored="false" />
     <file path="/select_country_main.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389254260435" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389633391470" ignored="false" />
-    <file path="/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389254369160" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389257095914" ignored="false" />
-    <file path="/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389257092353" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_buy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389257064810" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389858285196" ignored="false" />
+    <file path="/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389858154679" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389866009980" ignored="false" />
+    <file path="/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389864820647" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_buy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389865552197" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/helper_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389696067826" ignored="false" />
     <file path="/helper_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389684048113" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/bank_page.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389258731118" ignored="false" />
-    <file path="/GeoLocationService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389286431434" ignored="false" />
+    <file path="/GeoLocationService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390628078609" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/profile_cars_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389532512510" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389704037420" ignored="false" />
     <file path="/screens.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389327205913" ignored="false" />
@@ -178,8 +129,8 @@
     <file path="/animation.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389337045758" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/profile_kasko_policy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389587825923" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/profile_kasko_policy.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389587905722" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/profile_policy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389531468660" ignored="false" />
-    <file path="/profile_policy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389531465379" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/profile_policy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389851018663" ignored="false" />
+    <file path="/profile_policy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389851018245" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/profile_car_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389357409215" ignored="false" />
     <file path="/profile_car_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389357352098" ignored="false" />
     <file path="/profile_cars_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389532512510" ignored="false" />
@@ -202,8 +153,8 @@
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/final_claim_preview.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389602870189" ignored="false" />
     <file path="/final_claim_preview.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389601398451" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/navigation_controller.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389632997655" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389700797809" ignored="false" />
-    <file path="/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389686142813" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389865523710" ignored="false" />
+    <file path="/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389865516793" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/claim_photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608061871" ignored="false" />
     <file path="/claim_photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608061121" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/damage_photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608108777" ignored="false" />
@@ -212,6 +163,20 @@
     <file path="/save_remove_buttons.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608270578" ignored="false" />
     <file path="/navigation_controller.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389616282946" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/tiapp.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389633391470" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ret_parser/pom.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389772978007" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ret_parser/src/main/java/ru/eastbanctech/s7/retparser/processor/RETProcessor.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389788228998" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ret_parser/src/main/java/ru/eastbanctech/s7/retparser/model/data/AAPDataFormatUtility.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389845121411" ignored="false" />
+    <file path="/AAPDataFormatUtility.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389845120065" ignored="false" />
+    <file path="$PROJECT_DIR$/../../air_dict_converter/src/test/java/ru/eastbanctech/s7/parser/CSVParseServiceTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389846668277" ignored="false" />
+    <file path="$PROJECT_DIR$/../../air_dict_converter/src/test/resources/persistence.properties" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389846788126" ignored="false" />
+    <file path="/persistence.properties" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389846788126" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/content_window.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389856884276" ignored="false" />
+    <file path="/content_window.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389853774268" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/accident_osago.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389856884276" ignored="false" />
+    <file path="/accident_osago.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389852833868" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_travellers_insurer_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389865534842" ignored="false" />
+    <file path="/calc_buy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389864934016" ignored="false" />
+    <file path="/UtilsService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390626020987" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,79 +237,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="334" column="28" selection-start="6540" selection-end="6540" vertical-scroll-proportion="0.43071786">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="animation.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/animation.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="14" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="0" selection-start="4775" selection-end="4775" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="40" selection-start="157" selection-end="157" vertical-scroll-proportion="-1.25">
+            <state line="231" column="0" selection-start="11883" selection-end="11883" vertical-scroll-proportion="0.99660444">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="24" selection-start="36" selection-end="47" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/LoginController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="62" selection-start="51" selection-end="62" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RootController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/RootController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="85" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="411" column="153" selection-start="10494" selection-end="10494" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1119#1301#0" expanded="false" />
-                <element signature="e#1644#1758#0" expanded="false" />
-                <element signature="e#1764#2302#0" expanded="false" />
-                <element signature="e#2820#4077#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -367,22 +264,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/libs/jquery.scrollbars.min.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/jquery.scrollbars.min.css" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/LostItem.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/FoundItem.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/libs/geolocation-service.js" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/animation.css" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/web/pom.xml" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
         <option value="$PROJECT_DIR$/web/src/main/resources/1.t" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/RootController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/app.js" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/UtilsService.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
       </list>
     </option>
   </component>
@@ -395,8 +292,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1920" />
-    <option name="height" value="1054" />
+    <option name="width" value="1280" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -426,26 +323,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -548,7 +425,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,7 +451,49 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,6 +521,26 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -609,7 +548,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../air_dict_converter" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.includeJavaFiles" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -1007,7 +946,11 @@
       <created>1389464670235</created>
       <updated>1389464670235</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="WIP">
+      <created>1389750201408</created>
+      <updated>1389750201408</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1031,13 +974,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1054" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869378" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46656534" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32655245" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39908257" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1051,10 +993,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16328709" sideWeight="0.6713062" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2280514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24797407" sideWeight="0.77217126" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22782874" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32655245" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1102,7 +1045,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Кастомный скролл" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1122,6 +1065,7 @@
     <MESSAGE value="Карта" />
     <MESSAGE value="Высота болка для скролла wip" />
     <MESSAGE value="Кастомный скролл" />
+    <MESSAGE value="WIP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1133,74 +1077,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/libs/geolocation-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="2" selection-start="6796" selection-end="6796" vertical-scroll-proportion="5.781407" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/HomeService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="0" selection-end="227" vertical-scroll-proportion="0.32846716" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.08278146">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="462" column="0" selection-start="18360" selection-end="18360" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="285" column="22" selection-start="9815" selection-end="9815" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="79" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="24" selection-start="36" selection-end="47" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/LoginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="62" selection-start="51" selection-end="62" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/RootController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="85" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="411" column="153" selection-start="10494" selection-end="10494" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1119#1301#0" expanded="false" />
-            <element signature="e#1644#1758#0" expanded="false" />
-            <element signature="e#1764#2302#0" expanded="false" />
-            <element signature="e#2820#4077#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,6 +1092,28 @@
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/back.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="24" selection-start="36" selection-end="47" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/LoginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="62" selection-start="51" selection-end="62" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/RootController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="85" selection-start="277" selection-end="277" vertical-scroll-proportion="0.025041737" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/animation.css">
@@ -1228,16 +1130,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/UtilsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="40" selection-start="157" selection-end="157" vertical-scroll-proportion="-1.25">
+        <state line="23" column="56" selection-start="759" selection-end="759" vertical-scroll-proportion="0.5511182">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="241" selection-end="241" vertical-scroll-proportion="0.14681892">
+          <folding>
+            <element signature="e#798#1653#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="448" column="0" selection-start="11562" selection-end="11562" vertical-scroll-proportion="10.4730835">
+          <folding>
+            <element signature="e#10070#10683#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="690" selection-end="690" vertical-scroll-proportion="0.2740864">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="28" selection-start="6540" selection-end="6540" vertical-scroll-proportion="0.43071786">
+        <state line="1093" column="14" selection-start="22833" selection-end="22846" vertical-scroll-proportion="0.9755302">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="0" selection-start="11883" selection-end="11883" vertical-scroll-proportion="0.99660444">
           <folding />
         </state>
       </provider>

@@ -1,7 +1,17 @@
-function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) {
+function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService) {
+  $scope.lafBusy = false;
+  $scope.cities = [
+    {
+      name: 'Новосибирск',
+      coords: {
+        lng: 82.9203497573968,
+        lat: 55.030282009814
+      }
+    }
+  ];
   $scope.map = 'Новосибирск';
   $scope.currentCountry = 'Россия';
-  $scope.currentCity = 'Новосибирск';
+  $scope.currentCity = $scope.cities[0];
   $scope.dateFormat = 'dd/MM/yyyy';
   $scope.isCollapsed = false;
   $scope.categoriesListType = 'lost';
@@ -200,6 +210,68 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     angular.element('.found-b').toggleClass('active', angular.equals(value, 'found'));
   };
 
+  $scope.lostAndFoundItems = [];
+
+  for (var i = 0; i < 3; i++) {
+    $scope.lostAndFoundItems.push({
+      id: 'one_' + i,
+      what: 'Паспорт на имя Человека',
+      where: 'г. Новосибирск, ул. Кутателадзе 4г',
+      when: new Date().getTime(),
+      creationDate: new Date().getTime(),
+      tags: ['документы', 'паспорт'],
+      author: {
+        firstName: 'Иван',
+        lastName: 'Иванов',
+        email: 'ivan.ivanov@gmail.com',
+        phone: '+79236431122'
+      },
+      photosIds: ['/img/sample.png'],
+      location: [],
+      money: false,
+      hasPrev: i != 0,
+      hasNext: true
+    });
+    $scope.lostAndFoundItems.push({
+      id: 'two_' + i,
+      what: 'Ключи от гаража',
+      where: 'г. Новосибирск, Советский район',
+      when: new Date().getTime(),
+      creationDate: new Date().getTime(),
+      tags: [],
+      author: {
+        firstName: 'Петр',
+        lastName: 'Растиряшкин',
+        email: 'gde.moi.kluchi@mail.ru',
+        phone: ''
+      },
+      photosIds: [],
+      location: [],
+      money: true,
+      hasPrev: true,
+      hasNext: true
+    });
+    $scope.lostAndFoundItems.push({
+      id: 'three_' + i,
+      what: 'Плеер',
+      where: 'г. Новосибирск, ул. Полевая 3',
+      when: new Date().getTime(),
+      creationDate: new Date().getTime(),
+      tags: ['плеер'],
+      author: {
+        firstName: 'Федя',
+        lastName: 'Музыкант',
+        email: 'boom.box@rambler.ru',
+        phone: ''
+      },
+      photosIds: [],
+      location: [],
+      money: false,
+      hasPrev: true,
+      hasNext: i != 2
+    });
+  }
+
   $scope.showSearchResults = true;
 
   $scope.showSelectedCategory = false;
@@ -210,67 +282,7 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     $scope.showCategoriesList = false;
     $scope.selectedCategory = category;
     $scope.selectedTag = tag;
-    $scope.lostAndFoundItems = [];
 
-    for (var i = 0; i < 3; i++) {
-      $scope.lostAndFoundItems.push({
-        id: 'one_' + i,
-        what: 'Паспорт на имя Человека',
-        where: 'г. Новосибирск, ул. Кутателадзе 4г',
-        when: new Date().getTime(),
-        creationDate: new Date().getTime(),
-        tags: ['документы', 'паспорт'],
-        author: {
-          firstName: 'Иван',
-          lastName: 'Иванов',
-          email: 'ivan.ivanov@gmail.com',
-          phone: '+79236431122'
-        },
-        photosIds: [],
-        location: [],
-        money: false,
-        hasPrev: i != 0,
-        hasNext: true
-      });
-      $scope.lostAndFoundItems.push({
-        id: 'two_' + i,
-        what: 'Ключи от гаража',
-        where: 'г. Новосибирск, Советский район',
-        when: new Date().getTime(),
-        creationDate: new Date().getTime(),
-        tags: [],
-        author: {
-          firstName: 'Петр',
-          lastName: 'Растиряшкин',
-          email: 'gde.moi.kluchi@mail.ru',
-          phone: ''
-        },
-        photosIds: [],
-        location: [],
-        money: true,
-        hasPrev: true,
-        hasNext: true
-      });
-      $scope.lostAndFoundItems.push({
-        id: 'three_' + i,
-        what: 'Плеер',
-        where: 'г. Новосибирск, ул. Полевая 3',
-        when: new Date().getTime(),
-        creationDate: new Date().getTime(),
-        tags: ['плеер'],
-        author: {
-          firstName: 'Федя',
-          lastName: 'Музыкант',
-          email: 'boom.box@rambler.ru',
-          phone: ''
-        },
-        photosIds: [],
-        location: [],
-        money: false,
-        hasPrev: true,
-        hasNext: i != 2
-      });
-    }
     $timeout(function () {
       // recalculate scroll heights
       $scope.calcScrollHeights();
@@ -330,6 +342,9 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
         },
         categories: function () {
           return $scope.categories;
+        },
+        lostAndFoundItems: function () {
+          return $scope.lostAndFoundItems;
         }
       }
     });
@@ -342,12 +357,14 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
     });
   };
 
-  var CreateItemModalCtrl = function ($scope, $modalInstance, itemType, laf, whatDict, categories) {
+  var CreateItemModalCtrl = function ($scope, $modalInstance, itemType, laf, whatDict, categories, lostAndFoundItems) {
 
     $scope.laf = laf;
     $scope.itemType = itemType;
     $scope.whatDict = whatDict;
     $scope.categories = categories;
+    $scope.lostAndFoundItems = lostAndFoundItems;
+    $scope.foundOnCreation = [lostAndFoundItems[0], lostAndFoundItems[1], lostAndFoundItems[2], lostAndFoundItems[3]];
 
     $scope.addTag = function (tag) {
       if ($scope.laf.tags.indexOf(tag) == -1) {
@@ -371,59 +388,39 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
   }, 500));
 
   $scope.initMap = function () {
-    //current location
-    var location = GeoLocationService.location();
-    location.then(function (loc) {
-      console.log(loc);
-      var coords = [loc.latitude, loc.longitude];
-      $scope.locationPlacemark = new ymaps.Placemark(coords, {}, {
-        iconImageHref: '/img/icon_03.png',
-        iconImageSize: [24, 24],
-        iconImageOffset: [-12, -12]
-      });
-
-      $scope.getAddress(coords);
-
-      var cityObjects = ymaps.geoQuery(ymaps.geocode($scope.currentCountry + ', ' + $scope.currentCity, {kind: 'locality'}));
-
-      cityObjects.then(function () {
-        var bounds = cityObjects.get(0).properties.get('boundedBy');
-        console.log('loc.zoom ' + loc.zoom);
-        $scope.map = new ymaps.Map('map-panel', {
-          center: coords,
-          zoom: 15,
-          behaviors: ['default', 'scrollZoom']
-        }, {
-          restrictMapArea: bounds
-        });
-
-        $scope.map.geoObjects.add($scope.locationPlacemark);
-        $scope.map.container.fitToViewport();
-        $scope.map.events.add('click', function (e) {
-          var clickCoords = e.get('coordPosition');
-          $scope.locationPlacemark.geometry.setCoordinates(clickCoords);
-          $scope.getAddress(clickCoords);
-        });
-      });
+    $(function () {
+      var DGisMap = new DG.Map('map-panel');
+      DGisMap.setCenter(new DG.GeoPoint($scope.currentCity.coords.lng, $scope.currentCity.coords.lat), 15);
+      DGisMap.onCurrentLocation = function (longitude, latitude) {
+        $scope.getAddress(DGisMap, longitude, latitude)
+      };
+      $scope.lafBusyMessage = $sce.trustAsHtml('Определение текущего<br/>местоположения...');
+      $scope.lafBusy = true;
+      GeoLocationService.location(DGisMap);
     });
+
   };
 
-  $scope.getAddress = function (coords) {
-    ymaps.geocode(coords).then(function (res) {
-      var firstGeoObject = res.geoObjects.get(0);
-      $scope.laf.where = firstGeoObject.properties.get('name') + ', ' + firstGeoObject.properties.get('description');
-//      $scope.laf.where = firstGeoObject.properties.get('text');
-      console.log(firstGeoObject);
-      if (!$scope.$$phase) {
-        $scope.$apply();
-      }
-      console.log('$scope.laf.where ' + $scope.laf.where);
-//      myPlacemark.properties
-//        .set({
-//          iconContent: firstGeoObject.properties.get('name'),
-//          balloonContent: firstGeoObject.properties.get('text')
-//        })
-    });
+  $scope.getAddress = function (mapObj, lng, lat) {
+    mapObj.geocoder.get(new DG.GeoPoint(lng, lat),
+      {
+        types: ['house', 'street', 'district'],
+        radius: 50,
+        limit: 1,
+        success: function (geocoderObjects) {
+          $scope.lafBusy = false;
+          var geocoderObject = geocoderObjects[0];
+          console.log(geocoderObject.getName());
+          $scope.laf.where = geocoderObject.getName();
+          if (!$scope.$$phase) {
+            $scope.$apply();
+          }
+        },
+        failure: function (code, message) {
+          $scope.lafBusy = false;
+          console.log(code + ' ' + message);
+        }
+      });
   };
 
   $scope.collapse = function () {
@@ -448,8 +445,7 @@ function HomeController($scope, $modal, $timeout, $animate, GeoLocationService) 
 
   $timeout(function () {
     $scope.calcScrollHeights();
-    ymaps.ready($scope.initMap);
-    //todo doesn't work
+    $scope.initMap();
     $timeout(function () {
       $('.categories-list-scroll').nanoScroller();
     });
