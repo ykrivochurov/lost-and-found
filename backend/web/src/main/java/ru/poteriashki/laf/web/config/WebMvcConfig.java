@@ -22,7 +22,7 @@ import ru.poteriashki.laf.core.config.PropHolderConfig;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"ru.poteriashki.laf.web.controllers"},
+@ComponentScan(basePackages = {"ru.poteriashki.laf.web.controllers", "ru.poteriashki.laf.web.security"},
         excludeFilters = {@ComponentScan.Filter(Configuration.class)})
 @Import({PropHolderConfig.class, ThymeleafConfig.class})
 @EnableAspectJAutoProxy(proxyTargetClass = true)

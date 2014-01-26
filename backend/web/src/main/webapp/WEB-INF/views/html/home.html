@@ -225,9 +225,13 @@
                 </li>
             </ul>
         </div>
-        <div class="clearfix login-buttons">
-            <button class="vk-login">Войти через аккаунт Vkontakte</button>
-            <button class="fb-login">Войти через аккаунт Facebook</button>
+        {{currentUser.firstName}}<br/>
+        {{currentUser.lastName}}<br/>
+        {{currentUser.email}}<br/>
+        {{currentUser.phone}}<br/>
+        <div class="clearfix login-buttons" ng-show="!currentUser.id">
+            <button class="vk-login" ng-click="authService.vk.login()">Войти через аккаунт Vkontakte</button>
+            <button class="fb-login" ng-click="authService.fb.login()">Войти через аккаунт Facebook</button>
         </div>
     </div>
 </script>

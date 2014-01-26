@@ -1,6 +1,7 @@
 package ru.poteriashki.laf.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.poteriashki.laf.core.model.FoundItem;
 import ru.poteriashki.laf.core.model.LostItem;
 import ru.poteriashki.laf.core.model.User;
@@ -10,6 +11,7 @@ import ru.poteriashki.laf.core.service.ILostAndFoundService;
 
 import java.util.Set;
 
+@Service
 public class LostAndFoundService implements ILostAndFoundService {
 
     @Autowired

@@ -27,6 +27,9 @@ angular.module('laf').
                 alert('Определить местоположение не удалась! Неизвестная ошибка.');
                 break;
             }
+            if (UtilsService.isFunction(DGisMap.onCurrentLocation)) {
+              DGisMap.onCurrentLocation(null, null);
+            }
           }, {timeout: 10000});
         } else {
           alert('Ваш браузер не поддерживает Geolocation API! Попробуйте использовать современные браузеры: Chrome, Firefox, Safari, Opera');

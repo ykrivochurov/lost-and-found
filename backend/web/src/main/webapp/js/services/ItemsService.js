@@ -4,6 +4,8 @@ angular.module('laf').
       crud: {
         getItemsByBounds: function (filterParams, callback) {
           //todo lost or found
+          return LOST_AND_FOUND_ITEMS;
+/*
           return [
             {
               id: 'lafDBId_1',
@@ -168,6 +170,7 @@ angular.module('laf').
               where: "Новосибирск, Советский"
             }
           ];
+*/
         }
       }
       /*

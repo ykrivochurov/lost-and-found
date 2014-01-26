@@ -9,6 +9,10 @@ public class User extends BaseEntity {
 
     public static final String COLLECTION = "user";
 
+    private String sid;
+
+    private String uid;
+
     private String firstName;
 
     private String lastName;
@@ -20,6 +24,32 @@ public class User extends BaseEntity {
     private String login;
 
     private String password;
+
+    private UserType type;
+
+    public UserType getType() {
+        return type;
+    }
+
+    public void setType(UserType type) {
+        this.type = type;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public String getLogin() {
         return login;
