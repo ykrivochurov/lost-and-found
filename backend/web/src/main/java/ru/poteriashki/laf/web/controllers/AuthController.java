@@ -55,7 +55,7 @@ public class AuthController {
             user.setLastName(userMap.get("last_name"));
             user.setEmail(userMap.get("email"));
             userService.updateUser(user);
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOGGER.debug("Unable to get user data", e);
         }
         return user;
@@ -78,7 +78,7 @@ public class AuthController {
             user.setEmail(userMap.get("email"));
             user.setPhone(userMap.get("home_phone"));
             userService.updateUser(user);
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOGGER.debug("Unable to get user data", e);
         }
         return user;
