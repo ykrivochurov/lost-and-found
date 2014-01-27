@@ -13,6 +13,8 @@ public class User extends BaseEntity {
 
     private String uid;
 
+    private String name;
+
     private String firstName;
 
     private String lastName;
@@ -97,5 +99,13 @@ public class User extends BaseEntity {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

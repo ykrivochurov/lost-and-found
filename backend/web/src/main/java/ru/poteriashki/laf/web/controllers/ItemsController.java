@@ -13,7 +13,7 @@ import ru.poteriashki.laf.web.security.UserContext;
 import java.util.Collections;
 
 @Controller
-@RequestMapping(value = "/items")
+@RequestMapping(value = "/api/items")
 public class ItemsController {
 
     @Autowired

@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "/auth")
+@RequestMapping(value = "/api/auth")
 public class AuthController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);

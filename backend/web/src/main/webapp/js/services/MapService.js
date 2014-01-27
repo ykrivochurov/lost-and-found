@@ -85,7 +85,7 @@ angular.module('laf').
             rightBottom: bounds.getRightBottom(),
             type: controllerScope.categoriesListType
           };//todo selected category and tag
-          var items = ItemsService.crud.getItemsByBounds(filterParams, function () {
+          var items = ItemsService.getItemsByBounds(filterParams, function () {
           });
           for (var i = 0; i < items.length; i++) {
             self.createMarker(items[i]);

@@ -5,4 +5,8 @@ import ru.poteriashki.laf.core.model.Category;
 
 public interface CategoryRepository extends PagingAndSortingRepository<Category, String> {
 
+    Category findOneByName(String name);
+
+    Category findOneByTags(String tags);
+
 }

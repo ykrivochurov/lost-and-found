@@ -24,17 +24,17 @@ public class Item extends BaseEntity {
 
     private boolean finished = false;
 
-    private User author;
+    private String author;
 
     private Set<String> photosIds;
 
-    private Double[] location;
+    private Double[] location; // lng, lat
 
     private boolean showPrivateInfo = false;
 
     private boolean money = false;
 
-    private Category mainCategory;
+    private String mainCategory;
 
     private ItemType itemType;
 
@@ -46,11 +46,11 @@ public class Item extends BaseEntity {
         this.itemType = itemType;
     }
 
-    public Category getMainCategory() {
+    public String getMainCategory() {
         return mainCategory;
     }
 
-    public void setMainCategory(Category mainCategory) {
+    public void setMainCategory(String mainCategory) {
         this.mainCategory = mainCategory;
     }
 
@@ -94,11 +94,11 @@ public class Item extends BaseEntity {
         this.finished = finished;
     }
 
-    public User getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 

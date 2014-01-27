@@ -16,7 +16,7 @@ angular.module('laf').
           var uid = response.session.mid;
           var sid = response.session.sid;
           var name = response.session.user.first_name + ' ' + response.session.user.last_name;
-          $.get("/auth/vk?sid=" + sid + "&uid=" + uid + "&name=" + name, function (data, status) {
+          $.get("/api/auth/vk?sid=" + sid + "&uid=" + uid + "&name=" + name, function (data, status) {
             $('.loggingin').removeClass('loggingvk');
             if (status == 'success') {
               $('#logins .vk').append($('<span>' + data + '</span>'));
@@ -60,7 +60,7 @@ angular.module('laf').
         if (response.authResponse) {
           var uid = response.authResponse.userID;
           var token = response.authResponse.accessToken;
-          $.get("/auth/fb?token=" + token + "&uid=" + uid, function (data, status) {
+          $.get("/api/auth/fb?token=" + token + "&uid=" + uid, function (data, status) {
             $('.loggingin').removeClass('loggingfb')
             if (status == 'success')
               $('#logins .fb').append($('<span>' + data + '</span>'))
@@ -100,7 +100,7 @@ angular.module('laf').
     vk.init();
     fb.init();
     return {
-      user: $resource('auth/user'),
+      user: $resource('api/auth/user'),
       fb: fb,
       vk: vk
     };

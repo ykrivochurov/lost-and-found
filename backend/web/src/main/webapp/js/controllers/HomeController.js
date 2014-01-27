@@ -117,7 +117,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     });
   };
 
-  var CreateItemModalCtrl = function ($scope, $modalInstance, AuthService, itemType, laf, whatDict, categories, lostAndFoundItems) {
+  var CreateItemModalCtrl = function ($scope, $modalInstance, AuthService, ItemsService, itemType, laf, whatDict, categories, lostAndFoundItems) {
 
     $scope.authService = AuthService;
     $scope.currentUser = $scope.authService.user.get();
@@ -129,9 +129,15 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     $scope.lostAndFoundItems = lostAndFoundItems;
     $scope.foundOnCreation = [lostAndFoundItems[0], lostAndFoundItems[1], lostAndFoundItems[2], lostAndFoundItems[3]];
 
+    $scope.saveItem = function () {
+      ItemsService.crud.create($scope.laf, function (item) {
+        console.log('Item created: ' + JSON.stringify(item));
+      });
+    };
+
     $scope.addTag = function (tag) {
-      if ($scope.laf.tags.indexOf(tag) == -1) {
-        $scope.laf.tags.push(tag);
+      if ($scope.laf.tags.indexOf(tag.name) == -1) {
+        $scope.laf.tags.push(tag.name);
       }
     };
 

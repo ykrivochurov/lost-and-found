@@ -1,5 +1,6 @@
 package ru.poteriashki.laf.core.service.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -33,6 +34,9 @@ public class UserService implements IUserService {
     @Override
     public User updateUser(User user) {
         Assert.notNull(user);
+        if (StringUtils.isBlank(user.getName())) {
+            user.setName(user.getFirstName() + " " + user.getLastName());
+        }
         return userRepository.save(user);
     }
 }

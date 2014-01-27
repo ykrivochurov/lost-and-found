@@ -12,11 +12,11 @@
             <input type="text" name="where" placeholder="Где" ng-model="laf.where">
             <!--<input type="text" class="dropdown-toggle" name="what" placeholder="Что" ng-model="laf.what">-->
             <div class="what">
-                <div class="dropdown-toggle">{{laf.tags[0] ? laf.tags[0].name : 'Что'}}</div>
+                <div class="dropdown-toggle">{{laf.tags[0] ? laf.tags[0] : 'Что'}}</div>
                 <ul class="dropdown-menu">
                     <li ng-repeat="category in categories">
                         {{category.name}}
-                        <a ng-repeat="tag in category.tags" ng-click="laf.tags = [tag]">{{tag.name}}</a>
+                        <a ng-repeat="tag in category.tags" ng-click="laf.tags = [tag.name]">{{tag.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -213,7 +213,7 @@
         <div class="tags clearfix">
             <div class="tags-wrapper" ng-show="laf.tags.length > 0">
                 <span class="tags-label">Tags:</span>
-                <span ng-repeat="tag in laf.tags">{{$index != 0 ? ', ' : ''}}{{tag.name}}</span>
+                <span ng-repeat="tag in laf.tags">{{$index != 0 ? ', ' : ''}}{{tag}}</span>
             </div>
             <div class="add-tag-button dropdown-toggle">
                 Добавить тег
@@ -225,10 +225,45 @@
                 </li>
             </ul>
         </div>
-        {{currentUser.firstName}}<br/>
-        {{currentUser.lastName}}<br/>
-        {{currentUser.email}}<br/>
-        {{currentUser.phone}}<br/>
+        <div>
+            <label>
+                <input type="checkbox" ng-model="laf.showPrivateInfo">
+                Публикация контактов
+            </label>
+        </div>
+        <div class="clearfix">
+            <div class="where">
+                <span>контактное лицо</span>
+                <div>
+                    <input type="text" ng-model="currentUser.firstName">
+                </div>
+            </div>
+            <div class="when">
+                <span>Емэйл</span>
+                <div>
+                    <input type="text" ng-model="currentUser.email">
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="where">
+                <span>контактный телефон</span>
+                <div>
+                    <input type="text" ng-model="currentUser.phone">
+                </div>
+            </div>
+        </div>
+
+
+        <input type="text" ng-model="currentUser.firstName"><br/>
+        <input type="text" ng-model="currentUser.lastName"><br/>
+        <input type="text" ng-model="currentUser.email" placeholder="Емайл"><br/>
+        <input type="text" ng-model="currentUser.phone" placeholder="Телефон"><br/>
+        <div class="clearfix login-buttons" ng-show="currentUser.id">
+            <button ng-click="saveItem()">Готово</button>
+            <button ng-click="cancel()">Отмена</button>
+        </div>
         <div class="clearfix login-buttons" ng-show="!currentUser.id">
             <button class="vk-login" ng-click="authService.vk.login()">Войти через аккаунт Vkontakte</button>
             <button class="fb-login" ng-click="authService.fb.login()">Войти через аккаунт Facebook</button>
