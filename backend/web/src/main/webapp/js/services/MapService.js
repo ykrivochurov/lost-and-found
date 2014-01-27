@@ -148,25 +148,27 @@ angular.module('laf').
         var unknownWhere = 'Неизвестное место на карте';
         mapObj.geocoder.get(new DG.GeoPoint(lng, lat),
           {
-            types: ['house', 'street', 'district'],
+            types: ['house', 'street', 'city', 'district', 'living_area', 'place', 'station_platform', 'settlement'],
             radius: 200,
-            limit: 3,
+            limit: 4,
             success: function (geocoderObjects) {
               controllerScope.hideBusy();
               var geocoderObject;
               for (var i = 0; i < geocoderObjects.length; i++) {
                 var obj = geocoderObjects[i];
-                if (UtilsService.isEmpty(geocoderObject)) {
+                console.log('a: ' + obj.getName());
+                if (UtilsService.isEmpty(geocoderObject) && UtilsService.isNotBlank(obj.getName())) {
                   geocoderObject = obj;
                 }
-                if (geocoderObject.getType() != 'house'
+                if (UtilsService.isNotEmpty(geocoderObject)
+                  && geocoderObject.getType() != 'house'
                   && obj.getType() == 'house'
                   && UtilsService.isNotBlank(obj.getName())) {
                   geocoderObject = obj;
                 }
               }
               var showBalloon = false;
-              if (UtilsService.isNotBlank(geocoderObject.getName())) {
+              if (UtilsService.isNotEmpty(geocoderObject) && UtilsService.isNotBlank(geocoderObject.getName())) {
                 controllerScope.laf.where = geocoderObject.getName();
                 showBalloon = true;
               } else {

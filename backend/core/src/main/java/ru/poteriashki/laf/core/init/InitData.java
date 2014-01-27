@@ -41,7 +41,7 @@ public class InitData {
             User user = new User();
             user.setLogin("l1");
             user.setPassword("l1");
-            userRepository.save(user);
+//            userRepository.save(user);
         }
     }
 }

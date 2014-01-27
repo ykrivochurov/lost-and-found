@@ -15,11 +15,6 @@ import ru.poteriashki.laf.core.config.PersistenceMongoConfig;
 import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.repositories.UserRepository;
 
-/**
- * User: y.krivochurov
- * Date: 28.04.13
- * Time: 11:49
- */
 @ContextConfiguration(classes = {TestPropHolderConfig.class, PersistenceMongoConfig.class, BaseConfiguration.class})
 public class UserRepositoryTest extends AbstractTestNGSpringContextTests {
 

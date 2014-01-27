@@ -6,11 +6,6 @@ import org.thymeleaf.spring3.SpringTemplateEngine;
 import org.thymeleaf.spring3.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Yuri A. Bulkin
- */
-
 @Configuration
 public class ThymeleafConfig {
 
@@ -42,7 +37,7 @@ public class ThymeleafConfig {
         resolver.setTemplateEngine(templateEngine());
         resolver.setCharacterEncoding("UTF-8");
         resolver.setOrder(1);
-        resolver.setViewNames(new String[] {"templates/*"});
+        resolver.setViewNames(new String[]{"templates/*"});
         return resolver;
     }
 

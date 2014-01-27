@@ -11,9 +11,6 @@ import ru.poteriashki.laf.core.service.IUserService;
 @Service
 public class UserService implements IUserService {
 
-    public static final String FB_UID_PREFIX = "fb_";
-    public static final String VK_UID_PREFIX = "vk_";
-
     @Autowired
     private UserRepository userRepository;
 

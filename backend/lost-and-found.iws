@@ -1,30 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="2gis API&#10;Sample markers">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/AuthController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/SecurityFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/UserContext.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/UserType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/GeoLocationService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
+    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/fonts/LiberationSans-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/fonts/LiberationSans-BoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/fonts/LiberationSans-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/fonts/LiberationSans-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/fonts/fontsfamily1375078485533.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/fonts/jasperreports_extension.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CommentController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CompanyController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/web-security.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/I18nAdapter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/I18nAngular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/CompaniesController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/LoginController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/MeetingDetailController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/MeetingFormController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/QuestionController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/ResultsController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/filters.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/i18n/en-us/messages.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/i18n/ru-ru/messages.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/libs/i18n-3.0.0.rc3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/AccessService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/CommentService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/CommitteeService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/CompanyService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/DocumentService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/HomeService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/MeetingService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/PositionService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/QuestionService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/User.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/UserRepository.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/RootController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/RootController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestMvcConfig.java" afterPath="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestMvcConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/config/TestPropHolderConfig.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/config/TestPropHolderConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/ThymeleafConfig.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/ThymeleafConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/repository/UserRepositoryTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/repository/UserRepositoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebMvcConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/db.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/app.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.ipr" afterPath="$PROJECT_DIR$/lost-and-found.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pom.xml" afterPath="$PROJECT_DIR$/web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web.iml" afterPath="$PROJECT_DIR$/web/web.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/test/resources/test.properties" afterPath="$PROJECT_DIR$/web/src/test/resources/test.properties" />
     </list>
     <ignored path="lost-and-found.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +58,7 @@
     <ignored path="web/catalina.home_IS_UNDEFINED/logs/laf.log.1" />
     <ignored path="web/catalina.home_IS_UNDEFINED/logs/laf.log" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/gsa/GSAUtil.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387905061269" ignored="false" />
-    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390755368361" ignored="false" />
+    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390833443523" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388407468951" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community-feed.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/DiscussionFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
@@ -54,7 +77,7 @@
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388058028351" ignored="false" />
     <file path="/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387967507139" ignored="false" />
     <file path="/fragment.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390756586181" ignored="false" />
-    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390744667626" ignored="false" />
+    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390831705865" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharacterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387960551535" ignored="false" />
@@ -128,8 +151,8 @@
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/1.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389707126768" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/select_country_main.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389254262786" ignored="false" />
     <file path="/select_country_main.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389254260435" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389858285196" ignored="false" />
-    <file path="/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389858154679" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390813747945" ignored="false" />
+    <file path="/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390812606163" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389866009980" ignored="false" />
     <file path="/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389864820647" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_buy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389865552197" ignored="false" />
@@ -193,7 +216,7 @@
     <file path="/calc_buy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389864934016" ignored="false" />
     <file path="/UtilsService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390626020987" ignored="false" />
     <file path="/ItemsService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390711155943" ignored="false" />
-    <file path="/MapService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390715445224" ignored="false" />
+    <file path="/MapService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390831446843" ignored="false" />
     <file path="/db.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390713042167" ignored="false" />
     <file path="/AuthService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390755310787" ignored="false" />
     <file path="/AuthController.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390756556029" ignored="false" />
@@ -203,6 +226,8 @@
     <file path="/UserService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390753944528" ignored="false" />
     <file path="/UserType.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390749543483" ignored="false" />
     <file path="/__dummy.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390749851341" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/select_country_sub.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390810930518" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/build.log" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390810972591" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,22 +305,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
-        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/UserContext.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebMvcConfig.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/UserType.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/User.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/UserRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/web/pom.xml" />
-        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/SecurityFilter.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
         <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/AuthController.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/RootController.js" />
+        <option value="$PROJECT_DIR$/web/src/test/resources/test.properties" />
+        <option value="$PROJECT_DIR$/web/src/test/java/ru/poteriashki/laf/web/config/TestMvcConfig.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/ThymeleafConfig.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/config/WebMvcConfig.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/repository/UserRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/config/TestPropHolderConfig.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/app.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
       </list>
     </option>
   </component>
@@ -414,6 +439,44 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -466,212 +529,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="security" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -684,406 +541,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repositories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1533,7 +990,11 @@
       <created>1390676173562</created>
       <updated>1390676173562</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Map logic refactoring&#10;Mock data refactoring&#10;FB and VK login">
+      <created>1390757227790</created>
+      <updated>1390757227790</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1560,10 +1021,10 @@
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46636087" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46636087" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32655245" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32568806" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39908257" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1578,7 +1039,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24797407" sideWeight="0.53363913" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24797407" sideWeight="0.67431194" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22782874" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1628,7 +1089,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="2gis API&#10;Sample markers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Map logic refactoring&#10;Mock data refactoring&#10;FB and VK login" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1651,6 +1112,7 @@
     <MESSAGE value="WIP" />
     <MESSAGE value="2gis API" />
     <MESSAGE value="2gis API&#10;Sample markers" />
+    <MESSAGE value="Map logic refactoring&#10;Mock data refactoring&#10;FB and VK login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1662,126 +1124,115 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security/SecurityFilter.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/CategoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="24" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.39488637">
+        <state line="5" column="17" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/FoundItemRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="221" selection-end="221" vertical-scroll-proportion="0.1754386">
+        <state line="5" column="17" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/LostItemRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="66" selection-start="232" selection-end="232" vertical-scroll-proportion="0.28767124">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="5" column="17" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/IGridFSDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/MessageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/IEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="17" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="639" selection-end="639" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PropHolderConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="531" selection-end="531" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PersistenceMongoConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/InitConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/BaseConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="847" selection-end="847" vertical-scroll-proportion="0.27123287">
+        <state line="22" column="13" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="50" selection-start="871" selection-end="871" vertical-scroll-proportion="0.5964912">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="518" selection-end="518" vertical-scroll-proportion="0.21929824">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/DocumentService.js">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/CommitteeService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/CommentService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="105" selection-end="255" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="30" selection-start="3127" selection-end="3127" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#84#1479#0" expanded="false" />
-            <element signature="e#1494#3096#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/UserService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="71" selection-start="102" selection-end="161" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="13" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.5890411">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="34" selection-start="4047" selection-end="4047" vertical-scroll-proportion="0.41411042">
+        <state line="17" column="81" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="68" selection-start="11887" selection-end="11887" vertical-scroll-proportion="-10.25">
-          <folding>
-            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.5.RELEASE/spring-web-3.2.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="0" selection-start="8625" selection-end="8625" vertical-scroll-proportion="0.0">
+        <state line="33" column="30" selection-start="2033" selection-end="2033" vertical-scroll-proportion="0.6511628">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="111" selection-start="3316" selection-end="3316" vertical-scroll-proportion="0.3096591">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

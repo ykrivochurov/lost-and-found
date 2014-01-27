@@ -6,11 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 
-/**
- * User: y.krivochurov
- * Date: 05.10.12
- * Time: 14:53
- */
 @Configuration
 @PropertySource("test.properties")
 public class TestPropHolderConfig {

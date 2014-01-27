@@ -12,10 +12,6 @@ import ru.eastbanctech.resources.config.MongoConnectionConfig;
 import ru.eastbanctech.resources.config.MongoResourceServiceConfig;
 import ru.poteriashki.laf.core.config.BaseConfiguration;
 
-/**
- * @author Yuri Bulkin <y.bulkin@eastbanctech.ru>
- */
-
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"ru.poteriashki.laf.web.controllers"},
