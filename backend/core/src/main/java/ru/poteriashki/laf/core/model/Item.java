@@ -6,11 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 import java.util.Set;
 
-@Document(collection = LostItem.COLLECTION)
+@Document(collection = Item.COLLECTION)
 @JsonDeserialize
-public class LostItem extends BaseEntity {
+public class Item extends BaseEntity {
 
-    public static final String COLLECTION = "lost";
+    public static final String COLLECTION = "items";
 
     private String what;
 
@@ -35,6 +35,16 @@ public class LostItem extends BaseEntity {
     private boolean money = false;
 
     private Category mainCategory;
+
+    private ItemType itemType;
+
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
 
     public Category getMainCategory() {
         return mainCategory;

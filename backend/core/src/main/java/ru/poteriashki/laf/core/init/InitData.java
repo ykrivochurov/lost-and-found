@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.repositories.CategoryRepository;
-import ru.poteriashki.laf.core.repositories.FoundItemRepository;
-import ru.poteriashki.laf.core.repositories.LostItemRepository;
+import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.repositories.MessageRepository;
 import ru.poteriashki.laf.core.repositories.UserRepository;
 
@@ -23,10 +22,7 @@ public class InitData {
     private UserRepository userRepository;
 
     @Autowired
-    private FoundItemRepository foundItemRepository;
-
-    @Autowired
-    private LostItemRepository lostItemRepository;
+    private ItemRepository itemRepository;
 
     @Autowired
     private MessageRepository messageRepository;

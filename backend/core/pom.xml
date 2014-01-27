@@ -63,11 +63,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>ru.eastbanctech</groupId>
-            <artifactId>jasper-reports-management</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>

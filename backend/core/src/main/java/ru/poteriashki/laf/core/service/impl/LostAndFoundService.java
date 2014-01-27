@@ -2,11 +2,9 @@ package ru.poteriashki.laf.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.poteriashki.laf.core.model.FoundItem;
-import ru.poteriashki.laf.core.model.LostItem;
+import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.User;
-import ru.poteriashki.laf.core.repositories.FoundItemRepository;
-import ru.poteriashki.laf.core.repositories.LostItemRepository;
+import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 
 import java.util.Set;
@@ -15,26 +13,14 @@ import java.util.Set;
 public class LostAndFoundService implements ILostAndFoundService {
 
     @Autowired
-    private FoundItemRepository foundItemRepository;
-
-    @Autowired
-    private LostItemRepository lostItemRepository;
+    private ItemRepository itemRepository;
 
     @Override
-    public FoundItem createFoundItem(FoundItem foundItem, User user, Set<String> photoIds) {
-        foundItem.setAuthor(user);
-        foundItem.setPhotosIds(photoIds);
-        foundItem.setFinished(false);
-        return foundItemRepository.save(foundItem);
+    public Item createItem(Item item, User user, Set<String> photoIds) {
+        item.setAuthor(user);
+        item.setPhotosIds(photoIds);
+        item.setFinished(false);
+        return itemRepository.save(item);
     }
-
-    @Override
-    public LostItem createLostItem(LostItem lostItem, User user, Set<String> photoIds) {
-        lostItem.setAuthor(user);
-        lostItem.setPhotosIds(photoIds);
-        lostItem.setFinished(false);
-        return lostItemRepository.save(lostItem);
-    }
-
 
 }
