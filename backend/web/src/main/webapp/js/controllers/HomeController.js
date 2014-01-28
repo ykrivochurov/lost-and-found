@@ -1,4 +1,4 @@
-function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, MapService, AuthService) {
+function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService) {
   $scope.authService = AuthService;
   $scope.mapService = MapService;
   $scope.lafBusy = false;
@@ -9,9 +9,9 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   $scope.dateFormat = 'dd/MM/yyyy';
   $scope.isCollapsed = false;
   $scope.categoriesListType = 'lost';
-  $scope.laf = {when: '', where: '', what: '', creationDate: new Date().getTime(), tags: []};
   $scope.whatDict = ['ключи', 'телефон', 'кошелек', 'сумку', 'варежку'];
-  $scope.categories = CATEGORIES;
+  $scope.categories = CategoriesService.crud.all();
+  $scope.categoriesCounts = CategoriesService.crud.counts();
   $scope.tagsIcons = TAGS_ICONS;
   $scope.searchQuery = null;
   $scope.selectedCategory = null;
@@ -23,6 +23,25 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
 
   $scope.showSelectedCategory = false;
   $scope.showCategoriesList = true;
+
+  $scope.renewLaf = function () {
+    $scope.laf = {when: '', where: '', what: '', creationDate: new Date().getTime(), tags: []};
+  };
+
+  $scope.renewLaf();
+
+  $scope.refreshCategories = function () {
+    $scope.categories = CategoriesService.crud.all();
+    $scope.categoriesCounts = CategoriesService.crud.counts();
+  };
+
+  $scope.getCountByTag = function (tag) {
+    var count = $scope.categoriesCounts[tag];
+    if (UtilsService.isEmpty(count)) {
+      return 0;
+    }
+    return count;
+  };
 
   $scope.getIconByTag = function (tagName) {
     return $scope.tagsIcons[tagName];
@@ -90,6 +109,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     var modalInstance = $modal.open({
       templateUrl: 'create-item-modal.html',
       controller: CreateItemModalCtrl,
+      scope: $scope,
       resolve: {
         itemType: function () {
           return itemType;
@@ -102,6 +122,9 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
         },
         categories: function () {
           return $scope.categories;
+        },
+        categoriesCounts: function () {
+          return $scope.categoriesCounts;
         },
         lostAndFoundItems: function () {
           return $scope.lostAndFoundItems;
@@ -117,27 +140,28 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     });
   };
 
-  var CreateItemModalCtrl = function ($scope, $modalInstance, AuthService, ItemsService, itemType, laf, whatDict, categories, lostAndFoundItems) {
+  var CreateItemModalCtrl = function ($scope, $modalInstance, AuthService, ItemsService, itemType, laf, whatDict, categories, categoriesCounts, lostAndFoundItems) {
 
     $scope.authService = AuthService;
     $scope.currentUser = $scope.authService.user.get();
     console.log($scope.currentUser);
-    $scope.laf = laf;
     $scope.itemType = itemType;
     $scope.whatDict = whatDict;
-    $scope.categories = categories;
     $scope.lostAndFoundItems = lostAndFoundItems;
     $scope.foundOnCreation = [lostAndFoundItems[0], lostAndFoundItems[1], lostAndFoundItems[2], lostAndFoundItems[3]];
 
     $scope.saveItem = function () {
       ItemsService.crud.create($scope.laf, function (item) {
         console.log('Item created: ' + JSON.stringify(item));
+        $scope.refreshCategories();
+        $scope.renewLaf();
+        $modalInstance.dismiss('cancel');
       });
     };
 
     $scope.addTag = function (tag) {
-      if ($scope.laf.tags.indexOf(tag.name) == -1) {
-        $scope.laf.tags.push(tag.name);
+      if ($scope.laf.tags.indexOf(tag) == -1 && UtilsService.isNotBlank(tag)) {
+        $scope.laf.tags.push(tag);
       }
     };
 

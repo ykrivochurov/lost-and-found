@@ -126,7 +126,7 @@ angular.module('laf').
             controllerScope.DGisMap.markers.getGroup(groupName).hide();
           }
           selectedGroup.show();
-          defaultGroup.show();
+//          defaultGroup.show();
         } else {
           for (var i = 0; i < allGroupsNames.length; i++) {
             var groupName = allGroupsNames[i];

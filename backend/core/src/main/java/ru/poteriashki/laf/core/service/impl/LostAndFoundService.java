@@ -1,20 +1,26 @@
 package ru.poteriashki.laf.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.repositories.CategoryRepository;
+import ru.poteriashki.laf.core.repositories.ICounterDao;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 
 import java.util.Date;
+import java.util.Map;
 import java.util.Set;
 
 @Service
 public class LostAndFoundService implements ILostAndFoundService {
+
+    @Autowired
+    private ICounterDao counterDao;
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -43,4 +49,13 @@ public class LostAndFoundService implements ILostAndFoundService {
         return itemRepository.save(item);
     }
 
+    @Override
+    public Map<String, Float> getCountsByTags() {
+        return counterDao.countTags();
+    }
+
+    @Override
+    public Iterable<Category> getAllCategories() {
+        return categoryRepository.findAll(new Sort(Sort.Direction.ASC, "priority"));
+    }
 }

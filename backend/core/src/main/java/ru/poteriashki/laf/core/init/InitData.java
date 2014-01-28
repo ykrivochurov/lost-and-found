@@ -10,8 +10,6 @@ import ru.poteriashki.laf.core.repositories.MessageRepository;
 import ru.poteriashki.laf.core.repositories.UserRepository;
 
 import javax.annotation.PostConstruct;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -37,24 +35,29 @@ public class InitData {
 
     @PostConstruct
     public void init() {
-        Map<String, Set<String>> catMap = new HashMap<>();
-        catMap.put("Животные", Sets.newHashSet(new String[]{"Кошки", "Собаки", "Другие животные"}));
-        catMap.put("Документы", Sets.newHashSet(new String[]{"Документы", "Паспорт", "Водительское удостоверение", "Пенсионное удостоверение"}));
-        catMap.put("Деньги", Sets.newHashSet(new String[]{"Карта", "Кошелек"}));
-        catMap.put("Рег. Номер", Sets.newHashSet(new String[]{"Рег. Номер"}));
-        catMap.put("Ключи", Sets.newHashSet(new String[]{"Ключи от автомобиля", "Ключи от дома"}));
-        catMap.put("Сумка", Sets.newHashSet(new String[]{"Сумка"}));
-        catMap.put("Гаджеты", Sets.newHashSet(new String[]{"Мобильный телефон", "Флешкарта", "Планшет", "Ноутбук", "Плеер", "Видеокамера", "Фотоаппарат"}));
-        catMap.put("Украшения", Sets.newHashSet(new String[]{"Сережки", "Кольцо", "Браслет", "Цепочка", "Кулон", "Часы"}));
-        catMap.put("Другое", Sets.newHashSet(new String[]{}));
-        for (Map.Entry<String, Set<String>> catMapEntry : catMap.entrySet()) {
-            Category category = categoryRepository.findOneByName(catMapEntry.getKey());
-            if (category == null) {
-                category = new Category();
-                category.setName(catMapEntry.getKey());
-                category.setTags(catMapEntry.getValue());
-                categoryRepository.save(category);
-            }
+        Integer priority = 0;
+        priority = createCategory(priority, "Животные", Sets.newHashSet(new String[]{"Кошки", "Собаки", "Другие животные"}));
+        priority = createCategory(priority, "Документы", Sets.newHashSet(new String[]{"Документы", "Паспорт", "Водительское удостоверение", "Пенсионное удостоверение"}));
+        priority = createCategory(priority, "Документы", Sets.newHashSet(new String[]{"Документы", "Паспорт", "Водительское удостоверение", "Пенсионное удостоверение"}));
+        priority = createCategory(priority, "Деньги", Sets.newHashSet(new String[]{"Карта", "Кошелек"}));
+        priority = createCategory(priority, "Рег. Номер", Sets.newHashSet(new String[]{"Рег. Номер"}));
+        priority = createCategory(priority, "Ключи", Sets.newHashSet(new String[]{"Ключи от автомобиля", "Ключи от дома"}));
+        priority = createCategory(priority, "Сумка", Sets.newHashSet(new String[]{"Сумка"}));
+        priority = createCategory(priority, "Гаджеты", Sets.newHashSet(new String[]{"Мобильный телефон", "Флешкарта", "Планшет", "Ноутбук", "Плеер", "Видеокамера", "Фотоаппарат"}));
+        priority = createCategory(priority, "Украшения", Sets.newHashSet(new String[]{"Сережки", "Кольцо", "Браслет", "Цепочка", "Кулон", "Часы"}));
+        priority = createCategory(priority, "Другое", Sets.newHashSet(new String[]{}));
+    }
+
+    private Integer createCategory(Integer priority, String name, Set<String> tags) {
+        Category category = categoryRepository.findOneByName(name);
+        if (category == null) {
+            category = new Category();
+            category.setName(name);
+            category.setTags(tags);
+            category.setPriority(priority);
+            categoryRepository.save(category);
+            priority++;
         }
+        return priority;
     }
 }
