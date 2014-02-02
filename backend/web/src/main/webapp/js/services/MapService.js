@@ -6,6 +6,10 @@ angular.module('laf').
       init: function (scope) {
         controllerScope = scope;
       },
+      getLocationObject: function () {
+        var position = controllerScope.currentLocationMarker.getPosition();
+        return [position.lon, position.lat];
+      },
       initMap: function (mapContainerSelector) {
         var self = this;
         $(function () {
@@ -50,8 +54,9 @@ angular.module('laf').
             //перемещение маркера в новое место клика
             controllerScope.currentLocationMarker.setPosition(geoPoint);
           });
-          controllerScope.showBusy('Определение текущего<br/>местоположения...');
-          GeoLocationService.location(controllerScope.DGisMap);
+//          todo пока не ясно, нужно ли нам определять текущее местополодение
+//          controllerScope.showBusy('Определение текущего<br/>местоположения...');
+//          GeoLocationService.location(controllerScope.DGisMap);
 
 
           self.rebuildMarkers();
@@ -103,6 +108,10 @@ angular.module('laf').
       },
 
       createMarker: function (item) {
+        if (UtilsService.isEmpty(item.location)) {
+          console.log('Unable create marker for item.id = ' + item.id);
+          return;
+        }
         console.log('Create marker');
         var marker = new DG.Markers.MarkerWithBalloon({
           geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),

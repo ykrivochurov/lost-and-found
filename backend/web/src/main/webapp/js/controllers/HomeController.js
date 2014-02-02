@@ -1,4 +1,4 @@
-function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService) {
+function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, UsersService) {
   $scope.authService = AuthService;
   $scope.mapService = MapService;
   $scope.lafBusy = false;
@@ -8,10 +8,8 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   $scope.currentCity = $scope.cities[0];
   $scope.dateFormat = 'dd/MM/yyyy';
   $scope.isCollapsed = false;
-  $scope.categoriesListType = 'lost';
+  $scope.categoriesListType = 'LOST';
   $scope.whatDict = ['ключи', 'телефон', 'кошелек', 'сумку', 'варежку'];
-  $scope.categories = CategoriesService.crud.all();
-  $scope.categoriesCounts = CategoriesService.crud.counts();
   $scope.tagsIcons = TAGS_ICONS;
   $scope.searchQuery = null;
   $scope.selectedCategory = null;
@@ -32,7 +30,24 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
 
   $scope.refreshCategories = function () {
     $scope.categories = CategoriesService.crud.all();
-    $scope.categoriesCounts = CategoriesService.crud.counts();
+    $scope.categoriesCounts = CategoriesService.crud.counts({itemType: $scope.categoriesListType});
+  };
+
+  $scope.refreshCategories();
+
+  $scope.itemAdded = function (item) {
+    var firstTag = item.tags[0];
+    var countForTag = $scope.categoriesCounts[firstTag];
+    if (UtilsService.isNotEmpty(countForTag)) {
+      countForTag++;
+      $scope.categoriesCounts[firstTag] = countForTag;
+      console.log('+1');
+      $scope.categories = $scope.categories; // todo refresh categories
+    } else {
+      $scope.categoriesCounts[firstTag] = 1;
+      $scope.categories = $scope.categories; // todo refresh categories
+    }
+    MapService.createMarker(item);
   };
 
   $scope.getCountByTag = function (tag) {
@@ -113,21 +128,6 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
       resolve: {
         itemType: function () {
           return itemType;
-        },
-        laf: function () {
-          return $scope.laf;
-        },
-        whatDict: function () {
-          return $scope.whatDict;
-        },
-        categories: function () {
-          return $scope.categories;
-        },
-        categoriesCounts: function () {
-          return $scope.categoriesCounts;
-        },
-        lostAndFoundItems: function () {
-          return $scope.lostAndFoundItems;
         }
       }
     });
@@ -138,40 +138,6 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     }, function () {
       console.log('Modal dismissed at: ' + new Date());
     });
-  };
-
-  var CreateItemModalCtrl = function ($scope, $modalInstance, AuthService, ItemsService, itemType, laf, whatDict, categories, categoriesCounts, lostAndFoundItems) {
-
-    $scope.authService = AuthService;
-    $scope.currentUser = $scope.authService.user.get();
-    console.log($scope.currentUser);
-    $scope.itemType = itemType;
-    $scope.whatDict = whatDict;
-    $scope.lostAndFoundItems = lostAndFoundItems;
-    $scope.foundOnCreation = [lostAndFoundItems[0], lostAndFoundItems[1], lostAndFoundItems[2], lostAndFoundItems[3]];
-
-    $scope.saveItem = function () {
-      ItemsService.crud.create($scope.laf, function (item) {
-        console.log('Item created: ' + JSON.stringify(item));
-        $scope.refreshCategories();
-        $scope.renewLaf();
-        $modalInstance.dismiss('cancel');
-      });
-    };
-
-    $scope.addTag = function (tag) {
-      if ($scope.laf.tags.indexOf(tag) == -1 && UtilsService.isNotBlank(tag)) {
-        $scope.laf.tags.push(tag);
-      }
-    };
-
-    $scope.ok = function () {
-      $modalInstance.close(itemType);
-    };
-
-    $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
-    };
   };
 
   // All about map
@@ -226,6 +192,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     $timeout(function () {
       $('.categories-list-scroll').nanoScroller();
     });
+    //todo move to directive
   });
 
 }
@@ -235,4 +202,44 @@ function joinTagsObjects(tags) {
     return tags.join(', ');
   }
   return null;
+}
+
+function CreateItemModalCtrl($scope, $modalInstance, $timeout, AuthService, ItemsService, UsersService, MapService, itemType) {
+
+  $scope.authService = AuthService;
+  $scope.currentUser = $scope.authService.user.get();
+  console.log($scope.currentUser);
+  $scope.itemType = itemType;
+  $scope.laf.itemType = itemType;
+  MapService.getLocationObject();
+
+  $scope.saveItem = function () {
+    $scope.laf.location = MapService.getLocationObject();
+    ItemsService.crud.create($scope.laf, function (item) {
+      console.log('Item created: ' + JSON.stringify(item));
+      $scope.itemAdded(item);
+      $scope.renewLaf();
+      UsersService.crud.update($scope.currentUser);
+      $modalInstance.dismiss('cancel');
+    });
+  };
+
+  $scope.addTag = function (tag) {
+    if ($scope.laf.tags.indexOf(tag) == -1 && UtilsService.isNotBlank(tag)) {
+      $scope.laf.tags.push(tag);
+    }
+  };
+
+  $scope.ok = function () {
+    $modalInstance.close(itemType);
+  };
+
+  $scope.cancel = function () {
+    $scope.renewLaf();
+    $modalInstance.dismiss('cancel');
+  };
+
+  $timeout(function () {
+    $(".phone-mask").mask("+7 (999) 999-9999");
+  });
 }

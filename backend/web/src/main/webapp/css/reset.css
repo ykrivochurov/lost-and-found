@@ -48,5 +48,9 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
+.app-wrapper label {
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+}
 /* end of Reset */

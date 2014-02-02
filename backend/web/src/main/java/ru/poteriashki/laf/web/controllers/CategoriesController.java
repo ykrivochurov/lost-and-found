@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ru.poteriashki.laf.core.model.Category;
+import ru.poteriashki.laf.core.model.ItemType;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 
 import java.util.Map;
@@ -25,8 +27,8 @@ public class CategoriesController {
 
     @RequestMapping(value = "/counts", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, Float> getCounts() {
-        return lostAndFoundService.getCountsByTags();
+    public Map<String, Float> getCounts(@RequestParam("itemType") ItemType itemType) {
+        return lostAndFoundService.getCountsByTags(itemType);
     }
 
 }

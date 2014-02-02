@@ -9,8 +9,7 @@
             <span class="city">{{currentCity.name}}</span>
         </div>
         <div class="start-form clearfix">
-            <input type="text" name="where" placeholder="Где" ng-model="laf.where">
-            <!--<input type="text" class="dropdown-toggle" name="what" placeholder="Что" ng-model="laf.what">-->
+            <input type="text" name="where" placeholder="Где, укажите на карте" ng-model="laf.where">
             <div class="what">
                 <div class="dropdown-toggle">{{laf.tags[0] ? laf.tags[0] : 'Что'}}</div>
                 <ul class="dropdown-menu">
@@ -24,8 +23,8 @@
                    show-weeks="false" datepicker-append-to-body="true" ng-model="laf.when">
 
             <div class="buttons clearfix">
-                <button class="l-button" ng-click="createItem('lost')">Я ПОТЕРЯЛ</button>
-                <button class="r-button" ng-click="createItem('found')">Я НАШЕЛ</button>
+                <button class="l-button" ng-click="createItem('LOST')">Я ПОТЕРЯЛ</button>
+                <button class="r-button" ng-click="createItem('FOUND')">Я НАШЕЛ</button>
             </div>
         </div>
         <div class="show-list clearfix">
@@ -37,10 +36,10 @@
     <div class="right-panel animate-show" ng-show="isCollapsed">
         <div class="right-panel-hide  {{isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
         <div class="top-buttons clearfix">
-            <button ng-click="lafListSelect('lost')" class="lost-b active">
+            <button ng-click="lafListSelect('LOST')" class="lost-b active">
                 <span>Утеряно</span>
             </button>
-            <button ng-click="lafListSelect('found')" class="found-b">
+            <button ng-click="lafListSelect('FOUND')" class="found-b">
                 <span>Найдено</span>
             </button>
         </div>
@@ -173,7 +172,7 @@
 
 <script type="text/ng-template" id="create-item-modal.html">
 
-    <div class="ci-popup creation-form {{itemType}}">
+    <div class="ci-popup creation-form {{itemType == 'LOST' ? 'lost' : 'found'}}">
         <div class="creation-date">
             <span class="day">{{laf.creationDate | date:'dd'}}</span>
             <span class="month">{{laf.creationDate | date:'MMMM'}}</span>
@@ -225,20 +224,20 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="private-info">
             <label>
                 <input type="checkbox" ng-model="laf.showPrivateInfo">
                 Публикация контактов
             </label>
         </div>
         <div class="clearfix">
-            <div class="where">
+            <div class="user-name">
                 <span>контактное лицо</span>
                 <div>
-                    <input type="text" ng-model="currentUser.firstName">
+                    <input type="text" ng-model="currentUser.name">
                 </div>
             </div>
-            <div class="when">
+            <div class="email">
                 <span>Емэйл</span>
                 <div>
                     <input type="text" ng-model="currentUser.email">
@@ -247,22 +246,16 @@
         </div>
 
         <div class="clearfix">
-            <div class="where">
+            <div class="phone">
                 <span>контактный телефон</span>
                 <div>
-                    <input type="text" ng-model="currentUser.phone">
+                    <input type="text" ng-model="currentUser.phone" class="phone-mask">
                 </div>
             </div>
         </div>
-
-
-        <input type="text" ng-model="currentUser.firstName"><br/>
-        <input type="text" ng-model="currentUser.lastName"><br/>
-        <input type="text" ng-model="currentUser.email" placeholder="Емайл"><br/>
-        <input type="text" ng-model="currentUser.phone" placeholder="Телефон"><br/>
         <div class="clearfix login-buttons" ng-show="currentUser.id">
-            <button ng-click="saveItem()">Готово</button>
-            <button ng-click="cancel()">Отмена</button>
+            <button ng-click="cancel()" class="c-button">Отмена</button>
+            <button ng-click="saveItem()" class="s-button">Готово</button>
         </div>
         <div class="clearfix login-buttons" ng-show="!currentUser.id">
             <button class="vk-login" ng-click="authService.vk.login()">Войти через аккаунт Vkontakte</button>

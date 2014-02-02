@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Document(collection = Item.COLLECTION)
@@ -20,13 +21,13 @@ public class Item extends BaseEntity {
 
     private Date creationDate;
 
-    private Set<String> tags;
+    private Set<String> tags = new HashSet<>();
 
     private boolean finished = false;
 
     private String author;
 
-    private Set<String> photosIds;
+    private Set<String> photosIds = new HashSet<>();
 
     private Double[] location; // lng, lat
 

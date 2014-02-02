@@ -4,7 +4,7 @@ angular.module('laf').
       crud: $resource('api/categories/:countsCtrl', {},
         {
           all: {method: 'GET', params: {}, isArray: true},
-          counts: {method: 'GET', params: {countsCtrl: 'counts'}}
+          counts: {method: 'GET', params: {countsCtrl: 'counts', itemType: '@itemType'}}
         })
     };
   });

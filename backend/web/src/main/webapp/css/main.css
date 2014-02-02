@@ -758,6 +758,10 @@ button:focus {
     cursor: pointer;
 }
 
+.app-wrapper .creation-form input {
+    padding: 9px 12px;
+}
+
 .app-wrapper .creation-form .what {
     padding-left: 30px;
     position: relative;
@@ -792,7 +796,6 @@ button:focus {
 }
 
 .app-wrapper .creation-form .where input {
-    padding: 9px 12px;
     width: 396px;
 }
 
@@ -811,21 +814,83 @@ button:focus {
 }
 
 .app-wrapper .creation-form .when input {
-    padding: 9px 12px;
     width: 156px;
 }
 
+.app-wrapper .creation-form .private-info,
 .app-wrapper .creation-form .where,
-.app-wrapper .creation-form .when {
+.app-wrapper .creation-form .when,
+.app-wrapper .creation-form .user-name,
+.app-wrapper .creation-form .email,
+.app-wrapper .creation-form .phone {
     margin-top: 15px;
 }
 
+.app-wrapper .creation-form .phone>span,
+.app-wrapper .creation-form .email>span,
+.app-wrapper .creation-form .user-name>span,
 .app-wrapper .creation-form .where>span,
 .app-wrapper .creation-form .when>span {
     color: rgb(192, 192, 192);
     font-size: 80%;
     margin-bottom: 5px;
     display: block;
+}
+
+.app-wrapper .creation-form.lost .private-info {
+    margin-left: 30px;
+}
+
+.app-wrapper .creation-form.lost .user-name {
+    background: url('../img/icon_07.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form.found .user-name {
+    background: url('../img/icon_07_0.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form .user-name {
+    float: left;
+    padding-left: 30px;
+}
+
+.app-wrapper .creation-form .user-name input {
+    width: 266px;
+}
+
+.app-wrapper .creation-form.lost .email {
+    background: url('../img/icon_05.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form.found .email {
+    background: url('../img/icon_05_0.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form .email {
+    float: left;
+    padding-left: 30px;
+    margin-left: 30px;
+}
+
+.app-wrapper .creation-form .email input {
+    width: 266px;
+}
+
+.app-wrapper .creation-form.lost .phone {
+    background: url('../img/icon_04.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form.found .phone {
+    background: url('../img/icon_04_0.png') no-repeat transparent 5px 32px;
+}
+
+.app-wrapper .creation-form .phone {
+    float: left;
+    padding-left: 30px;
+}
+
+.app-wrapper .creation-form .phone input {
+    width: 266px;
 }
 
 .app-wrapper .creation-form .tags {
@@ -896,8 +961,9 @@ button:focus {
 }
 
 .app-wrapper .creation-form .login-buttons {
+    text-align: center;
     margin-left: 30px;
-    margin-top: 15px;
+    margin-top: 30px;
     width: 640px;
 }
 
@@ -970,6 +1036,26 @@ button:focus {
     max-height: 50px;
     vertical-align: middle;
     margin-left: -4px;
+}
+
+.app-wrapper .creation-form .c-button,
+.app-wrapper .creation-form .s-button {
+    color: #ffffff;
+    font-size: 130%;
+    width: 123px;
+}
+
+.app-wrapper .creation-form.lost .s-button {
+    background-color: rgb(242, 108, 79);
+}
+
+.app-wrapper .creation-form.found .s-button {
+    background-color: rgb(95, 197, 183);
+}
+
+.app-wrapper .creation-form .c-button {
+    background-color: rgb(96, 96, 96);
+    margin-right: 10px;
 }
 
 /* Datepicker */
