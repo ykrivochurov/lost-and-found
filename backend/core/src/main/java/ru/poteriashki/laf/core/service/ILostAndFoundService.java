@@ -6,6 +6,7 @@ import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
 import ru.poteriashki.laf.core.model.User;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,5 +18,7 @@ public interface ILostAndFoundService {
 
     Iterable<Category> getAllCategories();
 
-    Page<Item> getItems(ItemType itemType, String category, String tag, Integer pageNumber, Integer pageSize);
+    Page<Item> getItems(ItemType itemType, String category, String tag, String cityId, Integer pageNumber, Integer pageSize);
+
+    List<Item> getItemsForMarkers(ItemType itemType, String cityId);
 }

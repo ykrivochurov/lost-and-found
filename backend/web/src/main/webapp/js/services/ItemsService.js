@@ -1,13 +1,11 @@
 angular.module('laf').
   factory('ItemsService', function ($resource) {
     return {
-      getItemsByBounds: function (filterParams, callback) {
-        //todo lost or found
-        return LOST_AND_FOUND_ITEMS;
-      },
-      crud: $resource('api/items/:itemId', {itemId: '@itemId'},
+      crud: $resource('api/items/:itemId:markers', {itemId: '@itemId', markers: '@markers'},
         {
-          create: {method: 'PUT'}
+          create: {method: 'PUT'},
+          getByCatAndTag: {method: 'GET', params: {itemType: '@itemType', category: '@category', tag: '@tag', cityId: '@cityId', pageNumber: '@pageNumber'}},
+          getMarkers: {method: 'GET', params: {itemType: '@itemType', category: '@category', tag: '@tag', cityId: '@cityId', markers: 'markers'}, isArray: true}
         })
     };
   });

@@ -39,6 +39,8 @@ public class Item extends BaseEntity {
 
     private ItemType itemType;
 
+    private String cityId;
+
     public ItemType getItemType() {
         return itemType;
     }
@@ -141,5 +143,13 @@ public class Item extends BaseEntity {
 
     public void setMoney(boolean money) {
         this.money = money;
+    }
+
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 }

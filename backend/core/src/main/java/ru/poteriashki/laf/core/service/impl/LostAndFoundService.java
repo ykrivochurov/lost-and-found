@@ -19,6 +19,7 @@ import ru.poteriashki.laf.core.service.ILostAndFoundService;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -67,20 +68,28 @@ public class LostAndFoundService implements ILostAndFoundService {
     }
 
     @Override
-    public Page<Item> getItems(ItemType itemType, String category, String tag, Integer pageNumber, Integer pageSize) {
+    public List<Item> getItemsForMarkers(ItemType itemType, String cityId) {
+        Assert.notNull(itemType);
+        Assert.notNull(cityId);
+
+        return itemRepository.findByItemTypeAndCityId(itemType, cityId);
+    }
+
+    @Override
+    public Page<Item> getItems(ItemType itemType, String category, String tag, String cityId,
+                               Integer pageNumber, Integer pageSize) {
         Assert.notNull(itemType);
         Assert.hasText(category);
+        Assert.notNull(cityId);
         Assert.notNull(pageNumber);
         Assert.notNull(pageSize);
 
         Pageable pageable = new PageRequest(pageNumber, pageSize, new Sort(Sort.Direction.DESC, "creationDate"));
 
         if (StringUtils.isBlank(tag)) {
-            return itemRepository.findByItemTypeAndMainCategoryAndCreationDateGreaterThan(itemType, category,
-                    getAvailableDate(), pageable);
+            return itemRepository.findByItemTypeAndMainCategoryAndCityId(itemType, category, cityId, pageable);
         } else {
-            return itemRepository.findByItemTypeAndMainCategoryAndTagsAndCreationDateGreaterThan(itemType, category,
-                    tag, getAvailableDate(), pageable);
+            return itemRepository.findByItemTypeAndMainCategoryAndTagsAndCityId(itemType, category, tag, cityId, pageable);
         }
     }
 

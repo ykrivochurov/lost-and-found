@@ -7,6 +7,7 @@ import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
 
 import java.util.Date;
+import java.util.List;
 
 public interface ItemRepository extends PagingAndSortingRepository<Item, String> {
 
@@ -17,4 +18,9 @@ public interface ItemRepository extends PagingAndSortingRepository<Item, String>
     Page<Item> findByItemTypeAndMainCategoryAndCreationDateGreaterThan(ItemType itemType, String mainCategory,
                                                                        Date creationDate, Pageable pageable);
 
+    Page<Item> findByItemTypeAndMainCategoryAndCityId(ItemType itemType, String category, String cityId, Pageable pageable);
+
+    Page<Item> findByItemTypeAndMainCategoryAndTagsAndCityId(ItemType itemType, String category, String tag, String cityId, Pageable pageable);
+
+    List<Item> findByItemTypeAndCityId(ItemType itemType, String cityId);
 }

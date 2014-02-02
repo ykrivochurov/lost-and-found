@@ -16,9 +16,9 @@ angular.module('laf').
           controllerScope.DGisMap = new DG.Map(mapContainerSelector);
           //выкл стандартных балунов
           controllerScope.DGisMap.geoclicker.disable();
-          controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.coords.lng, controllerScope.currentCity.coords.lat), 15);
+          controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
           controllerScope.currentLocationMarker = new DG.Markers.Common({
-            geoPoint: new DG.GeoPoint(controllerScope.currentCity.coords.lng, controllerScope.currentCity.coords.lat)});
+            geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1])});
           controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker);
 
           controllerScope.DGisMap.onCurrentLocation = function (longitude, latitude) {
@@ -85,16 +85,12 @@ angular.module('laf').
           console.log('inside timer');
           self.removeMarkers();
           var bounds = controllerScope.DGisMap.getBounds();
-          var filterParams = {
-            leftTop: bounds.getLeftTop(),
-            rightBottom: bounds.getRightBottom(),
-            type: controllerScope.categoriesListType
-          };//todo selected category and tag
-          var items = ItemsService.getItemsByBounds(filterParams, function () {
-          });
-          for (var i = 0; i < items.length; i++) {
-            self.createMarker(items[i]);
-          }
+          ItemsService.crud.getMarkers({itemType: controllerScope.categoriesListType, cityId: controllerScope.currentCity.id},
+            function (items) {
+              for (var i = 0; i < items.length; i++) {
+                self.createMarker(items[i]);
+              }
+            });
 //          controllerScope.hideBusy();
         }, 100);
       },

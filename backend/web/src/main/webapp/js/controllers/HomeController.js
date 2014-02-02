@@ -1,8 +1,12 @@
-function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, UsersService) {
+function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService) {
   $scope.authService = AuthService;
   $scope.mapService = MapService;
   $scope.lafBusy = false;
-  $scope.cities = CITIES;
+  $scope.cities = CityService.crud.get(function (cities) {
+    $scope.currentCity = cities[0];
+    $scope.mapService.init($scope);
+    $scope.mapService.initMap('map-panel');
+  });
   $scope.map = 'Новосибирск';
   $scope.currentCountry = 'Россия';
   $scope.currentCity = $scope.cities[0];
@@ -15,7 +19,6 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   $scope.selectedCategory = null;
   $scope.selectedTag = null;
   $scope.selectedItem = null;
-  $scope.lostAndFoundItems = LOST_AND_FOUND_ITEMS;
 
   $scope.showSearchResults = true;
 
@@ -69,15 +72,19 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   };
 
   $scope.selectCategoryAndTag = function (category, tag) {
-    $scope.showSelectedCategory = true;
-    $scope.showCategoriesList = false;
-    $scope.selectedCategory = category;
-    $scope.selectedTag = tag;
-    $scope.mapService.showMarkersForCategory($scope.selectedCategory);
-    $timeout(function () {
-      // recalculate scroll heights
-      $scope.calcScrollHeights();
-      $('.items-list-scroll').nanoScroller();
+    ItemsService.crud.getByCatAndTag({itemType: $scope.categoriesListType, category: category.name, tag: tag,
+      cityId: $scope.currentCity.id, pageNumber: 0}, function (items) {
+      $scope.lostAndFoundItems = items.content;
+      $scope.showSelectedCategory = true;
+      $scope.showCategoriesList = false;
+      $scope.selectedCategory = category;
+      $scope.selectedTag = tag;
+      $scope.mapService.showMarkersForCategory($scope.selectedCategory);
+      $timeout(function () {
+        // recalculate scroll heights
+        $scope.calcScrollHeights();
+        $('.items-list-scroll').nanoScroller();
+      });
     });
   };
 
@@ -187,8 +194,6 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
 
   $timeout(function () {
     $scope.calcScrollHeights();
-    $scope.mapService.init($scope);
-    $scope.mapService.initMap('map-panel');
     $timeout(function () {
       $('.categories-list-scroll').nanoScroller();
     });
@@ -214,6 +219,7 @@ function CreateItemModalCtrl($scope, $modalInstance, $timeout, AuthService, Item
   MapService.getLocationObject();
 
   $scope.saveItem = function () {
+    $scope.laf.cityId = $scope.currentCity.id;
     $scope.laf.location = MapService.getLocationObject();
     ItemsService.crud.create($scope.laf, function (item) {
       console.log('Item created: ' + JSON.stringify(item));
