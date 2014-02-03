@@ -8,4 +8,6 @@ public interface IUserService {
     User getOrCreateUser(String uid, String sid, UserType userType);
 
     User updateUser(User user);
+
+    User getById(String author);
 }

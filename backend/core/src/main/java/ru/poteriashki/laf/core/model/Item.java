@@ -1,6 +1,7 @@
 package ru.poteriashki.laf.core.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -40,6 +41,9 @@ public class Item extends BaseEntity {
     private ItemType itemType;
 
     private String cityId;
+
+    @Transient
+    private User user;
 
     public ItemType getItemType() {
         return itemType;
@@ -151,5 +155,13 @@ public class Item extends BaseEntity {
 
     public void setCityId(String cityId) {
         this.cityId = cityId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

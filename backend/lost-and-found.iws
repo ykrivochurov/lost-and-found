@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/City.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CityController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/CityRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/CityService.js" />
+    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="Items selection">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/ItemRepository.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/ItemRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/db.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
     </list>
     <ignored path="lost-and-found.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +39,7 @@
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388058028351" ignored="false" />
     <file path="/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387967507139" ignored="false" />
     <file path="/fragment.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391353774436" ignored="false" />
-    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391353776268" ignored="false" />
+    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391399888020" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharacterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387960551535" ignored="false" />
@@ -80,7 +72,7 @@
     <file path="/CommunityDaoImpl.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388234941147" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/main/java/org/redcross/dao/CommunityDao.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388389319802" ignored="false" />
     <file path="/ILostAndFoundService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390963848148" ignored="false" />
-    <file path="/LostAndFoundService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391357800684" ignored="false" />
+    <file path="/LostAndFoundService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391396211677" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/dao/src/test/java/org/redcross/dao/impl/CommunityTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388208192850" ignored="false" />
     <file path="/CommunityTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388037425860" ignored="false" />
     <file path="/CommunityDao.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388037247114" ignored="false" />
@@ -101,12 +93,12 @@
     <file path="/MyCommunitiesFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388236053833" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/service/CommunityFeedService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388235603255" ignored="false" />
     <file path="/ApplicationContext.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388420552680" ignored="false" />
-    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391339795823" ignored="false" />
+    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391399230119" ignored="false" />
     <file path="/index.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391338727888" ignored="false" />
     <file path="/logback.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388473853913" ignored="false" />
     <file path="/fonts.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388474155651" ignored="false" />
-    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391339257599" ignored="false" />
-    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391361355430" ignored="false" />
+    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391399811144" ignored="false" />
+    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391398797630" ignored="false" />
     <file path="/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389327132545" ignored="false" />
     <file path="/1.t" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388941577565" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391059370471" ignored="false" />
@@ -192,15 +184,15 @@
     <file path="/AuthController.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390756556029" ignored="false" />
     <file path="$PROJECT_DIR$/../../board-of-directors/backend/web/src/main/webapp/js/controllers/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390748942058" ignored="false" />
     <file path="/SecurityFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390748992773" ignored="false" />
-    <file path="/IUserService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390749622072" ignored="false" />
-    <file path="/UserService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390846613533" ignored="false" />
+    <file path="/IUserService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391396224221" ignored="false" />
+    <file path="/UserService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391396256344" ignored="false" />
     <file path="/UserType.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390749543483" ignored="false" />
     <file path="/__dummy.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390749851341" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/select_country_sub.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390810930518" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/build.log" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391007551339" ignored="false" />
     <file path="/ItemsController.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391357538013" ignored="false" />
     <file path="/ItemType.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390837413290" ignored="false" />
-    <file path="/Item.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391353370862" ignored="false" />
+    <file path="/Item.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391394063213" ignored="false" />
     <file path="/1.json" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390844999413" ignored="false" />
     <file path="/map.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390906267982" ignored="false" />
     <file path="/CounterDao.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391340414219" ignored="false" />
@@ -287,10 +279,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LostAndFoundService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="675" column="95" selection-start="13438" selection-end="13438" vertical-scroll-proportion="0.3779972">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LostAndFoundService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="22" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.2235577">
+            <state line="102" column="45" selection-start="3594" selection-end="3594" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="115" column="34" selection-start="6481" selection-end="6481" vertical-scroll-proportion="-8.98">
+              <folding>
+                <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IUserService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="32" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="0" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -310,7 +342,25 @@
       <file leaf-file-name="ItemsController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="38" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0">
+            <state line="36" column="14" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="98" selection-start="2969" selection-end="2969" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Item.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="64" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -334,13 +384,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/impl/CounterDao.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CityController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/ItemRepository.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/CityRepository.java" />
@@ -349,7 +393,13 @@
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
       </list>
     </option>
   </component>
@@ -362,8 +412,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1280" />
-    <option name="height" value="774" />
+    <option name="width" value="1920" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -399,6 +449,142 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="lost-and-found" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springframework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mongodb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -934,7 +1120,7 @@
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../air_dict_converter" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="GoToClass.includeJavaFiles" value="true" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -1420,7 +1606,11 @@
       <created>1391341750594</created>
       <updated>1391341750594</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Items selection">
+      <created>1391361954094</created>
+      <updated>1391361954094</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1444,7 +1634,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46636087" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1453,7 +1643,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32415903" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30122325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21092077" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1465,7 +1655,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24797407" sideWeight="0.6987768" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16328709" sideWeight="0.78907925" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22782874" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1515,7 +1705,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Item creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Items selection" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1545,6 +1735,7 @@
     <MESSAGE value="Save item to DB&#10;" />
     <MESSAGE value="Categories from DB&#10;Tags counts from DB&#10;" />
     <MESSAGE value="Item creation" />
+    <MESSAGE value="Items selection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1559,69 +1750,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="674" selection-end="674" vertical-scroll-proportion="0.53435117">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="86" selection-start="6835" selection-end="6852" vertical-scroll-proportion="-5.6666665">
-          <folding>
-            <element signature="tag#div#4;tag#div#2;tag#div#0" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/ItemRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="983" selection-end="983" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/CategoriesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="56" selection-start="197" selection-end="212" vertical-scroll-proportion="0.12437811">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/CityRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="0.19900498">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="42" selection-start="3035" selection-end="3035" vertical-scroll-proportion="1.9110577">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="332" selection-end="388" vertical-scroll-proportion="0.19900498">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/City.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="197" selection-end="197" vertical-scroll-proportion="0.07628524">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1650,9 +1778,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE-sources.jar!/org/springframework/data/mongodb/core/mapping/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="98" selection-start="2601" selection-end="2601" vertical-scroll-proportion="0.28846154">
+        <state line="13" column="18" selection-start="345" selection-end="345" vertical-scroll-proportion="0.23272215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE-sources.jar!/org/springframework/data/mongodb/core/mapping/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="18" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.38081804">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.5.1.RELEASE/spring-data-commons-1.5.1.RELEASE-sources.jar!/org/springframework/data/domain/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="17" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="64" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="45" selection-start="3594" selection-end="3594" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="14" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1666,16 +1829,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="38" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0">
+        <state line="48" column="0" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="22" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.2235577">
+        <state line="11" column="32" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="98" selection-start="2969" selection-end="2969" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="34" selection-start="6481" selection-end="6481" vertical-scroll-proportion="-8.98">
+          <folding>
+            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="675" column="95" selection-start="13438" selection-end="13438" vertical-scroll-proportion="0.3779972">
           <folding />
         </state>
       </provider>

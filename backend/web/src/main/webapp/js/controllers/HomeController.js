@@ -25,6 +25,11 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   $scope.showSelectedCategory = false;
   $scope.showCategoriesList = true;
 
+  $scope.itemsList = {
+    page: null,
+    lostAndFoundItems: []
+  };
+
   $scope.renewLaf = function () {
     $scope.laf = {when: '', where: '', what: '', creationDate: new Date().getTime(), tags: []};
   };
@@ -72,9 +77,14 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   };
 
   $scope.selectCategoryAndTag = function (category, tag) {
+    $scope.itemsList = {
+      page: null,
+      lostAndFoundItems: []
+    };
     ItemsService.crud.getByCatAndTag({itemType: $scope.categoriesListType, category: category.name, tag: tag,
       cityId: $scope.currentCity.id, pageNumber: 0}, function (items) {
-      $scope.lostAndFoundItems = items.content;
+      $scope.itemsList.page = items;
+      $scope.itemsList.lostAndFoundItems = items.content; //todo need to add new items not replace
       $scope.showSelectedCategory = true;
       $scope.showCategoriesList = false;
       $scope.selectedCategory = category;
@@ -109,16 +119,27 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     $scope.mapService.showBalloonForItem(item);
   };
 
+  $scope.hasNextItem = function (selectedItem, prev) {
+    var indexOf = $scope.itemsList.lostAndFoundItems.indexOf(selectedItem);
+    if (indexOf == 0 && prev) {
+      return false;
+    }
+    if (indexOf + 1 == $scope.itemsList.lostAndFoundItems.length && !prev) {
+      return UtilsService.isNotEmpty($scope.itemsList.page) && $scope.itemsList.page.lastPage;
+    }
+    return true;
+  };
+
   $scope.openNextItem = function (selectedItem, prev) {
-    for (var i = 0; i < $scope.lostAndFoundItems.length; i++) {
-      var item = $scope.lostAndFoundItems[i];
+    for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
+      var item = $scope.itemsList.lostAndFoundItems[i];
       if (item.id == selectedItem.id) {
         if (prev && item.hasPrev) {
-          $scope.selectedItem = $scope.lostAndFoundItems[i - 1];
+          $scope.selectedItem = $scope.itemsList.lostAndFoundItems[i - 1];
           return;
         }
         if (!prev && item.hasNext) {
-          $scope.selectedItem = $scope.lostAndFoundItems[i + 1];
+          $scope.selectedItem = $scope.itemsList.lostAndFoundItems[i + 1];
           return;
         }
         $scope.goToSelectedCategory();

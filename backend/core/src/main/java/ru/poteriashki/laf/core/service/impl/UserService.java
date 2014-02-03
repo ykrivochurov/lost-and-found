@@ -39,4 +39,11 @@ public class UserService implements IUserService {
         }
         return userRepository.save(user);
     }
+
+    @Override
+    public User getById(String author) {
+        Assert.hasText(author);
+
+        return userRepository.findOne(author);
+    }
 }

@@ -16,6 +16,7 @@ import ru.poteriashki.laf.core.repositories.CategoryRepository;
 import ru.poteriashki.laf.core.repositories.ICounterDao;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
+import ru.poteriashki.laf.core.service.IUserService;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -35,6 +36,9 @@ public class LostAndFoundService implements ILostAndFoundService {
 
     @Autowired
     private ItemRepository itemRepository;
+
+    @Autowired
+    private IUserService userService;
 
     @Override
     public Item createItem(Item item, User user, Set<String> photoIds) {
@@ -86,11 +90,21 @@ public class LostAndFoundService implements ILostAndFoundService {
 
         Pageable pageable = new PageRequest(pageNumber, pageSize, new Sort(Sort.Direction.DESC, "creationDate"));
 
+        Page<Item> itemsPage;
+
         if (StringUtils.isBlank(tag)) {
-            return itemRepository.findByItemTypeAndMainCategoryAndCityId(itemType, category, cityId, pageable);
+            itemsPage = itemRepository.findByItemTypeAndMainCategoryAndCityId(itemType, category, cityId, pageable);
         } else {
-            return itemRepository.findByItemTypeAndMainCategoryAndTagsAndCityId(itemType, category, tag, cityId, pageable);
+            itemsPage = itemRepository.findByItemTypeAndMainCategoryAndTagsAndCityId(itemType, category, tag, cityId, pageable);
         }
+
+        for (Item item : itemsPage) {
+            if (item.isShowPrivateInfo()) {
+                item.setUser(userService.getById(item.getAuthor()));
+            }
+        }
+
+        return itemsPage;
     }
 
     private Date getAvailableDate() {

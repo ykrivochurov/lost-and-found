@@ -634,7 +634,6 @@ button:focus {
 }
 
 .home-wrapper .phone-b {
-    width: 160px;
     float: left;
 }
 
@@ -675,6 +674,7 @@ button:focus {
 
 .home-wrapper .share-section {
     color: rgb(128, 128, 128);
+    position: relative;
 }
 
 .home-wrapper .share-section img {
