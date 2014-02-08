@@ -1,5 +1,6 @@
 angular.module('laf').
   factory('MapService', function ($timeout, $sce, UtilsService, GeoLocationService, ItemsService) {
+    var defaultGroupName = 'default_markers';
     var controllerScope;
     var markersMap = {};
     return {
@@ -19,7 +20,7 @@ angular.module('laf').
           controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
           controllerScope.currentLocationMarker = new DG.Markers.Common({
             geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1])});
-          controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker);
+          controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker, defaultGroupName);
 
           controllerScope.DGisMap.onCurrentLocation = function (longitude, latitude) {
             if (UtilsService.isNotEmpty(longitude) && UtilsService.isNotEmpty(latitude)) {
@@ -97,9 +98,9 @@ angular.module('laf').
 
       removeMarkers: function () {
         console.log('Remove markers');
-        var groupNames = ['1', '2', '3', '4'];
+        var groupNames = controllerScope.categories;
         for (var i = 0; i < groupNames.length; i++) {
-          controllerScope.DGisMap.markers.removeGroup(groupNames[i]);
+          controllerScope.DGisMap.markers.removeGroup(groupNames[i].name);
         }
       },
 
@@ -122,7 +123,7 @@ angular.module('laf').
       },
 
       showMarkersForCategory: function (selectedCategory) {
-        var defaultGroup = controllerScope.DGisMap.markers.getDefaultGroupName();
+        var defaultGroup = controllerScope.DGisMap.markers.getGroup(defaultGroupName);
         var allGroupsNames = controllerScope.DGisMap.markers.getAllGroupsNames();
         if (UtilsService.isNotEmpty(selectedCategory)) {
           var selectedGroup = controllerScope.DGisMap.markers.getGroup(selectedCategory.name);
@@ -131,7 +132,7 @@ angular.module('laf').
             controllerScope.DGisMap.markers.getGroup(groupName).hide();
           }
           selectedGroup.show();
-//          defaultGroup.show();
+          defaultGroup.show();
         } else {
           for (var i = 0; i < allGroupsNames.length; i++) {
             var groupName = allGroupsNames[i];
@@ -145,6 +146,14 @@ angular.module('laf').
           var marker = markersMap[item.id];
           controllerScope.DGisMap.setCenter(marker.getPosition());
           marker.showBalloon();
+        }
+      },
+
+      hideBalloonForItem: function (item) {
+        if (UtilsService.isNotEmpty(item)) {
+          var marker = markersMap[item.id];
+          controllerScope.DGisMap.setCenter(marker.getPosition());
+          marker.hideBalloon();
         }
       },
 

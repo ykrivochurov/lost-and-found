@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="Items selection">
+    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" afterPath="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
@@ -19,8 +16,9 @@
     <ignored path="web/catalina.home_IS_UNDEFINED/logs/laf.log.3" />
     <ignored path="web/catalina.home_IS_UNDEFINED/logs/laf.log.1" />
     <ignored path="web/catalina.home_IS_UNDEFINED/logs/laf.log" />
+    <ignored mask="*.log" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/gsa/GSAUtil.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387905061269" ignored="false" />
-    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391359894152" ignored="false" />
+    <file path="/a.dummy" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391854337563" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388407468951" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/RepositoryLiaison/src/main/VLT-HOME/jcr_root/etc/designs/redcross/communities/community-feed.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/DiscussionFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387938502324" ignored="false" />
@@ -39,7 +37,7 @@
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388058028351" ignored="false" />
     <file path="/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387967507139" ignored="false" />
     <file path="/fragment.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391353774436" ignored="false" />
-    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391399888020" ignored="false" />
+    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391846660081" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharacterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387960551535" ignored="false" />
@@ -93,15 +91,15 @@
     <file path="/MyCommunitiesFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388236053833" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/service/CommunityFeedService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388235603255" ignored="false" />
     <file path="/ApplicationContext.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388420552680" ignored="false" />
-    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391399230119" ignored="false" />
+    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391855002386" ignored="false" />
     <file path="/index.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391338727888" ignored="false" />
     <file path="/logback.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388473853913" ignored="false" />
     <file path="/fonts.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388474155651" ignored="false" />
-    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391399811144" ignored="false" />
-    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391398797630" ignored="false" />
+    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391855335545" ignored="false" />
+    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391853568010" ignored="false" />
     <file path="/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389327132545" ignored="false" />
     <file path="/1.t" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388941577565" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391059370471" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
     <file path="/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391053307657" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/mask.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389245834471" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/profile_kasko_policies_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389588673696" ignored="false" />
@@ -110,7 +108,7 @@
     <file path="/profile_policies_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389248949691" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/screens.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389327217848" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/soap/soap_calc_vzr.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389253057193" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/1.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389707126768" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/1.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391764033376" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/select_country_main.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391065032241" ignored="false" />
     <file path="/select_country_main.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391065016612" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_travellers.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390813747945" ignored="false" />
@@ -118,12 +116,12 @@
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391059739086" ignored="false" />
     <file path="/validation_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389864820647" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_buy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391059888532" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/helper_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389696067826" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/helper_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
     <file path="/helper_utils.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389684048113" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/bank_page.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389258731118" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/bank_page.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391507213014" ignored="false" />
     <file path="/GeoLocationService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390715387347" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/profile_cars_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389532512510" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391054599072" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
     <file path="/screens.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389327205913" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_insurance_event/insurance_types.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389350020290" ignored="false" />
     <file path="/animation.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389337045758" ignored="false" />
@@ -135,7 +133,7 @@
     <file path="/profile_car_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389357352098" ignored="false" />
     <file path="/profile_cars_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389532512510" ignored="false" />
     <file path="/profile_kasko_policy.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389587901070" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/insurance_case_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389602870189" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/insurance_case_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/data/kasko_insured_event.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389532780132" ignored="false" />
     <file path="/kasko_insured_event.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389532780132" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/claim_photo_list.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608070627" ignored="false" />
@@ -152,9 +150,9 @@
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/accident_kasko.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389589322133" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/final_claim_preview.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389602870189" ignored="false" />
     <file path="/final_claim_preview.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389601398451" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/navigation_controller.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391059347332" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391060242299" ignored="false" />
-    <file path="/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391060240526" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/navigation_controller.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/02_buy_policy/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391502678375" ignored="false" />
+    <file path="/calc_vzr_insured_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391502252362" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/claim_photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608061871" ignored="false" />
     <file path="/claim_photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608061121" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/03_kasko_insured_event/damage_photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608108777" ignored="false" />
@@ -162,7 +160,7 @@
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/save_remove_buttons.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608271275" ignored="false" />
     <file path="/save_remove_buttons.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389608270578" ignored="false" />
     <file path="/navigation_controller.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391056278308" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/tiapp.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389633391470" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/tiapp.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
     <file path="$PROJECT_DIR$/../../ret_parser/pom.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389772978007" ignored="false" />
     <file path="$PROJECT_DIR$/../../ret_parser/src/main/java/ru/eastbanctech/s7/retparser/processor/RETProcessor.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389788228998" ignored="false" />
     <file path="$PROJECT_DIR$/../../ret_parser/src/main/java/ru/eastbanctech/s7/retparser/model/data/AAPDataFormatUtility.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389845121411" ignored="false" />
@@ -170,7 +168,7 @@
     <file path="$PROJECT_DIR$/../../air_dict_converter/src/test/java/ru/eastbanctech/s7/parser/CSVParseServiceTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389846668277" ignored="false" />
     <file path="$PROJECT_DIR$/../../air_dict_converter/src/test/resources/persistence.properties" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389846788126" ignored="false" />
     <file path="/persistence.properties" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389846788126" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/content_window.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391052708119" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/content_window.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
     <file path="/content_window.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391052675050" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/05_my_profile/accident_osago.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389856884276" ignored="false" />
     <file path="/accident_osago.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389852833868" ignored="false" />
@@ -178,8 +176,8 @@
     <file path="/calc_buy_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391059882596" ignored="false" />
     <file path="/UtilsService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390626020987" ignored="false" />
     <file path="/ItemsService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391359418593" ignored="false" />
-    <file path="/MapService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391359459528" ignored="false" />
-    <file path="/db.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390713042167" ignored="false" />
+    <file path="/MapService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391853512038" ignored="false" />
+    <file path="/db.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391413675041" ignored="false" />
     <file path="/AuthService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390755310787" ignored="false" />
     <file path="/AuthController.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390756556029" ignored="false" />
     <file path="$PROJECT_DIR$/../../board-of-directors/backend/web/src/main/webapp/js/controllers/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390748942058" ignored="false" />
@@ -201,11 +199,11 @@
     <file path="/ICounterDao.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390963809966" ignored="false" />
     <file path="/ItemRepository.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391357763624" ignored="false" />
     <file path="/ItemRepositoryTest.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390967441073" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_standart.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391004344064" ignored="false" />
-    <file path="/offer_karta_standart.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390998934015" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_gold.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391000533708" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391054836579" ignored="false" />
-    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_platinum.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391000465655" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_standart.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391498799219" ignored="false" />
+    <file path="/offer_karta_standart.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391498799219" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_gold.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391498775194" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391498504382" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/karta/offer_karta_platinum.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391498780774" ignored="false" />
     <file path="/offer_karta_gold.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1390998703509" ignored="false" />
     <file path="/offer_karta_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391054818313" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/06_our_offers/offers_karta_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391004377874" ignored="false" />
@@ -219,6 +217,66 @@
     <file path="/CityRepository.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391357944839" ignored="false" />
     <file path="/CityController.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391353490585" ignored="false" />
     <file path="/CityService.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391359802779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/big_button.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/indicator.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/db.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416952817" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/data/cities.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/default.db" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/utils/soap.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391416626362" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/pensionnoe_strahovanie_offer.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_protivopravnye_deystviya_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_pozhar_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_povrezhdenie_vodoy_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_oformlenie_bez_GIBDD_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_protivopravnoe_deistvie_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/neschastnyy_sluchay_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/data/load_dicts.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_protivopravnye_deystviya_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_oformlenie_bez_GIBDD_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_predmetom_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/neschastnyy_sluchay_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/map.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_deystviya_strahovatelya_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_pvu_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/propaja_bagaza_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_pozhar_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_pozhar_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_deystviya_poterpevshego_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_deystviya_poterpevshego_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_deystviya_strahovatelya_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_ugon_hishenie_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_stihiynoe_bedstvie_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_povrezhdenie_vodoy_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/osago_pvu_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763661" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/otmena_poezdki_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/data/stoa_dict.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_dtp_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_na_stoyanke_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/claim_base_form.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_ugon_hishenie_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/meditsinskie_rashody_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/strahovanie_ot_neschastny_sluchaev_offer.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/meditsinskie_rashody_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/propaja_bagaza_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/otmena_poezdki_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_pozhar_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_dtp_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/calendar.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/strahovanie_zhizni_offer.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_na_stoyanke_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/imushestvo_stihiynoe_bedstvie_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/strahovanie_zhizni_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/strahovanie_ot_neschastny_sluchaev_instruction.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/screens/claim_photo.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_protivopravnoe_deistvie_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/html/kasko_predmetom_documents.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/platform/android/AndroidManifest.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391764029536" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391663745438" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/2.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391764144305" ignored="false" />
+    <file path="/1.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391673252635" ignored="false" />
+    <file path="/__dummy.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391851710394" ignored="false" />
+    <file path="/fragment.js2" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391851719276" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,16 +340,7 @@
       <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="675" column="95" selection-start="13438" selection-end="13438" vertical-scroll-proportion="0.3779972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LostAndFoundService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="45" selection-start="3594" selection-end="3594" vertical-scroll-proportion="0.0">
+            <state line="676" column="37" selection-start="13906" selection-end="13906" vertical-scroll-proportion="0.42431763">
               <folding />
             </state>
           </provider>
@@ -300,49 +349,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="34" selection-start="6481" selection-end="6481" vertical-scroll-proportion="-8.98">
-              <folding>
-                <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IUserService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="32" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="0" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CityController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CityController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemsController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="14" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.0">
+            <state line="35" column="75" selection-start="1847" selection-end="1856" vertical-scroll-proportion="-4.5416665">
               <folding />
             </state>
           </provider>
@@ -351,16 +358,34 @@
       <file leaf-file-name="HomeController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="98" selection-start="2969" selection-end="2969" vertical-scroll-proportion="0.0">
+            <state line="80" column="4" selection-start="2420" selection-end="2445" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Item.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java">
+      <file leaf-file-name="db.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="64" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemsService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="20" selection-start="391" selection-end="401" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="151" column="24" selection-start="6742" selection-end="6760" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -391,12 +416,12 @@
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/City.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/CityService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
@@ -412,8 +437,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1920" />
-    <option name="height" value="1054" />
+    <option name="width" value="1280" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -450,142 +475,6 @@
               <option name="myItemId" value="lost-and-found" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springframework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongodb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springframework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongodb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springframework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongodb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mapping" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework.data:spring-data-mongodb:1.2.0.RELEASE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-data-mongodb-1.2.0.RELEASE.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -626,44 +515,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -812,46 +663,12 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -874,218 +691,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repositories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lost-and-found" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poteriashki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1365,6 +970,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1393,19 +1011,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -1419,13 +1024,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1447,6 +1045,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
@@ -1610,7 +1215,11 @@
       <created>1391361954094</created>
       <updated>1391361954094</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Selected Item">
+      <created>1391407674237</created>
+      <updated>1391407674237</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1634,20 +1243,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1054" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46636087" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46493903" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32415903" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32317072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21092077" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30122325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1655,10 +1263,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16328709" sideWeight="0.78907925" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22782874" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24797407" sideWeight="0.6768293" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22713415" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1705,7 +1314,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Items selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Selected Item" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1736,6 +1345,7 @@
     <MESSAGE value="Categories from DB&#10;Tags counts from DB&#10;" />
     <MESSAGE value="Item creation" />
     <MESSAGE value="Items selection" />
+    <MESSAGE value="Selected Item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1750,58 +1360,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/CityService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="39" selection-start="165" selection-end="165" vertical-scroll-proportion="0.13986014">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.7932692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="155" selection-start="378" selection-end="378" vertical-scroll-proportion="0.21634616">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE-sources.jar!/org/springframework/data/mongodb/core/mapping/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="345" selection-end="345" vertical-scroll-proportion="0.23272215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/1.2.0.RELEASE/spring-data-mongodb-1.2.0.RELEASE-sources.jar!/org/springframework/data/mongodb/core/mapping/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="18" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.38081804">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.5.1.RELEASE/spring-data-commons-1.5.1.RELEASE-sources.jar!/org/springframework/data/domain/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="17" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="17" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="64" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+        <state line="33" column="64" selection-start="769" selection-end="769" vertical-scroll-proportion="0.03131524">
           <folding />
         </state>
       </provider>
@@ -1813,19 +1379,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="14" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="22" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1843,27 +1400,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lost-and-found.iws">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="14" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.38841203">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="24" selection-start="6742" selection-end="6760" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="391" selection-end="401" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="98" selection-start="2969" selection-end="2969" vertical-scroll-proportion="0.0">
+        <state line="80" column="4" selection-start="2420" selection-end="2445" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="34" selection-start="6481" selection-end="6481" vertical-scroll-proportion="-8.98">
-          <folding>
-            <element signature="n#style#0;n#div#4;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="35" column="75" selection-start="1847" selection-end="1856" vertical-scroll-proportion="-4.5416665">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/icon_01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="675" column="95" selection-start="13438" selection-end="13438" vertical-scroll-proportion="0.3779972">
+        <state line="676" column="37" selection-start="13906" selection-end="13906" vertical-scroll-proportion="0.42431763">
           <folding />
         </state>
       </provider>

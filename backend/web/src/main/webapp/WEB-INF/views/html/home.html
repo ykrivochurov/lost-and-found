@@ -33,13 +33,13 @@
         <div class="musor">&nbsp;</div>
     </div>
     <div id="map-panel" class="map-panel"></div>
-    <div class="right-panel animate-show" ng-show="isCollapsed">
+    <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed">
         <div class="right-panel-hide  {{isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
         <div class="top-buttons clearfix">
-            <button ng-click="lafListSelect('LOST')" class="lost-b active">
+            <button ng-click="setCategoriesListType('LOST')" class="lost-b active">
                 <span>Утеряно</span>
             </button>
-            <button ng-click="lafListSelect('FOUND')" class="found-b">
+            <button ng-click="setCategoriesListType('FOUND')" class="found-b">
                 <span>Найдено</span>
             </button>
         </div>
@@ -82,7 +82,7 @@
                         <div class="label-b">когда утеряно</div>
                         <div class="text-b">
                             <span class="day">{{selectedItem.when | date:'dd'}}</span>
-                            <span class="month">{{selectedItem.when | date:'MMMM'}}</span>
+                            <span class="month">{{selectedItem.when | date:'MMM'}}</span>
                             <span class="year">{{selectedItem.when | date:'yyyy'}}</span>
                         </div>
                     </div>
@@ -91,8 +91,8 @@
                     <span class="tags-label">Tags:</span>
                     <span class="tags">{{joinTags(selectedItem.tags)}}</span>
                 </div>
-                <div class="contacts-section clearfix" ng-show="selectedItem.user">
-                    <div class="clearfix" ng-show="selectedItem.user.name">
+                <div class="contacts-section clearfix">
+                    <div class="clearfix" ng-show="selectedItem.user && selectedItem.user.name">
                         <div class="icon-label-b person-b">
                             <div class="label-b">контактное лицо</div>
                             <div class="text-b">{{selectedItem.user.name}}
@@ -100,12 +100,12 @@
                         </div>
                     </div>
                     <div class="clearfix">
-                        <div class="icon-label-b phone-b" ng-show="selectedItem.user.phone">
+                        <div class="icon-label-b phone-b" ng-show="selectedItem.user && selectedItem.user.phone">
                             <div class="text-b">{{selectedItem.user.phone}}</div>
                         </div>
                     </div>
                     <div class="clearfix">
-                        <div class="icon-label-b email-b float-left" ng-show="selectedItem.user.email">
+                        <div class="icon-label-b email-b float-left" ng-show="selectedItem.user && selectedItem.user.email">
                             <div class="text-b">{{selectedItem.user.email}}</div>
                         </div>
                     </div>
@@ -197,14 +197,14 @@
         </div>
         <div class="clearfix">
             <div class="where">
-                <span>где {{itemType == 'lost' ? 'утеряно' : 'найдено'}}</span>
+                <span>где {{itemType == 'LOST' ? 'утеряно' : 'найдено'}}</span>
 
                 <div>
                     <input type="text" ng-model="laf.where" placeholder="Где">
                 </div>
             </div>
             <div class="when">
-                <span>когда {{itemType == 'lost' ? 'утеряно' : 'найдено'}}</span>
+                <span>когда {{itemType == 'LOST' ? 'утеряно' : 'найдено'}}</span>
 
                 <div>
                     <input type="text" ng-model="laf.when" placeholder="Когда" datepicker-popup="{{dateFormat}}"

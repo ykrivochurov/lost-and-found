@@ -607,7 +607,6 @@ button:focus {
 }
 
 .home-wrapper .where-b .text-b {
-    background: url('../img/icon_03.png') no-repeat transparent 0 5px;
     width: 200px;
 }
 
@@ -615,48 +614,67 @@ button:focus {
     float: right;
 }
 
-.home-wrapper .when-b .text-b {
-    background: url('../img/icon_02.png') no-repeat transparent 0 3px;
-}
-
 .home-wrapper .person-b {
     width: 300px;
 }
 
-.home-wrapper .person-b .text-b {
-    background: url('../img/icon_07.png') no-repeat transparent 0 3px;
-}
-
-.home-wrapper .pen-b,
+.home-wrapper .person-b,
 .home-wrapper .email-b,
 .home-wrapper .phone-b {
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .home-wrapper .phone-b {
     float: left;
 }
 
-.home-wrapper .phone-b .text-b {
-    background: url('../img/icon_04.png') no-repeat transparent 0 3px;
-}
-
 .home-wrapper .email-b {
     max-width: 230px;
 }
 
+.home-wrapper .pen-b .text-b,
 .home-wrapper .email-b .text-b {
     font-size: 110%;
     color: rgb(230, 197, 108);
-    background: url('../img/icon_05.png') no-repeat transparent 0 4px;
     cursor: pointer;
 }
 
-.home-wrapper .pen-b .text-b {
-    color: rgb(230, 197, 108);
-    margin-top: 10px;
+.home-wrapper .lost-list .when-b .text-b {
+    background: url('../img/icon_02.png') no-repeat transparent 0 3px;
+}
+.home-wrapper .lost-list .where-b .text-b {
+    background: url('../img/icon_03.png') no-repeat transparent 0 5px;
+}
+.home-wrapper .lost-list .phone-b .text-b {
+    background: url('../img/icon_04.png') no-repeat transparent 0 3px;
+}
+.home-wrapper .lost-list .email-b .text-b {
+    background: url('../img/icon_05.png') no-repeat transparent 0 4px;
+}
+.home-wrapper .lost-list .pen-b .text-b {
     background: url('../img/icon_06.png') no-repeat transparent 0 3px;
-    cursor: pointer;
+}
+.home-wrapper .lost-list .person-b .text-b {
+    background: url('../img/icon_07.png') no-repeat transparent 0 3px;
+}
+
+.home-wrapper .found-list .when-b .text-b {
+    background: url('../img/icon_02_0.png') no-repeat transparent 0 3px;
+}
+.home-wrapper .found-list .where-b .text-b {
+    background: url('../img/icon_03_0.png') no-repeat transparent 0 5px;
+}
+.home-wrapper .found-list .phone-b .text-b {
+    background: url('../img/icon_04_0.png') no-repeat transparent 0 3px;
+}
+.home-wrapper .found-list .email-b .text-b {
+    background: url('../img/icon_05_0.png') no-repeat transparent 0 4px;
+}
+.home-wrapper .found-list .pen-b .text-b {
+    background: url('../img/icon_06_0.png') no-repeat transparent 0 3px;
+}
+.home-wrapper .found-list .person-b .text-b {
+    background: url('../img/icon_07_0.png') no-repeat transparent 0 3px;
 }
 
 /* end icon label block */
