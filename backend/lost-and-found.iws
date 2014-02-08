@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/button_facebook.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/button_vk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/close.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/add.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/add.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/bottom.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/bottom.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_01_0.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_01_0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_02.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_02.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_02_0.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_02_0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_03.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_03.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_03_0.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_03_0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_04.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_04.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_04_0.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_04_0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_05.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_05.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_05_0.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_05_0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_06.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_06.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_06_0.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_06_0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_07.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_07.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_07_0.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_07_0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_calendar.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_calendar.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/icon_camera.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/icon_camera.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/money_icon.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/money_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/search2.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/search2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/share_facebook.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/share_facebook.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/share_twitt.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/share_twitt.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/share_vkontacte.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/share_vkontacte.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/top.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/top.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" afterPath="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
@@ -37,7 +64,7 @@
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/community/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388058028351" ignored="false" />
     <file path="/UploadAssetServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387967507139" ignored="false" />
     <file path="/fragment.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391353774436" ignored="false" />
-    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391846660081" ignored="false" />
+    <file path="/Dummy.txt" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391856125016" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="/CharecterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387959224105" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/filters/CharacterEncodingFilter.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1387960551535" ignored="false" />
@@ -91,12 +118,12 @@
     <file path="/MyCommunitiesFeedServlet.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388236053833" ignored="false" />
     <file path="$PROJECT_DIR$/../../redcross/the-exchange/bundles/core/src/main/java/org/redcross/intranet/core/service/CommunityFeedService.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388235603255" ignored="false" />
     <file path="/ApplicationContext.java" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388420552680" ignored="false" />
-    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391855002386" ignored="false" />
+    <file path="/home.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391859418287" ignored="false" />
     <file path="/index.html" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391338727888" ignored="false" />
     <file path="/logback.xml" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388473853913" ignored="false" />
     <file path="/fonts.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388474155651" ignored="false" />
-    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391855335545" ignored="false" />
-    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391853568010" ignored="false" />
+    <file path="/main.css" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391859959941" ignored="false" />
+    <file path="/HomeController.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391858565117" ignored="false" />
     <file path="/app.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1389327132545" ignored="false" />
     <file path="/1.t" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1388941577565" ignored="false" />
     <file path="$PROJECT_DIR$/../../ingosstrakh/Resources/ui/views/combofield.js" changelist="f05676ae-78b2-47fc-916f-9dbbfc489c72" time="1391414763662" ignored="false" />
@@ -340,7 +367,16 @@
       <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="676" column="37" selection-start="13906" selection-end="13906" vertical-scroll-proportion="0.42431763">
+            <state line="572" column="12" selection-start="11499" selection-end="11499" vertical-scroll-proportion="0.39784947">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LostAndFoundService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="22" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -349,7 +385,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="75" selection-start="1847" selection-end="1856" vertical-scroll-proportion="-4.5416665">
+            <state line="57" column="16" selection-start="3223" selection-end="3223" vertical-scroll-proportion="-10.0">
               <folding />
             </state>
           </provider>
@@ -358,7 +394,7 @@
       <file leaf-file-name="HomeController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="4" selection-start="2420" selection-end="2445" vertical-scroll-proportion="0.0">
+            <state line="149" column="73" selection-start="5002" selection-end="5002" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -368,15 +404,6 @@
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemsService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="20" selection-start="391" selection-end="401" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -410,7 +437,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/init/InitData.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/CityRepository.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/City.java" />
@@ -422,6 +448,7 @@
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/IUserService.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
+        <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
@@ -736,9 +763,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/main/webapp/img" />
       <recent name="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security" />
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img/categories" />
-      <recent name="$PROJECT_DIR$/web/src/main/webapp/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img" />
@@ -1219,7 +1246,11 @@
       <created>1391407674237</created>
       <updated>1391407674237</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refs #2 Утеряно/Найдено">
+      <created>1391856137482</created>
+      <updated>1391856137482</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1249,13 +1280,14 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46493903" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32317072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32415903" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30122325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1263,11 +1295,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24797407" sideWeight="0.6768293" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22713415" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24797407" sideWeight="0.7737003" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22629969" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1314,7 +1345,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Selected Item" />
+    <option name="LAST_COMMIT_MESSAGE" value="refs #2 Утеряно/Найдено" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1346,6 +1377,7 @@
     <MESSAGE value="Item creation" />
     <MESSAGE value="Items selection" />
     <MESSAGE value="Selected Item" />
+    <MESSAGE value="refs #2 Утеряно/Найдено" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1360,25 +1392,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.5.1.RELEASE/spring-data-commons-1.5.1.RELEASE-sources.jar!/org/springframework/data/domain/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="17" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="64" selection-start="769" selection-end="769" vertical-scroll-proportion="0.03131524">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="45" selection-start="3594" selection-end="3594" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/CityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="22" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
@@ -1407,13 +1420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="14" selection-start="1283" selection-end="1283" vertical-scroll-proportion="0.38841203">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="13" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
@@ -1428,9 +1434,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/icon_menu.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/button_facebook.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/ILostAndFoundService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="15" selection-start="562" selection-end="562" vertical-scroll-proportion="0.40723982">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="95" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="20" selection-start="391" selection-end="401" vertical-scroll-proportion="0.0">
+        <state line="7" column="20" selection-start="391" selection-end="401" vertical-scroll-proportion="0.23755656">
           <folding />
         </state>
       </provider>
@@ -1444,26 +1474,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="4" selection-start="2420" selection-end="2445" vertical-scroll-proportion="0.0">
+        <state line="149" column="73" selection-start="5002" selection-end="5002" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="75" selection-start="1847" selection-end="1856" vertical-scroll-proportion="-4.5416665">
+        <state line="57" column="16" selection-start="3223" selection-end="3223" vertical-scroll-proportion="-10.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/icon_01.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="22" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="676" column="37" selection-start="13906" selection-end="13906" vertical-scroll-proportion="0.42431763">
+        <state line="572" column="12" selection-start="11499" selection-end="11499" vertical-scroll-proportion="0.39784947">
           <folding />
         </state>
       </provider>

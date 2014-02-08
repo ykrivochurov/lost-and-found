@@ -51,14 +51,16 @@
             <input type="text" placeholder="Подробности" ng-model="searchQuery"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
         </div>
-        <div class="selected-category left-margin clearfix" tooltip="Вернуться к объявлений"
-             ng-show="selectedCategory != null" ng-click="goToSelectedCategory()"><span class="name">{{selectedCategory.name}}</span>
-            <span class="tag" ng-show="selectedTag != null">/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
+        <div class="selected-category left-margin clearfix" ng-show="selectedCategory != null">
+            <span tooltip="Вернуться к объявлений" ng-click="goToSelectedCategory()">
+                <span class="name">{{selectedCategory.name}}</span>
+                <span class="tag" ng-show="selectedTag != null">/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
+            </span>
+            <div class="prev-laf-item" ng-show="selectedItem != null && hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
+                    src="/img/top.png" alt="prev"></div>
         </div>
         <div class="nano" style="height: {{itemsListHeight}}px" ng-show="selectedItem != null">
             <div class="content details-block left-margin">
-                <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
-                        src="/img/top.png" alt="prev"></div>
                 <div class="creation-date">
                     <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
                     <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
@@ -228,32 +230,35 @@
                 </li>
             </ul>
         </div>
-        <div class="private-info">
-            <label>
-                <input type="checkbox" ng-model="laf.showPrivateInfo">
-                Публикация контактов
-            </label>
-        </div>
-        <div class="clearfix">
-            <div class="user-name">
-                <span>контактное лицо</span>
-                <div>
-                    <input type="text" ng-model="currentUser.name">
-                </div>
-            </div>
-            <div class="email">
-                <span>Емэйл</span>
-                <div>
-                    <input type="text" ng-model="currentUser.email">
-                </div>
-            </div>
-        </div>
 
-        <div class="clearfix">
-            <div class="phone">
-                <span>контактный телефон</span>
-                <div>
-                    <input type="text" ng-model="currentUser.phone" class="phone-mask">
+        <div ng-show="currentUser.id">
+            <div class="private-info">
+                <label>
+                    <input type="checkbox" ng-model="laf.showPrivateInfo">
+                    Публикация контактов
+                </label>
+            </div>
+            <div class="clearfix">
+                <div class="user-name">
+                    <span>контактное лицо</span>
+                    <div>
+                        <input type="text" ng-model="currentUser.name">
+                    </div>
+                </div>
+                <div class="email">
+                    <span>Емэйл</span>
+                    <div>
+                        <input type="text" ng-model="currentUser.email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <div class="phone">
+                    <span>контактный телефон</span>
+                    <div>
+                        <input type="text" ng-model="currentUser.phone" class="phone-mask">
+                    </div>
                 </div>
             </div>
         </div>

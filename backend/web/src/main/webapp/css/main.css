@@ -424,6 +424,7 @@ button:focus {
     margin-bottom: 20px;
     cursor: pointer;
     max-width: 350px;
+    position: relative;
 }
 
 .home-wrapper .right-panel .selected-category:hover .name,
@@ -554,25 +555,29 @@ button:focus {
     border-bottom: 1px solid rgb(95, 95, 95);
 }
 
-.home-wrapper .details-block .prev-laf-item:hover,
+.home-wrapper .prev-laf-item:hover,
 .home-wrapper .details-block .next-laf-item:hover {
     background-color: rgb(95, 95, 95);
 }
 
-.home-wrapper .details-block .prev-laf-item {
+.home-wrapper .prev-laf-item {
     position: absolute;
-    right: -5px;
-    top: -60px;
+    right: -50px;
+    top: 0;
     cursor: pointer;
     padding: 5px;
 }
 
 .home-wrapper .details-block .next-laf-item {
     position: absolute;
-    right: -5px;
+    right: 0;
     bottom: 10px;
     cursor: pointer;
     padding: 5px;
+}
+
+.home-wrapper .details-block .next-laf-item img {
+    margin-left: 0;
 }
 
 /* end Item details */
@@ -986,19 +991,19 @@ button:focus {
 }
 
 .app-wrapper .creation-form.lost .vk-login {
-    background: url('../img/share_vkontacte.png') no-repeat rgb(242, 108, 79) 10px 50%;
+    background: url('../img/button_vk.png') no-repeat rgb(242, 108, 79) 10px 50%;
 }
 
 .app-wrapper .creation-form.lost .fb-login {
-    background: url('../img/share_facebook.png') no-repeat rgb(242, 108, 79) 10px 50%;
+    background: url('../img/button_facebook.png') no-repeat rgb(242, 108, 79) 10px 50%;
 }
 
 .app-wrapper .creation-form.found .vk-login {
-    background: url('../img/share_vkontacte.png') no-repeat rgb(95, 197, 183) 10px 50%;
+    background: url('../img/button_vk.png') no-repeat rgb(95, 197, 183) 10px 50%;
 }
 
 .app-wrapper .creation-form.found .fb-login {
-    background: url('../img/share_facebook.png') no-repeat rgb(95, 197, 183) 10px 50%;
+    background: url('../img/button_facebook.png') no-repeat rgb(95, 197, 183) 10px 50%;
 }
 
 .app-wrapper .creation-form .vk-login,

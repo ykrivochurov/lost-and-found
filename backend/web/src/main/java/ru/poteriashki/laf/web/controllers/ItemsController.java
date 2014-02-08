@@ -37,7 +37,7 @@ public class ItemsController {
     public Page<Item> all(@RequestParam("itemType") ItemType itemType, @RequestParam("category") String category,
                           @RequestParam(value = "tag", required = false) String tag, @RequestParam(value = "cityId") String cityId,
                           @RequestParam("pageNumber") Integer pageNumber) {
-        return lostAndFoundService.getItems(itemType, category, tag, cityId, pageNumber, 1000); //todo paging
+        return lostAndFoundService.getItems(itemType, category, tag, cityId, pageNumber, 100000); //todo paging
     }
 
     @RequestMapping(value = "/markers", method = RequestMethod.GET)

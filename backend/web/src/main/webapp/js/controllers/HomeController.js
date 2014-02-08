@@ -128,38 +128,31 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
 
   $scope.openItem = function (item) {
     console.log('Item: ' + JSON.stringify(item));
+    $scope.mapService.hideBalloonForItem($scope.selectedItem);
     $scope.selectedItem = item;
     $scope.showSelectedCategory = false;
     $scope.mapService.showBalloonForItem(item);
   };
 
-  $scope.hasNextItem = function (selectedItem, prev) {
-    var indexOf = $scope.itemsList.lostAndFoundItems.indexOf(selectedItem);
+  $scope.hasNextItem = function (item, prev) {
+    var indexOf = $scope.itemsList.lostAndFoundItems.indexOf(item);
     if (indexOf == 0 && prev) {
       return false;
     }
     if (indexOf + 1 == $scope.itemsList.lostAndFoundItems.length && !prev) {
-      return UtilsService.isNotEmpty($scope.itemsList.page) && $scope.itemsList.page.lastPage;
+      return false;
+//      return UtilsService.isNotEmpty($scope.itemsList.page) && $scope.itemsList.page.lastPage;
     }
     return true;
   };
 
   $scope.openNextItem = function (selectedItem, prev) {
-    for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
-      var item = $scope.itemsList.lostAndFoundItems[i];
-      if (item.id == selectedItem.id) {
-        if (prev && item.hasPrev) {
-          $scope.selectedItem = $scope.itemsList.lostAndFoundItems[i - 1];
-          return;
-        }
-        if (!prev && item.hasNext) {
-          $scope.selectedItem = $scope.itemsList.lostAndFoundItems[i + 1];
-          return;
-        }
-        $scope.goToSelectedCategory();
-      }
+    var indexOf = $scope.itemsList.lostAndFoundItems.indexOf(selectedItem);
+    if (prev) {
+      $scope.openItem($scope.itemsList.lostAndFoundItems[indexOf - 1]);
+    } else {
+      $scope.openItem($scope.itemsList.lostAndFoundItems[indexOf + 1]);
     }
-    $scope.mapService.showBalloonForItem($scope.selectedItem);
   };
 
   $scope.createItem = function (itemType) {
