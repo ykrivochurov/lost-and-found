@@ -231,7 +231,7 @@
             </ul>
         </div>
 
-        <div ng-show="currentUser.id">
+        <div ng-show="authService.currentUserHolder.id">
             <div class="private-info">
                 <label>
                     <input type="checkbox" ng-model="laf.showPrivateInfo">
@@ -242,13 +242,13 @@
                 <div class="user-name">
                     <span>контактное лицо</span>
                     <div>
-                        <input type="text" ng-model="currentUser.name">
+                        <input type="text" ng-model="authService.currentUserHolder.name">
                     </div>
                 </div>
                 <div class="email">
                     <span>Емэйл</span>
                     <div>
-                        <input type="text" ng-model="currentUser.email">
+                        <input type="text" ng-model="authService.currentUserHolder.email">
                     </div>
                 </div>
             </div>
@@ -257,16 +257,16 @@
                 <div class="phone">
                     <span>контактный телефон</span>
                     <div>
-                        <input type="text" ng-model="currentUser.phone" class="phone-mask">
+                        <input type="text" ng-model="authService.currentUserHolder.phone" class="phone-mask">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="clearfix login-buttons" ng-show="currentUser.id">
+        <div class="clearfix login-buttons" ng-show="authService.currentUserHolder.id">
             <button ng-click="cancel()" class="c-button">Отмена</button>
             <button ng-click="saveItem()" class="s-button">Готово</button>
         </div>
-        <div class="clearfix login-buttons" ng-show="!currentUser.id">
+        <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
             <button class="vk-login" ng-click="authService.vk.login()">Войти через аккаунт Vkontakte</button>
             <button class="fb-login" ng-click="authService.fb.login()">Войти через аккаунт Facebook</button>
         </div>

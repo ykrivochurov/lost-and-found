@@ -240,11 +240,15 @@ function joinTagsObjects(tags) {
 function CreateItemModalCtrl($scope, $modalInstance, $timeout, AuthService, ItemsService, UsersService, MapService, itemType) {
 
   $scope.authService = AuthService;
-  $scope.currentUser = $scope.authService.user.get();
+//  $scope.currentUser = $scope.authService.user.get();
   console.log($scope.currentUser);
   $scope.itemType = itemType;
   $scope.laf.itemType = itemType;
   MapService.getLocationObject();
+
+  $scope.$watch('authService.currentUserHolder', function (user) {
+    $scope.currentUser = user;
+  }, true);
 
   $scope.saveItem = function () {
     $scope.laf.cityId = $scope.currentCity.id;

@@ -1,5 +1,9 @@
 angular.module('laf').
   factory('AuthService', function ($resource) {
+    var resultObject = {
+      currentUserHolder: currentUserHolder
+    };
+    var currentUserHolder = {};
     var vk = {
       data: {},
       appID: 4145243,
@@ -16,12 +20,9 @@ angular.module('laf').
           var uid = response.session.mid;
           var sid = response.session.sid;
           var name = response.session.user.first_name + ' ' + response.session.user.last_name;
-          $.get("/api/auth/vk?sid=" + sid + "&uid=" + uid + "&name=" + name, function (data, status) {
-            $('.loggingin').removeClass('loggingvk');
-            if (status == 'success') {
-              $('#logins .vk').append($('<span>' + data + '</span>'));
-            }
-          })
+          $.get("/api/auth/vk?sid=" + sid + "&uid=" + uid + "&name=" + name, function (user, status) {
+            resultObject.currentUserHolder = user;
+          });
         } else {
           $('.loggingin').removeClass('loggingvk');
         }
@@ -60,10 +61,8 @@ angular.module('laf').
         if (response.authResponse) {
           var uid = response.authResponse.userID;
           var token = response.authResponse.accessToken;
-          $.get("/api/auth/fb?token=" + token + "&uid=" + uid, function (data, status) {
-            $('.loggingin').removeClass('loggingfb')
-            if (status == 'success')
-              $('#logins .fb').append($('<span>' + data + '</span>'))
+          $.get("/api/auth/fb?token=" + token + "&uid=" + uid, function (user, status) {
+            resultObject.currentUserHolder = user;
           })
         } else {
           $('.loggingin').removeClass('loggingfb')
@@ -99,9 +98,9 @@ angular.module('laf').
     };
     vk.init();
     fb.init();
-    return {
-      user: $resource('api/auth/user'),
-      fb: fb,
-      vk: vk
-    };
+
+    resultObject.user = $resource('api/auth/user');
+    resultObject.fb = fb;
+    resultObject.vk = vk;
+    return  resultObject;
   });
