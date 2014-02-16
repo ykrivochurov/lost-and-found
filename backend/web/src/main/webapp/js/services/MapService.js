@@ -1,5 +1,6 @@
 angular.module('laf').
   factory('MapService', function ($timeout, $sce, UtilsService, GeoLocationService, ItemsService) {
+    moment.lang('ru');
     var defaultGroupName = 'default_markers';
     var controllerScope;
     var markersMap = {};
@@ -19,7 +20,10 @@ angular.module('laf').
           controllerScope.DGisMap.geoclicker.disable();
           controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
           controllerScope.currentLocationMarker = new DG.Markers.Common({
-            geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1])});
+            geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]),
+            icon: new DG.Icon('/img/pins/p_00_poterial.png', new DG.Size(30, 48)),
+            hoverIcon: new DG.Icon('/img/pins/p_00_poterial_big.png', new DG.Size(80, 128))
+          });
           controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker, defaultGroupName);
 
           controllerScope.DGisMap.onCurrentLocation = function (longitude, latitude) {
@@ -39,14 +43,17 @@ angular.module('laf').
             }
             //определение нового адреса
             self.getAddress(controllerScope.DGisMap, geoPoint.lon, geoPoint.lat, function () {
+              self.hideAllBalloons();
+              angular.element('.balloon-content .what').text(controllerScope.laf.where);
               if (UtilsService.isEmpty(controllerScope.activeBallon)) {
                 controllerScope.activeBallon = new DG.Balloons.Common({
                   geoPoint: geoPoint,
-                  contentHtml: controllerScope.laf.where
+                  contentHtml: angular.element('.active-balloon-content-wrapper').html(),
+                  isClosed: false
                 });
                 controllerScope.DGisMap.balloons.add(controllerScope.activeBallon);
               } else {
-                controllerScope.activeBallon.setContent(controllerScope.laf.where);
+                controllerScope.activeBallon.setContent(angular.element('.active-balloon-content-wrapper').html());
                 controllerScope.activeBallon.setPosition(geoPoint);
                 controllerScope.activeBallon.show();
               }
@@ -109,13 +116,21 @@ angular.module('laf').
           console.log('Unable create marker for item.id = ' + item.id);
           return;
         }
-        console.log('Create marker');
+        if (item.itemType == 'LOST') {
+          angular.element('.balloon-content').addClass('lost');
+        } else {
+          angular.element('.balloon-content').addClass('found');
+        }
+        angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
+        angular.element('.balloon-content .what').text(item.what);
         var marker = new DG.Markers.MarkerWithBalloon({
           geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
           icon: new DG.Icon(controllerScope.tagsIcons[item.tags[0]], new DG.Size(29, 29)),
           balloonOptions: {
             geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
-            contentHtml: item.what
+            contentHtml: angular.element('.balloon-content-wrapper').html(),
+            showLatestOnly: true,
+            isClosed: false
           }
         });
         markersMap[item.id] = marker;
@@ -154,6 +169,15 @@ angular.module('laf').
           var marker = markersMap[item.id];
           controllerScope.DGisMap.setCenter(marker.getPosition());
           marker.hideBalloon();
+        }
+      },
+
+      hideAllBalloons: function() {
+        var all = controllerScope.DGisMap.markers.getAll();
+        for (var i = 0; i < all.length; i++) {
+          if (UtilsService.isNotEmpty(all[i]) && UtilsService.isFunction(all[i].hideBalloon)) {
+            all[i].hideBalloon();
+          }
         }
       },
 

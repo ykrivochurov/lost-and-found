@@ -84,6 +84,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     $scope.refreshCategories();
     MapService.rebuildMarkers();
     $scope.clearCategorySelection();
+    MapService.hideAllBalloons();
   };
 
   $scope.selectCategoryAndTag = function (category, tag) {
@@ -111,7 +112,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   };
 
   $scope.goToSelectedCategory = function () {
-    MapService.hideBalloonForItem($scope.selectedItem);
+    MapService.hideAllBalloons();
     $scope.selectedItem = null;
     $scope.showSelectedCategory = true;
   };
@@ -122,6 +123,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     $scope.selectedCategory = null;
     $scope.selectedTag = null;
     MapService.hideBalloonForItem($scope.selectedItem);
+    MapService.hideAllBalloons();
     $scope.selectedItem = null;
     $scope.mapService.showMarkersForCategory();
   };
