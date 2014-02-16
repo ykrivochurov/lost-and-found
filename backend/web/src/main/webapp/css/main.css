@@ -5,15 +5,30 @@ body {
     overflow: hidden;
 }
 
+.app-wrapper .input-color {
+    color: rgb(82, 82, 82);
+}
+
+.app-wrapper textarea {
+    background-color: rgb(245, 245, 245);
+    border-radius: 4px;
+    border: 1px solid rgb(205, 206, 206);
+    font-size: 100%;
+    color: rgb(82, 82, 82);
+    padding: 8px;
+}
+
 .app-wrapper input[type="text"],
 .app-wrapper input[type="password"],
 .app-wrapper input {
     box-sizing: content-box;
-    border-radius: 0;
-    font-size: 120%;
-    color: rgb(113, 113, 113);
-    border: none;
-    padding: 11px 12px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 4px;
+    border: 1px solid rgb(205, 206, 206);
+    font-size: 100%;
+    color: rgb(82, 82, 82);
+    padding: 8px;
+    height: 16px;
 }
 
 .ng-cloak {
@@ -22,8 +37,8 @@ body {
 
 .dashed-text {
     display: inline-block;
-    color: #ffffff;
-    border-bottom: 1px dashed #ffffff;
+    color: rgb(117, 117, 117);
+    border-bottom: 1px dashed rgb(117, 117, 117);
     cursor: pointer;
 }
 
@@ -69,24 +84,48 @@ select:focus:invalid:focus {
 }
 
 /* Placeholder */
+textarea::-webkit-input-placeholder,
 input::-webkit-input-placeholder {
     /* WebKit browsers */
     color: rgb(111, 111, 111);
 }
 
+textarea:-moz-placeholder,
 input:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     color: rgb(111, 111, 111);
 }
 
+textarea::-moz-placeholder,
 input::-moz-placeholder {
     /* Mozilla Firefox 19+ */
     color: rgb(111, 111, 111);
 }
 
+textarea:-ms-input-placeholder,
 input:-ms-input-placeholder {
     /* Internet Explorer 10+ */
     color: rgb(111, 111, 111);
+}
+
+.search-block input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-style: italic;
+}
+
+.search-block input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-style: italic;
+}
+
+.search-block input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-style: italic;
+}
+
+.search-block input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    font-style: italic;
 }
 
 /* end Placeholder */
@@ -115,8 +154,8 @@ button:focus {
 }
 
 .home-wrapper .left-panel {
-    /*background-color: rgb(55, 55, 55);*/
-    background: url('/img/left_bar_gr_bg.png') repeat-y rgb(55, 55, 55);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     width: 350px;
     min-height: 100%;
     position: relative;
@@ -125,12 +164,13 @@ button:focus {
 }
 
 .home-wrapper .left-panel .top-logo {
-    padding: 40px 0;
+    background: url('/img/logos/02_bg.png') no-repeat transparent center -150px;
+    padding: 50px 0 25px;
 }
 
 .home-wrapper .left-panel .img-logo {
     display: block;
-    margin-left: 83px;
+    margin: auto;
 }
 
 .home-wrapper .left-panel .city,
@@ -141,22 +181,13 @@ button:focus {
 }
 
 .home-wrapper .left-panel .text-logo {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .home-wrapper .left-panel .city {
-    margin-top: 10px;
-    color: rgb(244, 244, 244);
+    color: rgb(117, 117, 117);
     text-align: center;
-}
-
-.home-wrapper .left-panel .hr {
-    background-color: rgb(95, 95, 95);
-    margin-left: auto;
-    margin-right: auto;
-    width: 210px;
-    height: 1px;
 }
 
 .home-wrapper .start-form {
@@ -165,19 +196,22 @@ button:focus {
 }
 
 .home-wrapper .start-form .what {
-    width: 260px;
+    width: 253px;
     display: block;
     margin-bottom: 14px;
     margin-left: auto;
     margin-right: auto;
-    color: #ffffff;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 .home-wrapper .start-form .what .dropdown-toggle {
-    background-color: #ffffff;
-    color: rgb(111, 111, 111);
-    padding: 11px 12px;
+    box-sizing: content-box;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(205, 206, 206);
+    border-radius: 4px;
+    padding: 6px 8px 8px 8px;
+    height: 18px;
+    cursor: pointer;
 }
 
 .home-wrapper .start-form .what .dropdown-menu {
@@ -196,7 +230,7 @@ button:focus {
 }
 
 .home-wrapper .start-form .buttons {
-    width: 259px;
+    width: 254px;
     display: block;
     margin-bottom: 10px;
     margin-left: auto;
@@ -205,19 +239,29 @@ button:focus {
 
 .home-wrapper .start-form .l-button {
     float: left;
-    background-color: rgb(242, 108, 79);
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:    -moz-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:     -ms-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:      -o-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:         linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
     color: white;
     font-size: 110%;
-    width: 123px;
+    width: 120px;
     margin-top: 0;
 }
 
 .home-wrapper .start-form .r-button {
     float: right;
-    background-color: rgb(95, 197, 183);
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:    -moz-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:     -ms-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:      -o-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:         linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
     color: white;
     font-size: 110%;
-    width: 123px;
+    width: 120px;
     margin-top: 0;
 }
 
@@ -239,31 +283,31 @@ button:focus {
 /* Right panel */
 
 .home-wrapper .right-panel-show {
-    height: 35px;
-    width: 35px;
-    background: url('/img/search.png') no-repeat rgb(55, 55, 55) center center;
+    height: 54px;
+    width: 54px;
+    background: url('/img/search.png') no-repeat transparent center center;
     position: absolute;
-    top: 20px;
-    right: -50px;
+    top: 10px;
+    right: -70px;
     z-index: 100;
 }
 
 .home-wrapper .right-panel-show.back {
-    background: url('/img/back.png') no-repeat rgb(55, 55, 55) center center;
+    background: url('/img/left.png') no-repeat transparent center center;
 }
 
 .home-wrapper .right-panel-hide {
-    height: 35px;
-    width: 35px;
-    background: url('/img/icon_menu.png') no-repeat rgb(55, 55, 55) center center;
+    height: 54px;
+    width: 54px;
+    background: url('/img/menu.png') no-repeat transparent center center;
     position: absolute;
-    top: 20px;
-    right: 530px;
+    top: 10px;
+    right: 510px;
     z-index: 100;
 }
 
 .home-wrapper .right-panel-hide.back {
-    background: url('/img/forward.png') no-repeat rgb(55, 55, 55) center center;
+    background: url('/img/right.png') no-repeat transparent center center;
 }
 
 .home-wrapper .left-panel.ui-show {
@@ -280,8 +324,8 @@ button:focus {
 }
 
 .home-wrapper .right-panel {
-    /*background-color: rgb(55, 55, 55);*/
-    background: url('/img/right_bar_gr_bg.png') repeat-y rgb(55, 55, 55);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     width: 490px;
     height: 100%;
     position: relative;
@@ -297,25 +341,33 @@ button:focus {
 }
 
 .home-wrapper .right-panel .category {
+    color: rgb(100, 100, 100);
     font-size: 180%;
-    color: #ffffff;
     margin-bottom: 15px;
     cursor: pointer;
 }
 
 .home-wrapper .right-panel .tag-w-count {
-    color: #ffffff;
+    color: rgb(143, 143, 143);
     font-size: 100%;
     display: inline-block;
     width: 200px;
-    height: 42px;
+    height: 55px;
     text-align: left;
     cursor: pointer;
+    margin-bottom: 3px;
 }
 
-.home-wrapper .right-panel .category:hover,
+.home-wrapper .right-panel .category:hover {
+    color: rgb(50, 50, 50);
+}
+
 .home-wrapper .right-panel .tag-w-count:hover {
-    color: rgb(231, 198, 109);
+    color: rgb(113, 113, 113);
+}
+
+.home-wrapper .right-panel .tag-w-count:hover .tag-count {
+    color: rgb(177, 177, 177);
 }
 
 .home-wrapper .right-panel .tag-name {
@@ -333,19 +385,22 @@ button:focus {
 
 .home-wrapper .right-panel .tag-count {
     margin-left: 5px;
+    color: rgb(207, 207, 207);
 }
 
 .home-wrapper .right-panel .tag-icon {
     float: left;
-    width: 32px;
+    width: 54px;
+    height: 54px;
     margin-right: 10px;
     display: table;
-    height: 100%;
+    background: url('/img/cat_bg.png') no-repeat transparent center center;
 }
 
 .home-wrapper .right-panel .tag-icon-tc {
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
     height: 100%;
 }
 
@@ -357,9 +412,9 @@ button:focus {
     height: 46px;
     text-align: center;
     float: left;
-    font-size: 180%;
+    font-size: 150%;
     color: #ffffff;
-    padding: 0 12px 5px 12px;
+    padding: 5px 12px 0 12px;
 }
 
 .home-wrapper .top-buttons .found-b:focus,
@@ -369,31 +424,31 @@ button:focus {
 
 .home-wrapper .top-buttons .found-b,
 .home-wrapper .top-buttons .lost-b {
-    background-color: rgb(37, 37, 37);
-    border-top: 3px solid rgb(37, 37, 37);
-    color: rgb(117, 117, 117);
+    background-color: rgb(245, 245, 245);
+    color: rgb(180, 180, 180);
+    border-bottom: 1px solid rgb(227, 227, 227);
 }
 
-.home-wrapper .top-buttons .lost-b span,
-.home-wrapper .top-buttons .found-b span {
-    border-bottom: 1px dashed rgb(117, 117, 117);
+.home-wrapper .top-buttons .lost-b {
+    border-right: 1px solid rgb(227, 227, 227);
 }
 
-.home-wrapper .top-buttons .lost-b.active span,
-.home-wrapper .top-buttons .found-b.active span {
-    border-bottom: none;
+.home-wrapper .top-buttons .found-b {
+    border-left: 1px solid rgb(227, 227, 227);
 }
 
 .home-wrapper .top-buttons .lost-b.active {
-    color: #ffffff;
+    color: rgb(222, 77, 12);
     background-color: transparent;
-    border-top: 3px solid rgb(242, 108, 78);
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid transparent;
 }
 
 .home-wrapper .top-buttons .found-b.active {
-    color: #ffffff;
+    color: rgb(30, 164, 213);
     background-color: transparent;
-    border-top: 3px solid rgb(95, 197, 183);
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
 }
 
 .home-wrapper .search-block {
@@ -408,11 +463,9 @@ button:focus {
 }
 
 .home-wrapper .search-block input {
-    width: 316px;
-    background: url('/img/search2.png') no-repeat #ffffff 97% 55%;
-    font-size: 130%;
-    padding: 6px 12px 4px;
-    margin-left: 30px;
+    width: 336px;
+    background: url('/img/search2.png') no-repeat rgb(245, 245, 245) 97% 55%;
+    margin-left: 20px;
 }
 
 /* end Top buttons and search box */
@@ -425,25 +478,24 @@ button:focus {
     cursor: pointer;
     max-width: 350px;
     position: relative;
+    color: rgb(100, 100, 100);
 }
 
 .home-wrapper .right-panel .selected-category:hover .name,
 .home-wrapper .right-panel .selected-category:hover .tag {
-    color: rgb(231, 198, 109);
+    color: rgb(50, 50, 50);
 }
 
 .home-wrapper .right-panel .selected-category .name {
     font-size: 180%;
-    color: #ffffff;
     margin-right: 10px;
 }
 
 .home-wrapper .right-panel .selected-category .tag {
-    color: #ffffff;
 }
 
 .home-wrapper .laf-item {
-    border-top: 1px solid rgb(95, 95, 95);
+    border-top: 1px solid rgb(143, 143, 143);
     padding-bottom: 18px;
     width: 400px;
     cursor: pointer;
@@ -452,13 +504,12 @@ button:focus {
 .app-wrapper .found-on-create-items .creation-date,
 .app-wrapper .creation-date,
 .home-wrapper .laf-item .when {
-    color: #ffffff;
     margin-top: 12px;
     position: relative;
 }
 
-.home-wrapper .laf-item:hover .when {
-    color: rgb(231, 198, 109);
+.home-wrapper .laf-item:hover {
+    background-color: rgb(245, 245, 245);
 }
 
 .app-wrapper .found-on-create-items .creation-date .day,
@@ -485,7 +536,6 @@ button:focus {
 
 /* Tags list */
 .home-wrapper .tags-label {
-    color: #ffffff;
     margin-right: 5px;
 }
 
@@ -499,7 +549,7 @@ button:focus {
 
 .home-wrapper .details-block {
     width: 400px;
-    border-top: 1px solid rgb(95, 95, 95);
+    border-top: 1px solid rgb(143, 143, 143);
     position: relative;
 }
 
@@ -512,11 +562,12 @@ button:focus {
     float: left;
     width: 102px;
     height: 102px;
-    border: 1px solid white;
+    border: 1px solid rgb(205, 206, 206);
+    border-radius: 4px;
     margin-right: 25px;
     margin-top: 9px;
     vertical-align: middle;
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(245, 245, 245);
     text-align: center;
 }
 
@@ -530,7 +581,7 @@ button:focus {
 
 .home-wrapper .details-block .what {
     float: left;
-    color: #ffffff;
+    color: rgb(90, 90, 90);
     font-size: 160%;
     margin-top: 10px;
     width: 270px;
@@ -557,7 +608,7 @@ button:focus {
 
 .home-wrapper .prev-laf-item:hover,
 .home-wrapper .details-block .next-laf-item:hover {
-    background-color: rgb(95, 95, 95);
+    background-color: rgb(205, 206, 206);
 }
 
 .home-wrapper .prev-laf-item {
@@ -601,7 +652,7 @@ button:focus {
 }
 
 .home-wrapper .icon-label-b .text-b {
-    color: #ffffff;
+    color: rgb(90, 90, 90);
     font-size: 120%;
     padding-left: 30px;
 }
@@ -647,18 +698,23 @@ button:focus {
 .home-wrapper .lost-list .when-b .text-b {
     background: url('../img/icon_02.png') no-repeat transparent 0 3px;
 }
+
 .home-wrapper .lost-list .where-b .text-b {
     background: url('../img/icon_03.png') no-repeat transparent 0 5px;
 }
+
 .home-wrapper .lost-list .phone-b .text-b {
     background: url('../img/icon_04.png') no-repeat transparent 0 3px;
 }
+
 .home-wrapper .lost-list .email-b .text-b {
     background: url('../img/icon_05.png') no-repeat transparent 0 4px;
 }
+
 .home-wrapper .lost-list .pen-b .text-b {
     background: url('../img/icon_06.png') no-repeat transparent 0 3px;
 }
+
 .home-wrapper .lost-list .person-b .text-b {
     background: url('../img/icon_07.png') no-repeat transparent 0 3px;
 }
@@ -666,18 +722,23 @@ button:focus {
 .home-wrapper .found-list .when-b .text-b {
     background: url('../img/icon_02_0.png') no-repeat transparent 0 3px;
 }
+
 .home-wrapper .found-list .where-b .text-b {
     background: url('../img/icon_03_0.png') no-repeat transparent 0 5px;
 }
+
 .home-wrapper .found-list .phone-b .text-b {
     background: url('../img/icon_04_0.png') no-repeat transparent 0 3px;
 }
+
 .home-wrapper .found-list .email-b .text-b {
     background: url('../img/icon_05_0.png') no-repeat transparent 0 4px;
 }
+
 .home-wrapper .found-list .pen-b .text-b {
     background: url('../img/icon_06_0.png') no-repeat transparent 0 3px;
 }
+
 .home-wrapper .found-list .person-b .text-b {
     background: url('../img/icon_07_0.png') no-repeat transparent 0 3px;
 }
@@ -731,10 +792,9 @@ button:focus {
 
 .ci-popup {
     width: 880px;
-    background-color: rgb(55, 55, 55);
-    border-top: 1px solid;
+    border-top: 2px solid;
     padding: 15px 35px 45px 35px;
-    color: #ffffff;
+    color: rgb(82, 82, 82);
 }
 
 .ci-popup .creation-date {
@@ -744,22 +804,22 @@ button:focus {
 }
 
 .ci-popup.found {
-    border-top-color: rgb(95, 197, 183);
+    border-top-color: rgb(30, 164, 213);
 }
 
 .ci-popup.lost {
-    border-top-color: rgb(242, 108, 79);
+    border-top-color: rgb(222, 77, 12);
 }
 
 .app-wrapper .creation-form .picture {
     float: left;
     width: 102px;
     height: 102px;
-    border: 1px solid white;
+    border: 1px solid rgb(205, 205, 206);
     margin-right: 25px;
     margin-top: 9px;
     vertical-align: middle;
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(245, 245, 245);
     text-align: center;
 }
 
@@ -791,26 +851,25 @@ button:focus {
 }
 
 .app-wrapper .creation-form.lost .what {
-    background: url('../img/icon_01.png') no-repeat transparent 5px 15px;
+    background: url('../img/icon_01.png') no-repeat transparent 5px 11px;
 }
 
 .app-wrapper .creation-form.found .what {
-    background: url('../img/icon_01_0.png') no-repeat transparent 5px 15px;
+    background: url('../img/icon_01_0.png') no-repeat transparent 5px 11px;
 }
 
 .app-wrapper .creation-form .what textarea {
-    width: 640px;
-    height: 100px;
-    font-size: 150%;
-    padding: 8px 15px;
+    width: 645px;
+    height: 75px;
+    padding: 8px;
 }
 
 .app-wrapper .creation-form.lost .where {
-    background: url('../img/icon_03.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_03.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form.found .where {
-    background: url('../img/icon_03_0.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_03_0.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form .where {
@@ -823,11 +882,11 @@ button:focus {
 }
 
 .app-wrapper .creation-form.lost .when {
-    background: url('../img/icon_02.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_02.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form.found .when {
-    background: url('../img/icon_02_0.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_02_0.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form .when {
@@ -849,27 +908,27 @@ button:focus {
     margin-top: 15px;
 }
 
-.app-wrapper .creation-form .phone>span,
-.app-wrapper .creation-form .email>span,
-.app-wrapper .creation-form .user-name>span,
-.app-wrapper .creation-form .where>span,
-.app-wrapper .creation-form .when>span {
-    color: rgb(192, 192, 192);
+.app-wrapper .creation-form .phone > span,
+.app-wrapper .creation-form .email > span,
+.app-wrapper .creation-form .user-name > span,
+.app-wrapper .creation-form .where > span,
+.app-wrapper .creation-form .when > span {
+    color: rgb(148, 148, 148);
     font-size: 80%;
     margin-bottom: 5px;
     display: block;
 }
 
-.app-wrapper .creation-form.lost .private-info {
+.app-wrapper .creation-form .private-info {
     margin-left: 30px;
 }
 
 .app-wrapper .creation-form.lost .user-name {
-    background: url('../img/icon_07.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_07.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form.found .user-name {
-    background: url('../img/icon_07_0.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_07_0.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form .user-name {
@@ -882,11 +941,11 @@ button:focus {
 }
 
 .app-wrapper .creation-form.lost .email {
-    background: url('../img/icon_05.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_05.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form.found .email {
-    background: url('../img/icon_05_0.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_05_0.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form .email {
@@ -900,11 +959,11 @@ button:focus {
 }
 
 .app-wrapper .creation-form.lost .phone {
-    background: url('../img/icon_04.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_04.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form.found .phone {
-    background: url('../img/icon_04_0.png') no-repeat transparent 5px 32px;
+    background: url('../img/icon_04_0.png') no-repeat transparent 5px 30px;
 }
 
 .app-wrapper .creation-form .phone {
@@ -923,7 +982,6 @@ button:focus {
     padding: 10px 3px;
     margin-top: 20px;
     width: 640px;
-    color: rgb(206, 178, 101);
     position: relative;
 }
 
@@ -936,12 +994,29 @@ button:focus {
 .app-wrapper .creation-form .tags .tags-label {
     margin-right: 5px;
     display: inline-block;
-    color: #ffffff;
+}
+
+.app-wrapper .creation-form .tag-value img {
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.app-wrapper .creation-form .tag-value span {
+    padding-right: 5px;
+    white-space: nowrap;
+}
+
+.app-wrapper .creation-form.lost .tags-wrapper .tag-value {
+    color: rgb(222, 77, 12);
+}
+
+.app-wrapper .creation-form.found .tags-wrapper .tag-value {
+    color: rgb(30, 164, 213);
 }
 
 .app-wrapper .creation-form .tags .add-tag-button {
-    background: url('../img/add.png') no-repeat transparent 0 1px;
-    color: rgb(206, 178, 101);
+    background: url('../img/add.png') no-repeat transparent 0 3px;
+    color: rgb(148, 148, 148);
     padding-left: 30px;
     cursor: pointer;
     float: left;
@@ -949,9 +1024,7 @@ button:focus {
 
 .app-wrapper .start-form .dropdown-menu,
 .app-wrapper .creation-form .tags .dropdown-menu {
-    background-color: rgb(70, 70, 70);
-    border-radius: 0;
-    color: #ffffff;
+    border-radius: 4px;
     padding: 10px;
     max-height: 200px;
     overflow-y: auto;
@@ -973,14 +1046,20 @@ button:focus {
 .app-wrapper .creation-form .tags .dropdown-menu a {
     display: block;
     margin-left: 5px;
-    color: #ffffff;
     cursor: pointer;
 }
 
 .app-wrapper .creation-form .vk-login,
 .app-wrapper .creation-form .fb-login {
-    color: #ffffff;
+    color: rgb(143, 143, 143);
     padding-left: 45px;
+    position: relative;
+}
+
+.app-wrapper .creation-form .vk-login img,
+.app-wrapper .creation-form .fb-login img {
+    position: absolute;
+    left: 15px;
 }
 
 .app-wrapper .creation-form .login-buttons {
@@ -990,28 +1069,19 @@ button:focus {
     width: 640px;
 }
 
-.app-wrapper .creation-form.lost .vk-login {
-    background: url('../img/button_vk.png') no-repeat rgb(242, 108, 79) 10px 50%;
-}
-
-.app-wrapper .creation-form.lost .fb-login {
-    background: url('../img/button_facebook.png') no-repeat rgb(242, 108, 79) 10px 50%;
-}
-
-.app-wrapper .creation-form.found .vk-login {
-    background: url('../img/button_vk.png') no-repeat rgb(95, 197, 183) 10px 50%;
-}
-
-.app-wrapper .creation-form.found .fb-login {
-    background: url('../img/button_facebook.png') no-repeat rgb(95, 197, 183) 10px 50%;
-}
-
 .app-wrapper .creation-form .vk-login,
 .app-wrapper .creation-form .fb-login {
     width: 48%;
     font-size: 120%;
     padding-top: 8px;
     padding-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid rgb(158, 158, 158);
+    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image:    -moz-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image:     -ms-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image:      -o-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image:         linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
 }
 
 .app-wrapper .creation-form .vk-login {
@@ -1063,21 +1133,34 @@ button:focus {
 
 .app-wrapper .creation-form .c-button,
 .app-wrapper .creation-form .s-button {
+    border-radius: 4px;
     color: #ffffff;
-    font-size: 130%;
-    width: 123px;
+    font-size: 110%;
+    width: 120px;
 }
 
 .app-wrapper .creation-form.lost .s-button {
-    background-color: rgb(242, 108, 79);
+    background-image: -webkit-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:    -moz-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:     -ms-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:      -o-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image:         linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
 }
 
 .app-wrapper .creation-form.found .s-button {
-    background-color: rgb(95, 197, 183);
+    background-image: -webkit-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:    -moz-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:     -ms-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:      -o-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image:         linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
 }
 
 .app-wrapper .creation-form .c-button {
-    background-color: rgb(96, 96, 96);
+    background-image: -webkit-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image:    -moz-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image:     -ms-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image:      -o-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image:         linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
     margin-right: 10px;
 }
 
@@ -1114,13 +1197,13 @@ transition: 5s linear all;
     bottom: 0;
     height: 50px;
     width: 100%;
-    background: -moz-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, rgba(55, 55, 55, 0.95)), color-stop(100%, rgba(55, 55, 55, 0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(bottom, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* IE10+ */
-    background: linear-gradient(to top, rgba(55, 55, 55, 0.95) 0%, rgba(55, 55, 55, 0) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0); /* IE6-9 */
+    background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, rgba(255, 255, 255, 0.95)), color-stop(100%, rgba(255, 255, 255, 0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%); /* IE10+ */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6ffffff', endColorstr='#00ffffff', GradientType=0); /* IE6-9 */
 }
 
 .nano {

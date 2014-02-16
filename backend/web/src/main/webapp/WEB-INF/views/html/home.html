@@ -2,16 +2,14 @@
     <div class="left-panel animate-show" ng-show="!isCollapsed">
         <div class="right-panel-show {{!isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
         <div class="top-logo">
-            <img class="img-logo" src="/img/logo_01.png">
-            <img class="text-logo" src="/img/logo2.png">
-
-            <div class="hr">&nbsp;</div>
+            <img class="img-logo" src="/img/logos/02_ico.png">
+            <img class="text-logo" src="/img/logos/02_b.png">
             <span class="city">{{currentCity.name}}</span>
         </div>
         <div class="start-form clearfix">
             <input type="text" name="where" placeholder="Где, укажите на карте" ng-model="laf.where">
             <div class="what">
-                <div class="dropdown-toggle">{{laf.tags[0] ? laf.tags[0] : 'Что'}}</div>
+                <div class="dropdown-toggle input-color">{{laf.tags[0] ? laf.tags[0] : 'Что'}}</div>
                 <ul class="dropdown-menu">
                     <li ng-repeat="category in categories">
                         {{category.name}}
@@ -30,17 +28,28 @@
         <div class="show-list clearfix">
             <div class="dashed-text" ng-click="collapse()">Перейти к списку объявлений</div>
         </div>
-        <div class="musor">&nbsp;</div>
     </div>
     <div id="map-panel" class="map-panel"></div>
     <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed">
         <div class="right-panel-hide  {{isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
         <div class="top-buttons clearfix">
             <button ng-click="setCategoriesListType('LOST')" class="lost-b active">
-                <span>Утеряно</span>
+                <span>У</span>
+                <span>Т</span>
+                <span>Е</span>
+                <span>Р</span>
+                <span>Я</span>
+                <span>Н</span>
+                <span>О</span>
             </button>
             <button ng-click="setCategoriesListType('FOUND')" class="found-b">
-                <span>Найдено</span>
+                <span>Н</span>
+                <span>А</span>
+                <span>Й</span>
+                <span>Д</span>
+                <span>Е</span>
+                <span>Н</span>
+                <span>О</span>
             </button>
         </div>
         <div class="search-block left-margin">
@@ -48,7 +57,7 @@
                 <img src="/img/icon_menu2.png" alt="" tooltip="Вернуться к списку категорий"
                      tooltip-placement="right" tooltip-trigger="mouseenter">
             </span>
-            <input type="text" placeholder="Подробности" ng-model="searchQuery"
+            <input type="text" placeholder="Искать" ng-model="searchQuery"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
         </div>
         <div class="selected-category left-margin clearfix" ng-show="selectedCategory != null">
@@ -217,8 +226,10 @@
         </div>
         <div class="tags clearfix">
             <div class="tags-wrapper" ng-show="laf.tags.length > 0">
-                <span class="tags-label">Tags:</span>
-                <span ng-repeat="tag in laf.tags">{{$index != 0 ? ', ' : ''}}{{tag}}</span>
+                <span class="tags-label">Категории:</span>
+                <span ng-repeat="tag in laf.tags" class="tag-value">
+                    <span>{{tag}}<img src="/img/close.png" ng-click="removeTag(tag)"></span>
+                </span>
             </div>
             <div class="add-tag-button dropdown-toggle">
                 Добавить тег
@@ -267,8 +278,14 @@
             <button ng-click="saveItem()" class="s-button">Готово</button>
         </div>
         <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
-            <button class="vk-login" ng-click="authService.vk.login()">Войти через аккаунт Vkontakte</button>
-            <button class="fb-login" ng-click="authService.fb.login()">Войти через аккаунт Facebook</button>
+            <button class="vk-login" ng-click="authService.vk.login(setCurrentUser)">
+                <img src="/img/button_vk.png">
+                Войти через аккаунт Vkontakte
+            </button>
+            <button class="fb-login" ng-click="authService.fb.login(setCurrentUser)">
+                <img src="/img/button_facebook.png">
+                Войти через аккаунт Facebook
+            </button>
         </div>
     </div>
 </script>

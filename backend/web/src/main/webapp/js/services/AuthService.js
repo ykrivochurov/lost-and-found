@@ -1,5 +1,6 @@
 angular.module('laf').
-  factory('AuthService', function ($resource) {
+  factory('AuthService', function ($resource, UtilsService) {
+    var authCallback = null;
     var resultObject = {
       currentUserHolder: currentUserHolder
     };
@@ -22,6 +23,9 @@ angular.module('laf').
           var name = response.session.user.first_name + ' ' + response.session.user.last_name;
           $.get("/api/auth/vk?sid=" + sid + "&uid=" + uid + "&name=" + name, function (user, status) {
             resultObject.currentUserHolder = user;
+            if (UtilsService.isNotEmpty(authCallback)) {
+              authCallback(user);
+            }
           });
         } else {
           $('.loggingin').removeClass('loggingvk');
@@ -29,6 +33,7 @@ angular.module('laf').
       },
 
       login: function (callback) {
+        authCallback = callback;
         VK.Auth.login(vk.auth, 1027);
       },
 
@@ -63,13 +68,17 @@ angular.module('laf').
           var token = response.authResponse.accessToken;
           $.get("/api/auth/fb?token=" + token + "&uid=" + uid, function (user, status) {
             resultObject.currentUserHolder = user;
+            if (UtilsService.isNotEmpty(authCallback)) {
+              authCallback(user);
+            }
           })
         } else {
           $('.loggingin').removeClass('loggingfb')
         }
       },
 
-      login: function () {
+      login: function (callback) {
+        authCallback = callback;
         FB.login(function () {
         }, {scope: 'user_relationships,publish_stream,offline_access,email'});
       },

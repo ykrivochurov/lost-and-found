@@ -237,18 +237,20 @@ function joinTagsObjects(tags) {
   return null;
 }
 
-function CreateItemModalCtrl($scope, $modalInstance, $timeout, AuthService, ItemsService, UsersService, MapService, itemType) {
+function CreateItemModalCtrl($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, UsersService, MapService, itemType) {
 
   $scope.authService = AuthService;
-//  $scope.currentUser = $scope.authService.user.get();
   console.log($scope.currentUser);
   $scope.itemType = itemType;
   $scope.laf.itemType = itemType;
   MapService.getLocationObject();
 
-  $scope.$watch('authService.currentUserHolder', function (user) {
+  $scope.setCurrentUser = function (user) {
     $scope.currentUser = user;
-  }, true);
+    if (!$scope.$$phase) {
+      $scope.$apply();
+    }
+  };
 
   $scope.saveItem = function () {
     $scope.laf.cityId = $scope.currentCity.id;
@@ -265,6 +267,13 @@ function CreateItemModalCtrl($scope, $modalInstance, $timeout, AuthService, Item
   $scope.addTag = function (tag) {
     if ($scope.laf.tags.indexOf(tag) == -1 && UtilsService.isNotBlank(tag)) {
       $scope.laf.tags.push(tag);
+    }
+  };
+
+  $scope.removeTag = function (tag) {
+    var index = $scope.laf.tags.indexOf(tag);
+    if (index > -1) {
+      $scope.laf.tags.splice(index, 1);
     }
   };
 
