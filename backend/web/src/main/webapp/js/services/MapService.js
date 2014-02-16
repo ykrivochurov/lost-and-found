@@ -51,11 +51,11 @@ angular.module('laf').
                   contentHtml: angular.element('.active-balloon-content-wrapper').html(),
                   isClosed: false
                 });
-                controllerScope.DGisMap.balloons.add(controllerScope.activeBallon);
+//                controllerScope.DGisMap.balloons.add(controllerScope.activeBallon);
               } else {
                 controllerScope.activeBallon.setContent(angular.element('.active-balloon-content-wrapper').html());
                 controllerScope.activeBallon.setPosition(geoPoint);
-                controllerScope.activeBallon.show();
+//                controllerScope.activeBallon.show();
               }
               geoPoint.where = controllerScope.laf.where;
             });
@@ -125,7 +125,7 @@ angular.module('laf').
         angular.element('.balloon-content .what').text(item.what);
         var marker = new DG.Markers.MarkerWithBalloon({
           geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
-          icon: new DG.Icon(controllerScope.tagsIcons[item.tags[0]], new DG.Size(29, 29)),
+          icon: new DG.Icon(controllerScope.pinIcons[item.tags[0]], new DG.Size(46, 68)),
           balloonOptions: {
             geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
             contentHtml: angular.element('.balloon-content-wrapper').html(),

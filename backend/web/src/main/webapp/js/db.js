@@ -26,3 +26,31 @@ TAGS_ICONS = {
   'Часы': '/img/categories/Y_06.png'
 //    'Ноутбук': '/img/categories/'
 };
+PIN_ICONS = {
+  'Кошки': '/img/pins/P-Animal_02.png',
+  'Собаки': '/img/pins/P-Animal_03.png',
+  'Другие животные': '/img/pins/P-Animal_01.png',
+  'Документы': '/img/pins/P-Doc_02.png',
+  'Паспорт': '/img/pins/P-Doc_03.png',
+  'Водительское удостоверение': '/img/pins/P-Doc_01.png',
+  'Пенсионное удостоверение': '/img/pins/P-Doc_04.png',
+  'Карта': '/img/pins/P-Money_02.png',
+  'Кошелек': '/img/pins/P-Money_01.png',
+  'Ключи от автомобиля': '/img/pins/P-Key_02.png',
+  'Ключи от дома': '/img/pins/P-Key_01.png',
+  'Сумка': '/img/pins/P-Bag_01.png',
+  'Мобильный телефон': '/img/pins/P-Gadget_02.png',
+  'Флешкарта': '/img/pins/P-Gadget_06.png',
+  'Планшет': '/img/pins/P-Gadget_05.png',
+  'Плеер': '/img/pins/P-Gadget_01.png',
+  'Видеокамера': '/img/pins/P-Gadget_04.png',
+  'Фотоаппарат': '/img/pins/P-Gadget_03.png',
+  'Рег. Номер': '/img/pins/P-Auto_01.png',
+  'Сережки': '/img/pins/P-Y_01.png',
+  'Кольцо': '/img/pins/P-Y_02.png',
+  'Браслет': '/img/pins/P-Y_04.png',
+  'Цепочка': '/img/pins/P-Y_05.png',
+  'Кулон': '/img/pins/P-Y_03.png',
+  'Часы': '/img/pins/P-Y_06.png'
+//    'Ноутбук': '/img/pins/P-'
+};

@@ -2,8 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_07.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansCyr-Italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansCyr-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansCyr-LightItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansCyr-Medium.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansCyr-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-BoldItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-Italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-LightItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-Medium.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/fonts/NeoSansPro-Ultra.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Animal_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Animal_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Animal_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Auto_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Bag_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Doc_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Doc_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Doc_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Doc_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Gadget_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Gadget_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Gadget_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Gadget_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Gadget_05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Gadget_06.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Gadget_07.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Key_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Key_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Money_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Money_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Y_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Y_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Y_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Y_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Y_05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Y_06.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/fonts.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/fonts/NotoSerif-Regular-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/fonts/NotoSerif-Regular-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/fonts/NotoSerif-Regular-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/fonts/NotoSerif-Regular-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/pins/p_09.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_02.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_02.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_03.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Animal_03.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Auto_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Auto_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Bag_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Bag_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_02.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_02.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_03.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_03.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_04.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Doc_04.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_02.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_02.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_03.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_03.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_04.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_04.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_05.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_05.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_06.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_06.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Key_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Key_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Key_02.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Key_02.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Money_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Money_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Money_02.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Money_02.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_01.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_01.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_02.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_02.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_03.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_03.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_04.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_04.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_05.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_05.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_06.png" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/categories/Y_06.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/db.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
     </list>
     <ignored path="lost-and-found.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,16 +159,25 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1296" column="46" selection-start="29454" selection-end="29454" vertical-scroll-proportion="0.0" vertical-offset="19307" max-vertical-offset="20205">
+            <state line="1333" column="27" selection-start="30457" selection-end="30457" vertical-scroll-proportion="0.0" vertical-offset="19787" max-vertical-offset="20205">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapService.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MapService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="33" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="3570">
+            <state line="54" column="41" selection-start="2908" selection-end="2908" vertical-scroll-proportion="0.6602871" vertical-offset="534" max-vertical-offset="3570">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fonts.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/fonts.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
@@ -139,16 +230,25 @@
       <file leaf-file-name="HomeController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="35" selection-start="829" selection-end="829" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="4485">
+            <state line="17" column="29" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="4500">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="db.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="9" selection-start="1220" selection-end="1229" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="33" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.84766585" vertical-offset="0" max-vertical-offset="765">
+            <state line="10" column="47" selection-start="689" selection-end="689" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -185,7 +285,6 @@
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/CityRepository.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/City.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/CityService.js" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
@@ -193,12 +292,14 @@
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/UserService.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemsController.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/fonts.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js" />
       </list>
     </option>
   </component>
@@ -408,7 +509,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pins" />
+              <option name="myItemId" value="categories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lost-and-found" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -483,10 +644,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/main/webapp/css" />
+      <recent name="$PROJECT_DIR$/web/src/main/webapp/fonts" />
+      <recent name="$PROJECT_DIR$/web/src/main/webapp/img/categories" />
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img/pins" />
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img" />
-      <recent name="$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/security" />
-      <recent name="$PROJECT_DIR$/web/src/main/webapp/img/categories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img" />
@@ -956,7 +1118,7 @@
       <updated>1387903058578</updated>
       <workItem from="1392534566982" duration="379000" />
       <workItem from="1392534963566" duration="202000" />
-      <workItem from="1392535168526" duration="22175000" />
+      <workItem from="1392535168526" duration="24209000" />
     </task>
     <task id="LOCAL-00001" summary="Renaming.&#10;Base core model and configuration.">
       <created>1387996907187</created>
@@ -1054,11 +1216,15 @@
       <created>1392557361831</created>
       <updated>1392557361831</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="dependency fix">
+      <created>1392558159854</created>
+      <updated>1392558159854</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22756000" />
+    <option name="totallyTimeSpent" value="24790000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1082,7 +1248,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46493903" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1095,7 +1261,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3003049" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3003049" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1151,7 +1317,8 @@
     <MESSAGE value="authService изменен" />
     <MESSAGE value="Исправил проблему с логином.&#10;Новая верстка.&#10;" />
     <MESSAGE value="Балуны для карты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Балуны для карты" />
+    <MESSAGE value="dependency fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="dependency fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1427,11 +1594,6 @@
         <state line="7" column="20" selection-start="391" selection-end="401" vertical-scroll-proportion="0.23755656" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="82" column="22" selection-start="2693" selection-end="2693" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
@@ -1512,13 +1674,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1296" column="46" selection-start="29454" selection-end="29454" vertical-scroll-proportion="0.0" vertical-offset="19307" max-vertical-offset="20205">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="236" column="24" selection-start="8159" selection-end="8159" vertical-scroll-proportion="0.0" vertical-offset="3384" max-vertical-offset="4560">
@@ -1533,9 +1688,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="33" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="524" max-vertical-offset="3570">
+        <state line="438" column="0" selection-start="17433" selection-end="17433" vertical-scroll-proportion="0.0" vertical-offset="6414" max-vertical-offset="8070">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="47" selection-start="689" selection-end="689" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="9" selection-start="1220" selection-end="1229" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="29" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="4500">
           <folding />
         </state>
       </provider>
@@ -1582,23 +1758,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/pins/P-Auto_01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/categories/Gadget_07.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/fonts.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="35" selection-start="829" selection-end="829" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="4485">
+        <state line="9" column="0" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="438" column="0" selection-start="17433" selection-end="17433" vertical-scroll-proportion="0.0" vertical-offset="6414" max-vertical-offset="8070">
+        <state line="1333" column="27" selection-start="30457" selection-end="30457" vertical-scroll-proportion="0.0" vertical-offset="19787" max-vertical-offset="20205">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/MapService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="33" selection-start="1594" selection-end="1594" vertical-scroll-proportion="0.84766585" vertical-offset="0" max-vertical-offset="765">
+        <state line="54" column="41" selection-start="2908" selection-end="2908" vertical-scroll-proportion="0.6602871" vertical-offset="534" max-vertical-offset="3570">
           <folding />
         </state>
       </provider>

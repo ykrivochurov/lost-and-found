@@ -1,0 +1,9 @@
+
+@font-face{
+    font-family: 'NotoSerif';
+    src: url('../fonts/NotoSerif-Regular-webfont.eot');
+    src: url('../fonts/NotoSerif-Regular-webfont.eot?iefix') format('eot'),
+    url('../fonts/NotoSerif-Regular-webfont.woff') format('woff'),
+    url('../fonts/NotoSerif-Regular-webfont.ttf') format('truetype'),
+    url('../fonts/NotoSerif-Regular-webfont.svg#webfont') format('svg');
+}

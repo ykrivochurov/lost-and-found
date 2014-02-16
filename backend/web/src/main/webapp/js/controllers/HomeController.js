@@ -15,6 +15,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   $scope.categoriesListType = 'LOST';
   $scope.whatDict = ['ключи', 'телефон', 'кошелек', 'сумку', 'варежку'];
   $scope.tagsIcons = TAGS_ICONS;
+  $scope.pinIcons = PIN_ICONS;
   $scope.searchQuery = null;
   $scope.selectedCategory = null;
   $scope.selectedTag = null;

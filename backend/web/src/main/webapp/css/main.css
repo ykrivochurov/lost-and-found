@@ -1328,7 +1328,7 @@ transition: 5s linear all;
 /* end Balloon */
 
 .app-wrapper .dg-callout-tail {
-    /*display: none;*/
+    display: none;
 }
 
 .app-wrapper .dg-callout-scroll-fade,
