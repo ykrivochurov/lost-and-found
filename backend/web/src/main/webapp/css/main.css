@@ -1,8 +1,10 @@
 @import "reset.css";
+@import "fonts.css";
 @import "animation.css";
 
 body {
     overflow: hidden;
+    font-family: 'NeoSansCyr', Arial, sans-serif !important;
 }
 
 .app-wrapper .input-color {
@@ -81,6 +83,10 @@ select:focus:invalid:focus {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
+}
+
+.colored-button {
+    height: 40px;
 }
 
 /* Placeholder */

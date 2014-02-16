@@ -21,8 +21,8 @@
                    show-weeks="false" datepicker-append-to-body="true" ng-model="laf.when">
 
             <div class="buttons clearfix">
-                <button class="l-button" ng-click="createItem('LOST')">Я ПОТЕРЯЛ</button>
-                <button class="r-button" ng-click="createItem('FOUND')">Я НАШЕЛ</button>
+                <button class="l-button colored-button" ng-click="createItem('LOST')">Я ПОТЕРЯЛ</button>
+                <button class="r-button colored-button" ng-click="createItem('FOUND')">Я НАШЕЛ</button>
             </div>
         </div>
         <div class="show-list clearfix">
@@ -291,8 +291,8 @@
             </div>
         </div>
         <div class="clearfix login-buttons" ng-show="authService.currentUserHolder.id">
-            <button ng-click="cancel()" class="c-button">Отмена</button>
-            <button ng-click="saveItem()" class="s-button">Готово</button>
+            <button ng-click="cancel()" class="c-button colored-button">Отмена</button>
+            <button ng-click="saveItem()" class="s-button colored-button">Готово</button>
         </div>
         <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
             <button class="vk-login" ng-click="authService.vk.login(setCurrentUser)">

@@ -1,9 +1,9 @@
 
 @font-face{
-    font-family: 'NotoSerif';
-    src: url('../fonts/NotoSerif-Regular-webfont.eot');
-    src: url('../fonts/NotoSerif-Regular-webfont.eot?iefix') format('eot'),
-    url('../fonts/NotoSerif-Regular-webfont.woff') format('woff'),
-    url('../fonts/NotoSerif-Regular-webfont.ttf') format('truetype'),
-    url('../fonts/NotoSerif-Regular-webfont.svg#webfont') format('svg');
+    font-family: 'NeoSansCyr';
+    src: url('../fonts/NeoSansCyr-Regular.eot');
+    src: url('../fonts/NeoSansCyr-Regular.eot?iefix') format('eot'),
+    url('../fonts/NeoSansCyr-Regular.woff') format('woff'),
+    url('../fonts/NeoSansCyr-Regular.ttf') format('truetype'),
+    url('../fonts/NeoSansCyr-Regular.svg#webfont') format('svg');
 }
