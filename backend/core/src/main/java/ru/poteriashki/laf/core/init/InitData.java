@@ -50,8 +50,7 @@ public class InitData {
         }
 
         Integer priority = 0;
-        priority = createCategory(priority, "Животные", Sets.newHashSet(new String[]{"Кошки", "Собаки", "Другие животные"}));
-        priority = createCategory(priority, "Документы", Sets.newHashSet(new String[]{"Документы", "Паспорт", "Водительское удостоверение", "Пенсионное удостоверение"}));
+        priority = createCategory(priority, "Животные", Sets.newHashSet(new String[]{"Другие животные", "Кошки", "Собаки"}));
         priority = createCategory(priority, "Документы", Sets.newHashSet(new String[]{"Документы", "Паспорт", "Водительское удостоверение", "Пенсионное удостоверение"}));
         priority = createCategory(priority, "Деньги", Sets.newHashSet(new String[]{"Карта", "Кошелек"}));
         priority = createCategory(priority, "Рег. Номер", Sets.newHashSet(new String[]{"Рег. Номер"}));
@@ -59,7 +58,7 @@ public class InitData {
         priority = createCategory(priority, "Сумка", Sets.newHashSet(new String[]{"Сумка"}));
         priority = createCategory(priority, "Гаджеты", Sets.newHashSet(new String[]{"Мобильный телефон", "Флешкарта", "Планшет", "Ноутбук", "Плеер", "Видеокамера", "Фотоаппарат"}));
         priority = createCategory(priority, "Украшения", Sets.newHashSet(new String[]{"Сережки", "Кольцо", "Браслет", "Цепочка", "Кулон", "Часы"}));
-        priority = createCategory(priority, "Другое", Sets.newHashSet(new String[]{}));
+        priority = createCategory(priority, "Другое", Sets.newHashSet(new String[]{"Другое"}));
     }
 
     private Integer createCategory(Integer priority, String name, Set<String> tags) {

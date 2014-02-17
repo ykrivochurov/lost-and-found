@@ -1,32 +1,36 @@
 <div class="home-wrapper animate-switch-container">
     <div class="left-panel animate-show" ng-show="!isCollapsed">
         <div class="right-panel-show {{!isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
-        <div class="top-logo">
-            <img class="img-logo" src="/img/logos/02_ico.png">
-            <img class="text-logo" src="/img/logos/02_b.png">
-            <span class="city">{{currentCity.name}}</span>
-        </div>
-        <div class="start-form clearfix">
-            <input type="text" name="where" placeholder="Где, укажите на карте" ng-model="laf.where">
-            <div class="what">
-                <div class="dropdown-toggle input-color">{{laf.tags[0] ? laf.tags[0] : 'Что'}}</div>
-                <ul class="dropdown-menu">
-                    <li ng-repeat="category in categories">
-                        {{category.name}}
-                        <a ng-repeat="tag in category.tags" ng-click="laf.tags = [tag]">{{tag}}</a>
-                    </li>
-                </ul>
+        <div class="v-align-table">
+            <div class="v-align-cell">
+            <div class="top-logo">
+                <img class="img-logo" src="/img/logos/02_ico.png">
+                <img class="text-logo" src="/img/logos/02_b.png">
+                <span class="city">{{currentCity.name}}</span>
             </div>
-            <input type="text" name="when" placeholder="Когда" datepicker-popup="{{dateFormat}}" show-button-bar="false"
-                   show-weeks="false" datepicker-append-to-body="true" ng-model="laf.when">
+            <div class="start-form clearfix">
+                <input type="text" name="where" placeholder="Где, укажите на карте" ng-model="laf.where">
+                <div class="what">
+                    <div class="dropdown-toggle input-color">{{laf.tags[0] ? laf.tags[0] : 'Что'}}</div>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="category in categories">
+                            {{category.name}}
+                            <a ng-repeat="tag in category.tags" ng-click="laf.tags = [tag]">{{tag}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <input type="text" name="when" placeholder="Когда" datepicker-popup="{{dateFormat}}" show-button-bar="false"
+                       show-weeks="false" datepicker-append-to-body="true" ng-model="laf.when">
 
-            <div class="buttons clearfix">
-                <button class="l-button colored-button" ng-click="createItem('LOST')">Я ПОТЕРЯЛ</button>
-                <button class="r-button colored-button" ng-click="createItem('FOUND')">Я НАШЕЛ</button>
+                <div class="buttons clearfix">
+                    <button class="l-button colored-button" ng-click="createItem('LOST')">Я ПОТЕРЯЛ</button>
+                    <button class="r-button colored-button" ng-click="createItem('FOUND')">Я НАШЕЛ</button>
+                </div>
+            </div>
+            <div class="show-list clearfix">
+                <div class="dashed-text" ng-click="collapse()">Перейти к списку объявлений</div>
             </div>
         </div>
-        <div class="show-list clearfix">
-            <div class="dashed-text" ng-click="collapse()">Перейти к списку объявлений</div>
         </div>
     </div>
     <div id="map-panel" class="map-panel"></div>
@@ -54,19 +58,17 @@
         </div>
         <div class="search-block left-margin">
             <span ng-click="clearCategorySelection()">
-                <img src="/img/icon_menu2.png" alt="" tooltip="Вернуться к списку категорий"
-                     tooltip-placement="right" tooltip-trigger="mouseenter">
+                <img src="/img/icon_menu.png" alt="">
             </span>
             <input type="text" placeholder="Искать" ng-model="searchQuery"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
         </div>
         <div class="selected-category left-margin clearfix" ng-show="selectedCategory != null">
-            <span tooltip="Вернуться к объявлений" ng-click="goToSelectedCategory()">
-                <span class="name">{{selectedCategory.name}}</span>
-                <span class="tag" ng-show="selectedTag != null">/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
+            <span class="back" ng-click="selectedItem != null ? goToSelectedCategory() : clearCategorySelection()">{{selectedItem != null ? 'К списку объявлений' : 'К списку категорий'}}</span>
+            <span class="name-tag">
+                {{selectedCategory.name}}
+                <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
             </span>
-            <div class="prev-laf-item" ng-show="selectedItem != null && hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
-                    src="/img/top.png" alt="prev"></div>
         </div>
         <div class="nano" style="height: {{itemsListHeight}}px" ng-show="selectedItem != null">
             <div class="content details-block left-margin">
@@ -74,6 +76,8 @@
                     <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
                     <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
                     <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
+                    <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
+                            src="/img/top.png" alt="prev"></div>
                 </div>
                 <div class="clearfix">
                     <div class="picture">
@@ -84,13 +88,11 @@
                 </div>
                 <div class="when-where-section clearfix">
                     <div class="icon-label-b where-b">
-                        <!--todo утеряно/найдено-->
-                        <div class="label-b">где утеряно</div>
+                        <div class="label-b">где {{selectedItem.itemType == 'LOST' ? 'утеряно' : 'найдено'}}</div>
                         <div class="text-b">{{selectedItem.where}}</div>
                     </div>
                     <div class="icon-label-b when-b">
-                        <!--todo утеряно/найдено-->
-                        <div class="label-b">когда утеряно</div>
+                        <div class="label-b">когда {{selectedItem.itemType == 'LOST' ? 'утеряно' : 'найдено'}}</div>
                         <div class="text-b">
                             <span class="day">{{selectedItem.when | date:'dd'}}</span>
                             <span class="month">{{selectedItem.when | date:'MMM'}}</span>
@@ -99,8 +101,8 @@
                     </div>
                 </div>
                 <div class="tags-section" ng-show="selectedItem.tags.length > 0">
-                    <span class="tags-label">Tags:</span>
-                    <span class="tags">{{joinTags(selectedItem.tags)}}</span>
+                    <span class="tags-label">Категории:</span>
+                    <span class="tags {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}">{{joinTags(selectedItem.tags)}}</span>
                 </div>
                 <div class="contacts-section clearfix">
                     <div class="clearfix" ng-show="selectedItem.user && selectedItem.user.name">
@@ -123,14 +125,14 @@
                     <div class="icon-label-b pen-b">
                         <div class="text-b">Написать личное сообщение</div>
                     </div>
+                    <div class="next-laf-item" ng-show="hasNextItem(selectedItem, false)" ng-click="openNextItem(selectedItem, false)"><img
+                            src="/img/bottom.png" alt="prev"></div>
                 </div>
                 <div class="share-section">
                     <span>Поделиться</span>
                     <img src="/img/share_twitt.png" alt="Twitter">
                     <img src="/img/share_vkontacte.png" alt="ВКонтакте">
                     <img src="/img/share_facebook.png" alt="Facebook">
-                    <div class="next-laf-item" ng-show="hasNextItem(selectedItem, false)" ng-click="openNextItem(selectedItem, false)"><img
-                            src="/img/bottom.png" alt="prev"></div>
                 </div>
             </div>
         </div>
@@ -145,7 +147,7 @@
                     </div>
                     <div class="what" ng-click="openItem(item)">{{item.what}}</div>
                     <!--todo каждый тэг отдельно кликабельный!!-->
-                    <div><span class="tags-label" ng-show="item.tags.length > 0">Tags:</span><span class="tags"
+                    <div><span class="tags-label" ng-show="item.tags.length > 0">Категории:</span><span class="tags {{item.itemType == 'LOST' ? 'lost' : 'found'}}"
                                                                                                    ng-show="item.tags.length > 0">{{joinTags(item.tags)}}</span>
                     </div>
                 </div>
@@ -241,6 +243,14 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix">
+            <div class="refund-info">
+                <label>
+                    <input type="checkbox" ng-model="laf.money">
+                    <span>За вознаграждение</span>
+                </label>
+            </div>
+        </div>
         <div class="tags clearfix">
             <div class="tags-wrapper" ng-show="laf.tags.length > 0">
                 <span class="tags-label">Категории:</span>
@@ -263,7 +273,7 @@
             <div class="private-info">
                 <label>
                     <input type="checkbox" ng-model="laf.showPrivateInfo">
-                    Публикация контактов
+                    <span>Публикация контактов</span>
                 </label>
             </div>
             <div class="clearfix">

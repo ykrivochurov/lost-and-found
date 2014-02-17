@@ -52,18 +52,20 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   };
 
   $scope.itemAdded = function (item) {
-    var firstTag = item.tags[0];
-    var countForTag = $scope.categoriesCounts[firstTag];
-    if (UtilsService.isNotEmpty(countForTag)) {
-      countForTag++;
-      $scope.categoriesCounts[firstTag] = countForTag;
-      console.log('+1');
-      $scope.categoriesRedraw();
-    } else {
-      $scope.categoriesCounts[firstTag] = 1;
-      $scope.categoriesRedraw();
+    if ($scope.categoriesListType == item.itemType) {
+      var firstTag = item.tags[0];
+      var countForTag = $scope.categoriesCounts[firstTag];
+      if (UtilsService.isNotEmpty(countForTag)) {
+        countForTag++;
+        $scope.categoriesCounts[firstTag] = countForTag;
+        console.log('+1');
+        $scope.categoriesRedraw();
+      } else {
+        $scope.categoriesCounts[firstTag] = 1;
+        $scope.categoriesRedraw();
+      }
+      MapService.createMarker(item);
     }
-    MapService.createMarker(item);
   };
 
   $scope.getCountByTag = function (tag) {
@@ -245,6 +247,9 @@ function CreateItemModalCtrl($scope, $modalInstance, $timeout, UtilsService, Aut
   $scope.authService = AuthService;
   console.log($scope.currentUser);
   $scope.itemType = itemType;
+  if (UtilsService.isNotEmptyArray($scope.laf.tags)) {
+    $scope.laf.what = WHAT_PREDEF[$scope.laf.tags[0]];
+  }
   $scope.laf.itemType = itemType;
   MapService.getLocationObject();
 

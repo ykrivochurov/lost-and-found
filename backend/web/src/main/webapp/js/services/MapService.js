@@ -21,8 +21,8 @@ angular.module('laf').
           controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
           controllerScope.currentLocationMarker = new DG.Markers.Common({
             geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]),
-            icon: new DG.Icon('/img/pins/p_00_poterial.png', new DG.Size(30, 48)),
-            hoverIcon: new DG.Icon('/img/pins/p_00_poterial_big.png', new DG.Size(80, 128))
+            icon: new DG.Icon('/img/pins/P-ia_poterial_mini.png', new DG.Size(46, 68)),
+            hoverIcon: new DG.Icon('/img/pins/P-ia_poterial.png', new DG.Size(80, 128))
           });
           controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker, defaultGroupName);
 
