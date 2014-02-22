@@ -19,6 +19,7 @@
         <db.name>laf</db.name>
         <db.user>admin</db.user>
         <db.password>pAssw0rd</db.password>
+        <imagemagick.path>/usr/bin/</imagemagick.path>
     </properties>
 
     <build>
