@@ -1,7 +1,8 @@
 var app = angular.module('laf', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate']).
   config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
-      when('/', {templateUrl: 'home', controller: HomeController}).
+      when('/', {templateUrl: 'landing-page'}).
+      when('/home', {templateUrl: 'home', controller: HomeController}).
       otherwise({redirectTo: '/'});
   }]);
 

@@ -1,0 +1,14 @@
+.app-wrapper .lp-body {
+    width: 100%;
+    height: 100%;
+}
+
+.app-wrapper .lp-body .laf-logo-cell {
+    background: url('/img/logos/02_bg.png') no-repeat rgb(255, 255, 255) center center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.app-wrapper .lp-body .laf-logo-cell .img-logo {
+    margin-bottom: 30px;
+}

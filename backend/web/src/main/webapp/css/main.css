@@ -3,6 +3,7 @@
 @import "animation.css";
 @import "scroll.css";
 @import "map.css";
+@import "landing-page.css";
 
 body {
     overflow: hidden;
