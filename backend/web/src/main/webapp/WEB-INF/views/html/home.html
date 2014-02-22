@@ -4,7 +4,7 @@
         <div class="v-align-table">
             <div class="v-align-cell">
             <div class="top-logo">
-                <img class="img-logo" src="/img/logos/02_ico.png">
+                <img class="img-logo" src="/img/icon_left_panel.png">
                 <img class="text-logo" src="/img/logos/02_b.png">
                 <span class="city">{{currentCity.name}}</span>
             </div>
@@ -82,7 +82,8 @@
                 <div class="clearfix">
                     <div class="picture">
                         <span class="img-va-helper"></span>
-                        <img src="/img/sample.png">
+                        <img src="api/items/photo/{{selectedItem.thumbnailId}}" ng-show="selectedItem.thumbnailId" ng-click="showFullSIzeImage(selectedItem)">
+                        <!--<img src="/img/sample.png" ng-show="!selectedItem.photoId"> todo placeholder-->
                     </div>
                     <div class="what">{{selectedItem.what}}</div>
                 </div>
@@ -204,10 +205,16 @@
     </div>
 </div>
 
+<script type="text/ng-template" id="full-size-image.html">
+    <div>
+        <img src="api/items/photo/{{item.photoId}}" style="max-height: 550px; max-width: 550px;">
+    </div>
+</script>
+
 <script type="text/ng-template" id="create-item-modal.html">
 
     <div class="ci-popup creation-form {{itemType == 'LOST' ? 'lost' : 'found'}}">
-        <div class="creation-date">
+        <div class="creation-date" ng-click="showSpinner()">
             <span class="day">{{laf.creationDate | date:'dd'}}</span>
             <span class="month">{{laf.creationDate | date:'MMMM'}}</span>
             <span class="year">{{laf.creationDate | date:'yyyy'}}</span>
@@ -217,12 +224,13 @@
                 <textarea ng-model="laf.what" placeholder="Что"></textarea>
             </div>
             <div class="picture-block">
-                <span>Загрузить фото</span>
+                <span><label for="photos-input">Загрузить фото</label></span>
 
                 <div class="picture">
                     <span class="img-va-helper"></span>
-                    <img src="/img/icon_camera.png">
+                    <img id="photo-preview" src="/img/icon_camera.png">
                 </div>
+                <input type="file" class="hidden" name="photos" id="photos-input" ng-model="photoPath" ng-change="uploadPhoto()">
             </div>
         </div>
         <div class="clearfix">

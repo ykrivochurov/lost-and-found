@@ -163,7 +163,7 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   $scope.createItem = function (itemType) {
     var modalInstance = $modal.open({
       templateUrl: 'create-item-modal.html',
-      controller: CreateItemModalCtrl,
+      controller: ItemCreateModalController,
       scope: $scope,
       resolve: {
         itemType: function () {
@@ -178,6 +178,21 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     }, function () {
       console.log('Modal dismissed at: ' + new Date());
     });
+  };
+
+  $scope.showFullSIzeImage = function (item) {
+    if (UtilsService.isNotEmpty(item.photoId)) {
+      $modal.open({
+        templateUrl: 'full-size-image.html',
+        controller: ImageViewModalController,
+        windowClass: 'full-size-image-modal',
+        resolve: {
+          item: function () {
+            return item;
+          }
+        }
+      });
+    }
   };
 
   // All about map
@@ -229,7 +244,9 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     $scope.calcScrollHeights();
     $timeout(function () {
       $('.categories-list-scroll').nanoScroller();
-    });
+      $(".pane").css("display", "block");
+      $(".slider").css("display", "block");
+    }, 2000);
     //todo move to directive
   });
 
@@ -240,61 +257,4 @@ function joinTagsObjects(tags) {
     return tags.join(', ');
   }
   return null;
-}
-
-function CreateItemModalCtrl($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, UsersService, MapService, itemType) {
-
-  $scope.authService = AuthService;
-  console.log($scope.currentUser);
-  $scope.itemType = itemType;
-  if (UtilsService.isNotEmptyArray($scope.laf.tags)) {
-    $scope.laf.what = WHAT_PREDEF[$scope.laf.tags[0]];
-  }
-  $scope.laf.itemType = itemType;
-  MapService.getLocationObject();
-
-  $scope.setCurrentUser = function (user) {
-    $scope.currentUser = user;
-    if (!$scope.$$phase) {
-      $scope.$apply();
-    }
-  };
-
-  $scope.saveItem = function () {
-    $scope.laf.cityId = $scope.currentCity.id;
-    $scope.laf.location = MapService.getLocationObject();
-    ItemsService.crud.create($scope.laf, function (item) {
-      console.log('Item created: ' + JSON.stringify(item));
-      $scope.itemAdded(item);
-      $scope.renewLaf();
-      UsersService.crud.update($scope.currentUser);
-      $modalInstance.dismiss('cancel');
-    });
-  };
-
-  $scope.addTag = function (tag) {
-    if ($scope.laf.tags.indexOf(tag) == -1 && UtilsService.isNotBlank(tag)) {
-      $scope.laf.tags.push(tag);
-    }
-  };
-
-  $scope.removeTag = function (tag) {
-    var index = $scope.laf.tags.indexOf(tag);
-    if (index > -1) {
-      $scope.laf.tags.splice(index, 1);
-    }
-  };
-
-  $scope.ok = function () {
-    $modalInstance.close(itemType);
-  };
-
-  $scope.cancel = function () {
-    $scope.renewLaf();
-    $modalInstance.dismiss('cancel');
-  };
-
-  $timeout(function () {
-    $(".phone-mask").mask("+7 (999) 999-9999");
-  });
 }

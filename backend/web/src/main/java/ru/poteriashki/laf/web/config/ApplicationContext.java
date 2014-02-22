@@ -13,6 +13,8 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import ru.eastbanctech.resources.config.MongoConnectionConfig;
+import ru.eastbanctech.resources.config.MongoResourceServiceConfig;
 import ru.poteriashki.laf.core.config.BaseConfiguration;
 import ru.poteriashki.laf.core.config.InitConfiguration;
 import ru.poteriashki.laf.core.config.PersistenceMongoConfig;
@@ -23,7 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@Import({BaseConfiguration.class, PropHolderConfig.class, PersistenceMongoConfig.class, InitConfiguration.class})
+@Import({BaseConfiguration.class, PropHolderConfig.class, PersistenceMongoConfig.class, InitConfiguration.class,
+        MongoConnectionConfig.class, MongoResourceServiceConfig.class})
 @PropertySource("classpath:application.properties")
 public class ApplicationContext extends WebMvcConfigurerAdapter {
 
@@ -32,7 +35,7 @@ public class ApplicationContext extends WebMvcConfigurerAdapter {
 
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setDefaultEncoding("UTF-8");
-        resolver.setMaxUploadSize(52428800);
+        resolver.setMaxUploadSize(5242880);
         resolver.setMaxInMemorySize(5242880);
 
         return resolver;

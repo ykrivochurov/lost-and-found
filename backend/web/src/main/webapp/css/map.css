@@ -1,0 +1,57 @@
+/* Balloon */
+.balloon-content {
+    border-radius: 4px;
+    border: 10px solid rgba(255, 255, 255, 0.6);
+}
+
+.balloon-content > div {
+    width: 250px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 1px solid rgb(213, 213, 213);
+    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
+    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
+    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
+    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
+    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
+}
+
+.balloon-content .when {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 120%;
+    color: rgb(255, 255, 255);
+}
+
+.balloon-content.lost .when {
+    background-color: rgb(222, 77, 12);
+}
+
+.balloon-content.found .when {
+    background-color: rgb(30, 164, 213);
+}
+
+/* end Balloon */
+
+/* Full screen button on map */
+
+.app-wrapper .dg-map-btn-fullscreen {
+    display: none;
+}
+
+/* end Full screen button on map */
+
+.app-wrapper .dg-callout-tail {
+    display: none;
+}
+
+.app-wrapper .dg-callout-scroll-fade,
+.app-wrapper .dg-callout-top,
+.app-wrapper .dg-callout-bottom,
+.app-wrapper .dg-callout-content {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}

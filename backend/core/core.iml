@@ -77,7 +77,7 @@
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:4.2.7.Final" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.27" level="project" />
     <orderEntry type="library" name="Maven: org.hsqldb:hsqldb:2.3.1" level="project" />
-    <orderEntry type="library" name="Maven: ru.eastbanctech:mongo-resource-management:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: ru.eastbanctech:mongo-resource-management:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.11.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: cglib:cglib-nodep:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.im4java:im4java:1.4.0" level="project" />

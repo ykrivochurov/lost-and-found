@@ -6,23 +6,30 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+import org.springframework.web.multipart.MultipartFile;
+import ru.eastbanctech.resources.services.ImageResourceInfo;
+import ru.eastbanctech.resources.services.ServiceException;
+import ru.eastbanctech.resources.services.impl.ResourceService;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
+import ru.poteriashki.laf.core.model.TempResource;
 import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.repositories.CategoryRepository;
 import ru.poteriashki.laf.core.repositories.ICounterDao;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
+import ru.poteriashki.laf.core.repositories.TempResourceRepository;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 import ru.poteriashki.laf.core.service.IUserService;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -38,10 +45,16 @@ public class LostAndFoundService implements ILostAndFoundService {
     private ItemRepository itemRepository;
 
     @Autowired
+    private ResourceService resourceService;
+
+    @Autowired
     private IUserService userService;
 
+    @Autowired
+    private TempResourceRepository tempResourceRepository;
+
     @Override
-    public Item createItem(Item item, User user, Set<String> photoIds) {
+    public Item createItem(Item item, User user) throws InterruptedException, IOException, ServiceException {
         Assert.notNull(item);
         Assert.notEmpty(item.getTags());
         Assert.hasText(item.getWhat());
@@ -49,7 +62,6 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(item.getWhen());
         Assert.notNull(user);
         item.setAuthor(user.getId());
-        item.setPhotosIds(photoIds);
         item.setFinished(false);
         item.setCreationDate(new Date());
         Category category = null;
@@ -58,7 +70,22 @@ public class LostAndFoundService implements ILostAndFoundService {
             break;
         }
         item.setMainCategory(category != null ? category.getName() : null);
-        return itemRepository.save(item);
+
+        if (item.getPhotoId() != null) {
+            ImageResourceInfo imageResourceInfo = resourceService.saveWithAnotherSize(item.getPhotoId(), 100, 100, false);
+            item.setThumbnailId(imageResourceInfo.getId());
+        }
+
+        Item savedItem = itemRepository.save(item);
+
+        if (savedItem.getPhotoId() != null) {
+            TempResource tempResource = tempResourceRepository.findOneByFileId(savedItem.getPhotoId());
+            if (tempResource != null) {
+                tempResourceRepository.delete(tempResource);
+            }
+        }
+
+        return savedItem;
     }
 
     @Override
@@ -105,6 +132,25 @@ public class LostAndFoundService implements ILostAndFoundService {
         }
 
         return itemsPage;
+    }
+
+    @Override
+    public String createPhoto(MultipartFile fileData) throws IOException, ServiceException {
+        String fileId = resourceService.saveMultipart(fileData);
+        tempResourceRepository.save(new TempResource(fileId, new Date()));
+        return fileId;
+    }
+
+    @Override
+    @Scheduled(fixedRate = 86400000)
+    public void cleanupUselessPhotos() throws ServiceException {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(calendar.getTimeInMillis() - TimeUnit.HOURS.toMillis(2));
+        List<TempResource> tempResources = tempResourceRepository.findByCreationDateGreaterThan(calendar.getTime());
+        for (TempResource tempResource : tempResources) {
+            resourceService.delete(tempResource.getFileId());
+            tempResourceRepository.delete(tempResource);
+        }
     }
 
     private Date getAvailableDate() {

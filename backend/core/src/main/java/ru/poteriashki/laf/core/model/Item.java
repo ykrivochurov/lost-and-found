@@ -28,7 +28,9 @@ public class Item extends BaseEntity {
 
     private String author;
 
-    private Set<String> photosIds = new HashSet<>();
+    private String photoId;
+
+    private String thumbnailId;
 
     private Double[] location; // lng, lat
 
@@ -109,12 +111,12 @@ public class Item extends BaseEntity {
         this.author = author;
     }
 
-    public Set<String> getPhotosIds() {
-        return photosIds;
+    public String getPhotoId() {
+        return photoId;
     }
 
-    public void setPhotosIds(Set<String> photosIds) {
-        this.photosIds = photosIds;
+    public void setPhotoId(String photoId) {
+        this.photoId = photoId;
     }
 
     public Double[] getLocation() {
@@ -163,5 +165,13 @@ public class Item extends BaseEntity {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getThumbnailId() {
+        return thumbnailId;
+    }
+
+    public void setThumbnailId(String thumbnailId) {
+        this.thumbnailId = thumbnailId;
     }
 }

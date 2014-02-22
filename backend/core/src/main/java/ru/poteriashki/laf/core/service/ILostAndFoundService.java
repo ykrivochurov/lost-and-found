@@ -1,18 +1,22 @@
 package ru.poteriashki.laf.core.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.multipart.MultipartFile;
+import ru.eastbanctech.resources.services.*;
+import ru.eastbanctech.resources.services.ServiceException;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
 import ru.poteriashki.laf.core.model.User;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public interface ILostAndFoundService {
 
-    Item createItem(Item item, User user, Set<String> photoIds);
+    Item createItem(Item item, User user) throws InterruptedException, IOException, ru.eastbanctech.resources.services.ServiceException;
 
     Map<String, Float> getCountsByTags(ItemType itemType);
 
@@ -21,4 +25,9 @@ public interface ILostAndFoundService {
     Page<Item> getItems(ItemType itemType, String category, String tag, String cityId, Integer pageNumber, Integer pageSize);
 
     List<Item> getItemsForMarkers(ItemType itemType, String cityId);
+
+    String createPhoto(MultipartFile fileData) throws IOException, ServiceException;
+
+    @Scheduled(cron = "")
+    void cleanupUselessPhotos() throws ru.eastbanctech.resources.services.ServiceException;
 }

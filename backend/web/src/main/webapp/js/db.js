@@ -1,3 +1,22 @@
+SPINER_OPTS = {
+  lines: 9,
+  length: 1,
+  width: 3,
+  radius: 6,
+  corners: 1,
+  rotate: 0,
+  direction: 1,
+  color: '#000',
+  speed: 0.9,
+  trail: 62,
+  shadow: false,
+  hwaccel: false,
+  className: 'spinner',
+  zIndex: 2e9,
+  top: 'auto',
+  left: 'auto'
+};
+
 WHAT_PREDEF = {
   'Кошки': 'Кошку',
   'Собаки': 'Собаку',

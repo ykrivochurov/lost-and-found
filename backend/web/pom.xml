@@ -256,6 +256,10 @@
             <groupId>org.webjars</groupId>
             <artifactId>nanoScrollerJS</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>spin-js</artifactId>
+        </dependency>
 
         <!-- Testing -->
         <dependency>
