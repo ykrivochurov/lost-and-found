@@ -19,8 +19,9 @@ angular.module('laf').
 //          headers: { 'Content-Type': 'application/json' }
 //        }).success(success).error(fail);
       },
-      crud: $resource('api/items/:itemId:markers', {itemId: '@itemId', markers: '@markers'},
+      crud: $resource('api/items/:number:markers', {number: '@number', markers: '@markers'},
         {
+          getByNumber: {method: 'GET', params: {number: '@number'}},
           create: {method: 'PUT'},
           getByCatAndTag: {method: 'GET', params: {itemType: '@itemType', category: '@category', tag: '@tag', cityId: '@cityId', pageNumber: '@pageNumber'}},
           getMarkers: {method: 'GET', params: {itemType: '@itemType', category: '@category', tag: '@tag', cityId: '@cityId', markers: 'markers'}, isArray: true}

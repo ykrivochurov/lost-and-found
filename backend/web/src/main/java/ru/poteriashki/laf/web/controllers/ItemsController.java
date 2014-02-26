@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import ru.eastbanctech.resources.services.IResourceService;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
+import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 import ru.poteriashki.laf.core.service.ServiceException;
 import ru.poteriashki.laf.web.security.UserContext;
@@ -36,6 +37,9 @@ public class ItemsController {
     @Autowired
     private ILostAndFoundService lostAndFoundService;
 
+    @Autowired
+    private ItemRepository itemRepository;
+
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
     public Item create(@RequestBody Item item) throws InterruptedException, IOException,
@@ -49,6 +53,12 @@ public class ItemsController {
                           @RequestParam(value = "tag", required = false) String tag, @RequestParam(value = "cityId") String cityId,
                           @RequestParam("pageNumber") Integer pageNumber) {
         return lostAndFoundService.getItems(itemType, category, tag, cityId, pageNumber, 100000); //todo paging
+    }
+
+    @RequestMapping(value = "/{number}", method = RequestMethod.GET)
+    @ResponseBody
+    public Item one(@PathVariable("number") Integer number) {
+        return itemRepository.findOneByNumber(number);
     }
 
     @RequestMapping(value = "/markers", method = RequestMethod.GET)

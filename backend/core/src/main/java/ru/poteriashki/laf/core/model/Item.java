@@ -44,6 +44,8 @@ public class Item extends BaseEntity {
 
     private String cityId;
 
+    private Integer number;
+
     @Transient
     private User user;
 
@@ -173,5 +175,13 @@ public class Item extends BaseEntity {
 
     public void setThumbnailId(String thumbnailId) {
         this.thumbnailId = thumbnailId;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }

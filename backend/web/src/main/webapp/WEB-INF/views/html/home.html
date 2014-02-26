@@ -78,6 +78,8 @@
                     <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
                     <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
                             src="/img/top.png" alt="prev"></div>
+                    <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
+                       tooltip-placement="bottom" ng-click="getItemLink(selectedItem); $event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
                 </div>
                 <div class="clearfix">
                     <div class="picture">
@@ -131,9 +133,9 @@
                 </div>
                 <div class="share-section">
                     <span>Поделиться</span>
-                    <img src="/img/share_twitt.png" alt="Twitter">
-                    <img src="/img/share_vkontacte.png" alt="ВКонтакте">
-                    <img src="/img/share_facebook.png" alt="Facebook">
+                    <img src="/img/share_twitt.png" alt="Twitter" ng-click="shareService.twitter(selectedItem)">
+                    <img src="/img/share_vkontacte.png" alt="ВКонтакте" ng-click="shareService.vkontakte(selectedItem)">
+                    <img src="/img/share_facebook.png" alt="Facebook" ng-click="shareService.facebook(selectedItem)">
                     <img src="/img/complain.png" alt="Пожаловаться">
                     <span class="complain">Пожаловаться</span>
                 </div>
@@ -146,6 +148,7 @@
                         <span class="day">{{item.creationDate | date:'dd'}}</span>
                         <span class="month">{{item.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{item.creationDate | date:'yyyy'}}</span>
+                        <a href="/#/home?number={{item.number}}" class="item-number {{item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="getItemLink(item); $event.stopPropagation();">#&nbsp;{{item.number}}</a>
                         <span class="money" ng-show="item.money" tooltip="За вознаграждение!" tooltip-placement="left">&nbsp;</span>
                     </div>
                     <div class="what" ng-click="openItem(item)">{{item.what}}</div>

@@ -76,7 +76,7 @@ public class LostAndFoundService implements ILostAndFoundService {
             item.setThumbnailId(imageResourceInfo.getId());
         }
 
-        Item savedItem = itemRepository.save(item);
+        Item savedItem = saveInternal(item);
 
         if (savedItem.getPhotoId() != null) {
             TempResource tempResource = tempResourceRepository.findOneByFileId(savedItem.getPhotoId());
@@ -86,6 +86,18 @@ public class LostAndFoundService implements ILostAndFoundService {
         }
 
         return savedItem;
+    }
+
+    private synchronized Item saveInternal(Item item) {
+        Pageable pageable = new PageRequest(0, 1, new Sort(Sort.Direction.DESC, "number"));
+        Page<Item> items = itemRepository.findAll(pageable);
+        if (items.hasContent()) {
+            Item prevItem = items.getContent().get(0);
+            item.setNumber(prevItem.getNumber() + 1);
+        } else {
+            item.setNumber(1);
+        }
+        return itemRepository.save(item);
     }
 
     @Override

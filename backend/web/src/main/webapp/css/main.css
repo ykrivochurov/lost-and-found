@@ -785,9 +785,40 @@ button:focus {
     background: url('../img/money_icon.png') no-repeat transparent center center;
     height: 26px;
     width: 26px;
+    float: right;
+}
+
+.home-wrapper .item-number:hover,
+.home-wrapper .item-number:visited,
+.home-wrapper .item-number {
+    float: right;
+    color: rgb(255, 255, 255);
+    padding: 1px 5px 0px;
+    border-radius: 4px;
+    margin-top: 7px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.home-wrapper .details-block .item-number:hover,
+.home-wrapper .details-block .item-number:visited,
+.home-wrapper .details-block .item-number {
+    margin-top: 13px;
+    margin-right: 13px;
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 35px;
+}
+
+.home-wrapper .item-number.found:visited,
+.home-wrapper .item-number.found:hover,
+.home-wrapper .item-number.found {
+    background-color: rgb(30, 191, 228);
+}
+
+.home-wrapper .item-number.lost:visited,
+.home-wrapper .item-number.lost:hover,
+.home-wrapper .item-number.lost {
+    background-color: rgb(222, 77, 12);
 }
 
 /* Share section */
