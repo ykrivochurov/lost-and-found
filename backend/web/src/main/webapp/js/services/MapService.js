@@ -1,5 +1,5 @@
 angular.module('laf').
-  factory('MapService', function ($timeout, $sce, UtilsService, GeoLocationService, ItemsService) {
+  factory('MapService', function ($q, $timeout, $sce, UtilsService, GeoLocationService, ItemsService) {
     moment.lang('ru');
     var defaultGroupName = 'default_markers';
     var controllerScope;
@@ -87,7 +87,7 @@ angular.module('laf').
         }
 
 //        controllerScope.showBusy('Загрузка объявлений...');
-
+        var deferred = $q.defer();
         console.log('outside timer');
         controllerScope.rebuildMarkersPromise = $timeout(function () {
           console.log('inside timer');
@@ -98,9 +98,11 @@ angular.module('laf').
               for (var i = 0; i < items.length; i++) {
                 self.createMarker(items[i]);
               }
+              deferred.resolve();
             });
 //          controllerScope.hideBusy();
         }, 100);
+        return deferred.promise;
       },
 
       removeMarkers: function () {

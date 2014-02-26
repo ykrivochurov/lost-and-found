@@ -1,4 +1,4 @@
-function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService) {
+function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService) {
   $scope.authService = AuthService;
   $scope.mapService = MapService;
   $scope.lafBusy = false;
@@ -31,6 +31,15 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     lostAndFoundItems: []
   };
 
+  $scope.getCategoryByName = function (name) {
+    for (var i = 0; i < $scope.categories.length; i++) {
+      var category = $scope.categories[i];
+      if (category.name == name) {
+        return category;
+      }
+    }
+  };
+
   $scope.renewLaf = function () {
     $scope.laf = {when: '', where: '', what: '', creationDate: new Date().getTime(), tags: []};
   };
@@ -38,11 +47,14 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   $scope.renewLaf();
 
   $scope.refreshCategories = function () {
+    var deferred = $q.defer();
     $scope.categoriesCounts = CategoriesService.crud.counts({itemType: $scope.categoriesListType}, function (counts) {
       if (UtilsService.isEmptyArray($scope.categories)) {
         $scope.categories = CategoriesService.crud.all();
       }
+      deferred.resolve();
     });
+    return deferred.promise;
   };
 
   $scope.refreshCategories();
@@ -52,6 +64,21 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   };
 
   $scope.itemAdded = function (item) {
+    var deferred = $q.defer();
+    deferred.promise.then(function() {
+      $scope.isCollapsed = true;
+      $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0]).then(function() {
+        // get item from db if exists
+        for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
+          var dbItem = $scope.itemsList.lostAndFoundItems[i];
+          if (dbItem.id == item.id) {
+            item = dbItem;
+            break;
+          }
+        }
+        $scope.openItem(item);
+      });
+    });
     if ($scope.categoriesListType == item.itemType) {
       var firstTag = item.tags[0];
       var countForTag = $scope.categoriesCounts[firstTag];
@@ -65,6 +92,11 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
         $scope.categoriesRedraw();
       }
       MapService.createMarker(item);
+      deferred.resolve();
+    } else {
+      $scope.setCategoriesListType(item.itemType).then(function() {
+        deferred.resolve();
+      });
     }
   };
 
@@ -81,16 +113,23 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
   };
 
   $scope.setCategoriesListType = function (value) {
+    var deferred = $q.defer();
     $scope.categoriesListType = value;
     angular.element('.lost-b').toggleClass('active', angular.equals(value, 'LOST'));
     angular.element('.found-b').toggleClass('active', angular.equals(value, 'FOUND'));
-    $scope.refreshCategories();
-    MapService.rebuildMarkers();
-    $scope.clearCategorySelection();
-    MapService.hideAllBalloons();
+    $scope.refreshCategories().then(function () {
+      MapService.hideBalloonForItem($scope.selectedItem);
+      MapService.rebuildMarkers().then(function () {
+        $scope.clearCategorySelection();
+        MapService.hideAllBalloons();
+        deferred.resolve();
+      });
+    });
+    return deferred.promise;
   };
 
   $scope.selectCategoryAndTag = function (category, tag) {
+    var deferred = $q.defer();
     $scope.itemsList = {
       page: null,
       lostAndFoundItems: []
@@ -106,18 +145,24 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
       if (UtilsService.isNotEmptyArray($scope.itemsList.lostAndFoundItems)) {
         $scope.mapService.showMarkersForCategory($scope.selectedCategory);
       }
+      deferred.resolve();
       $timeout(function () {
         // recalculate scroll heights
         $scope.calcScrollHeights();
         $('.items-list-scroll').nanoScroller();
       });
     });
+    return deferred.promise;
   };
 
   $scope.goToSelectedCategory = function () {
     MapService.hideAllBalloons();
     $scope.selectedItem = null;
     $scope.showSelectedCategory = true;
+    $scope.selectCategoryAndTag(
+      $scope.selectedCategory,
+      $scope.selectedTag
+    );
   };
 
   $scope.clearCategorySelection = function () {
@@ -125,7 +170,6 @@ function HomeController($scope, $modal, $timeout, $animate, $sce, GeoLocationSer
     $scope.showCategoriesList = true;
     $scope.selectedCategory = null;
     $scope.selectedTag = null;
-    MapService.hideBalloonForItem($scope.selectedItem);
     MapService.hideAllBalloons();
     $scope.selectedItem = null;
     $scope.mapService.showMarkersForCategory();

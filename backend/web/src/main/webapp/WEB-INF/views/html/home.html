@@ -82,8 +82,8 @@
                 <div class="clearfix">
                     <div class="picture">
                         <span class="img-va-helper"></span>
-                        <img src="api/items/photo/{{selectedItem.thumbnailId}}" ng-show="selectedItem.thumbnailId" ng-click="showFullSIzeImage(selectedItem)">
-                        <!--<img src="/img/sample.png" ng-show="!selectedItem.photoId"> todo placeholder-->
+                        <img class="thumbnail-img" src="api/items/photo/{{selectedItem.thumbnailId}}" ng-show="selectedItem.thumbnailId" ng-click="showFullSIzeImage(selectedItem)">
+                        <img src="/img/icon_camera.png" ng-show="!selectedItem.photoId">
                     </div>
                     <div class="what">{{selectedItem.what}}</div>
                 </div>
@@ -134,6 +134,8 @@
                     <img src="/img/share_twitt.png" alt="Twitter">
                     <img src="/img/share_vkontacte.png" alt="ВКонтакте">
                     <img src="/img/share_facebook.png" alt="Facebook">
+                    <img src="/img/complain.png" alt="Пожаловаться">
+                    <span class="complain">Пожаловаться</span>
                 </div>
             </div>
         </div>
