@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import org.springframework.web.multipart.MultipartFile;
 import ru.eastbanctech.resources.services.ImageResourceInfo;
-import ru.eastbanctech.resources.services.ServiceException;
 import ru.eastbanctech.resources.services.impl.ResourceService;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.model.Item;
@@ -23,7 +22,9 @@ import ru.poteriashki.laf.core.repositories.ICounterDao;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.repositories.TempResourceRepository;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
+import ru.poteriashki.laf.core.service.IMessageService;
 import ru.poteriashki.laf.core.service.IUserService;
+import ru.poteriashki.laf.core.service.ServiceException;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -53,8 +54,11 @@ public class LostAndFoundService implements ILostAndFoundService {
     @Autowired
     private TempResourceRepository tempResourceRepository;
 
+    @Autowired
+    private IMessageService messageService;
+
     @Override
-    public Item createItem(Item item, User user) throws InterruptedException, IOException, ServiceException {
+    public Item createItem(Item item, User user) throws InterruptedException, IOException, ru.eastbanctech.resources.services.ServiceException {
         Assert.notNull(item);
         Assert.notEmpty(item.getTags());
         Assert.hasText(item.getWhat());
@@ -119,6 +123,20 @@ public class LostAndFoundService implements ILostAndFoundService {
     }
 
     @Override
+    public Page<Item> getMyItems(User user, Integer pageNumber, Integer pageSize) throws ServiceException {
+        Assert.notNull(user);
+        Assert.notNull(pageNumber);
+        Assert.notNull(pageSize);
+
+        Pageable pageable = new PageRequest(pageNumber, pageSize, new Sort(Sort.Direction.DESC, "creationDate"));
+        Page<Item> byAuthor = itemRepository.findByAuthor(user.getId(), pageable);
+        for (Item item : byAuthor) {
+            item.setMessages(messageService.loadByItemId(item.getId(), user));
+        }
+        return byAuthor;
+    }
+
+    @Override
     public Page<Item> getItems(ItemType itemType, String category, String tag, String cityId,
                                Integer pageNumber, Integer pageSize) {
         Assert.notNull(itemType);
@@ -147,7 +165,7 @@ public class LostAndFoundService implements ILostAndFoundService {
     }
 
     @Override
-    public String createPhoto(MultipartFile fileData) throws IOException, ServiceException {
+    public String createPhoto(MultipartFile fileData) throws IOException, ru.eastbanctech.resources.services.ServiceException {
         String fileId = resourceService.saveMultipart(fileData);
         tempResourceRepository.save(new TempResource(fileId, new Date()));
         return fileId;
@@ -155,7 +173,7 @@ public class LostAndFoundService implements ILostAndFoundService {
 
     @Override
     @Scheduled(fixedRate = 86400000)
-    public void cleanupUselessPhotos() throws ServiceException {
+    public void cleanupUselessPhotos() throws ru.eastbanctech.resources.services.ServiceException {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(calendar.getTimeInMillis() - TimeUnit.HOURS.toMillis(2));
         List<TempResource> tempResources = tempResourceRepository.findByCreationDateGreaterThan(calendar.getTime());

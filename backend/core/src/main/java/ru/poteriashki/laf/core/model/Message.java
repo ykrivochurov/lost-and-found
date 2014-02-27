@@ -3,44 +3,46 @@ package ru.poteriashki.laf.core.model;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Document(collection = Message.COLLECTION)
 @JsonDeserialize
 public class Message extends BaseEntity {
 
     public static final String COLLECTION = "message";
 
-    private User sender;
+    private String receiver;
 
-    private User receiver;
-
-    private String title;
+    private String sender;
 
     private String text;
 
-    private String lostOrFoundId;
+    private String itemId;
 
-    public User getSender() {
+    private Date creationDate;
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public String getSender() {
         return sender;
     }
 
-    public void setSender(User sender) {
+    public void setSender(String sender) {
         this.sender = sender;
     }
 
-    public User getReceiver() {
+    public String getReceiver() {
         return receiver;
     }
 
-    public void setReceiver(User receiver) {
+    public void setReceiver(String receiver) {
         this.receiver = receiver;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getText() {
@@ -51,11 +53,11 @@ public class Message extends BaseEntity {
         this.text = text;
     }
 
-    public String getLostOrFoundId() {
-        return lostOrFoundId;
+    public String getItemId() {
+        return itemId;
     }
 
-    public void setLostOrFoundId(String lostOrFoundId) {
-        this.lostOrFoundId = lostOrFoundId;
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
 }

@@ -105,6 +105,13 @@ angular.module('laf').
         return deferred.promise;
       },
 
+      drawMarkersForMyItems: function (items) {
+        this.removeMarkers();
+        for (var i = 0; i < items.length; i++) {
+          this.createMarker(items[i]);
+        }
+      },
+
       removeMarkers: function () {
         console.log('Remove markers');
         var groupNames = controllerScope.categories;
@@ -118,6 +125,8 @@ angular.module('laf').
           console.log('Unable create marker for item.id = ' + item.id);
           return;
         }
+        angular.element('.balloon-content').removeClass('lost');
+        angular.element('.balloon-content').removeClass('found');
         if (item.itemType == 'LOST') {
           angular.element('.balloon-content').addClass('lost');
         } else {
@@ -148,7 +157,9 @@ angular.module('laf').
             var groupName = allGroupsNames[i];
             controllerScope.DGisMap.markers.getGroup(groupName).hide();
           }
-          selectedGroup.show();
+          if (UtilsService.isNotEmpty(selectedGroup)) {
+            selectedGroup.show();
+          }
           defaultGroup.show();
         } else {
           for (var i = 0; i < allGroupsNames.length; i++) {
@@ -174,7 +185,7 @@ angular.module('laf').
         }
       },
 
-      hideAllBalloons: function() {
+      hideAllBalloons: function () {
         var all = controllerScope.DGisMap.markers.getAll();
         for (var i = 0; i < all.length; i++) {
           if (UtilsService.isNotEmpty(all[i]) && UtilsService.isFunction(all[i].hideBalloon)) {

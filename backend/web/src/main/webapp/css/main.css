@@ -483,6 +483,17 @@ button:focus {
     margin-bottom: 40px;
 }
 
+.home-wrapper .search-block .my-items {
+    background: url('/img/my.png') no-repeat transparent 0% 41%;
+    float: right;
+    height: 34px;
+    color: rgb(210, 210, 210);
+    padding-left: 37px;
+    font-size: 80%;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
 .home-wrapper .search-block img {
     margin-top: -2px;
     vertical-align: middle;
@@ -490,7 +501,7 @@ button:focus {
 }
 
 .home-wrapper .search-block input {
-    width: 356px;
+    width: 240px;
     background: url('/img/search2.png') no-repeat rgb(245, 245, 245) 97% 55%;
     margin-left: 15px;
 }
@@ -536,6 +547,11 @@ button:focus {
     margin-top: 15px;
     position: relative;
     color: rgb(84, 84, 84);
+}
+
+.home-wrapper .laf-item .messages-label {
+    margin-right: 5px;
+    color: rgb(183, 183, 183);
 }
 
 .home-wrapper .laf-item:hover {

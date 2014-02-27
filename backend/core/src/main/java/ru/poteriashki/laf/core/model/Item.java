@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Document(collection = Item.COLLECTION)
@@ -45,6 +47,9 @@ public class Item extends BaseEntity {
     private String cityId;
 
     private Integer number;
+
+    @Transient
+    private List<Message> messages = new ArrayList<>();
 
     @Transient
     private User user;
@@ -183,5 +188,13 @@ public class Item extends BaseEntity {
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 }

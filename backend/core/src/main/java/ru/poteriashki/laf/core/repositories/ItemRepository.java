@@ -22,6 +22,8 @@ public interface ItemRepository extends PagingAndSortingRepository<Item, String>
 
     Page<Item> findByItemTypeAndMainCategoryAndTagsAndCityId(ItemType itemType, String category, String tag, String cityId, Pageable pageable);
 
+    Page<Item> findByAuthor(String author, Pageable pageable);
+
     List<Item> findByItemTypeAndCityId(ItemType itemType, String cityId);
 
     Page<Item> findAll(Pageable pageable);

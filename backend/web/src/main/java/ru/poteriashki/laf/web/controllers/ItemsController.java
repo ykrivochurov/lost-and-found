@@ -55,6 +55,12 @@ public class ItemsController {
         return lostAndFoundService.getItems(itemType, category, tag, cityId, pageNumber, 100000); //todo paging
     }
 
+    @RequestMapping(value = "/my", method = RequestMethod.GET)
+    @ResponseBody
+    public Page<Item> my(@RequestParam("pageNumber") Integer pageNumber) throws ServiceException {
+        return lostAndFoundService.getMyItems(userContext.getUser(), pageNumber, 100000); //todo paging
+    }
+
     @RequestMapping(value = "/{number}", method = RequestMethod.GET)
     @ResponseBody
     public Item one(@PathVariable("number") Integer number) {
