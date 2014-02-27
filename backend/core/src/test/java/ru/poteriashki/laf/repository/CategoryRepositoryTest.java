@@ -15,7 +15,9 @@ import ru.poteriashki.laf.core.config.PersistenceMongoConfig;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.repositories.CategoryRepository;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @ContextConfiguration(classes = {TestPropHolderConfig.class, PersistenceMongoConfig.class, BaseConfiguration.class})
@@ -34,7 +36,7 @@ public class CategoryRepositoryTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testCreate() throws Exception {
-        Set<String> tags = new HashSet<>();
+        List<String> tags = new ArrayList<>();
         tags.add("Паспорт");
         tags.add("Снилс");
 
@@ -49,7 +51,7 @@ public class CategoryRepositoryTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testLoad() throws Exception {
-        Set<String> tags = new HashSet<>();
+        List<String> tags = new ArrayList<>();
         tags.add("Паспорт");
         tags.add("Снилс");
 

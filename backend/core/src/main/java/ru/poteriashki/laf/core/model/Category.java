@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.OrderBy;
-import java.util.Set;
+import java.util.List;
 
 @Document(collection = Category.COLLECTION)
 @JsonDeserialize
@@ -14,7 +14,7 @@ public class Category extends BaseEntity {
 
     private String name;
 
-    private Set<String> tags;
+    private List<String> tags;
 
     @OrderBy
     private Integer priority;
@@ -27,11 +27,11 @@ public class Category extends BaseEntity {
         this.name = name;
     }
 
-    public Set<String> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
-    public void setTags(Set<String> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 

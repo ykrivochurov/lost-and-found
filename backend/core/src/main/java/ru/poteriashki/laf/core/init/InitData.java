@@ -1,6 +1,6 @@
 package ru.poteriashki.laf.core.init;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.poteriashki.laf.core.model.Category;
@@ -12,7 +12,7 @@ import ru.poteriashki.laf.core.repositories.MessageRepository;
 import ru.poteriashki.laf.core.repositories.UserRepository;
 
 import javax.annotation.PostConstruct;
-import java.util.Set;
+import java.util.List;
 
 /**
  * User: y.krivochurov
@@ -50,18 +50,18 @@ public class InitData {
         }
 
         Integer priority = 0;
-        priority = createCategory(priority, "Животные", Sets.newHashSet(new String[]{"Другие животные", "Кошки", "Собаки"}));
-        priority = createCategory(priority, "Документы", Sets.newHashSet(new String[]{"Документы", "Паспорт", "Водительское удостоверение", "Пенсионное удостоверение"}));
-        priority = createCategory(priority, "Деньги", Sets.newHashSet(new String[]{"Карта", "Кошелек"}));
-        priority = createCategory(priority, "Рег. Номер", Sets.newHashSet(new String[]{"Рег. Номер"}));
-        priority = createCategory(priority, "Ключи", Sets.newHashSet(new String[]{"Ключи от автомобиля", "Ключи от дома"}));
-        priority = createCategory(priority, "Сумка", Sets.newHashSet(new String[]{"Сумка"}));
-        priority = createCategory(priority, "Гаджеты", Sets.newHashSet(new String[]{"Мобильный телефон", "Флешкарта", "Планшет", "Ноутбук", "Плеер", "Видеокамера", "Фотоаппарат"}));
-        priority = createCategory(priority, "Украшения", Sets.newHashSet(new String[]{"Сережки", "Кольцо", "Браслет", "Цепочка", "Кулон", "Часы"}));
-        priority = createCategory(priority, "Другое", Sets.newHashSet(new String[]{"Другое"}));
+        priority = createCategory(priority, "Животные", Lists.newArrayList("Кошка", "Собака", "Другое животное"));
+        priority = createCategory(priority, "Документы", Lists.newArrayList("Документы", "Паспорт", "Водительское удостоверение", "Пенсионное удостоверение"));
+        priority = createCategory(priority, "Деньги", Lists.newArrayList("Карта", "Кошелек"));
+        priority = createCategory(priority, "Рег. Номер", Lists.newArrayList("Рег. Номер"));
+        priority = createCategory(priority, "Ключи", Lists.newArrayList("Ключи от автомобиля", "Ключи от дома"));
+        priority = createCategory(priority, "Сумка", Lists.newArrayList("Сумка"));
+        priority = createCategory(priority, "Гаджеты", Lists.newArrayList("Мобильный телефон", "Флешкарта", "Планшет", "Ноутбук", "Плеер", "Видеокамера", "Фотоаппарат"));
+        priority = createCategory(priority, "Украшения", Lists.newArrayList("Сережки", "Кольцо", "Браслет", "Цепочка", "Кулон", "Часы"));
+        priority = createCategory(priority, "Другое", Lists.newArrayList("Другое"));
     }
 
-    private Integer createCategory(Integer priority, String name, Set<String> tags) {
+    private Integer createCategory(Integer priority, String name, List<String> tags) {
         Category category = categoryRepository.findOneByName(name);
         if (category == null) {
             category = new Category();

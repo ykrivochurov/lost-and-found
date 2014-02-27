@@ -17,10 +17,15 @@ SPINER_OPTS = {
   left: 'auto'
 };
 
+WHAT_PREFFIX = {
+  'LOST': 'Я потерял ',
+  'FOUND': 'Я нашел '
+};
+
 WHAT_PREDEF = {
-  'Кошки': 'Кошку',
-  'Собаки': 'Собаку',
-  'Другие животные': 'Другое животное',
+  'Кошка': 'Кошку',
+  'Собака': 'Собаку',
+  'Другое животное': 'Другое животное',
   'Документы': 'Документы',
   'Паспорт': 'Паспорт',
   'Водительское удостоверение': 'Водительское удостоверение',
@@ -47,9 +52,9 @@ WHAT_PREDEF = {
   'Другое': 'Другое'
 };
 TAGS_ICONS = {
-  'Кошки': '/img/categories/Animal_02.png',
-  'Собаки': '/img/categories/Animal_03.png',
-  'Другие животные': '/img/categories/Animal_01.png',
+  'Кошка': '/img/categories/Animal_02.png',
+  'Собака': '/img/categories/Animal_03.png',
+  'Другое животное': '/img/categories/Animal_01.png',
   'Документы': '/img/categories/Doc_02.png',
   'Паспорт': '/img/categories/Doc_03.png',
   'Водительское удостоверение': '/img/categories/Doc_01.png',
@@ -76,9 +81,9 @@ TAGS_ICONS = {
   'Другое': '/img/categories/all.png'
 };
 PIN_ICONS = {
-  'Кошки': '/img/pins/P-Animal_02.png',
-  'Собаки': '/img/pins/P-Animal_03.png',
-  'Другие животные': '/img/pins/P-Animal_01.png',
+  'Кошка': '/img/pins/P-Animal_02.png',
+  'Собака': '/img/pins/P-Animal_03.png',
+  'Другое животное': '/img/pins/P-Animal_01.png',
   'Документы': '/img/pins/P-Doc_02.png',
   'Паспорт': '/img/pins/P-Doc_03.png',
   'Водительское удостоверение': '/img/pins/P-Doc_01.png',

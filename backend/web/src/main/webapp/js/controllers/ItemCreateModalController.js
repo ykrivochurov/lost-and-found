@@ -4,7 +4,7 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
   console.log($scope.currentUser);
   $scope.itemType = itemType;
   if (UtilsService.isNotEmptyArray($scope.laf.tags)) {
-    $scope.laf.what = WHAT_PREDEF[$scope.laf.tags[0]];
+    $scope.laf.what = WHAT_PREFFIX[$scope.itemType] + WHAT_PREDEF[$scope.laf.tags[0]];
   }
   $scope.laf.itemType = itemType;
   MapService.getLocationObject();
