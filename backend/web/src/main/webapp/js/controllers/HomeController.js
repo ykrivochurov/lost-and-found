@@ -263,7 +263,8 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.showMyItems = function () {
     var selectedCategory = {name: 'Мои объявления'};
-    if (UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
+    if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)
+      && UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
       MapService.hideAllBalloons();
       $scope.selectedItem = null;
       $scope.showSelectedCategory = true;
