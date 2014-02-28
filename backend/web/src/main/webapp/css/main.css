@@ -92,6 +92,20 @@ select:focus:invalid:focus {
     height: 40px;
 }
 
+.button-base {
+    color: rgb(143, 143, 143);
+    font-size: 120%;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    border-radius: 4px;
+    border: 1px solid rgb(158, 158, 158);
+    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+}
+
 /* Placeholder */
 textarea::-webkit-input-placeholder,
 input::-webkit-input-placeholder {
@@ -845,9 +859,11 @@ button:focus {
 }
 
 .home-wrapper .share-section .complain {
-    margin-left: 14px;
     color: rgb(204, 204, 204);
     cursor: pointer;
+}
+.home-wrapper .share-section .complain img {
+    margin-right: 14px;
 }
 
 .home-wrapper .share-section img {
@@ -859,8 +875,88 @@ button:focus {
 
 /* end Home page */
 
+/* Popup header */
+
+.ci-popup {
+    border-top: 2px solid;
+    padding: 15px 35px 45px 35px;
+    color: rgb(82, 82, 82);
+}
+
+.ci-popup.found {
+    border-top-color: rgb(30, 164, 213);
+}
+
+.ci-popup.lost {
+    border-top-color: rgb(222, 77, 12);
+}
+
+/* Complaint popup */
+
+.app-wrapper .complaint-form {
+    width: 640px;
+}
+
+.app-wrapper .complaint-form .complaint-reason {
+    padding-left: 30px;
+}
+
+.app-wrapper .complaint-form .complaint-header {
+    background: url('../img/complain.png') no-repeat transparent 0 8px;
+    padding-left: 30px;
+    height: 30px;
+    display: block;
+    padding-top: 10px;
+}
+
+.app-wrapper .complaint-form .complaint-text {
+    background: url('../img/icon_00.png') no-repeat transparent 0 30px;
+    padding-left: 30px;
+}
+
+.app-wrapper .complaint-form select,
+.app-wrapper .complaint-form textarea {
+    width: 520px;
+}
+
+.app-wrapper .complaint-form textarea {
+    height: 75px;
+    resize: none;
+}
+
+.app-wrapper .complaint-form .complaint-buttons button {
+    width: 48%;
+}
+
+.app-wrapper .complaint-form .complaint-buttons {
+    margin-left: 30px;
+    margin-top: 25px;
+    width: 520px;
+}
+
+.app-wrapper .complaint-modal .complaint-cancel {
+    float: left;
+}
+
+.app-wrapper .complaint-modal .complaint-send {
+    float: right;
+    position: relative;
+}
+
+.app-wrapper .complaint-modal .complaint-send img {
+    position: absolute;
+    left: 45px;
+}
+
+.app-wrapper .complaint-modal .modal-dialog {
+    width: 640px;
+}
+
+/* end Complaint popup */
+
 /* Create item popup */
 .app-wrapper .modal-dialog {
+    margin-top: 100px;
     width: 880px;
 }
 
@@ -879,25 +975,10 @@ button:focus {
     filter: alpha(opacity=30);
 }
 
-.ci-popup {
-    width: 880px;
-    border-top: 2px solid;
-    padding: 15px 35px 45px 35px;
-    color: rgb(82, 82, 82);
-}
-
 .ci-popup .creation-date {
     color: rgb(128, 128, 128);
     margin-top: 0;
     margin-left: 30px;
-}
-
-.ci-popup.found {
-    border-top-color: rgb(30, 164, 213);
-}
-
-.ci-popup.lost {
-    border-top-color: rgb(222, 77, 12);
 }
 
 .app-wrapper .creation-form .picture {
@@ -995,6 +1076,8 @@ button:focus {
     width: 156px;
 }
 
+.app-wrapper .complaint-form .complaint-reason,
+.app-wrapper .complaint-form .complaint-text,
 .app-wrapper .creation-form .refund-info,
 .app-wrapper .creation-form .private-info,
 .app-wrapper .creation-form .where,
@@ -1005,6 +1088,8 @@ button:focus {
     margin-top: 15px;
 }
 
+.app-wrapper .complaint-form .complaint-reason > span,
+.app-wrapper .complaint-form .complaint-text > span,
 .app-wrapper .creation-form .phone > span,
 .app-wrapper .creation-form .email > span,
 .app-wrapper .creation-form .user-name > span,
@@ -1178,16 +1263,6 @@ button:focus {
 .app-wrapper .creation-form .vk-login,
 .app-wrapper .creation-form .fb-login {
     width: 48%;
-    font-size: 120%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 4px;
-    border: 1px solid rgb(158, 158, 158);
-    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
-    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
-    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
-    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
-    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
 }
 
 .app-wrapper .creation-form .vk-login {

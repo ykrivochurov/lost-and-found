@@ -139,8 +139,10 @@
                     <img src="/img/share_twitt.png" alt="Twitter" ng-click="shareService.twitter(selectedItem)">
                     <img src="/img/share_vkontacte.png" alt="ВКонтакте" ng-click="shareService.vkontakte(selectedItem)">
                     <img src="/img/share_facebook.png" alt="Facebook" ng-click="shareService.facebook(selectedItem)">
-                    <img src="/img/complain.png" alt="Пожаловаться">
-                    <span class="complain">Пожаловаться</span>
+                    <span class="complain" ng-click="showComplaintModal(selectedItem)">
+                        <img src="/img/complain.png" alt="Пожаловаться">
+                        Пожаловаться
+                    </span>
                 </div>
             </div>
         </div>
@@ -261,6 +263,40 @@
     </div>
 </script>
 
+<script type="text/ng-template" id="complaint-modal.html">
+    <div class="ci-popup complaint-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
+        <span class="complaint-header">Это объявление некорректно? Пожалуйста, укажите, почему:</span>
+        <div class="complaint-reason clearfix">
+            <span><label for="complainReason">Выберите причину</label></span>
+            <div>
+                <select id="complainReason" ng-model="complaint.reason">
+                    <option value="0">В объявлении обман</option>
+                    <option value="1">Фотографии не соответствуют объявлению</option>
+                    <option value="2">Неверные контактные данные</option>
+                    <option value="3">Это просто глупое баловство</option>
+                    <option value="4">Мошенники</option>
+                    <option value="5">Объявление дублируется</option>
+                    <option value="6">Другая причина</option>
+                </select>
+            </div>
+        </div>
+        <div class="complaint-text clearfix">
+            <span><label for="complainText">Подробности</label></span>
+            <div>
+                <textarea id="complainText" ng-model="complaint.text" placeholder="Сообщение"></textarea>
+            </div>
+        </div>
+
+        <div class="clearfix complaint-buttons">
+            <button ng-click="cancel()" class="button-base float-left complaint-cancel">Отмена</button>
+            <button ng-click="save()" class="button-base float-right complaint-send">
+                <img src="/img/ok.png">
+                Отправить
+            </button>
+        </div>
+    </div>
+</script>
+
 <script type="text/ng-template" id="create-item-modal.html">
 
     <div class="ci-popup creation-form {{itemType == 'LOST' ? 'lost' : 'found'}}">
@@ -363,11 +399,11 @@
             <button ng-click="saveItem()" class="s-button colored-button">Готово</button>
         </div>
         <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
-            <button class="vk-login" ng-click="authService.vk.login(setCurrentUser)">
+            <button class="vk-login button-base" ng-click="authService.vk.login(setCurrentUser)">
                 <img src="/img/button_vk.png">
                 Войти через аккаунт Vkontakte
             </button>
-            <button class="fb-login" ng-click="authService.fb.login(setCurrentUser)">
+            <button class="fb-login button-base" ng-click="authService.fb.login(setCurrentUser)">
                 <img src="/img/button_facebook.png">
                 Войти через аккаунт Facebook
             </button>

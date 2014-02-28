@@ -12,7 +12,7 @@ import ru.poteriashki.laf.web.security.UserContext;
 
 @Controller
 @RequestMapping(value = "/api/users")
-public class UsersController {
+public class UserController {
 
     @Autowired
     private IUserService userService;

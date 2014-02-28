@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/api/categories")
-public class CategoriesController {
+public class CategoryController {
 
     @Autowired
     private ILostAndFoundService lostAndFoundService;

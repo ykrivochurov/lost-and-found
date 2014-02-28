@@ -332,11 +332,18 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     }
   };
 
-  // All about map
-  $scope.$watch('laf.where', _.debounce(function () {
-//    $scope.typed = $scope.typing;
-//    $scope.$apply();
-  }, 500));
+  $scope.showComplaintModal = function (item) {
+    $modal.open({
+      templateUrl: 'complaint-modal.html',
+      controller: ComplaintModalController,
+      windowClass: 'complaint-modal',
+      resolve: {
+        item: function () {
+          return item;
+        }
+      }
+    });
+  }
 
   $scope.showBusy = function (message) {
     if (!$scope.lafBusy) {

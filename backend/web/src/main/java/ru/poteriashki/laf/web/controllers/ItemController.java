@@ -26,7 +26,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/api/items")
-public class ItemsController {
+public class ItemController {
 
     @Autowired
     private UserContext userContext;
