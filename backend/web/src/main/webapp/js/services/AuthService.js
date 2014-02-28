@@ -108,7 +108,12 @@ angular.module('laf').
     vk.init();
     fb.init();
 
-    resultObject.user = $resource('api/auth/user');
+    resultObject.user = $resource('api/auth/user', {}, {get: {method: 'GET'}});
+    resultObject.refresh = function () {
+      resultObject.user.get(function (user) {
+        resultObject.currentUserHolder = user;
+      })
+    };
     resultObject.fb = fb;
     resultObject.vk = vk;
     return  resultObject;

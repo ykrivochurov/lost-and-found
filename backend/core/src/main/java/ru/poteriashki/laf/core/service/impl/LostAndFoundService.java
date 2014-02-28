@@ -123,6 +123,14 @@ public class LostAndFoundService implements ILostAndFoundService {
     }
 
     @Override
+    public User itemsCountToUser(User user) {
+        Assert.notNull(user);
+
+        user.setItemsCount(itemRepository.countByAuthor(user.getId()));
+        return user;
+    }
+
+    @Override
     public Page<Item> getMyItems(User user, Integer pageNumber, Integer pageSize) throws ServiceException {
         Assert.notNull(user);
         Assert.notNull(pageNumber);
@@ -132,6 +140,9 @@ public class LostAndFoundService implements ILostAndFoundService {
         Page<Item> byAuthor = itemRepository.findByAuthor(user.getId(), pageable);
         for (Item item : byAuthor) {
             item.setMessages(messageService.loadByItemId(item.getId(), user));
+            if (item.isShowPrivateInfo()) {
+                item.setUser(user);
+            }
         }
         return byAuthor;
     }

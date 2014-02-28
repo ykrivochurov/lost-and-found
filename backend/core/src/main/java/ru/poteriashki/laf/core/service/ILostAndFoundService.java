@@ -22,6 +22,8 @@ public interface ILostAndFoundService {
 
     Iterable<Category> getAllCategories();
 
+    User itemsCountToUser(User user);
+
     Page<Item> getMyItems(User user, Integer pageNumber, Integer pageSize) throws ru.poteriashki.laf.core.service.ServiceException;
 
     Page<Item> getItems(ItemType itemType, String category, String tag, String cityId, Integer pageNumber, Integer pageSize);

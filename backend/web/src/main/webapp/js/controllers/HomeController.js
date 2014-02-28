@@ -102,6 +102,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.itemAdded = function (item) {
     var deferred = $q.defer();
+    $scope.authService.refresh();
     deferred.promise.then(function () {
       $scope.isCollapsed = true;
       $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false).then(function () {
@@ -263,6 +264,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.showMyItems = function () {
     var selectedCategory = {name: 'Мои объявления'};
+    $scope.isCollapsed = true;
     if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)
       && UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
       MapService.hideAllBalloons();
@@ -274,6 +276,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       var modalInstance = $modal.open({
         templateUrl: 'login-win.html',
         controller: LoginModalController,
+        windowClass: 'login-modal',
         scope: $scope
       });
 
@@ -328,6 +331,19 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
             return item;
           }
         }
+      });
+    }
+  };
+
+  $scope.showLoginModal = function () {
+    if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)) {
+      $scope.authService.currentUserHolder = $scope.authService.currentUserHolder;
+    } else {
+      $modal.open({
+        templateUrl: 'login-win.html',
+        controller: LoginModalController,
+        windowClass: 'login-modal',
+        scope: $scope
       });
     }
   };
@@ -398,6 +414,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     if (UtilsService.isNotEmpty(searchObj.number)) {
       $scope.loadItemByNumber(searchObj.number);
     }
+    $scope.authService.currentUserHolder = $scope.authService.currentUserHolder;
   });
 
 }

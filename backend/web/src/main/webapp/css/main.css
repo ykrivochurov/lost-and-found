@@ -331,6 +331,7 @@ button:focus {
     top: 10px;
     right: -70px;
     z-index: 100;
+    cursor: pointer;
 }
 
 .home-wrapper .right-panel-show.back {
@@ -345,6 +346,7 @@ button:focus {
     top: 10px;
     right: 510px;
     z-index: 100;
+    cursor: pointer;
 }
 
 .home-wrapper .right-panel-hide.back {
@@ -497,17 +499,6 @@ button:focus {
     margin-bottom: 40px;
 }
 
-.home-wrapper .search-block .my-items {
-    background: url('/img/my.png') no-repeat transparent 0% 41%;
-    float: right;
-    height: 34px;
-    color: rgb(210, 210, 210);
-    padding-left: 37px;
-    font-size: 80%;
-    margin-right: 30px;
-    cursor: pointer;
-}
-
 .home-wrapper .search-block img {
     margin-top: -2px;
     vertical-align: middle;
@@ -515,7 +506,7 @@ button:focus {
 }
 
 .home-wrapper .search-block input {
-    width: 240px;
+    width: 350px;
     background: url('/img/search2.png') no-repeat rgb(245, 245, 245) 97% 55%;
     margin-left: 15px;
 }
@@ -862,6 +853,7 @@ button:focus {
     color: rgb(204, 204, 204);
     cursor: pointer;
 }
+
 .home-wrapper .share-section .complain img {
     margin-right: 14px;
 }
@@ -872,6 +864,56 @@ button:focus {
 }
 
 /* end Share section */
+
+.home-wrapper .user-panel {
+    padding: 9px 10px 7px 10px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 229));
+    height: 48px;
+    position: absolute;
+    top: 13px;
+    right: 580px;
+    z-index: 100;
+}
+
+.home-wrapper .user-panel .login-panel {
+    background: url('../img/user-panel/login.png') no-repeat transparent 0 8px;
+    height: 30px;
+    padding-top: 7px;
+    padding-left: 50px;
+    padding-right: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.home-wrapper .user-panel .info-panel {
+    white-space: nowrap;
+}
+
+.home-wrapper .user-panel .info-panel .my-messages-button {
+    background: url('../img/user-panel/mesage.png') no-repeat transparent 33px 5px;
+    display: inline-block;
+    height: 30px;
+    padding-right: 45px;
+    border-right: 1px solid rgb(232, 232, 232);
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.home-wrapper .user-panel .info-panel .my-items-button {
+    background: url('../img/user-panel/my.png') no-repeat transparent 15px 8px;
+    display: inline-block;
+    height: 30px;
+    padding-right: 30px;
+    margin-left: 10px;
+    padding-top: 5px;
+    cursor: pointer;
+}
 
 /* end Home page */
 
@@ -890,6 +932,27 @@ button:focus {
 .ci-popup.lost {
     border-top-color: rgb(222, 77, 12);
 }
+
+/* Login popup */
+
+.app-wrapper .simple-login {
+    width: 670px;
+    padding: 20px;
+}
+
+.app-wrapper .simple-login .vk-login {
+    float: left;
+}
+
+.app-wrapper .simple-login .fb-login {
+    float: right;
+}
+
+.app-wrapper .login-modal .modal-dialog {
+    width: 670px;
+}
+
+/* end Login popup */
 
 /* Complaint popup */
 
@@ -1240,6 +1303,8 @@ button:focus {
     cursor: pointer;
 }
 
+.app-wrapper .simple-login .vk-login,
+.app-wrapper .simple-login .fb-login,
 .app-wrapper .creation-form .vk-login,
 .app-wrapper .creation-form .fb-login {
     color: rgb(143, 143, 143);
@@ -1247,6 +1312,8 @@ button:focus {
     position: relative;
 }
 
+.app-wrapper .simple-login .vk-login img,
+.app-wrapper .simple-login .fb-login img,
 .app-wrapper .creation-form .vk-login img,
 .app-wrapper .creation-form .fb-login img {
     position: absolute;
@@ -1260,6 +1327,8 @@ button:focus {
     width: 640px;
 }
 
+.app-wrapper .simple-login .vk-login,
+.app-wrapper .simple-login .fb-login,
 .app-wrapper .creation-form .vk-login,
 .app-wrapper .creation-form .fb-login {
     width: 48%;

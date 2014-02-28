@@ -1,6 +1,7 @@
 package ru.poteriashki.laf.core.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = User.COLLECTION)
@@ -28,6 +29,9 @@ public class User extends BaseEntity {
     private String password;
 
     private UserType type;
+
+    @Transient
+    private Long itemsCount;
 
     public UserType getType() {
         return type;
@@ -107,5 +111,13 @@ public class User extends BaseEntity {
 
     public String getName() {
         return name;
+    }
+
+    public Long getItemsCount() {
+        return itemsCount;
+    }
+
+    public void setItemsCount(Long itemsCount) {
+        this.itemsCount = itemsCount;
     }
 }

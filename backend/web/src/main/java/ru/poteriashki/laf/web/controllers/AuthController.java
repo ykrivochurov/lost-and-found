@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.model.UserType;
+import ru.poteriashki.laf.core.service.ILostAndFoundService;
 import ru.poteriashki.laf.core.service.impl.UserService;
 import ru.poteriashki.laf.web.security.UserContext;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +31,9 @@ public class AuthController {
     public static final String VK_USER_URL = "https://api.vk.com/method/users.get?user_id=%s&fields=contacts&v=5.7&access_token=%s";
 
     @Autowired
+    private ILostAndFoundService lostAndFoundService;
+
+    @Autowired
     private UserService userService;
 
     @Autowired
@@ -39,14 +42,16 @@ public class AuthController {
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     @ResponseBody
     public User user() {
-        return userContext.getUser();
+        User user = userContext.getUser();
+        user = lostAndFoundService.itemsCountToUser(user);
+        userContext.setUser(user);
+        return user;
     }
 
     @RequestMapping(value = "/fb", method = RequestMethod.GET)
     @ResponseBody
     public User facebook(@RequestParam("token") String token, @RequestParam("uid") String uid) {
         User user = userService.getOrCreateUser(uid, token, UserType.FB);
-        userContext.setUser(user);
         try {
             Document doc = Jsoup.connect(String.format(FB_USER_URL, uid, token)).ignoreContentType(true).get();
             Map<String, String> userMap = OBJECT_MAPPER.readValue(doc.text(), new TypeReference<Map<String, String>>() {
@@ -54,10 +59,12 @@ public class AuthController {
             user.setFirstName(userMap.get("first_name"));
             user.setLastName(userMap.get("last_name"));
             user.setEmail(userMap.get("email"));
-            userService.updateUser(user);
+            user = userService.updateUser(user);
         } catch (Exception e) {
             LOGGER.debug("Unable to get user data", e);
         }
+        user = lostAndFoundService.itemsCountToUser(user);
+        userContext.setUser(user);
         return user;
     }
 
@@ -66,7 +73,6 @@ public class AuthController {
     public User vkontakte(@RequestParam("sid") String sid, @RequestParam("uid") String uid,
                           @RequestParam("name") String name) {
         User user = userService.getOrCreateUser(uid, sid, UserType.VK);
-        userContext.setUser(user);
         try {
             Document doc = Jsoup.connect(String.format(VK_USER_URL, uid, sid)).ignoreContentType(true).get();
             Map<Object, Object> responseWrapper = OBJECT_MAPPER.readValue(doc.getElementsByTag("body").text(),
@@ -81,6 +87,8 @@ public class AuthController {
         } catch (Exception e) {
             LOGGER.debug("Unable to get user data", e);
         }
+        user = lostAndFoundService.itemsCountToUser(user);
+        userContext.setUser(user);
         return user;
     }
 
