@@ -273,15 +273,13 @@
         <div class="complaint-reason clearfix">
             <span><label for="complainReason">Выберите причину</label></span>
             <div>
-                <select id="complainReason" ng-model="complaint.reason">
-                    <option value="0">В объявлении обман</option>
-                    <option value="1">Фотографии не соответствуют объявлению</option>
-                    <option value="2">Неверные контактные данные</option>
-                    <option value="3">Это просто глупое баловство</option>
-                    <option value="4">Мошенники</option>
-                    <option value="5">Объявление дублируется</option>
-                    <option value="6">Другая причина</option>
-                </select>
+                <div class="dropdown-toggle custom-select">
+                    <span class="caret"></span>
+                    {{complaint.reason}}
+                </div>
+                <ul class="dropdown-menu custom-select">
+                    <li ng-repeat="reason in reasons" ng-click="complaint.reason = reason">{{reason}}</li>
+                </ul>
             </div>
         </div>
         <div class="complaint-text clearfix">

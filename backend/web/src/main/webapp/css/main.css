@@ -4,6 +4,7 @@
 @import "scroll.css";
 @import "map.css";
 @import "landing-page.css";
+@import "select.css";
 
 body {
     overflow: hidden;
@@ -958,10 +959,13 @@ button:focus {
 
 .app-wrapper .complaint-form {
     width: 640px;
+    padding-top: 30px;
 }
 
 .app-wrapper .complaint-form .complaint-reason {
-    padding-left: 30px;
+    margin-left: 30px;
+    position: relative;
+    width: 520px;
 }
 
 .app-wrapper .complaint-form .complaint-header {
@@ -1416,7 +1420,7 @@ button:focus {
 
 /* Datepicker */
 .app-wrapper .dropdown-menu {
-    z-index: 1160;
+    z-index: 9999;
 }
 
 input[bs-datepicker] {
