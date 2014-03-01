@@ -316,6 +316,11 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       $location.search({number: item.number});
     }
     $scope.selectedItem = item;
+    $timeout(function () {
+      // recalculate scroll heights
+      $scope.calcScrollHeights();
+      $('.details-block-scroll').nanoScroller();
+    });
   };
 
   $scope.isSelectedItemOpened = function (number) {

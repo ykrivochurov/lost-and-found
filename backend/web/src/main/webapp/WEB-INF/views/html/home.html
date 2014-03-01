@@ -80,76 +80,78 @@
                 <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
             </span>
         </div>
-        <div class="nano" style="height: {{itemsListHeight}}px" ng-show="selectedItem != null">
-            <div class="content details-block left-margin">
-                <div class="creation-date">
-                    <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
-                    <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
-                    <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
-                    <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
-                            src="/img/top.png" alt="prev"></div>
-                    <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
-                       tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
-                </div>
-                <div class="clearfix">
-                    <div class="picture">
-                        <span class="img-va-helper"></span>
-                        <img class="thumbnail-img" src="api/items/photo/{{selectedItem.thumbnailId}}" ng-show="selectedItem.thumbnailId" ng-click="showFullSIzeImage(selectedItem)">
-                        <img src="/img/icon_camera.png" ng-show="!selectedItem.photoId">
+        <div class="nano details-block-scroll" style="height: {{itemsListHeight}}px" ng-show="selectedItem != null">
+            <div class="content scroll-content left-margin">
+                <div class="details-block">
+                    <div class="creation-date">
+                        <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
+                        <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
+                        <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
+                        <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
+                                src="/img/top.png" alt="prev"></div>
+                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
+                           tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
                     </div>
-                    <div class="what">{{selectedItem.what}}</div>
-                </div>
-                <div class="when-where-section clearfix">
-                    <div class="icon-label-b where-b">
-                        <div class="label-b">где {{selectedItem.itemType == 'LOST' ? 'утеряно' : 'найдено'}}</div>
-                        <div class="text-b">{{selectedItem.where}}</div>
-                    </div>
-                    <div class="icon-label-b when-b">
-                        <div class="label-b">когда {{selectedItem.itemType == 'LOST' ? 'утеряно' : 'найдено'}}</div>
-                        <div class="text-b">
-                            <span class="day">{{selectedItem.when | date:'dd'}}</span>
-                            <span class="month">{{selectedItem.when | date:'MMM'}}</span>
-                            <span class="year">{{selectedItem.when | date:'yyyy'}}</span>
+                    <div class="clearfix">
+                        <div class="picture">
+                            <span class="img-va-helper"></span>
+                            <img class="thumbnail-img" src="api/items/photo/{{selectedItem.thumbnailId}}" ng-show="selectedItem.thumbnailId" ng-click="showFullSIzeImage(selectedItem)">
+                            <img src="/img/icon_camera.png" ng-show="!selectedItem.photoId">
                         </div>
+                        <div class="what">{{selectedItem.what}}</div>
                     </div>
-                </div>
-                <div class="tags-section" ng-show="selectedItem.tags.length > 0">
-                    <span class="tags-label">Категории:</span>
-                    <span class="tags {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}">{{joinTags(selectedItem.tags)}}</span>
-                </div>
-                <div class="contacts-section clearfix">
-                    <div class="clearfix" ng-show="selectedItem.user && selectedItem.user.name">
-                        <div class="icon-label-b person-b">
-                            <div class="label-b">контактное лицо</div>
-                            <div class="text-b">{{selectedItem.user.name}}
+                    <div class="when-where-section clearfix">
+                        <div class="icon-label-b where-b">
+                            <div class="label-b">где {{selectedItem.itemType == 'LOST' ? 'утеряно' : 'найдено'}}</div>
+                            <div class="text-b">{{selectedItem.where}}</div>
+                        </div>
+                        <div class="icon-label-b when-b">
+                            <div class="label-b">когда {{selectedItem.itemType == 'LOST' ? 'утеряно' : 'найдено'}}</div>
+                            <div class="text-b">
+                                <span class="day">{{selectedItem.when | date:'dd'}}</span>
+                                <span class="month">{{selectedItem.when | date:'MMM'}}</span>
+                                <span class="year">{{selectedItem.when | date:'yyyy'}}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="clearfix">
-                        <div class="icon-label-b phone-b" ng-show="selectedItem.user && selectedItem.user.phone">
-                            <div class="text-b">{{selectedItem.user.phone}}</div>
+                    <div class="tags-section" ng-show="selectedItem.tags.length > 0">
+                        <span class="tags-label">Категории:</span>
+                        <span class="tags {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}">{{joinTags(selectedItem.tags)}}</span>
+                    </div>
+                    <div class="contacts-section clearfix">
+                        <div class="clearfix" ng-show="selectedItem.user && selectedItem.user.name">
+                            <div class="icon-label-b person-b">
+                                <div class="label-b">контактное лицо</div>
+                                <div class="text-b">{{selectedItem.user.name}}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="clearfix">
-                        <div class="icon-label-b email-b float-left" ng-show="selectedItem.user && selectedItem.user.email">
-                            <div class="text-b">{{selectedItem.user.email}}</div>
+                        <div class="clearfix">
+                            <div class="icon-label-b phone-b" ng-show="selectedItem.user && selectedItem.user.phone">
+                                <div class="text-b">{{selectedItem.user.phone}}</div>
+                            </div>
                         </div>
+                        <div class="clearfix">
+                            <div class="icon-label-b email-b float-left" ng-show="selectedItem.user && selectedItem.user.email">
+                                <div class="text-b">{{selectedItem.user.email}}</div>
+                            </div>
+                        </div>
+                        <div class="icon-label-b pen-b" ng-click="createMessage()">
+                            <div class="text-b">Написать личное сообщение</div>
+                        </div>
+                        <div class="next-laf-item" ng-show="hasNextItem(selectedItem, false)" ng-click="openNextItem(selectedItem, false)"><img
+                                src="/img/bottom.png" alt="prev"></div>
                     </div>
-                    <div class="icon-label-b pen-b" ng-click="createMessage()">
-                        <div class="text-b">Написать личное сообщение</div>
-                    </div>
-                    <div class="next-laf-item" ng-show="hasNextItem(selectedItem, false)" ng-click="openNextItem(selectedItem, false)"><img
-                            src="/img/bottom.png" alt="prev"></div>
-                </div>
-                <div class="share-section">
-                    <span>Поделиться</span>
-                    <img src="/img/share_twitt.png" alt="Twitter" ng-click="shareService.twitter(selectedItem)">
-                    <img src="/img/share_vkontacte.png" alt="ВКонтакте" ng-click="shareService.vkontakte(selectedItem)">
-                    <img src="/img/share_facebook.png" alt="Facebook" ng-click="shareService.facebook(selectedItem)">
+                    <div class="share-section">
+                        <span>Поделиться</span>
+                        <img src="/img/share_twitt.png" alt="Twitter" ng-click="shareService.twitter(selectedItem)">
+                        <img src="/img/share_vkontacte.png" alt="ВКонтакте" ng-click="shareService.vkontakte(selectedItem)">
+                        <img src="/img/share_facebook.png" alt="Facebook" ng-click="shareService.facebook(selectedItem)">
                     <span class="complain" ng-click="showComplaintModal(selectedItem)">
                         <img src="/img/complain.png" alt="Пожаловаться">
                         Пожаловаться
                     </span>
+                    </div>
                 </div>
             </div>
         </div>
