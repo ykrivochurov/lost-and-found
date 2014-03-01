@@ -605,6 +605,54 @@ button:focus {
     position: relative;
 }
 
+.home-wrapper .details-block .settings-button {
+    position: absolute;
+    top: 11px;
+    right: 40px;
+}
+
+.home-wrapper .details-block .popover.settings-block.bottom .arrow {
+    left: inherit;
+    right: 18px;
+}
+
+.home-wrapper .details-block .popover.settings-block {
+    border-radius: 0;
+    top: 40px;
+    right: 20px;
+    left: inherit;
+    display: block;
+}
+
+.home-wrapper .details-block .settings-block .popover-content {
+    padding: 15px 20px;
+}
+
+/*
+.home-wrapper .details-block .settings-block .edit-button:hover,
+.home-wrapper .details-block .settings-block .close-button:hover {
+    outline-offset: 2px;
+    outline: rgb(237, 170, 46) auto 5px;
+}
+*/
+
+.home-wrapper .details-block .settings-block .edit-button {
+    background: url('../img/edit3.png') no-repeat transparent 0 3px;
+    border-bottom: 1px solid rgb(234, 234, 234);
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.home-wrapper .details-block .settings-block .close-button {
+    background: url('../img/ok2.png') no-repeat transparent 0 10px;
+    height: 30px;
+    padding-top: 12px;
+    padding-left: 35px;
+    cursor: pointer;
+}
+
 .app-wrapper .creation-form .picture,
 .home-wrapper .details-block .picture {
     float: left;
@@ -809,6 +857,10 @@ button:focus {
     float: right;
 }
 
+.home-wrapper .settings-button {
+    cursor: pointer;
+}
+
 .home-wrapper .item-number:hover,
 .home-wrapper .item-number:visited,
 .home-wrapper .item-number {
@@ -828,6 +880,10 @@ button:focus {
     margin-right: 13px;
     position: absolute;
     right: 35px;
+}
+
+.home-wrapper .details-block .item-number.not-alone {
+    right: 55px !important;
 }
 
 .home-wrapper .item-number.found:visited,
@@ -911,6 +967,7 @@ button:focus {
     padding-top: 5px;
     cursor: pointer;
 }
+
 .home-wrapper .user-panel .info-panel .my-items-button img {
     position: relative;
     top: -1px;

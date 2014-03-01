@@ -54,16 +54,16 @@ public class ItemRepositoryTest extends AbstractTestNGSpringContextTests {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(calendar.getTimeInMillis() - TimeUnit.DAYS.toMillis(60));
 
-        Page<Item> items = itemRepository.findByItemTypeAndMainCategoryAndTagsAndCreationDateGreaterThan(ItemType.LOST, "cat1", "tag2",
-                calendar.getTime(), new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "creationDate")));
+        Page<Item> items = itemRepository.findByItemTypeAndMainCategoryAndTagsAndCreationDateGreaterThanAndClosed(ItemType.LOST, "cat1", "tag2",
+                calendar.getTime(), new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "creationDate")), false);
         Assert.assertEquals(items.getContent().size(), 1);
 
-        items = itemRepository.findByItemTypeAndMainCategoryAndCreationDateGreaterThan(ItemType.LOST, "cat1",
-                calendar.getTime(), new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "creationDate")));
+        items = itemRepository.findByItemTypeAndMainCategoryAndCreationDateGreaterThanAndClosed(ItemType.LOST, "cat1",
+                calendar.getTime(), new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "creationDate")), false);
         Assert.assertEquals(items.getContent().size(), 3);
 
-        items = itemRepository.findByItemTypeAndMainCategoryAndCreationDateGreaterThan(ItemType.FOUND, "cat1",
-                calendar.getTime(), new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "creationDate")));
+        items = itemRepository.findByItemTypeAndMainCategoryAndCreationDateGreaterThanAndClosed(ItemType.FOUND, "cat1",
+                calendar.getTime(), new PageRequest(0, 10, new Sort(Sort.Direction.DESC, "creationDate")), false);
         Assert.assertEquals(items.getContent().size(), 5);
     }
 

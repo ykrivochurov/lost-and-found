@@ -3,7 +3,6 @@ package ru.poteriashki.laf.core.service;
 import org.springframework.data.domain.Page;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.multipart.MultipartFile;
-import ru.eastbanctech.resources.services.*;
 import ru.eastbanctech.resources.services.ServiceException;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.model.Item;
@@ -17,6 +16,8 @@ import java.util.Map;
 public interface ILostAndFoundService {
 
     Item createItem(Item item, User user) throws InterruptedException, IOException, ru.eastbanctech.resources.services.ServiceException;
+
+    Item close(String id, User user) throws ru.poteriashki.laf.core.service.ServiceException;
 
     Map<String, Float> getCountsByTags(ItemType itemType);
 

@@ -30,7 +30,7 @@
 }
 
 .nano .content:focus {
-    outline: thin dotted;
+    outline: none;
 }
 
 .nano .content::-webkit-scrollbar {

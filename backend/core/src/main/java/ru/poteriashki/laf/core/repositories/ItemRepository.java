@@ -11,24 +11,24 @@ import java.util.List;
 
 public interface ItemRepository extends PagingAndSortingRepository<Item, String> {
 
-    Page<Item> findByItemTypeAndMainCategoryAndTagsAndCreationDateGreaterThan(ItemType itemType, String mainCategory,
-                                                                              String tags, Date creationDate,
-                                                                              Pageable pageable);
+    Page<Item> findByItemTypeAndMainCategoryAndTagsAndCreationDateGreaterThanAndClosed(ItemType itemType, String mainCategory,
+                                                                                       String tags, Date creationDate,
+                                                                                       Pageable pageable, boolean closed);
 
-    Page<Item> findByItemTypeAndMainCategoryAndCreationDateGreaterThan(ItemType itemType, String mainCategory,
-                                                                       Date creationDate, Pageable pageable);
+    Page<Item> findByItemTypeAndMainCategoryAndCreationDateGreaterThanAndClosed(ItemType itemType, String mainCategory,
+                                                                                Date creationDate, Pageable pageable, boolean closed);
 
-    Page<Item> findByItemTypeAndMainCategoryAndCityId(ItemType itemType, String category, String cityId, Pageable pageable);
+    Page<Item> findByItemTypeAndMainCategoryAndCityIdAndClosed(ItemType itemType, String category, String cityId, Pageable pageable, boolean closed);
 
-    Page<Item> findByItemTypeAndMainCategoryAndTagsAndCityId(ItemType itemType, String category, String tag, String cityId, Pageable pageable);
+    Page<Item> findByItemTypeAndMainCategoryAndTagsAndCityIdAndClosed(ItemType itemType, String category, String tag, String cityId, Pageable pageable, boolean closed);
 
-    Page<Item> findByAuthor(String author, Pageable pageable);
+    Page<Item> findByAuthorAndClosed(String author, Pageable pageable, boolean closed);
 
-    Long countByAuthor(String author);
+    Long countByAuthorAndClosed(String author, boolean closed);
 
-    List<Item> findByItemTypeAndCityId(ItemType itemType, String cityId);
+    List<Item> findByItemTypeAndCityIdAndClosed(ItemType itemType, String cityId, boolean closed);
 
-    Page<Item> findAll(Pageable pageable);
+    Page<Item> findByClosed(Pageable pageable, boolean closed);
 
     Item findOneByNumber(Integer number);
 }

@@ -34,7 +34,7 @@
         </div>
     </div>
     <div id="map-panel" class="map-panel"></div>
-    <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed">
+    <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed" ng-click="showSettings = false">
         <div class="user-panel">
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
@@ -89,8 +89,18 @@
                         <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
                         <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
                                 src="/img/top.png" alt="prev"></div>
-                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
+                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author ? 'not-alone' : ''}} {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
                            tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
+                        <img class="settings-button" src="img/settings.png" ng-show="selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author" ng-click="showSettings = !showSettings; $event.stopPropagation();">
+                        <div class="popover settings-block bottom fade in" ng-show="showSettings" ng-class="{ in: isOpen(), fade: animation() }">
+                            <div class="arrow"></div>
+                            <div class="popover-inner">
+                                <div class="popover-content">
+                                    <div class="edit-button">Редактировать</div>
+                                    <div class="close-button" ng-click="closeItem(selectedItem);">Закрыть</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="clearfix">
                         <div class="picture">

@@ -48,6 +48,8 @@ public class Item extends BaseEntity {
 
     private Integer number;
 
+    private boolean closed = false;
+
     @Transient
     private List<Message> messages = new ArrayList<>();
 
@@ -196,5 +198,13 @@ public class Item extends BaseEntity {
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    public boolean isClosed() {
+        return closed;
+    }
+
+    public void setClosed(boolean closed) {
+        this.closed = closed;
     }
 }

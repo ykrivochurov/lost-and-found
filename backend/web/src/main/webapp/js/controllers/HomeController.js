@@ -176,7 +176,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     }
     $scope.showBusy('Загрузка объявления...');
     try {
-      ItemsService.crud.getByNumber({number: number}, function (item) {
+      ItemsService.crud.getByNumber({numberOrId: number}, function (item) {
         if (UtilsService.isEmpty(item.id)) {
           //todo неудалось найти указанное объявление
           $scope.hideBusy();
@@ -245,12 +245,33 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     }
   };
 
+  $scope.itemClosed = function (item) {
+    $scope.authService.refresh();
+    if ($scope.categoriesListType == item.itemType) {
+      var firstTag = item.tags[0];
+      var countForTag = $scope.categoriesCounts[firstTag];
+      if (UtilsService.isNotEmpty(countForTag)) {
+        countForTag--;
+        $scope.categoriesCounts[firstTag] = countForTag;
+        $scope.categoriesRedraw();
+      }
+      MapService.removeMarker(item);
+    }
+  };
+
   $scope.openItem = function (item) {
     console.log('Item: ' + JSON.stringify(item));
     $scope.mapService.hideBalloonForItem($scope.selectedItem);
     $scope.setSelectedItem(item);
     $scope.showSelectedCategory = false;
     $scope.mapService.showBalloonForItem(item);
+  };
+
+  $scope.closeItem = function (item) {
+    ItemsService.crud.close({numberOrId: item.id}, function (item) {
+      $scope.goBackToSelectedCategory();
+      $scope.itemClosed(item);
+    });
   };
 
   $scope.hasNextItem = function (item, prev) {

@@ -21,6 +21,7 @@ import ru.poteriashki.laf.core.repositories.CategoryRepository;
 import ru.poteriashki.laf.core.repositories.ICounterDao;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.repositories.TempResourceRepository;
+import ru.poteriashki.laf.core.service.ErrorType;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 import ru.poteriashki.laf.core.service.IMessageService;
 import ru.poteriashki.laf.core.service.IUserService;
@@ -92,6 +93,24 @@ public class LostAndFoundService implements ILostAndFoundService {
         return savedItem;
     }
 
+    @Override
+    public Item close(String id, User user) throws ServiceException {
+        Assert.notNull(user);
+        Assert.hasText(id);
+
+        Item item = itemRepository.findOne(id);
+        if (item == null) {
+            throw new ServiceException(ErrorType.CONFLICT, "Item not found id = " + id);
+        }
+
+        if (!item.getAuthor().equals(user.getId())) {
+            throw new ServiceException(ErrorType.ACCESS_DENIED, "");
+        }
+
+        item.setClosed(true);
+        return itemRepository.save(item);
+    }
+
     private synchronized Item saveInternal(Item item) {
         Pageable pageable = new PageRequest(0, 1, new Sort(Sort.Direction.DESC, "number"));
         Page<Item> items = itemRepository.findAll(pageable);
@@ -119,14 +138,14 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(itemType);
         Assert.notNull(cityId);
 
-        return itemRepository.findByItemTypeAndCityId(itemType, cityId);
+        return itemRepository.findByItemTypeAndCityIdAndClosed(itemType, cityId, false);
     }
 
     @Override
     public User itemsCountToUser(User user) {
         Assert.notNull(user);
 
-        user.setItemsCount(itemRepository.countByAuthor(user.getId()));
+        user.setItemsCount(itemRepository.countByAuthorAndClosed(user.getId(), false));
         return user;
     }
 
@@ -137,7 +156,7 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(pageSize);
 
         Pageable pageable = new PageRequest(pageNumber, pageSize, new Sort(Sort.Direction.DESC, "creationDate"));
-        Page<Item> byAuthor = itemRepository.findByAuthor(user.getId(), pageable);
+        Page<Item> byAuthor = itemRepository.findByAuthorAndClosed(user.getId(), pageable, false);
         for (Item item : byAuthor) {
             item.setMessages(messageService.loadByItemId(item.getId(), user));
             if (item.isShowPrivateInfo()) {
@@ -161,9 +180,9 @@ public class LostAndFoundService implements ILostAndFoundService {
         Page<Item> itemsPage;
 
         if (StringUtils.isBlank(tag)) {
-            itemsPage = itemRepository.findByItemTypeAndMainCategoryAndCityId(itemType, category, cityId, pageable);
+            itemsPage = itemRepository.findByItemTypeAndMainCategoryAndCityIdAndClosed(itemType, category, cityId, pageable, false);
         } else {
-            itemsPage = itemRepository.findByItemTypeAndMainCategoryAndTagsAndCityId(itemType, category, tag, cityId, pageable);
+            itemsPage = itemRepository.findByItemTypeAndMainCategoryAndTagsAndCityIdAndClosed(itemType, category, tag, cityId, pageable, false);
         }
 
         for (Item item : itemsPage) {

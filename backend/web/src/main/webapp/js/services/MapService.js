@@ -121,6 +121,11 @@ angular.module('laf').
         }
       },
 
+      removeMarker: function (item) {
+        this.hideBalloonForItem(item);
+        controllerScope.DGisMap.markers.remove(markersMap[item.id]);
+      },
+
       createMarker: function (item) {
         if (UtilsService.isEmpty(item.location)) {
           console.log('Unable create marker for item.id = ' + item.id);
