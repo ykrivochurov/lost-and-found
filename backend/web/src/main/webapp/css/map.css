@@ -43,6 +43,8 @@
 
 /* end Full screen button on map */
 
+.app-wrapper .dg-callout-top,
+.app-wrapper .dg-callout-bottom,
 .app-wrapper .dg-callout-tail {
     display: none;
 }
@@ -53,5 +55,6 @@
 .app-wrapper .dg-callout-content {
     padding: 0;
     border: none;
-    background-color: transparent;
+    border-radius: 0;
+    background: none;
 }

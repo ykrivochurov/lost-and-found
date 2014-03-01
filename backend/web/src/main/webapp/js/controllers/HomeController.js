@@ -66,7 +66,108 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.categories = $scope.categories;
   };
 
-  $scope.loadItemByNumber = function (number) {
+  $scope.getCountByTag = function (tag) {
+    var count = $scope.categoriesCounts[tag];
+    if (UtilsService.isEmpty(count)) {
+      return 0;
+    }
+    return count;
+  };
+
+  $scope.getIconByTag = function (tagName) {
+    return $scope.tagsIcons[tagName];
+  };
+
+  $scope.setCategoriesListType = function (value) {
+    var deferred = $q.defer();
+    $scope.myItemsMode = false;
+    $scope.categoriesListType = value;
+    angular.element('.lost-b').toggleClass('active', angular.equals(value, 'LOST'));
+    angular.element('.found-b').toggleClass('active', angular.equals(value, 'FOUND'));
+    $scope.refreshCategories().then(function () {
+      MapService.hideBalloonForItem($scope.selectedItem);
+      MapService.rebuildMarkers().then(function () {
+        $scope.clearCategorySelection();
+        MapService.hideAllBalloons();
+        deferred.resolve();
+      });
+    });
+    return deferred.promise;
+  };
+
+  $scope.selectCategoryAndTag = function (category, tag, my) {
+    var deferred = $q.defer();
+    $scope.itemsList = {
+      page: null,
+      lostAndFoundItems: []
+    };
+
+    var callback = function (items) {
+      $scope.itemsList.page = items;
+      $scope.itemsList.lostAndFoundItems = items.content; //todo need to add new items not replace
+      $scope.showSelectedCategory = true;
+      $scope.showCategoriesList = false;
+      $scope.selectedCategory = category;
+      $scope.selectedTag = tag;
+      if (UtilsService.isNotEmptyArray($scope.itemsList.lostAndFoundItems)) {
+        $scope.mapService.showMarkersForCategory($scope.selectedCategory);
+      }
+      deferred.resolve();
+      $timeout(function () {
+        // recalculate scroll heights
+        $scope.calcScrollHeights();
+        $('.items-list-scroll').nanoScroller();
+      });
+    };
+    if (my) {
+      ItemsService.crud.getMy({pageNumber: 0}, function (items) {
+        callback(items);
+        $scope.mapService.drawMarkersForMyItems($scope.itemsList.lostAndFoundItems);
+      });
+    } else {
+      ItemsService.crud.getByCatAndTag({itemType: $scope.categoriesListType, category: category.name, tag: tag,
+        cityId: $scope.currentCity.id, pageNumber: 0}, callback);
+    }
+    return deferred.promise;
+  };
+
+  $scope.goBackToSelectedCategory = function () {
+    MapService.hideAllBalloons();
+    $scope.clearSelectedItem();
+    $scope.showSelectedCategory = true;
+    $scope.selectCategoryAndTag(
+      $scope.selectedCategory,
+      $scope.selectedTag,
+      $scope.myItemsMode
+    );
+  };
+
+  $scope.clearCategorySelection = function () {
+    if ($scope.myItemsMode) {
+      //total reload needed after my mode
+      $scope.setCategoriesListType($scope.categoriesListType);
+      return;
+    }
+    $scope.showSelectedCategory = false;
+    $scope.showCategoriesList = true;
+    $scope.selectedCategory = null;
+    $scope.selectedTag = null;
+    MapService.hideAllBalloons();
+    $scope.clearSelectedItem();
+    $scope.mapService.showMarkersForCategory();
+  };
+
+  $scope.loadAndOpenItemByNumber = function () {
+    var searchObj = $location.search();
+    var number;
+    if (UtilsService.isNotEmpty(searchObj.number)) {
+      number = searchObj.number;
+    } else {
+      return;
+    }
+    if ($scope.isSelectedItemOpened(number)) {
+      return;
+    }
     $scope.showBusy('Загрузка объявления...');
     try {
       ItemsService.crud.getByNumber({number: number}, function (item) {
@@ -138,105 +239,10 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     }
   };
 
-  $scope.getCountByTag = function (tag) {
-    var count = $scope.categoriesCounts[tag];
-    if (UtilsService.isEmpty(count)) {
-      return 0;
-    }
-    return count;
-  };
-
-  $scope.getIconByTag = function (tagName) {
-    return $scope.tagsIcons[tagName];
-  };
-
-  $scope.setCategoriesListType = function (value) {
-    var deferred = $q.defer();
-    $scope.myItemsMode = false;
-    $scope.categoriesListType = value;
-    angular.element('.lost-b').toggleClass('active', angular.equals(value, 'LOST'));
-    angular.element('.found-b').toggleClass('active', angular.equals(value, 'FOUND'));
-    $scope.refreshCategories().then(function () {
-      MapService.hideBalloonForItem($scope.selectedItem);
-      MapService.rebuildMarkers().then(function () {
-        $scope.clearCategorySelection();
-        MapService.hideAllBalloons();
-        deferred.resolve();
-      });
-    });
-    return deferred.promise;
-  };
-
-  $scope.selectCategoryAndTag = function (category, tag, my) {
-    var deferred = $q.defer();
-    $scope.itemsList = {
-      page: null,
-      lostAndFoundItems: []
-    };
-
-    var callback = function (items) {
-      $scope.itemsList.page = items;
-      $scope.itemsList.lostAndFoundItems = items.content; //todo need to add new items not replace
-      $scope.showSelectedCategory = true;
-      $scope.showCategoriesList = false;
-      $scope.selectedCategory = category;
-      $scope.selectedTag = tag;
-      if (UtilsService.isNotEmptyArray($scope.itemsList.lostAndFoundItems)) {
-        $scope.mapService.showMarkersForCategory($scope.selectedCategory);
-      }
-      deferred.resolve();
-      $timeout(function () {
-        // recalculate scroll heights
-        $scope.calcScrollHeights();
-        $('.items-list-scroll').nanoScroller();
-      });
-    };
-    if (my) {
-      ItemsService.crud.getMy({pageNumber: 0}, function (items) {
-        callback(items);
-        $scope.mapService.drawMarkersForMyItems($scope.itemsList.lostAndFoundItems);
-      });
-    } else {
-      ItemsService.crud.getByCatAndTag({itemType: $scope.categoriesListType, category: category.name, tag: tag,
-        cityId: $scope.currentCity.id, pageNumber: 0}, callback);
-    }
-    return deferred.promise;
-  };
-
-  $scope.goToSelectedCategory = function () {
-    MapService.hideAllBalloons();
-    $scope.selectedItem = null;
-    $scope.showSelectedCategory = true;
-    $scope.selectCategoryAndTag(
-      $scope.selectedCategory,
-      $scope.selectedTag,
-      $scope.myItemsMode
-    );
-  };
-
-  $scope.clearCategorySelection = function () {
-    if ($scope.myItemsMode) {
-      //total reload needed after my mode
-      $scope.setCategoriesListType($scope.categoriesListType);
-      return;
-    }
-    $scope.showSelectedCategory = false;
-    $scope.showCategoriesList = true;
-    $scope.selectedCategory = null;
-    $scope.selectedTag = null;
-    MapService.hideAllBalloons();
-    $scope.selectedItem = null;
-    $scope.mapService.showMarkersForCategory();
-  };
-
-  $scope.getItemLink = function (item) {
-    console.log('item number: ' + item.number);
-  };
-
   $scope.openItem = function (item) {
     console.log('Item: ' + JSON.stringify(item));
     $scope.mapService.hideBalloonForItem($scope.selectedItem);
-    $scope.selectedItem = item;
+    $scope.setSelectedItem(item);
     $scope.showSelectedCategory = false;
     $scope.mapService.showBalloonForItem(item);
   };
@@ -268,7 +274,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)
       && UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
       MapService.hideAllBalloons();
-      $scope.selectedItem = null;
+      $scope.clearSelectedItem();
       $scope.showSelectedCategory = true;
       $scope.selectCategoryAndTag(selectedCategory, null, true);
       $scope.myItemsMode = true;
@@ -282,7 +288,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
       modalInstance.result.then(function () {
         MapService.hideAllBalloons();
-        $scope.selectedItem = null;
+        $scope.clearSelectedItem();
         $scope.showSelectedCategory = true;
         $scope.selectCategoryAndTag(selectedCategory, null, true);
         $scope.myItemsMode = true;
@@ -291,6 +297,26 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       });
     }
   };
+
+  $scope.clearSelectedItem = function () {
+    if ($scope.selectedItem != null) {
+      $location.search('');
+    }
+    $scope.selectedItem = null;
+  };
+
+  $scope.setSelectedItem = function (item) {
+    if (item != null) {
+      $location.search({number: item.number});
+    }
+    $scope.selectedItem = item;
+  };
+
+  $scope.isSelectedItemOpened = function (number) {
+    return $scope.selectedItem != null && $scope.selectedItem.number == number;
+  };
+
+//  Modals part
 
   $scope.createItem = function (itemType) {
     var modalInstance = $modal.open({
@@ -361,6 +387,8 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     });
   }
 
+//  Modals part end
+
   $scope.showBusy = function (message) {
     if (!$scope.lafBusy) {
       $scope.lafBusyMessage = $sce.trustAsHtml(message);
@@ -396,11 +424,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.itemsListHeight = bodyHeight - topButtonsHeight - searchBlockHeight - selectedCategoryBlockHeight;
   };
 
-  $scope.testF = function () {
-    console.log("It's alive!");
-  };
-
-
   $timeout(function () {
     $scope.calcScrollHeights();
     $timeout(function () {
@@ -410,11 +433,12 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     }, 2000);
     //todo move to directive
     //check if we loads item link
-    var searchObj = $location.search();
-    if (UtilsService.isNotEmpty(searchObj.number)) {
-      $scope.loadItemByNumber(searchObj.number);
-    }
+    $scope.loadAndOpenItemByNumber();
     $scope.authService.currentUserHolder = $scope.authService.currentUserHolder;
+  });
+
+  $scope.$on('$routeUpdate', function (event) {
+    $scope.loadAndOpenItemByNumber();
   });
 
 }
@@ -424,6 +448,10 @@ function joinTagsObjects(tags) {
     return tags.join(', ');
   }
   return null;
+}
+
+function goToClear() {
+  return window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/#/home';
 }
 
 function generateUrl(item) {

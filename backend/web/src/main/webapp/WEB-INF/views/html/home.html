@@ -64,14 +64,14 @@
             </button>
         </div>
         <div class="search-block left-margin">
-            <span ng-click="clearCategorySelection()">
+            <span>
                 <img src="/img/icon_menu.png" alt="">
             </span>
             <input type="text" placeholder="Искать" ng-model="searchQuery"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
         </div>
         <div class="selected-category left-margin clearfix" ng-show="selectedCategory != null">
-            <span class="back" ng-click="selectedItem != null ? goToSelectedCategory() : clearCategorySelection()">{{selectedItem != null ? 'К списку объявлений' : 'К списку категорий'}}</span>
+            <span class="back" ng-click="selectedItem != null ? goBackToSelectedCategory() : clearCategorySelection()">{{selectedItem != null ? 'К списку объявлений' : 'К списку категорий'}}</span>
             <span class="name-tag">
                 {{selectedCategory.name}}
                 <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
@@ -86,7 +86,7 @@
                     <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
                             src="/img/top.png" alt="prev"></div>
                     <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
-                       tooltip-placement="bottom" ng-click="getItemLink(selectedItem); $event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
+                       tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
                 </div>
                 <div class="clearfix">
                     <div class="picture">
@@ -157,7 +157,7 @@
                         <span class="day">{{item.creationDate | date:'dd'}}</span>
                         <span class="month">{{item.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{item.creationDate | date:'yyyy'}}</span>
-                        <a href="/#/home?number={{item.number}}" class="item-number {{item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="getItemLink(item); $event.stopPropagation();">#&nbsp;{{item.number}}</a>
+                        <a href="/#/home?number={{item.number}}" class="item-number {{item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{item.number}}</a>
                         <span class="money" ng-show="item.money" tooltip="За вознаграждение!" tooltip-placement="left">&nbsp;</span>
                     </div>
                     <div class="what" ng-click="openItem(item)">{{item.what}}</div>

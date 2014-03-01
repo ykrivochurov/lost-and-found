@@ -114,6 +114,7 @@ angular.module('laf').
 
       removeMarkers: function () {
         console.log('Remove markers');
+        this.hideAllBalloons();
         var groupNames = controllerScope.categories;
         for (var i = 0; i < groupNames.length; i++) {
           controllerScope.DGisMap.markers.removeGroup(groupNames[i].name);
@@ -125,6 +126,13 @@ angular.module('laf').
           console.log('Unable create marker for item.id = ' + item.id);
           return;
         }
+
+        var container = angular.element('<div></div>');
+        container.append();
+
+        var wrapper = angular.element('<a href="' + generateUrl(item) + '" class="clear-link"></a>');
+        container.append(wrapper);
+
         angular.element('.balloon-content').removeClass('lost');
         angular.element('.balloon-content').removeClass('found');
         if (item.itemType == 'LOST') {
@@ -134,12 +142,13 @@ angular.module('laf').
         }
         angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
         angular.element('.balloon-content .what').text(item.what);
+        wrapper.append(angular.element('.balloon-content-wrapper').html());
         var marker = new DG.Markers.MarkerWithBalloon({
           geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
           icon: new DG.Icon(controllerScope.pinIcons[item.tags[0]], new DG.Size(46, 68)),
           balloonOptions: {
             geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
-            contentHtml: angular.element('.balloon-content-wrapper').html(),
+            contentHtml: container.html(),
             showLatestOnly: true,
             isClosed: false
           }
@@ -187,6 +196,7 @@ angular.module('laf').
 
       hideAllBalloons: function () {
         var all = controllerScope.DGisMap.markers.getAll();
+//        var all = controllerScope.DGisMap.balloons.getAll();
         for (var i = 0; i < all.length; i++) {
           if (UtilsService.isNotEmpty(all[i]) && UtilsService.isFunction(all[i].hideBalloon)) {
             all[i].hideBalloon();
