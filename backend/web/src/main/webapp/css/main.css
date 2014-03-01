@@ -899,7 +899,6 @@ button:focus {
 .home-wrapper .user-panel .info-panel .my-messages-button {
     background: url('../img/user-panel/mesage.png') no-repeat transparent 33px 5px;
     display: inline-block;
-    height: 30px;
     padding-right: 45px;
     border-right: 1px solid rgb(232, 232, 232);
     padding-top: 5px;
@@ -907,13 +906,16 @@ button:focus {
 }
 
 .home-wrapper .user-panel .info-panel .my-items-button {
-    background: url('../img/user-panel/my.png') no-repeat transparent 15px 8px;
     display: inline-block;
-    height: 30px;
-    padding-right: 30px;
+    padding-right: 5px;
     margin-left: 10px;
     padding-top: 5px;
     cursor: pointer;
+}
+.home-wrapper .user-panel .info-panel .my-items-button img {
+    position: relative;
+    top: -1px;
+    margin-left: 5px;
 }
 
 /* end Home page */

@@ -2,9 +2,8 @@ angular.module('laf').
   factory('AuthService', function ($resource, UtilsService) {
     var authCallback = null;
     var resultObject = {
-      currentUserHolder: currentUserHolder
+      currentUserHolder: null
     };
-    var currentUserHolder = {};
     var vk = {
       data: {},
       appID: 4145243,
@@ -68,6 +67,7 @@ angular.module('laf').
           var token = response.authResponse.accessToken;
           $.get("/api/auth/fb?token=" + token + "&uid=" + uid, function (user, status) {
             resultObject.currentUserHolder = user;
+
             if (UtilsService.isNotEmpty(authCallback)) {
               authCallback(user);
             }
@@ -109,10 +109,14 @@ angular.module('laf').
     fb.init();
 
     resultObject.user = $resource('api/auth/user', {}, {get: {method: 'GET'}});
-    resultObject.refresh = function () {
-      resultObject.user.get(function (user) {
-        resultObject.currentUserHolder = user;
-      })
+    resultObject.refresh = function (existingUser) {
+      if (UtilsService.isNotEmpty(existingUser)) {
+        resultObject.currentUserHolder = existingUser;
+      } else {
+        resultObject.user.get(function (user) {
+          resultObject.currentUserHolder = user;
+        })
+      }
     };
     resultObject.fb = fb;
     resultObject.vk = vk;

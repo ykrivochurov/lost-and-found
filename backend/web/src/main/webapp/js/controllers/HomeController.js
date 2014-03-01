@@ -1,6 +1,12 @@
 function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService) {
   $scope.shareService = ShareService;
   $scope.authService = AuthService;
+  $scope.authService.authCallback = function (user) {
+    if (!$scope.$$phase) {
+      $scope.$apply();
+    }
+  };
+
   $scope.mapService = MapService;
   $scope.messagesService = MessagesService;
   $scope.lafBusy = false;

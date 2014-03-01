@@ -2,6 +2,7 @@ package ru.poteriashki.laf.web.controllers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
@@ -56,9 +57,15 @@ public class AuthController {
             Document doc = Jsoup.connect(String.format(FB_USER_URL, uid, token)).ignoreContentType(true).get();
             Map<String, String> userMap = OBJECT_MAPPER.readValue(doc.text(), new TypeReference<Map<String, String>>() {
             });
-            user.setFirstName(userMap.get("first_name"));
-            user.setLastName(userMap.get("last_name"));
-            user.setEmail(userMap.get("email"));
+            if (StringUtils.isBlank(user.getFirstName())) {
+                user.setFirstName(userMap.get("first_name"));
+            }
+            if (StringUtils.isBlank(user.getLastName())) {
+                user.setLastName(userMap.get("last_name"));
+            }
+            if (StringUtils.isBlank(user.getEmail())) {
+                user.setEmail(userMap.get("email"));
+            }
             user = userService.updateUser(user);
         } catch (Exception e) {
             LOGGER.debug("Unable to get user data", e);
@@ -79,10 +86,18 @@ public class AuthController {
                     new TypeReference<Map<Object, Object>>() {
                     });
             Map<String, String> userMap = (Map<String, String>) ((List) responseWrapper.get("response")).get(0);
-            user.setFirstName(userMap.get("first_name"));
-            user.setLastName(userMap.get("last_name"));
-            user.setEmail(userMap.get("email"));
-            user.setPhone(userMap.get("home_phone"));
+            if (StringUtils.isBlank(user.getFirstName())) {
+                user.setFirstName(userMap.get("first_name"));
+            }
+            if (StringUtils.isBlank(user.getLastName())) {
+                user.setLastName(userMap.get("last_name"));
+            }
+            if (StringUtils.isBlank(user.getEmail())) {
+                user.setEmail(userMap.get("email"));
+            }
+            if (StringUtils.isBlank(user.getPhone())) {
+                user.setPhone(userMap.get("home_phone"));
+            }
             userService.updateUser(user);
         } catch (Exception e) {
             LOGGER.debug("Unable to get user data", e);

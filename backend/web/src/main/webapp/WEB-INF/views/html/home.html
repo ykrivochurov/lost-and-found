@@ -39,7 +39,10 @@
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
                 <div class="my-messages-button" ng-click="">1(3)</div>
-                <div class="my-items-button" ng-click="showMyItems()">{{authService.currentUserHolder.itemsCount}}</div>
+                <div class="my-items-button" ng-click="showMyItems()">
+                    {{authService.currentUserHolder.itemsCount}}
+                    <img src="img/user-panel/my.png">
+                </div>
             </div>
         </div>
         <div class="right-panel-hide  {{isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
@@ -255,11 +258,11 @@
             <button ng-click="saveMessage()" class="s-button colored-button">Отправить</button>
         </div>
         <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
-            <button class="vk-login" ng-click="authService.vk.login(setCurrentUser)">
+            <button class="vk-login" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
                 <img src="/img/button_vk.png">
                 Войти через аккаунт Vkontakte
             </button>
-            <button class="fb-login" ng-click="authService.fb.login(setCurrentUser)">
+            <button class="fb-login" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
                 <img src="/img/button_facebook.png">
                 Войти через аккаунт Facebook
             </button>
@@ -401,11 +404,11 @@
             <button ng-click="saveItem()" class="s-button colored-button">Готово</button>
         </div>
         <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
-            <button class="vk-login button-base" ng-click="authService.vk.login(setCurrentUser)">
+            <button class="vk-login button-base" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
                 <img src="/img/button_vk.png">
                 Войти через аккаунт Vkontakte
             </button>
-            <button class="fb-login button-base" ng-click="authService.fb.login(setCurrentUser)">
+            <button class="fb-login button-base" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
                 <img src="/img/button_facebook.png">
                 Войти через аккаунт Facebook
             </button>

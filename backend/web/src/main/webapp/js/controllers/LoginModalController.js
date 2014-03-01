@@ -7,7 +7,6 @@ function LoginModalController($scope, $modalInstance, AuthService, UtilsService)
   };
 
   $scope.setCurrentUser = function (user) {
-    $scope.currentUser = user;
     if (UtilsService.isNotEmpty($scope.spinner)) {
       $scope.spinner.stop();
     }

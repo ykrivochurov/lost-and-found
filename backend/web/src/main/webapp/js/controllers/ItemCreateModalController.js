@@ -1,7 +1,6 @@
 function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, UsersService, MapService, itemType) {
 
   $scope.authService = AuthService;
-  console.log($scope.currentUser);
   $scope.itemType = itemType;
   if (UtilsService.isNotEmptyArray($scope.laf.tags)) {
     $scope.laf.what = WHAT_PREFFIX[$scope.itemType] + WHAT_PREDEF[$scope.laf.tags[0]];
@@ -9,8 +8,14 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
   $scope.laf.itemType = itemType;
   MapService.getLocationObject();
 
+  $scope.startSpin = function () {
+    $scope.spinner = new Spinner(SPINER_OPTS).spin(angular.element('.login-buttons')[0]);
+  };
+
   $scope.setCurrentUser = function (user) {
-    $scope.currentUser = user;
+    if (UtilsService.isNotEmpty($scope.spinner)) {
+      $scope.spinner.stop();
+    }
     if (!$scope.$$phase) {
       $scope.$apply();
     }
@@ -19,12 +24,14 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
   $scope.saveItem = function () {
     $scope.laf.cityId = $scope.currentCity.id;
     $scope.laf.location = MapService.getLocationObject();
-    ItemsService.crud.create($scope.laf, function (item) {
-      console.log('Item created: ' + JSON.stringify(item));
-      $scope.itemAdded(item);
-      $scope.renewLaf();
-      UsersService.crud.update($scope.currentUser);
-      $modalInstance.dismiss('cancel');
+    UsersService.crud.update($scope.authService.currentUserHolder, function (user) {
+      $scope.authService.refresh(user);
+      ItemsService.crud.create($scope.laf, function (item) {
+        console.log('Item created: ' + JSON.stringify(item));
+        $scope.itemAdded(item);
+        $scope.renewLaf();
+        $modalInstance.dismiss('cancel');
+      });
     });
   };
 
