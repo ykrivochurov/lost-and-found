@@ -365,6 +365,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     var modalInstance = $modal.open({
       templateUrl: 'modify-item-modal.html',
       controller: ItemModifyModalController,
+      backdrop: false,
       resolve: {
         item: function () {
           return item;

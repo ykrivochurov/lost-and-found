@@ -21,7 +21,7 @@ public interface ILostAndFoundService {
 
     Item updateItem(Item item, User user) throws InterruptedException, IOException, ServiceException, ru.poteriashki.laf.core.service.ServiceException;
 
-    Item close(String id, User user) throws ru.poteriashki.laf.core.service.ServiceException;
+    Item changeCloseStatus(String id, User user) throws ru.poteriashki.laf.core.service.ServiceException;
 
     Map<String, Float> getCountsByTags(ItemType itemType);
 

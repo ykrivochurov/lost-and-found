@@ -314,14 +314,6 @@ button:focus {
     position: relative;
 }
 
-.home-wrapper .left-panel .musor {
-    background: url('/img/bg_musor.png') no-repeat transparent top center;
-    height: 262px;
-    width: 100%;
-    position: absolute;
-    bottom: 10px;
-}
-
 /* Right panel */
 
 .home-wrapper .right-panel-show {
@@ -690,7 +682,6 @@ button:focus {
 
 .home-wrapper .share-section {
     padding: 20px 10px 20px 0;
-    margin-bottom: ;
 }
 
 .home-wrapper .contacts-section {
@@ -709,9 +700,9 @@ button:focus {
     border-bottom: 1px solid rgb(225, 225, 225);
 }
 
-.home-wrapper .details-block .prev-laf-item:hover,
-.home-wrapper .details-block .next-laf-item:hover {
-    border: 1px solid rgb(210, 210, 210);
+.home-wrapper .details-block .prev-laf-item.no-items,
+.home-wrapper .details-block .next-laf-item.no-items {
+    cursor: default;
 }
 
 .home-wrapper .details-block .navigation-bar {
@@ -886,10 +877,30 @@ button:focus {
     text-decoration: none;
 }
 
+.home-wrapper .item-closed {
+    float: right;
+    color: rgb(196, 196, 196);
+    padding: 1px 5px 0px;
+    border-radius: 4px;
+    margin-top: 7px;
+    margin-left: 7px;
+    text-decoration: none;
+}
+
 .home-wrapper .details-block .item-number:hover,
 .home-wrapper .details-block .item-number:visited,
 .home-wrapper .details-block .item-number {
     margin-top: 13px;
+}
+
+.home-wrapper .details-block .item-closed {
+    margin-top: 13px;
+}
+
+.home-wrapper .item-number.closed:visited,
+.home-wrapper .item-number.closed:hover,
+.home-wrapper .item-number.closed {
+    background-color: rgb(195, 195, 195);
 }
 
 .home-wrapper .item-number.found:visited,
@@ -940,7 +951,7 @@ button:focus {
     position: absolute;
     top: 13px;
     right: 580px;
-    z-index: 100;
+    z-index: 200;
 }
 
 .home-wrapper .user-panel .login-panel {
@@ -969,7 +980,7 @@ button:focus {
 .home-wrapper .user-panel .info-panel .my-items-button {
     display: inline-block;
     padding-right: 5px;
-    margin-left: 10px;
+    margin-left: 6px;
     padding-top: 5px;
     cursor: pointer;
 }
@@ -977,7 +988,7 @@ button:focus {
 .home-wrapper .user-panel .info-panel .my-items-button img {
     position: relative;
     top: -1px;
-    margin-left: 5px;
+    margin-left: 8px;
 }
 
 /* end Home page */

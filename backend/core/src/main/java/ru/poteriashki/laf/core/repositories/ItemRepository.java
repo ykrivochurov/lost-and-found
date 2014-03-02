@@ -22,7 +22,7 @@ public interface ItemRepository extends PagingAndSortingRepository<Item, String>
 
     Page<Item> findByItemTypeAndMainCategoryAndTagsAndCityIdAndClosed(ItemType itemType, String category, String tag, String cityId, Pageable pageable, boolean closed);
 
-    Page<Item> findByAuthorAndClosed(String author, Pageable pageable, boolean closed);
+    Page<Item> findByAuthor(String author, Pageable pageable);
 
     Long countByAuthorAndClosed(String author, boolean closed);
 
@@ -30,5 +30,5 @@ public interface ItemRepository extends PagingAndSortingRepository<Item, String>
 
     Page<Item> findByClosed(Pageable pageable, boolean closed);
 
-    Item findOneByNumber(Integer number);
+    Item findOneByNumberAndClosed(Integer number, boolean closed);
 }

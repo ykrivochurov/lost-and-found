@@ -24,7 +24,6 @@ import ru.poteriashki.laf.core.repositories.TempResourceRepository;
 import ru.poteriashki.laf.core.service.ErrorType;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 import ru.poteriashki.laf.core.service.IMessageService;
-import ru.poteriashki.laf.core.service.IUserService;
 import ru.poteriashki.laf.core.service.ServiceException;
 
 import java.io.IOException;
@@ -50,9 +49,6 @@ public class LostAndFoundService implements ILostAndFoundService {
     private ResourceService resourceService;
 
     @Autowired
-    private IUserService userService;
-
-    @Autowired
     private TempResourceRepository tempResourceRepository;
 
     @Autowired
@@ -62,9 +58,9 @@ public class LostAndFoundService implements ILostAndFoundService {
     public Item loadByNumber(Integer number, User user) throws ServiceException {
         Assert.notNull(number);
 
-        Item item = itemRepository.findOneByNumber(number);
+        Item item = itemRepository.findOneByNumberAndClosed(number, false);
         if (item == null) {
-            throw new ServiceException(ErrorType.CONFLICT, "Item not found number = " + number);
+            return null;
         }
         if (!item.isShowPrivateInfo() &&
                 (user == null || !item.getAuthor().equals(user.getId()))) {
@@ -168,7 +164,7 @@ public class LostAndFoundService implements ILostAndFoundService {
     }
 
     @Override
-    public Item close(String id, User user) throws ServiceException {
+    public Item changeCloseStatus(String id, User user) throws ServiceException {
         Assert.notNull(user);
         Assert.hasText(id);
 
@@ -181,7 +177,7 @@ public class LostAndFoundService implements ILostAndFoundService {
             throw new ServiceException(ErrorType.ACCESS_DENIED, "");
         }
 
-        item.setClosed(true);
+        item.setClosed(!item.isClosed());
         return itemRepository.save(item);
     }
 
@@ -228,6 +224,7 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(user);
 
         user.setItemsCount(itemRepository.countByAuthorAndClosed(user.getId(), false));
+        user.setClosedCount(itemRepository.countByAuthorAndClosed(user.getId(), true));
         return user;
     }
 
@@ -237,8 +234,10 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(pageNumber);
         Assert.notNull(pageSize);
 
-        Pageable pageable = new PageRequest(pageNumber, pageSize, new Sort(Sort.Direction.DESC, "creationDate"));
-        Page<Item> byAuthor = itemRepository.findByAuthorAndClosed(user.getId(), pageable, false);
+        Sort sort = new Sort(new Sort.Order(Sort.Direction.DESC, "creationDate"),
+                new Sort.Order(Sort.Direction.ASC, "closed"));
+        Pageable pageable = new PageRequest(pageNumber, pageSize, sort);
+        Page<Item> byAuthor = itemRepository.findByAuthor(user.getId(), pageable);
         for (Item item : byAuthor) {
             item.setMessages(messageService.loadByItemId(item.getId(), user));
             if (!item.isShowPrivateInfo()) {
@@ -293,11 +292,5 @@ public class LostAndFoundService implements ILostAndFoundService {
             resourceService.delete(tempResource.getFileId());
             tempResourceRepository.delete(tempResource);
         }
-    }
-
-    private Date getAvailableDate() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(calendar.getTimeInMillis() - TimeUnit.DAYS.toMillis(60));
-        return calendar.getTime();
     }
 }

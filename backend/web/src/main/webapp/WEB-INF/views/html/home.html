@@ -38,9 +38,9 @@
         <div class="user-panel">
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
-                <div class="my-messages-button" ng-click="">1(3)</div>
-                <div class="my-items-button" ng-click="showMyItems()">
-                    {{authService.currentUserHolder.itemsCount}}
+                <div class="my-messages-button" ng-click="" tooltip-html-unsafe="Мои сообщения<br/> Новые (Все)" tooltip-placement="bottom">1(3)</div>
+                <div class="my-items-button" ng-click="showMyItems()" tooltip-html-unsafe="Мои объявления<br/> Активные (Закрытые)" tooltip-placement="bottom">
+                    {{authService.currentUserHolder.itemsCount}}<span ng-show="authService.currentUserHolder.closedCount">({{authService.currentUserHolder.closedCount}})</span>
                     <img src="img/user-panel/my.png">
                 </div>
             </div>
@@ -84,7 +84,7 @@
                         <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
                         <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
-                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
+                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.closed ? 'closed' : selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
                            tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
                         <img class="settings-button" src="img/settings.png" ng-show="selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author" ng-click="showItemSettings(); $event.stopPropagation();">
                         <div class="popover settings-block bottom fade in" ng-show="showSettings" ng-class="{ in: isOpen(), fade: animation() }">
@@ -92,10 +92,11 @@
                             <div class="popover-inner">
                                 <div class="popover-content">
                                     <div class="edit-button" ng-click="editItem(selectedItem);">Редактировать</div>
-                                    <div class="close-button" ng-click="closeItem(selectedItem);">Закрыть</div>
+                                    <div class="close-button" ng-click="closeItem(selectedItem);">{{selectedItem.closed ? 'Открыть' : 'Закрыть'}}</div>
                                 </div>
                             </div>
                         </div>
+                        <span class="item-closed" ng-show="selectedItem.closed">Закрыто</span>
                     </div>
                     <div class="clearfix">
                         <div class="picture">
@@ -155,9 +156,13 @@
                             Пожаловаться
                         </span>
                     </div>
-                    <div class="navigation-bar" ng-show="hasNextItem(selectedItem, true) || hasNextItem(selectedItem, false)">
+                    <div class="navigation-bar">
+                        <div class="prev-laf-item no-items" ng-show="!hasNextItem(selectedItem, true)">Предыдущее<img
+                                src="/img/top-grey.png" alt="prev"></div>
                         <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)">Предыдущее<img
                                 src="/img/top.png" alt="prev"></div>
+                        <div class="next-laf-item no-items" ng-show="!hasNextItem(selectedItem, false)"><img
+                                src="/img/bottom-grey.png" alt="prev">Следующее</div>
                         <div class="next-laf-item" ng-show="hasNextItem(selectedItem, false)" ng-click="openNextItem(selectedItem, false)"><img
                                 src="/img/bottom.png" alt="prev">Следующее</div>
                     </div>
@@ -171,8 +176,9 @@
                         <span class="day">{{item.creationDate | date:'dd'}}</span>
                         <span class="month">{{item.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{item.creationDate | date:'yyyy'}}</span>
-                        <a href="/#/home?number={{item.number}}" class="item-number {{item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{item.number}}</a>
+                        <a href="/#/home?number={{item.number}}" class="item-number   {{item.closed ? 'closed' : item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{item.number}}</a>
                         <span class="money" ng-show="item.money" tooltip="За вознаграждение!" tooltip-placement="left">&nbsp;</span>
+                        <span class="item-closed" ng-show="item.closed">Закрыто</span>
                     </div>
                     <div class="what" ng-click="openItem(item)">{{item.what}}</div>
                     <!--todo каждый тэг отдельно кликабельный!!-->

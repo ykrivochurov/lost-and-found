@@ -64,8 +64,8 @@ public class ItemController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public Item close(@PathVariable("id") String id) throws ServiceException {
-        return lostAndFoundService.close(id, userContext.getUser());
+    public Item changeCloseStatus(@PathVariable("id") String id) throws ServiceException {
+        return lostAndFoundService.changeCloseStatus(id, userContext.getUser());
     }
 
     @RequestMapping(value = "/my", method = RequestMethod.GET)

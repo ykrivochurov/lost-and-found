@@ -33,6 +33,9 @@ public class User extends BaseEntity {
     @Transient
     private Long itemsCount;
 
+    @Transient
+    private Long closedCount;
+
     public UserType getType() {
         return type;
     }
@@ -119,5 +122,13 @@ public class User extends BaseEntity {
 
     public void setItemsCount(Long itemsCount) {
         this.itemsCount = itemsCount;
+    }
+
+    public Long getClosedCount() {
+        return closedCount;
+    }
+
+    public void setClosedCount(Long closedCount) {
+        this.closedCount = closedCount;
     }
 }
