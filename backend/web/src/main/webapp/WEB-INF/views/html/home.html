@@ -67,9 +67,6 @@
             </button>
         </div>
         <div class="search-block left-margin">
-            <span>
-                <img src="/img/icon_menu.png" alt="">
-            </span>
             <input type="text" placeholder="Искать" ng-model="searchQuery"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
         </div>
@@ -80,18 +77,16 @@
                 <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
             </span>
         </div>
-        <div class="nano details-block-scroll" style="height: {{itemsListHeight}}px" ng-show="selectedItem != null">
+        <div class="nano details-block-scroll" style="height: {{detailsBlockHeight}}px" ng-show="selectedItem != null">
             <div class="content scroll-content left-margin">
                 <div class="details-block">
                     <div class="creation-date">
                         <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
                         <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
-                        <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)"><img
-                                src="/img/top.png" alt="prev"></div>
-                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author ? 'not-alone' : ''}} {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
+                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
                            tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
-                        <img class="settings-button" src="img/settings.png" ng-show="selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author" ng-click="showSettings = !showSettings; $event.stopPropagation();">
+                        <img class="settings-button" src="img/settings.png" ng-show="selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author" ng-click="showItemSettings(); $event.stopPropagation();">
                         <div class="popover settings-block bottom fade in" ng-show="showSettings" ng-class="{ in: isOpen(), fade: animation() }">
                             <div class="arrow"></div>
                             <div class="popover-inner">
@@ -149,18 +144,22 @@
                         <div class="icon-label-b pen-b" ng-click="createMessage()">
                             <div class="text-b">Написать личное сообщение</div>
                         </div>
-                        <div class="next-laf-item" ng-show="hasNextItem(selectedItem, false)" ng-click="openNextItem(selectedItem, false)"><img
-                                src="/img/bottom.png" alt="prev"></div>
                     </div>
                     <div class="share-section">
                         <span>Поделиться</span>
                         <img src="/img/share_twitt.png" alt="Twitter" ng-click="shareService.twitter(selectedItem)">
                         <img src="/img/share_vkontacte.png" alt="ВКонтакте" ng-click="shareService.vkontakte(selectedItem)">
                         <img src="/img/share_facebook.png" alt="Facebook" ng-click="shareService.facebook(selectedItem)">
-                    <span class="complain" ng-click="showComplaintModal(selectedItem)">
-                        <img src="/img/complain.png" alt="Пожаловаться">
-                        Пожаловаться
-                    </span>
+                        <span class="complain" ng-click="showComplaintModal(selectedItem)">
+                            <img src="/img/complain.png" alt="Пожаловаться">
+                            Пожаловаться
+                        </span>
+                    </div>
+                    <div class="navigation-bar" ng-show="hasNextItem(selectedItem, true) || hasNextItem(selectedItem, false)">
+                        <div class="prev-laf-item" ng-show="hasNextItem(selectedItem, true)" ng-click="openNextItem(selectedItem, true)">Предыдущее<img
+                                src="/img/top.png" alt="prev"></div>
+                        <div class="next-laf-item" ng-show="hasNextItem(selectedItem, false)" ng-click="openNextItem(selectedItem, false)"><img
+                                src="/img/bottom.png" alt="prev">Следующее</div>
                     </div>
                 </div>
             </div>

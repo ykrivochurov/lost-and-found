@@ -348,6 +348,15 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     return $scope.selectedItem != null && $scope.selectedItem.number == number;
   };
 
+
+  $scope.showItemSettings = function () {
+    var buttonLeft = angular.element('.settings-button').position().left;
+    var buttonWidth = angular.element('.settings-button').outerWidth(true);
+    var panelWidth = angular.element('.details-block .creation-date').outerWidth(true);
+    var widthFix = 1;
+    angular.element('.settings-block .arrow').css('right', (panelWidth - buttonLeft - buttonWidth - widthFix) + 'px');
+    $scope.showSettings = !$scope.showSettings;
+  }
 //  Modals part
 
   $scope.createItem = function (itemType) {
@@ -451,9 +460,11 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     var topButtonsHeight = angular.element('.top-buttons').outerHeight(true);
     var searchBlockHeight = angular.element('.search-block').outerHeight(true);
     var selectedCategoryBlockHeight = angular.element('.selected-category').outerHeight(true);
+    var navBlockHeight = angular.element('.navigation-bar').outerHeight(true);
     var bodyHeight = angular.element('body').outerHeight(true);
     $scope.categoriesBlockHeight = bodyHeight - topButtonsHeight - searchBlockHeight;
     $scope.itemsListHeight = bodyHeight - topButtonsHeight - searchBlockHeight - selectedCategoryBlockHeight;
+    $scope.detailsBlockHeight = bodyHeight - topButtonsHeight - searchBlockHeight - selectedCategoryBlockHeight - navBlockHeight;
   };
 
   $timeout(function () {

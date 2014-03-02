@@ -53,7 +53,6 @@ public class Item extends BaseEntity {
     @Transient
     private List<Message> messages = new ArrayList<>();
 
-    @Transient
     private User user;
 
     public ItemType getItemType() {

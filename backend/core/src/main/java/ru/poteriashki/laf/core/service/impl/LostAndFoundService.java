@@ -69,6 +69,7 @@ public class LostAndFoundService implements ILostAndFoundService {
         item.setAuthor(user.getId());
         item.setFinished(false);
         item.setCreationDate(new Date());
+        item.setUser(user);
         Category category = null;
         for (String tag : item.getTags()) {
             category = categoryRepository.findOneByTags(tag);
@@ -138,7 +139,15 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(itemType);
         Assert.notNull(cityId);
 
-        return itemRepository.findByItemTypeAndCityIdAndClosed(itemType, cityId, false);
+        List<Item> items = itemRepository.findByItemTypeAndCityIdAndClosed(itemType, cityId, false);
+
+        for (Item item : items) {
+            if (!item.isShowPrivateInfo()) {
+                item.setUser(null);
+            }
+        }
+
+        return items;
     }
 
     @Override
@@ -159,8 +168,8 @@ public class LostAndFoundService implements ILostAndFoundService {
         Page<Item> byAuthor = itemRepository.findByAuthorAndClosed(user.getId(), pageable, false);
         for (Item item : byAuthor) {
             item.setMessages(messageService.loadByItemId(item.getId(), user));
-            if (item.isShowPrivateInfo()) {
-                item.setUser(user);
+            if (!item.isShowPrivateInfo()) {
+                item.setUser(null);
             }
         }
         return byAuthor;
@@ -186,8 +195,8 @@ public class LostAndFoundService implements ILostAndFoundService {
         }
 
         for (Item item : itemsPage) {
-            if (item.isShowPrivateInfo()) {
-                item.setUser(userService.getById(item.getAuthor()));
+            if (!item.isShowPrivateInfo()) {
+                item.setUser(null);
             }
         }
 

@@ -506,9 +506,8 @@ button:focus {
 }
 
 .home-wrapper .search-block input {
-    width: 350px;
+    width: 385px;
     background: url('/img/search2.png') no-repeat rgb(245, 245, 245) 97% 55%;
-    margin-left: 15px;
 }
 
 /* end Top buttons and search box */
@@ -606,9 +605,8 @@ button:focus {
 }
 
 .home-wrapper .details-block .settings-button {
-    position: absolute;
-    top: 11px;
-    right: 40px;
+    margin-top: 11px;
+    float: right;
 }
 
 .home-wrapper .details-block .popover.settings-block.bottom .arrow {
@@ -619,7 +617,7 @@ button:focus {
 .home-wrapper .details-block .popover.settings-block {
     border-radius: 0;
     top: 40px;
-    right: 20px;
+    right: 0;
     left: inherit;
     display: block;
 }
@@ -692,6 +690,7 @@ button:focus {
 
 .home-wrapper .share-section {
     padding: 20px 10px 20px 0;
+    margin-bottom: ;
 }
 
 .home-wrapper .contacts-section {
@@ -710,30 +709,44 @@ button:focus {
     border-bottom: 1px solid rgb(225, 225, 225);
 }
 
-.home-wrapper .prev-laf-item:hover,
+.home-wrapper .details-block .prev-laf-item:hover,
 .home-wrapper .details-block .next-laf-item:hover {
     border: 1px solid rgb(210, 210, 210);
 }
 
-.home-wrapper .prev-laf-item {
+.home-wrapper .details-block .navigation-bar {
+    border-top: 1px solid rgb(227, 227, 227);
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 400px;
+}
+
+.home-wrapper .details-block .next-laf-item,
+.home-wrapper .details-block .prev-laf-item {
     border: 1px solid rgb(255, 255, 255);
-    float: right;
+    float: left;
     cursor: pointer;
     padding: 5px;
-    margin-right: 5px;
+    width: 48%;
+    color: rgb(220, 220, 220);
+}
+
+.home-wrapper .details-block .prev-laf-item {
+    float: left;
+    text-align: right;
 }
 
 .home-wrapper .details-block .next-laf-item {
-    border: 1px solid rgb(255, 255, 255);
-    position: absolute;
-    right: 5px;
-    bottom: 15px;
-    cursor: pointer;
-    padding: 5px;
+    float: right;
+}
+
+.home-wrapper .details-block .prev-laf-item img {
+    margin-left: 10px;
 }
 
 .home-wrapper .details-block .next-laf-item img {
-    margin-left: 0;
+    margin-right: 10px;
 }
 
 /* end Item details */
@@ -877,13 +890,6 @@ button:focus {
 .home-wrapper .details-block .item-number:visited,
 .home-wrapper .details-block .item-number {
     margin-top: 13px;
-    margin-right: 13px;
-    position: absolute;
-    right: 35px;
-}
-
-.home-wrapper .details-block .item-number.not-alone {
-    right: 55px !important;
 }
 
 .home-wrapper .item-number.found:visited,
