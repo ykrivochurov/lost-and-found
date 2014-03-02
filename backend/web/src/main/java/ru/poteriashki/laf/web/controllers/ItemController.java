@@ -47,6 +47,13 @@ public class ItemController {
         return lostAndFoundService.createItem(item, userContext.getUser());
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    public Item update(@RequestBody Item item) throws InterruptedException, IOException,
+            ru.eastbanctech.resources.services.ServiceException, ServiceException {
+        return lostAndFoundService.updateItem(item, userContext.getUser());
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public Page<Item> all(@RequestParam("itemType") ItemType itemType, @RequestParam("category") String category,
@@ -69,8 +76,8 @@ public class ItemController {
 
     @RequestMapping(value = "/{number}", method = RequestMethod.GET)
     @ResponseBody
-    public Item one(@PathVariable("number") Integer number) {
-        return itemRepository.findOneByNumber(number);
+    public Item one(@PathVariable("number") Integer number) throws ServiceException {
+        return lostAndFoundService.loadByNumber(number, userContext.getUser());
     }
 
     @RequestMapping(value = "/markers", method = RequestMethod.GET)

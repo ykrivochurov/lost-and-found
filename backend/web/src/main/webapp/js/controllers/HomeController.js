@@ -29,6 +29,8 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   $scope.selectedTag = null;
   $scope.selectedItem = null;
 
+  $scope.myItemsCategory = 'Мои объявления';
+
   $scope.showSearchResults = true;
 
   $scope.showSelectedCategory = false;
@@ -296,7 +298,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   };
 
   $scope.showMyItems = function () {
-    var selectedCategory = {name: 'Мои объявления'};
+    var selectedCategory = {name: $scope.myItemsCategory};
     $scope.isCollapsed = true;
     if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)
       && UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
@@ -358,6 +360,29 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.showSettings = !$scope.showSettings;
   }
 //  Modals part
+
+  $scope.editItem = function (item) {
+    var modalInstance = $modal.open({
+      templateUrl: 'modify-item-modal.html',
+      controller: ItemModifyModalController,
+      resolve: {
+        item: function () {
+          return item;
+        },
+        categories: function () {
+          return $scope.categories;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (item) {
+      $scope.refreshCategories();
+      if ($scope.selectedCategory != $scope.myItemsCategory) {
+      }
+    }, function () {
+      console.log('Modal dismissed at: ' + new Date());
+    });
+  };
 
   $scope.createItem = function (itemType) {
     var modalInstance = $modal.open({

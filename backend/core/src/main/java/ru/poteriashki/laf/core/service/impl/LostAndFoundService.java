@@ -59,6 +59,21 @@ public class LostAndFoundService implements ILostAndFoundService {
     private IMessageService messageService;
 
     @Override
+    public Item loadByNumber(Integer number, User user) throws ServiceException {
+        Assert.notNull(number);
+
+        Item item = itemRepository.findOneByNumber(number);
+        if (item == null) {
+            throw new ServiceException(ErrorType.CONFLICT, "Item not found number = " + number);
+        }
+        if (!item.isShowPrivateInfo() &&
+                (user == null || !item.getAuthor().equals(user.getId()))) {
+            item.setUser(null);
+        }
+        return item;
+    }
+
+    @Override
     public Item createItem(Item item, User user) throws InterruptedException, IOException, ru.eastbanctech.resources.services.ServiceException {
         Assert.notNull(item);
         Assert.notEmpty(item.getTags());
@@ -67,7 +82,6 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(item.getWhen());
         Assert.notNull(user);
         item.setAuthor(user.getId());
-        item.setFinished(false);
         item.setCreationDate(new Date());
         item.setUser(user);
         Category category = null;
@@ -92,6 +106,65 @@ public class LostAndFoundService implements ILostAndFoundService {
         }
 
         return savedItem;
+    }
+
+    @Override
+    public Item updateItem(Item item, User user) throws ServiceException, InterruptedException, IOException, ru.eastbanctech.resources.services.ServiceException {
+        Assert.notNull(item);
+        Assert.hasText(item.getId());
+        Assert.notEmpty(item.getTags());
+        Assert.hasText(item.getWhat());
+        Assert.hasText(item.getWhere());
+        Assert.notNull(item.getWhen());
+        Assert.notNull(user);
+
+        Item existingItem = itemRepository.findOne(item.getId());
+
+        if (existingItem == null) {
+            throw new ServiceException(ErrorType.DATABASE_ERROR, "Item doesn't exist id = " + item.getId());
+        }
+
+        if (!existingItem.getAuthor().equals(user.getId())) {
+            throw new ServiceException(ErrorType.ACCESS_DENIED, "");
+        }
+
+        existingItem.setWhat(item.getWhat());
+        existingItem.setWhere(item.getWhere());
+        existingItem.setWhen(item.getWhen());
+        existingItem.setLocation(item.getLocation());
+        existingItem.setShowPrivateInfo(item.isShowPrivateInfo());
+        existingItem.setMoney(item.isMoney());
+
+        existingItem.getUser().setPhone(item.getUser().getPhone());
+        existingItem.getUser().setEmail(item.getUser().getEmail());
+        existingItem.getUser().setName(item.getUser().getName());
+
+        existingItem.setModificationDate(new Date());
+
+        existingItem.setPhotoId(item.getPhotoId());
+
+        existingItem.setTags(item.getTags());
+
+        Category category = null;
+        for (String tag : existingItem.getTags()) {
+            category = categoryRepository.findOneByTags(tag);
+            break;
+        }
+        existingItem.setMainCategory(category != null ? category.getName() : null);
+
+        if (existingItem.getPhotoId() != null) {
+            ImageResourceInfo imageResourceInfo = resourceService.saveWithAnotherSize(existingItem.getPhotoId(), 100, 100, false);
+            existingItem.setThumbnailId(imageResourceInfo.getId());
+        }
+
+        if (existingItem.getPhotoId() != null) {
+            TempResource tempResource = tempResourceRepository.findOneByFileId(existingItem.getPhotoId());
+            if (tempResource != null) {
+                tempResourceRepository.delete(tempResource);
+            }
+        }
+
+        return itemRepository.save(existingItem);
     }
 
     @Override

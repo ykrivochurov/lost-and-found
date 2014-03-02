@@ -1087,7 +1087,7 @@ button:focus {
 
 /* Create item popup */
 .app-wrapper .modal-dialog {
-    margin-top: 100px;
+    margin-top: 60px;
     width: 880px;
 }
 

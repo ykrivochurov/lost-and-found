@@ -15,7 +15,11 @@ import java.util.Map;
 
 public interface ILostAndFoundService {
 
+    Item loadByNumber(Integer number, User user) throws ru.poteriashki.laf.core.service.ServiceException;
+
     Item createItem(Item item, User user) throws InterruptedException, IOException, ru.eastbanctech.resources.services.ServiceException;
+
+    Item updateItem(Item item, User user) throws InterruptedException, IOException, ServiceException, ru.poteriashki.laf.core.service.ServiceException;
 
     Item close(String id, User user) throws ru.poteriashki.laf.core.service.ServiceException;
 

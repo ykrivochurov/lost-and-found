@@ -24,9 +24,9 @@ public class Item extends BaseEntity {
 
     private Date creationDate;
 
-    private Set<String> tags = new HashSet<>();
+    private Date modificationDate;
 
-    private boolean finished = false;
+    private Set<String> tags = new HashSet<>();
 
     private String author;
 
@@ -101,14 +101,6 @@ public class Item extends BaseEntity {
 
     public void setTags(Set<String> tags) {
         this.tags = tags;
-    }
-
-    public boolean isFinished() {
-        return finished;
-    }
-
-    public void setFinished(boolean finished) {
-        this.finished = finished;
     }
 
     public String getAuthor() {
@@ -205,5 +197,13 @@ public class Item extends BaseEntity {
 
     public void setClosed(boolean closed) {
         this.closed = closed;
+    }
+
+    public Date getModificationDate() {
+        return modificationDate;
+    }
+
+    public void setModificationDate(Date modificationDate) {
+        this.modificationDate = modificationDate;
     }
 }

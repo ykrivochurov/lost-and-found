@@ -23,6 +23,7 @@ angular.module('laf').
         {
           getByNumber: {method: 'GET', params: {numberOrId: '@numberOrId'}},
           create: {method: 'PUT'},
+          update: {method: 'POST'},
           close: {method: 'DELETE', params: {numberOrId: '@numberOrId'}},
           getMy: {method: 'GET', params: {markers: 'my', pageNumber: '@pageNumber'}},
           getByCatAndTag: {method: 'GET', params: {itemType: '@itemType', category: '@category', tag: '@tag', cityId: '@cityId', pageNumber: '@pageNumber'}},
