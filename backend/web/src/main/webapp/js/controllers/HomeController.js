@@ -405,11 +405,17 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     });
   };
 
-  $scope.createMessage = function () {
+  $scope.createMessage = function (item) {
     $modal.open({
       templateUrl: 'create-message-modal.html',
       controller: CreateMessageModalController,
-      scope: $scope
+      windowClass: 'create-message-modal',
+      scope: $scope,
+      resolve: {
+        item: function () {
+          return item;
+        }
+      }
     });
   };
 

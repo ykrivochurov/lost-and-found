@@ -1,6 +1,7 @@
-function CreateMessageModalController($scope, $modalInstance, $timeout, AuthService, UtilsService, MessagesService) {
+function CreateMessageModalController($scope, $modalInstance, $timeout, AuthService, UtilsService, MessagesService, item) {
 
   $scope.authService = AuthService;
+  $scope.item = item;
   $scope.message = {
   };
 

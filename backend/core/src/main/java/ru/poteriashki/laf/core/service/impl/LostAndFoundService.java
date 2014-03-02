@@ -234,8 +234,8 @@ public class LostAndFoundService implements ILostAndFoundService {
         Assert.notNull(pageNumber);
         Assert.notNull(pageSize);
 
-        Sort sort = new Sort(new Sort.Order(Sort.Direction.DESC, "creationDate"),
-                new Sort.Order(Sort.Direction.ASC, "closed"));
+        Sort sort = new Sort(new Sort.Order(Sort.Direction.ASC, "closed"),
+                new Sort.Order(Sort.Direction.DESC, "creationDate"));
         Pageable pageable = new PageRequest(pageNumber, pageSize, sort);
         Page<Item> byAuthor = itemRepository.findByAuthor(user.getId(), pageable);
         for (Item item : byAuthor) {

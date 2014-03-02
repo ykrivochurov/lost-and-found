@@ -38,7 +38,7 @@
         <div class="user-panel">
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
-                <div class="my-messages-button" ng-click="" tooltip-html-unsafe="Мои сообщения<br/> Новые (Все)" tooltip-placement="bottom">1(3)</div>
+                <div class="my-messages-button" ng-click="" tooltip-html-unsafe="Мои сообщения<br/> Новые (Все)" tooltip-placement="bottom">1<span>(3)</span></div>
                 <div class="my-items-button" ng-click="showMyItems()" tooltip-html-unsafe="Мои объявления<br/> Активные (Закрытые)" tooltip-placement="bottom">
                     {{authService.currentUserHolder.itemsCount}}<span ng-show="authService.currentUserHolder.closedCount">({{authService.currentUserHolder.closedCount}})</span>
                     <img src="img/user-panel/my.png">
@@ -142,7 +142,7 @@
                                 <div class="text-b">{{selectedItem.user.email}}</div>
                             </div>
                         </div>
-                        <div class="icon-label-b pen-b" ng-click="createMessage()">
+                        <div class="icon-label-b pen-b" ng-click="createMessage(selectedItem)">
                             <div class="text-b">Написать личное сообщение</div>
                         </div>
                     </div>
@@ -263,25 +263,29 @@
 </script>
 
 <script type="text/ng-template" id="create-message-modal.html">
-    <div class="create-message-form">
-        <div class="clearfix">
-            <div class="item-message">
-                <textarea ng-model="message.text" placeholder="Сообщение"></textarea>
+    <div class="ci-popup create-message-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
+        <div class="message-text clearfix">
+            <span><label for="messageText">Сообщение</label></span>
+            <div>
+                <textarea id="messageText" ng-model="message.text"></textarea>
             </div>
         </div>
 
         <div class="clearfix login-buttons" ng-show="authService.currentUserHolder.id">
-            <button ng-click="cancel()" class="c-button colored-button">Отмена</button>
-            <button ng-click="saveMessage()" class="s-button colored-button">Отправить</button>
+            <button ng-click="cancel()" class="button-base message-cancel">Отмена</button>
+            <button ng-click="saveMessage()" class="button-base message-send">
+                <img src="{{item.itemType == 'LOST' ? '/img/ok2.png' : '/img/ok3.png'}}">
+                Отправить
+            </button>
         </div>
         <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
-            <button class="vk-login" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
+            <button class="button-base vk-login" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
                 <img src="/img/button_vk.png">
-                Войти через аккаунт Vkontakte
+                Войти через Vkontakte
             </button>
-            <button class="fb-login" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
+            <button class="button-base fb-login" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
                 <img src="/img/button_facebook.png">
-                Войти через аккаунт Facebook
+                Войти через Facebook
             </button>
         </div>
     </div>
