@@ -1,28 +1,42 @@
-function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, item, categories) {
+function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, laf, item, categories, mapServiceInstance) {
 
   $scope.authService = AuthService;
   $scope.categories = categories;
   $scope.itemType = item.itemType;
-  $scope.laf = {
-    id: item.id,
-    what: item.what,
-    where: item.where,
-    when: item.when,
-    creationDate: item.creationDate,
-    tags: item.tags.slice(0),
-    author: item.author,
-    photoId: item.photoId,
-    thumbnailId: item.thumbnailId,
-    location: item.location,
-    showPrivateInfo: item.showPrivateInfo,
-    money: item.money,
-    mainCategory: item.mainCategory,
-    itemType: item.itemType,
-    cityId: item.cityId,
-    number: item.number,
-    closed: item.closed,
-    messages: item.messages,
-    user: item.user
+  if (UtilsService.isNotEmpty(laf)) {
+    $scope.laf = laf;
+  } else {
+    $scope.laf = {
+      id: item.id,
+      what: item.what,
+      where: item.where,
+      when: item.when,
+      creationDate: item.creationDate,
+      tags: item.tags.slice(0),
+      author: item.author,
+      photoId: item.photoId,
+      thumbnailId: item.thumbnailId,
+      location: item.location,
+      showPrivateInfo: item.showPrivateInfo,
+      money: item.money,
+      mainCategory: item.mainCategory,
+      itemType: item.itemType,
+      cityId: item.cityId,
+      number: item.number,
+      closed: item.closed,
+      messages: item.messages,
+      user: item.user,
+      item: item
+    };
+  }
+
+  $scope.mapServiceInstance = mapServiceInstance;
+  $scope.mapServiceInstance.getLocationObject();
+  $scope.mapServiceInstance.deactivateMiddleStatePanel();
+
+  $scope.showMap = function () {
+    $scope.mapServiceInstance.activateMiddleStatePanel($scope.laf, false);
+    $modalInstance.dismiss('cancel');
   };
 
   ItemsService.crud.getByNumber({numberOrId: item.number}, function (currentItem) {
@@ -43,7 +57,7 @@ function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsServic
   };
 
   $scope.saveItem = function () {
-//    $scope.laf.location = MapService.getLocationObject();
+    delete $scope.laf.item;
     ItemsService.crud.update($scope.laf, function (updatedItem) {
       console.log('Item updated: ' + JSON.stringify(updatedItem));
 

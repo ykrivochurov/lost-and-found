@@ -5,6 +5,7 @@
 @import "map.css";
 @import "landing-page.css";
 @import "select.css";
+@import "on-map-panel.css";
 
 body {
     overflow: hidden;
@@ -105,6 +106,52 @@ select:focus:invalid:focus {
     background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
     background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
     background-image: linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+}
+
+.button-base-small {
+    color: rgb(255, 255, 255);
+    font-size: 100%;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    border: 1px solid rgb(158, 158, 158);
+    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(229, 229, 229));
+}
+
+.button-base-small.lost {
+    border: none;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-image: -webkit-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image: -moz-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image: -ms-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image: -o-linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+    background-image: linear-gradient(top, rgb(254, 131, 2), rgb(226, 76, 50));
+}
+
+.button-base-small.found {
+    border: none;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-image: -webkit-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image: -moz-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image: -ms-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image: -o-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+    background-image: linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
+}
+.button-base-small.cancel {
+    border: none;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-image: -webkit-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image: -moz-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image: -ms-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image: -o-linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
+    background-image: linear-gradient(top, rgb(120, 120, 120), rgb(96, 96, 96));
 }
 
 /* Placeholder */
@@ -938,20 +985,50 @@ button:focus {
 
 /* end Share section */
 
+.home-wrapper .marker-edit-mode {
+    position: absolute;
+    /*top: 13px;*/
+    bottom: 20px;
+    left: 450px;
+    padding-top: 8px;
+    width: 643px;
+}
+
+.home-wrapper .marker-edit-mode .button-base-small {
+    margin-left: 10px;
+}
+
+.app-wrapper .marker-edit-mode.lost .where {
+    background: url('../img/icon_03.png') no-repeat transparent 5px 9px;
+}
+
+.app-wrapper .marker-edit-mode.found .where {
+    background: url('../img/icon_03_0.png') no-repeat transparent 5px 9px;
+}
+
+.app-wrapper .marker-edit-mode .where {
+    float: left;
+    padding-left: 30px;
+}
+
+.app-wrapper .marker-edit-mode .where {
+    float: left;
+    padding-left: 30px;
+}
+
+.app-wrapper .marker-edit-mode .where input {
+    width: 396px;
+    background-color: rgb(255, 255, 255);
+    background-image: url('../img/pin_map.png');
+    background-position: 390px 4px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
 .home-wrapper .user-panel {
-    padding: 9px 10px 7px 10px;
-    border-radius: 8px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
-    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
-    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
-    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
-    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 229));
-    height: 48px;
     position: absolute;
     top: 13px;
     right: 580px;
-    z-index: 200;
 }
 
 .home-wrapper .user-panel .login-panel {
@@ -1252,13 +1329,18 @@ button:focus {
 .app-wrapper .creation-form .where {
     float: left;
     padding-left: 30px;
+    position: relative;
 }
 
 .app-wrapper .creation-form .where input {
     width: 396px;
-    background-image: url('../img/pin_map.png');
-    background-position: 395px 6px;
-    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.app-wrapper .creation-form .where img {
+    position: absolute;
+    right: 9px;
+    top: 27px;
     cursor: pointer;
 }
 

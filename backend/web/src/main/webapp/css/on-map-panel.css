@@ -1,0 +1,12 @@
+.on-map-panel {
+    padding: 9px 10px 7px 10px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 238));
+    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(238, 238, 229));
+    height: 48px;
+    z-index: 200;
+}

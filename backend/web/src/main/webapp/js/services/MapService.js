@@ -126,6 +126,16 @@ angular.module('laf').
         controllerScope.DGisMap.markers.remove(markersMap[item.id]);
       },
 
+      moveMarker: function (item) {
+        this.hideBalloonForItem(item);
+        var marker = markersMap[item.id];
+        if (UtilsService.isNotEmpty(marker)) {
+          marker.setPosition(new DG.GeoPoint(item.location[0], item.location[1]));
+          controllerScope.DGisMap.setCenter(marker.getPosition());
+          this.showBalloonForItem(item);
+        }
+      },
+
       createMarker: function (item) {
         if (UtilsService.isEmpty(item.location)) {
           console.log('Unable create marker for item.id = ' + item.id);
@@ -240,9 +250,14 @@ angular.module('laf').
               } else {
                 controllerScope.laf.where = unknownWhere;
               }
+              if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                controllerScope.middleStateItem.where = controllerScope.laf.where;
+                console.log('where: ' + controllerScope.middleStateItem.where);
+              }
               if (!controllerScope.$$phase) {
                 controllerScope.$apply();
               }
+
               if (showBalloon && UtilsService.isFunction(callback)) {
                 callback();
               }
@@ -250,12 +265,29 @@ angular.module('laf').
             failure: function (code, message) {
               controllerScope.hideBusy();
               controllerScope.laf.where = unknownWhere;
+              if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                controllerScope.middleStateItem.where = controllerScope.laf.where;
+              }
               if (!controllerScope.$$phase) {
                 controllerScope.$apply();
               }
               console.log(code + ' ' + message);
             }
           });
+      },
+
+      activateMiddleStatePanel: function (item, isCreation) {
+        controllerScope.middleStateItem = item;
+        controllerScope.middleStateItem_loc = item.location;
+        controllerScope.middleStateItem_where = item.where;
+        controllerScope.isItemCreation = isCreation;
+      },
+
+      deactivateMiddleStatePanel: function () {
+        controllerScope.middleStateItem = null;
+        controllerScope.middleStateItem_loc = null;
+        controllerScope.middleStateItem_where = null;
+        controllerScope.isItemCreation = null;
       }
     };
   });

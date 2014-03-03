@@ -1,4 +1,4 @@
-function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, UsersService, MapService, itemType) {
+function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, UsersService, mapServiceInstance, itemType) {
 
   $scope.authService = AuthService;
   $scope.itemType = itemType;
@@ -6,7 +6,14 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
     $scope.laf.what = WHAT_PREFFIX[$scope.itemType] + WHAT_PREDEF[$scope.laf.tags[0]];
   }
   $scope.laf.itemType = itemType;
-  MapService.getLocationObject();
+  $scope.mapServiceInstance = mapServiceInstance;
+  $scope.mapServiceInstance.getLocationObject();
+  $scope.mapServiceInstance.deactivateMiddleStatePanel();
+
+  $scope.showMap = function () {
+    $scope.mapServiceInstance.activateMiddleStatePanel($scope.laf, true);
+    $modalInstance.dismiss('cancel');
+  };
 
   $scope.startSpin = function () {
     $scope.spinner = new Spinner(SPINER_OPTS).spin(angular.element('.login-buttons')[0]);
@@ -23,7 +30,7 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
 
   $scope.saveItem = function () {
     $scope.laf.cityId = $scope.currentCity.id;
-    $scope.laf.location = MapService.getLocationObject();
+    $scope.laf.location = $scope.mapServiceInstance.getLocationObject();
     UsersService.crud.update($scope.authService.currentUserHolder, function (user) {
       $scope.authService.refresh(user);
       ItemsService.crud.create($scope.laf, function (item) {

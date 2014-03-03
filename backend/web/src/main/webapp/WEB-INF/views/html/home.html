@@ -32,10 +32,18 @@
             </div>
         </div>
         </div>
+        <div class="on-map-panel marker-edit-mode {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
+            <div class="where">
+                <input type="text" ng-model="middleStateItem.where" placeholder="Где">
+            </div>
+            <button ng-click="setNewPlace(false)" tooltip-html-unsafe="Вернуться к <br/>редактированию объявления" tooltip-placement="top" tooltip-popup-delay="500" tooltip-append-to-body="true"
+                    class="button-base-small {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}">Выбрать</button>
+            <button ng-click="setNewPlace(true)" class="button-base-small cancel">Отмена</button>
+        </div>
     </div>
     <div id="map-panel" class="map-panel"></div>
     <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed" ng-click="showSettings = false">
-        <div class="user-panel">
+        <div class="user-panel on-map-panel">
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
                 <div class="my-messages-button" ng-click="" tooltip-html-unsafe="Мои сообщения<br/> Новые (Все)" tooltip-placement="bottom">1<span>(3)</span></div>
@@ -91,7 +99,7 @@
                             <div class="arrow"></div>
                             <div class="popover-inner">
                                 <div class="popover-content">
-                                    <div class="edit-button" ng-click="editItem(selectedItem);">Редактировать</div>
+                                    <div class="edit-button" ng-click="editItem(null, selectedItem);">Редактировать</div>
                                     <div class="close-button" ng-click="closeItem(selectedItem);">{{selectedItem.closed ? 'Открыть' : 'Закрыть'}}</div>
                                 </div>
                             </div>
@@ -351,6 +359,7 @@
 
                 <div>
                     <input type="text" ng-model="laf.where" placeholder="Где">
+                    <img src="/img/pin_map.png" ng-click="showMap()">
                 </div>
             </div>
             <div class="when">
@@ -465,6 +474,7 @@
 
                 <div>
                     <input type="text" ng-model="laf.where" placeholder="Где">
+                    <img src="/img/pin_map.png" ng-click="showMap()">
                 </div>
             </div>
             <div class="when">

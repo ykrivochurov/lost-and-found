@@ -358,26 +358,53 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     var widthFix = 1;
     angular.element('.settings-block .arrow').css('right', (panelWidth - buttonLeft - buttonWidth - widthFix) + 'px');
     $scope.showSettings = !$scope.showSettings;
-  }
+  };
+
+  $scope.setNewPlace = function (cancel) {
+    if ($scope.isItemCreation) {
+      if (cancel) {
+        $scope.middleStateItem.location = $scope.middleStateItem_loc;
+        $scope.middleStateItem.where = $scope.middleStateItem_where;
+      }
+      $scope.createItem($scope.middleStateItem.itemType);
+      $scope.deactivateMiddleStatePanel();
+    } else {
+      if (cancel) {
+        $scope.middleStateItem.location = $scope.middleStateItem_loc;
+        $scope.middleStateItem.where = $scope.middleStateItem_where;
+      } else {
+        $scope.middleStateItem.location = $scope.mapService.getLocationObject();
+      }
+      $scope.editItem($scope.middleStateItem, $scope.middleStateItem.item);
+      $scope.mapService.deactivateMiddleStatePanel();
+    }
+  };
+
 //  Modals part
 
-  $scope.editItem = function (item) {
+  $scope.editItem = function (laf, item) {
     var modalInstance = $modal.open({
       templateUrl: 'modify-item-modal.html',
       controller: ItemModifyModalController,
-      backdrop: false,
       resolve: {
         item: function () {
           return item;
         },
+        laf: function () {
+          return laf;
+        },
         categories: function () {
           return $scope.categories;
+        },
+        mapServiceInstance: function () {
+          return $scope.mapService;
         }
       }
     });
 
     modalInstance.result.then(function (item) {
       $scope.refreshCategories();
+      $scope.mapService.moveMarker(item);
       if ($scope.selectedCategory != $scope.myItemsCategory) {
       }
     }, function () {
@@ -393,6 +420,9 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       resolve: {
         itemType: function () {
           return itemType;
+        },
+        mapServiceInstance: function () {
+          return $scope.mapService;
         }
       }
     });
