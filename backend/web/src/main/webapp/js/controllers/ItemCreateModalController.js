@@ -53,7 +53,6 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
   };
 
   $scope.cancel = function () {
-    $scope.renewLaf();
     $modalInstance.dismiss('cancel');
   };
 
