@@ -42,6 +42,17 @@ body {
     display: none !important;
 }
 
+.back-block {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    border-radius: 8px;
+    z-index: 9999;
+}
+
 .dashed-text {
     display: inline-block;
     color: rgb(117, 117, 117);
@@ -143,6 +154,7 @@ select:focus:invalid:focus {
     background-image: -o-linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
     background-image: linear-gradient(top, rgb(30, 200, 235), rgb(30, 142, 201));
 }
+
 .button-base-small.cancel {
     border: none;
     padding-top: 8px;

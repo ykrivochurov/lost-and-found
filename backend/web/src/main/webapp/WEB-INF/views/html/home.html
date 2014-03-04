@@ -44,6 +44,7 @@
     <div id="map-panel" class="map-panel"></div>
     <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed" ng-click="showSettings = false">
         <div class="user-panel on-map-panel">
+            <div class="back-block"></div>
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
                 <div class="my-messages-button" ng-click="" tooltip-html-unsafe="Мои сообщения<br/> Новые (Все)" tooltip-placement="bottom">1<span>(3)</span></div>

@@ -1,6 +1,7 @@
 angular.module('laf').
-  factory('AuthService', function ($resource, UtilsService) {
+  factory('AuthService', function ($resource, $timeout, UtilsService) {
     var authCallback = null;
+    var applyCallback = null;
     var resultObject = {
       currentUserHolder: null
     };
@@ -11,7 +12,10 @@ angular.module('laf').
 
       init: function () {
         VK.init({apiId: vk.appID});
-        VK.Auth.getLoginStatus(vk.auth, true);
+        $timeout(function () {
+          vk.spinner = new Spinner(SPINER_OPTS).spin(angular.element('.user-panel .back-block')[0]);
+          VK.Auth.getLoginStatus(vk.auth, true);
+        });
       },
 
       auth: function (response) {
@@ -25,9 +29,19 @@ angular.module('laf').
             if (UtilsService.isNotEmpty(authCallback)) {
               authCallback(user);
             }
+            if (UtilsService.isNotEmpty(applyCallback)) {
+              applyCallback();
+            }
           });
         } else {
           $('.loggingin').removeClass('loggingvk');
+        }
+        if (UtilsService.isNotEmpty(vk.spinner)) {
+          vk.spinner.stop();
+          angular.element('.user-panel .back-block').remove();
+        }
+        if (UtilsService.isNotEmpty(applyCallback)) {
+          applyCallback();
         }
       },
 
@@ -59,6 +73,9 @@ angular.module('laf').
       init: function () {
         FB.init({appId: fb.appID, xfbml: true, cookie: true, oauth: true});
         FB.Event.subscribe('auth.statusChange', fb.auth);
+        $timeout(function () {
+          fb.spinner = new Spinner(SPINER_OPTS).spin(angular.element('.user-panel .back-block')[0]);
+        });
       },
 
       auth: function (response) {
@@ -71,9 +88,19 @@ angular.module('laf').
             if (UtilsService.isNotEmpty(authCallback)) {
               authCallback(user);
             }
+            if (UtilsService.isNotEmpty(applyCallback)) {
+              applyCallback();
+            }
           })
         } else {
           $('.loggingin').removeClass('loggingfb')
+        }
+        if (UtilsService.isNotEmpty(fb.spinner)) {
+          fb.spinner.stop();
+          angular.element('.user-panel .back-block').remove();
+        }
+        if (UtilsService.isNotEmpty(applyCallback)) {
+          applyCallback();
         }
       },
 
