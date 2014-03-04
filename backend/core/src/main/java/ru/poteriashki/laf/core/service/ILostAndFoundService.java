@@ -39,4 +39,6 @@ public interface ILostAndFoundService {
 
     @Scheduled(cron = "")
     void cleanupUselessPhotos() throws ru.eastbanctech.resources.services.ServiceException;
+
+    List<Item> search(String searchString, ItemType itemType);
 }

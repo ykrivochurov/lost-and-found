@@ -76,7 +76,7 @@
             </button>
         </div>
         <div class="search-block left-margin">
-            <input type="text" placeholder="Искать" ng-model="searchQuery"
+            <input type="text" placeholder="Искать" ng-model="searchQuery" ng-change="search()"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
         </div>
         <div class="selected-category left-margin clearfix" ng-show="selectedCategory != null">
@@ -84,6 +84,7 @@
             <span class="name-tag">
                 {{selectedCategory.name}}
                 <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
+                <span ng-show="searchItemsMode">&nbsp;&nbsp;{{itemsList.lostAndFoundItems.length}}</span>
             </span>
         </div>
         <div class="nano details-block-scroll" style="height: {{detailsBlockHeight}}px" ng-show="selectedItem != null">

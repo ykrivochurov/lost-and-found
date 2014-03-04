@@ -29,19 +29,20 @@ angular.module('laf').
             if (UtilsService.isNotEmpty(authCallback)) {
               authCallback(user);
             }
+
             if (UtilsService.isNotEmpty(applyCallback)) {
               applyCallback();
             }
+
+            if (UtilsService.isNotEmpty(vk.spinner)) {
+              $timeout(function () {
+                vk.spinner.stop();
+                angular.element('.user-panel .back-block').remove();
+              });
+            }
           });
         } else {
-          $('.loggingin').removeClass('loggingvk');
-        }
-        if (UtilsService.isNotEmpty(vk.spinner)) {
-          vk.spinner.stop();
-          angular.element('.user-panel .back-block').remove();
-        }
-        if (UtilsService.isNotEmpty(applyCallback)) {
-          applyCallback();
+          fb.init();
         }
       },
 
@@ -91,16 +92,25 @@ angular.module('laf').
             if (UtilsService.isNotEmpty(applyCallback)) {
               applyCallback();
             }
+
+            if (UtilsService.isNotEmpty(fb.spinner)) {
+              $timeout(function () {
+                fb.spinner.stop();
+                angular.element('.user-panel .back-block').remove();
+              });
+            }
           })
         } else {
-          $('.loggingin').removeClass('loggingfb')
-        }
-        if (UtilsService.isNotEmpty(fb.spinner)) {
-          fb.spinner.stop();
-          angular.element('.user-panel .back-block').remove();
-        }
-        if (UtilsService.isNotEmpty(applyCallback)) {
-          applyCallback();
+          if (UtilsService.isNotEmpty(applyCallback)) {
+            applyCallback();
+          }
+
+          if (UtilsService.isNotEmpty(fb.spinner)) {
+            $timeout(function () {
+              fb.spinner.stop();
+              angular.element('.user-panel .back-block').remove();
+            });
+          }
         }
       },
 

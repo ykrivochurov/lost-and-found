@@ -87,6 +87,12 @@ public class ItemController {
         return lostAndFoundService.getItemsForMarkers(itemType, cityId);
     }
 
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Item> search(@RequestParam("query") String searchQuery, @RequestParam("itemType") ItemType itemType) {
+        return lostAndFoundService.search(searchQuery, itemType);
+    }
+
     @RequestMapping(value = "/photo", method = RequestMethod.POST, headers = "Content-Type=multipart/form-data")
     @ResponseBody
     public String uploadPhoto(@ModelAttribute MultipartFile fileData,

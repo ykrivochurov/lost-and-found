@@ -22,6 +22,7 @@ angular.module('laf').
       crud: $resource('api/items/:numberOrId:markers', {numberOrId: '@numberOrId', markers: '@markers'},
         {
           getByNumber: {method: 'GET', params: {numberOrId: '@numberOrId'}},
+          search: {method: 'GET', params: {markers: 'search', query: '@query', itemType: '@itemType'}, isArray: true},
           create: {method: 'PUT'},
           update: {method: 'POST'},
           close: {method: 'DELETE', params: {numberOrId: '@numberOrId'}},

@@ -105,7 +105,7 @@ angular.module('laf').
         return deferred.promise;
       },
 
-      drawMarkersForMyItems: function (items) {
+      drawMarkersDirectly: function (items) {
         this.removeMarkers();
         for (var i = 0; i < items.length; i++) {
           this.createMarker(items[i]);

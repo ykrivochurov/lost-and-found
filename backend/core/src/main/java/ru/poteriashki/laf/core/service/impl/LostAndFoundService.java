@@ -6,6 +6,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -53,6 +56,9 @@ public class LostAndFoundService implements ILostAndFoundService {
 
     @Autowired
     private IMessageService messageService;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
     @Override
     public Item loadByNumber(Integer number, User user) throws ServiceException {
@@ -292,5 +298,23 @@ public class LostAndFoundService implements ILostAndFoundService {
             resourceService.delete(tempResource.getFileId());
             tempResourceRepository.delete(tempResource);
         }
+    }
+
+    @Override
+    public List<Item> search(String searchString, ItemType itemType) {
+        Assert.hasText(searchString);
+
+        String searchPattern = ".*" + searchString + ".*";
+        List<Item> items = mongoTemplate.find(Query.query(Criteria.where("itemType").is(itemType)
+                .orOperator(Criteria.where("what").regex(searchPattern, "i"), Criteria.where("where").regex(searchPattern, "i"))
+        ), Item.class);
+
+        for (Item item : items) {
+            if (!item.isShowPrivateInfo()) {
+                item.setUser(null);
+            }
+        }
+
+        return items;
     }
 }

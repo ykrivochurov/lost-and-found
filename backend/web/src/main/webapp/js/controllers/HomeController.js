@@ -30,12 +30,14 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   $scope.selectedItem = null;
 
   $scope.myItemsCategory = 'Мои объявления';
+  $scope.searchItemsCategory = 'Результаты поиска';
 
   $scope.showSearchResults = true;
 
   $scope.showSelectedCategory = false;
   $scope.showCategoriesList = true;
   $scope.myItemsMode = false;
+  $scope.searchItemsMode = false;
 
   $scope.itemsList = {
     page: null,
@@ -89,6 +91,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   $scope.setCategoriesListType = function (value) {
     var deferred = $q.defer();
     $scope.myItemsMode = false;
+    $scope.searchItemsMode = false;
     $scope.categoriesListType = value;
     angular.element('.lost-b').toggleClass('active', angular.equals(value, 'LOST'));
     angular.element('.found-b').toggleClass('active', angular.equals(value, 'FOUND'));
@@ -103,7 +106,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     return deferred.promise;
   };
 
-  $scope.selectCategoryAndTag = function (category, tag, my) {
+  $scope.selectCategoryAndTag = function (category, tag, my, search) {
     var deferred = $q.defer();
     $scope.itemsList = {
       page: null,
@@ -127,10 +130,18 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
         $('.items-list-scroll').nanoScroller();
       });
     };
-    if (my) {
+    if (search) {
+      ItemsService.crud.search({query: $scope.searchQuery, itemType: $scope.categoriesListType}, function (items) {
+        if ($scope.searchSpinner) {
+          $scope.searchSpinner.stop();
+        }
+        callback({content: items});
+        $scope.mapService.drawMarkersDirectly($scope.itemsList.lostAndFoundItems);
+      });
+    } else if (my) {
       ItemsService.crud.getMy({pageNumber: 0}, function (items) {
         callback(items);
-        $scope.mapService.drawMarkersForMyItems($scope.itemsList.lostAndFoundItems);
+        $scope.mapService.drawMarkersDirectly($scope.itemsList.lostAndFoundItems);
       });
     } else {
       ItemsService.crud.getByCatAndTag({itemType: $scope.categoriesListType, category: category.name, tag: tag,
@@ -146,16 +157,18 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.selectCategoryAndTag(
       $scope.selectedCategory,
       $scope.selectedTag,
-      $scope.myItemsMode
+      $scope.myItemsMode,
+      $scope.searchItemsMode
     );
   };
 
   $scope.clearCategorySelection = function () {
-    if ($scope.myItemsMode) {
+    if ($scope.myItemsMode || $scope.searchItemsMode) {
       //total reload needed after my mode
       $scope.setCategoriesListType($scope.categoriesListType);
       return;
     }
+    $scope.searchQuery = null;
     $scope.showSelectedCategory = false;
     $scope.showCategoriesList = true;
     $scope.selectedCategory = null;
@@ -187,7 +200,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
         var deferred = $q.defer();
         deferred.promise.then(function () {
           $scope.isCollapsed = true;
-          $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false).then(function () {
+          $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false).then(function () {
             // get item from db if exists
             for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
               var dbItem = $scope.itemsList.lostAndFoundItems[i];
@@ -214,7 +227,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.authService.refresh();
     deferred.promise.then(function () {
       $scope.isCollapsed = true;
-      $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false).then(function () {
+      $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false).then(function () {
         // get item from db if exists
         for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
           var dbItem = $scope.itemsList.lostAndFoundItems[i];
@@ -305,7 +318,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       MapService.hideAllBalloons();
       $scope.clearSelectedItem();
       $scope.showSelectedCategory = true;
-      $scope.selectCategoryAndTag(selectedCategory, null, true);
+      $scope.selectCategoryAndTag(selectedCategory, null, true, false);
       $scope.myItemsMode = true;
     } else {
       var modalInstance = $modal.open({
@@ -319,7 +332,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
         MapService.hideAllBalloons();
         $scope.clearSelectedItem();
         $scope.showSelectedCategory = true;
-        $scope.selectCategoryAndTag(selectedCategory, null, true);
+        $scope.selectCategoryAndTag(selectedCategory, null, true, false);
         $scope.myItemsMode = true;
       }, function () {
         console.log('Modal dismissed at: ' + new Date());
@@ -517,6 +530,35 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     }
     return null;
   };
+
+
+  $scope.search = function () {
+    if ($scope.searchSpinner) {
+      $scope.searchSpinner.stop();
+    }
+    if ($scope.searchProimse) {
+      $timeout.cancel($scope.searchProimse);
+    }
+    $scope.searchProimse = $timeout(function () {
+      if ($scope.searchSpinner) {
+        $scope.searchSpinner.spin(angular.element('.search-block')[0]);
+      } else {
+        var serachSpinnerOptions = {};
+        angular.copy(SPINER_OPTS, serachSpinnerOptions);
+        serachSpinnerOptions.left = 345;
+
+        $scope.searchSpinner = new Spinner(serachSpinnerOptions).spin(angular.element('.search-block')[0]);
+      }
+      $scope.isCollapsed = true;
+      MapService.hideAllBalloons();
+      $scope.clearSelectedItem();
+      $scope.showSelectedCategory = true;
+      $scope.selectCategoryAndTag({name: $scope.searchItemsCategory}, null, false, true);
+      $scope.searchItemsMode = true;
+      console.log($scope.searchQuery);
+    }, 1000);
+  }
+
 
   $scope.calcScrollHeights = function () {
     var topButtonsHeight = angular.element('.top-buttons').outerHeight(true);
