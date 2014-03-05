@@ -1,6 +1,9 @@
 <div class="home-wrapper animate-switch-container">
     <div class="left-panel animate-show" ng-show="!isCollapsed">
-        <div class="right-panel-show {{!isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
+        <div class="right-panel-show on-map-panel" ng-click="collapse()">
+            <img src="img/left.png" ng-show="isCollapsed">
+            <img src="img/search.png" ng-show="!isCollapsed">
+        </div>
         <div class="v-align-table">
             <div class="v-align-cell">
             <div class="top-logo">
@@ -54,7 +57,10 @@
                 </div>
             </div>
         </div>
-        <div class="right-panel-hide  {{isCollapsed ? 'back' : ''}}" ng-click="collapse()"></div>
+        <div class="right-panel-hide on-map-panel" ng-click="collapse()">
+            <img src="img/right.png" ng-show="isCollapsed">
+            <img src="img/icon_menu.png" ng-show="!isCollapsed">
+        </div>
         <div class="top-buttons clearfix">
             <button ng-click="setCategoriesListType('LOST')" class="lost-b active">
                 <span>У</span>
