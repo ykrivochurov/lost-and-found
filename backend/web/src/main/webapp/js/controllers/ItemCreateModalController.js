@@ -65,8 +65,7 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
 
   $scope.uploadPhoto = function () {
     var photoInput = angular.element('input[name="photos"]');
-    var spinnerTarget = angular.element('.ci-popup .picture');
-    var spinner = new Spinner(SPINER_OPTS).spin(spinnerTarget[0]);
+    angular.element('#photo-preview').attr('src', 'img/li_mini.gif');
 
     var formData = new FormData();
     formData.append('fileData', photoInput[0].files[0]);
@@ -74,9 +73,7 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
     ItemsService.upload(formData, function (data, status) {
       angular.element('#photo-preview').attr('src', 'api/items/photo/' + data + '?w=100&h=100');
       $scope.laf.photoId = data;
-      spinner.stop();
     }, function (data, status) {
-      spinner.stop();
     });
   };
 

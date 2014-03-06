@@ -15,12 +15,6 @@ angular.module('laf').
         VK.init({apiId: vk.appID});
 
         $timeout(function () {
-          var infi = new Sonic(SONIC_OPTS);
-          infi.play();
-          if (!spinnerOnLine) {
-            spinnerOnLine = true;
-            angular.element('.user-panel .back-block').append(infi.canvas);
-          }
           VK.Auth.getLoginStatus(vk.auth, true);
         });
       },

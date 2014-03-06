@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="Кнопки для открытия панелей&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/message/ia.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/message/ia_on.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/message/icon-man.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/messages.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/picture-block.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/CreateMessageModalController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/CreateMessageModalController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/app.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/app.js" />
+    <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/li_max.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/img/li_mini.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemCreateModalController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemCreateModalController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/map.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/map.css" />
     </list>
     <ignored path="lost-and-found.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,6 +71,23 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemController.java" line="100" class="ru.poteriashki.laf.web.controllers.ItemController" package="ru.poteriashki.laf.web.controllers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -83,61 +97,154 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="ItemCreateModalController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemCreateModalController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1320">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InitConfiguration.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/InitConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="13" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="0" selection-start="4449" selection-end="4449" vertical-scroll-proportion="0.33333334" vertical-offset="1064" max-vertical-offset="1485">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthService.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="2355">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="310" column="0" selection-start="18807" selection-end="18807" vertical-scroll-proportion="0.0" vertical-offset="4650" max-vertical-offset="8820">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtilsService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/UtilsService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateMessageModalController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/CreateMessageModalController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="571" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1080">
+            <state line="91" column="37" selection-start="5250" selection-end="5265" vertical-scroll-proportion="-4.66" vertical-offset="1132" max-vertical-offset="8955">
               <folding>
-                <marker date="1394037063000" expanded="true" signature="241:1760" placeholder="[...]" />
-                <marker date="1394037063000" expanded="true" signature="1109:1755" placeholder="{&quot;sender&quot;: '53086da7da062612e3705c76'...}" />
-                <marker date="1394037063000" expanded="true" signature="2156:2231" placeholder="{...}" />
+                <marker date="1394125047000" expanded="true" signature="16890:17464" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="16979:17453" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="17091:17206" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="17318:17438" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="17544:17653" placeholder="..." />
+                <marker date="1394125047000" expanded="false" signature="17605:17641" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="17822:20254" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="17876:18090" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="18181:18562" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="18215:18547" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="18346:18528" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="18606:19284" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="18692:18790" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="18831:19269" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="18948:19099" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="19373:19696" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="19543:19681" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="19785:20243" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="19897:20004" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="20116:20228" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="20413:21657" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="20564:21052" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="20660:21037" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="20720:20832" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="20889:21018" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="21098:21303" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="21187:21288" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="21353:21646" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="21543:21631" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="21813:26657" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="21874:22106" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="22137:22735" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="22168:22263" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="22303:22720" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="22420:22571" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="22766:23529" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="22798:23092" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="22901:23073" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23123:23514" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23228:23495" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23342:23472" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23560:23860" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23598:23845" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23622:23826" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23896:24613" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="23965:24229" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24093:24210" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24286:24334" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24373:24598" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24429:24580" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24671:25802" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24710:24907" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24734:24888" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24942:25458" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="24982:25197" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="25057:25174" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="25233:25439" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="25298:25416" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="25494:25787" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="25530:25768" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="25608:25745" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="25890:26083" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="26172:26646" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="26284:26399" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="26511:26631" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="26813:31011" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="26849:27081" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="27112:27712" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="27143:27238" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="27278:27697" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="27395:27548" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="27743:28506" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="27775:28069" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="27878:28050" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28100:28491" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28205:28472" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28319:28449" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28537:28837" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28575:28822" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28599:28803" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28873:29590" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="28942:29206" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29070:29187" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29263:29311" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29350:29575" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29406:29557" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29648:30716" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29687:29884" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29711:29865" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29919:30393" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="29959:30153" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="30034:30130" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="30189:30374" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="30254:30351" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="30429:30701" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="30465:30682" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="30543:30659" placeholder="..." />
+                <marker date="1394125047000" expanded="true" signature="30804:31000" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1163" column="30" selection-start="26236" selection-end="26236" vertical-scroll-proportion="0.42174628" vertical-offset="17189" max-vertical-offset="25365">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="picture-block.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/picture-block.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="720">
-              <folding>
-                <marker date="1394038226000" expanded="true" signature="742:790" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messages.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/messages.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="18" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="750">
+            <state line="569" column="22" selection-start="13634" selection-end="13634" vertical-scroll-proportion="0.0" vertical-offset="8221" max-vertical-offset="25890">
               <folding />
             </state>
           </provider>
@@ -146,7 +253,7 @@
       <file leaf-file-name="HomeController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="580" column="0" selection-start="18187" selection-end="18365" vertical-scroll-proportion="0.0" vertical-offset="8476" max-vertical-offset="9225">
+            <state line="135" column="46" selection-start="4428" selection-end="4428" vertical-scroll-proportion="0.0" vertical-offset="7925" max-vertical-offset="9180">
               <folding />
             </state>
           </provider>
@@ -200,7 +307,6 @@
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/User.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/repositories/ItemRepository.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/on-map-panel.css" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemCreateModalController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemModifyModalController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/db.js" />
@@ -211,16 +317,17 @@
         <option value="$PROJECT_DIR$/core/src/test/resources/test.properties" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/service/impl/LostAndFoundService.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/LostAndFoundServiceTest.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/app.js" />
         <option value="$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Message.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/map.css" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/CreateMessageModalController.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/messages.css" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/css/picture-block.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemCreateModalController.js" />
       </list>
     </option>
   </component>
@@ -1236,8 +1343,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/src/main/webapp/img/message" />
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img" />
+      <recent name="$PROJECT_DIR$/web/src/main/webapp/img/message" />
       <recent name="$PROJECT_DIR$/web/src/main/webapp/js/libs" />
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img/user-panel" />
       <recent name="$PROJECT_DIR$/web/src/main/webapp/img/logos" />
@@ -1721,7 +1828,7 @@
       <workItem from="1393755846897" duration="20769000" />
       <workItem from="1393857975973" duration="18975000" />
       <workItem from="1393944224487" duration="20764000" />
-      <workItem from="1394115444590" duration="54000" />
+      <workItem from="1394115444590" duration="8355000" />
     </task>
     <task id="LOCAL-00001" summary="Renaming.&#10;Base core model and configuration.">
       <created>1387996907187</created>
@@ -1947,11 +2054,15 @@
       <created>1394030882932</created>
       <updated>1394030882932</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Сообщения wip">
+      <created>1394115520738</created>
+      <updated>1394115520738</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252950000" />
+    <option name="totallyTimeSpent" value="261251000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1975,7 +2086,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262195" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1987,10 +2098,11 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16239317" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41768292" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32799146" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2005,7 +2117,6 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24307036" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32799146" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2053,7 +2164,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="imagemagick path settings" />
     <MESSAGE value="Splash screen" />
     <MESSAGE value="Title&#10;" />
     <MESSAGE value="New landing page" />
@@ -2078,7 +2188,8 @@
     <MESSAGE value="refs #30 wip" />
     <MESSAGE value="spinner для логина&#10;" />
     <MESSAGE value="Кнопки для открытия панелей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Кнопки для открытия панелей" />
+    <MESSAGE value="Сообщения wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сообщения wip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2165,16 +2276,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemCreateModalController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="124" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemModifyModalController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="42" selection-start="3059" selection-end="3059" vertical-scroll-proportion="0.0" vertical-offset="1274" max-vertical-offset="1965" />
+        <state line="103" column="42" selection-start="3059" selection-end="3059" vertical-scroll-proportion="0.0" vertical-offset="1274" max-vertical-offset="1965">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/index.html">
@@ -2186,12 +2292,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/animation.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0" vertical-offset="641" max-vertical-offset="1335" />
+        <state line="59" column="0" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0" vertical-offset="641" max-vertical-offset="1335">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Item.java">
@@ -2204,13 +2314,6 @@
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/ItemsService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="91" selection-start="903" selection-end="911" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="39" selection-start="4037" selection-end="4037" vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="1485">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/java/ru/poteriashki/laf/service/UserServiceTest.java">
@@ -2237,13 +2340,6 @@
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/PropHolderConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="13" selection-start="531" selection-end="531" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/InitConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
           <folding />
         </state>
       </provider>
@@ -2298,13 +2394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="15" selection-start="3122" selection-end="3122" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="2445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/search2.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2317,7 +2406,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/on-map-panel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
@@ -2327,12 +2418,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="45" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095" />
+        <state line="17" column="45" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="25" selection-start="462" selection-end="462" vertical-scroll-proportion="0.5042017" vertical-offset="0" max-vertical-offset="690" />
+        <state line="19" column="25" selection-start="462" selection-end="462" vertical-scroll-proportion="0.5042017" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/img/icon_menu2.png">
@@ -2354,9 +2449,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="571" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1080">
           <folding>
-            <marker date="1394037063000" expanded="true" signature="241:1760" placeholder="[...]" />
-            <marker date="1394037063000" expanded="true" signature="1109:1755" placeholder="{&quot;sender&quot;: '53086da7da062612e3705c76'...}" />
-            <marker date="1394037063000" expanded="true" signature="2156:2231" placeholder="{...}" />
+            <marker date="1394037063000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1394037063000" expanded="true" signature="-1:-1" placeholder="{&quot;sender&quot;: '53086da7da062612e3705c76'...}" />
+            <marker date="1394037063000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -2368,25 +2463,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="580" column="0" selection-start="18187" selection-end="18365" vertical-scroll-proportion="0.0" vertical-offset="8476" max-vertical-offset="9225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="310" column="0" selection-start="18807" selection-end="18807" vertical-scroll-proportion="0.0" vertical-offset="4650" max-vertical-offset="8820">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/picture-block.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="720">
+        <state line="33" column="13" selection-start="643" selection-end="643" vertical-scroll-proportion="0.7711864" vertical-offset="222" max-vertical-offset="720">
           <folding>
-            <marker date="1394038226000" expanded="true" signature="742:790" placeholder="{...}" />
+            <marker date="1394038226000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -2400,14 +2481,155 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/messages.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="18" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="750">
+        <state line="42" column="18" selection-start="895" selection-end="895" vertical-scroll-proportion="1.1949153" vertical-offset="207" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1163" column="30" selection-start="26236" selection-end="26236" vertical-scroll-proportion="0.42174628" vertical-offset="17189" max-vertical-offset="25365">
+        <state line="569" column="22" selection-start="13634" selection-end="13634" vertical-scroll-proportion="0.0" vertical-offset="8221" max-vertical-offset="25890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="46" selection-start="4428" selection-end="4428" vertical-scroll-proportion="0.0" vertical-offset="7925" max-vertical-offset="9180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="37" selection-start="5250" selection-end="5265" vertical-scroll-proportion="-4.66" vertical-offset="1132" max-vertical-offset="8955">
+          <folding>
+            <marker date="1394125047000" expanded="true" signature="16890:17464" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="16979:17453" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="17091:17206" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="17318:17438" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="17544:17653" placeholder="..." />
+            <marker date="1394125047000" expanded="false" signature="17605:17641" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="17822:20254" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="17876:18090" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="18181:18562" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="18215:18547" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="18346:18528" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="18606:19284" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="18692:18790" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="18831:19269" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="18948:19099" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="19373:19696" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="19543:19681" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="19785:20243" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="19897:20004" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="20116:20228" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="20413:21657" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="20564:21052" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="20660:21037" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="20720:20832" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="20889:21018" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="21098:21303" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="21187:21288" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="21353:21646" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="21543:21631" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="21813:26657" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="21874:22106" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="22137:22735" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="22168:22263" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="22303:22720" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="22420:22571" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="22766:23529" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="22798:23092" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="22901:23073" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23123:23514" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23228:23495" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23342:23472" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23560:23860" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23598:23845" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23622:23826" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23896:24613" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="23965:24229" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24093:24210" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24286:24334" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24373:24598" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24429:24580" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24671:25802" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24710:24907" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24734:24888" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24942:25458" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="24982:25197" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="25057:25174" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="25233:25439" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="25298:25416" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="25494:25787" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="25530:25768" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="25608:25745" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="25890:26083" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="26172:26646" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="26284:26399" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="26511:26631" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="26813:31011" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="26849:27081" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="27112:27712" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="27143:27238" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="27278:27697" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="27395:27548" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="27743:28506" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="27775:28069" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="27878:28050" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28100:28491" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28205:28472" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28319:28449" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28537:28837" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28575:28822" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28599:28803" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28873:29590" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="28942:29206" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29070:29187" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29263:29311" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29350:29575" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29406:29557" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29648:30716" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29687:29884" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29711:29865" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29919:30393" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="29959:30153" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="30034:30130" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="30189:30374" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="30254:30351" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="30429:30701" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="30465:30682" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="30543:30659" placeholder="..." />
+            <marker date="1394125047000" expanded="true" signature="30804:31000" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/services/AuthService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="2355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/controllers/ItemCreateModalController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/ru/poteriashki/laf/core/config/InitConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/ru/poteriashki/laf/web/controllers/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="0" selection-start="4449" selection-end="4449" vertical-scroll-proportion="0.33333334" vertical-offset="1064" max-vertical-offset="1485">
           <folding />
         </state>
       </provider>

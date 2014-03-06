@@ -133,7 +133,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     if (search) {
       ItemsService.crud.search({query: $scope.searchQuery, itemType: $scope.categoriesListType}, function (items) {
         if ($scope.searchSpinner) {
-          $scope.searchSpinner.stop();
+          $scope.searchSpinner.addClass('hidden');
         }
         callback({content: items});
         $scope.mapService.drawMarkersDirectly($scope.itemsList.lostAndFoundItems);
@@ -534,20 +534,17 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.search = function () {
     if ($scope.searchSpinner) {
-      $scope.searchSpinner.stop();
+      $scope.searchSpinner.addClass('hidden');
     }
     if ($scope.searchProimse) {
       $timeout.cancel($scope.searchProimse);
     }
     $scope.searchProimse = $timeout(function () {
       if ($scope.searchSpinner) {
-        $scope.searchSpinner.spin(angular.element('.search-block')[0]);
+        $scope.searchSpinner.removeClass('hidden');
       } else {
-        var serachSpinnerOptions = {};
-        angular.copy(SPINER_OPTS, serachSpinnerOptions);
-        serachSpinnerOptions.left = 345;
-
-        $scope.searchSpinner = new Spinner(serachSpinnerOptions).spin(angular.element('.search-block')[0]);
+        $scope.searchSpinner = angular.element('.search-block img');
+        $scope.searchSpinner.removeClass('hidden');
       }
       $scope.isCollapsed = true;
       MapService.hideAllBalloons();

@@ -33,6 +33,9 @@
             <div class="show-list clearfix">
                 <div class="dashed-text" ng-click="collapse()">Перейти к списку объявлений</div>
             </div>
+            <div class="copyright">
+                &copy; 2014 Потеряшки <a class="dashed-text" href="mailto:support@find.nsk.ru">Служба поддержки.</a>
+            </div>
         </div>
         </div>
         <div class="on-map-panel marker-edit-mode {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
@@ -47,7 +50,9 @@
     <div id="map-panel" class="map-panel"></div>
     <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed" ng-click="showSettings = false">
         <div class="user-panel on-map-panel">
-            <div class="back-block"></div>
+            <div class="back-block on-map-panel">
+                <img src="img/li_max.gif">
+            </div>
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
                 <div class="my-messages-button" ng-click="" tooltip-html-unsafe="Мои сообщения<br/> Новые (Все)" tooltip-placement="bottom">1<span>(3)</span></div>
@@ -84,14 +89,18 @@
         <div class="search-block left-margin">
             <input type="text" placeholder="Искать" ng-model="searchQuery" ng-change="search()"
                    typeahead="thing for thing in whatDict | filter:$viewValue | limitTo:8">
+            <img class="hidden" src="img/li_mini.gif">
         </div>
         <div class="selected-category left-margin clearfix" ng-show="selectedCategory != null">
-            <span class="back" ng-click="selectedItem != null ? goBackToSelectedCategory() : clearCategorySelection()">{{selectedItem != null ? 'К списку объявлений' : 'К списку категорий'}}</span>
-            <span class="name-tag">
-                {{selectedCategory.name}}
-                <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
-                <span ng-show="searchItemsMode">&nbsp;&nbsp;{{itemsList.lostAndFoundItems.length}}</span>
-            </span>
+            <div class="clearfix">
+                <span class="back" ng-click="selectedItem != null ? goBackToSelectedCategory() : clearCategorySelection()">{{selectedItem != null ? 'К списку объявлений' : 'К списку категорий'}}</span>
+                <span class="name-tag">
+                    {{selectedCategory.name}}
+                    <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
+                    <span ng-show="searchItemsMode">&nbsp;&nbsp;{{itemsList.lostAndFoundItems.length}}</span>
+                </span>
+            </div>
+            <div class="category-border clearfix">&nbsp;</div>
         </div>
         <div class="nano details-block-scroll" style="height: {{detailsBlockHeight}}px" ng-show="selectedItem != null">
             <div class="content scroll-content left-margin">
@@ -220,9 +229,9 @@
                             <img src="{{getIconByTag(tag)}}" alt="">
                         </span>
                     </span>
-                    <span class="tag-name">
+                    <span class="tag-name-container">
                         <span class="tag-name-tc">
-                            <span>{{tag}}&nbsp;<span class="tag-count">{{getCountByTag(tag)}}</span></span>
+                            <span class="tag-name">{{tag}}</span>&nbsp;<span class="tag-count">{{getCountByTag(tag)}}</span>
                         </span>
                     </span>
                     </div>
