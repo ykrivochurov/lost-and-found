@@ -6,6 +6,8 @@
 @import "landing-page.css";
 @import "select.css";
 @import "on-map-panel.css";
+@import "messages.css";
+@import "picture-block.css";
 
 body {
     overflow: hidden;
@@ -727,6 +729,7 @@ button:focus {
     font-size: 160%;
     margin-top: 10px;
     width: 270px;
+    overflow-x: hidden;
 }
 
 .home-wrapper .share-section {
@@ -914,9 +917,9 @@ button:focus {
     cursor: pointer;
 }
 
-.home-wrapper .item-number:hover,
-.home-wrapper .item-number:visited,
-.home-wrapper .item-number {
+.app-wrapper .item-number:hover,
+.app-wrapper .item-number:visited,
+.app-wrapper .item-number {
     float: right;
     color: rgb(255, 255, 255);
     padding: 1px 5px 0px;
@@ -936,9 +939,9 @@ button:focus {
     text-decoration: none;
 }
 
-.home-wrapper .details-block .item-number:hover,
-.home-wrapper .details-block .item-number:visited,
-.home-wrapper .details-block .item-number {
+.app-wrapper .details-block .item-number:hover,
+.app-wrapper .details-block .item-number:visited,
+.app-wrapper .details-block .item-number {
     margin-top: 13px;
 }
 
@@ -946,21 +949,21 @@ button:focus {
     margin-top: 13px;
 }
 
-.home-wrapper .item-number.closed:visited,
-.home-wrapper .item-number.closed:hover,
-.home-wrapper .item-number.closed {
+.app-wrapper .item-number.closed:visited,
+.app-wrapper .item-number.closed:hover,
+.app-wrapper .item-number.closed {
     background-color: rgb(195, 195, 195);
 }
 
-.home-wrapper .item-number.found:visited,
-.home-wrapper .item-number.found:hover,
-.home-wrapper .item-number.found {
+.app-wrapper .item-number.found:visited,
+.app-wrapper .item-number.found:hover,
+.app-wrapper .item-number.found {
     background-color: rgb(30, 191, 228);
 }
 
-.home-wrapper .item-number.lost:visited,
-.home-wrapper .item-number.lost:hover,
-.home-wrapper .item-number.lost {
+.app-wrapper .item-number.lost:visited,
+.app-wrapper .item-number.lost:hover,
+.app-wrapper .item-number.lost {
     background-color: rgb(222, 77, 12);
 }
 
@@ -1124,6 +1127,7 @@ button:focus {
 .app-wrapper .create-message-form.lost .message-text {
     background: url('../img/mesage.png') no-repeat transparent 0 30px;
     padding-left: 30px;
+    position: relative;
 }
 
 .app-wrapper .create-message-form.found .message-text {
@@ -1132,8 +1136,8 @@ button:focus {
 }
 
 .app-wrapper .create-message-form textarea {
-    width: 520px;
-    height: 155px;
+    width: 400px;
+    height: 135px;
     resize: none;
 }
 
@@ -1258,39 +1262,6 @@ button:focus {
     color: rgb(128, 128, 128);
     margin-top: 0;
     margin-left: 30px;
-}
-
-.app-wrapper .creation-form .picture {
-    float: left;
-    width: 102px;
-    height: 102px;
-    border: 1px solid rgb(205, 205, 206);
-    margin-right: 25px;
-    margin-top: 9px;
-    vertical-align: middle;
-    background-color: rgb(245, 245, 245);
-    text-align: center;
-}
-
-.app-wrapper .creation-form .picture img {
-    max-width: 90px;
-    max-height: 90px;
-    vertical-align: middle;
-    margin-left: -4px;
-}
-
-.app-wrapper .creation-form .picture-block > span {
-    cursor: pointer;
-}
-
-.app-wrapper .creation-form .picture-block {
-    width: 100px;
-    position: absolute;
-    right: 35px;
-    top: 35px;
-    color: rgb(206, 178, 101);
-    font-size: 80%;
-    text-align: center;
 }
 
 .app-wrapper .creation-form input {

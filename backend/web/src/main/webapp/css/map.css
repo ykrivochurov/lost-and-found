@@ -3,6 +3,10 @@
     border-radius: 4px;
     border: 10px solid rgba(255, 255, 255, 0.6);
 }
+.balloon-content span {
+    display: block;
+    overflow: hidden;
+}
 
 .balloon-content > div {
     width: 250px;

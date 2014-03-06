@@ -1,12 +1,25 @@
 var app = angular.module('laf', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate']).
-    config(['$routeProvider', function ($routeProvider) {
-      $routeProvider.
-        when('/', {templateUrl: 'landing-page'}).
-        when('/home', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
-        otherwise({redirectTo: '/'});
-    }])
-  ;
+  config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.
+      when('/', {templateUrl: 'landing-page'}).
+      when('/home', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
+      otherwise({redirectTo: '/'});
+  }]);
+app.filter('truncate', function () {
+  return function (text, length) {
+    if (isNaN(length)) {
+      length = 10;
+    }
 
+    if (text.length <= length) {
+      return text;
+    }
+    else {
+      return String(text).substring(0, length) + "...";
+    }
+
+  };
+});
 app.directive('dndList', function () {
   return function (scope, element, attrs) {
     var toUpdate;
@@ -40,7 +53,7 @@ angular.module('$strap.config', []).value('$strapConfig', {
   }
 });
 
-angular.module("template/popover/popover.html", []).run(["$templateCache", function($templateCache) {
+angular.module("template/popover/popover.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("template/popover/popover.html",
     "<div class=\"popover {{placement}}\" ng-class=\"{ in: isOpen(), fade: animation() }\">\n" +
       "  <div class=\"arrow\"></div>\n" +

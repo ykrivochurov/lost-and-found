@@ -1,0 +1,42 @@
+.app-wrapper .picture {
+    float: left;
+    width: 102px;
+    height: 102px;
+    border: 1px solid rgb(205, 205, 206);
+    margin-right: 25px;
+    margin-top: 9px;
+    vertical-align: middle;
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+}
+
+.app-wrapper .picture img {
+    max-width: 90px;
+    max-height: 90px;
+    vertical-align: middle;
+    margin-left: -4px;
+}
+
+.app-wrapper .picture-block > span {
+    cursor: pointer;
+}
+
+.app-wrapper .picture-block {
+    width: 100px;
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    color: rgb(206, 178, 101);
+    font-size: 80%;
+    text-align: center;
+}
+
+.app-wrapper .message-text .picture-block {
+    right: 25px;
+    top: 0;
+}
+
+.app-wrapper .message-text .picture {
+    margin-right: auto;
+    margin-top: 5px;
+}

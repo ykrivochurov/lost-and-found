@@ -280,10 +280,33 @@
 
 <script type="text/ng-template" id="create-message-modal.html">
     <div class="ci-popup create-message-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
+<!-- todo tabs -->
+        <div class="item-m-panel">
+            <span class="item-number {{item.closed ? 'closed' : item.itemType == 'LOST' ? 'lost' : 'found'}}">#&nbsp;{{selectedItem.number}}</span>
+            <span>{{item.what|truncate:65}}</span>
+        </div>
+        <div class="messages-panel nano" ng-show="utilsService.isNotEmptyArray(messages)">
+            <div class="content">
+                <div class="message-panel {{$index != messages.length - 1 ? 'with-border' : ''}}" ng-repeat="message in messages">
+                    <img src="{{isMessageOwner(message) ? 'img/message/ia.png' : 'img/message/ia_on.png'}}">
+                    <span>{{message.text}}</span>
+                </div>
+            </div>
+        </div>
         <div class="message-text clearfix">
             <span><label for="messageText">Сообщение</label></span>
             <div>
                 <textarea id="messageText" ng-model="message.text"></textarea>
+            </div>
+
+            <div class="picture-block">
+                <span><label for="photos-input">Загрузить фото</label></span>
+
+                <div class="picture">
+                    <span class="img-va-helper"></span>
+                    <img id="photo-preview" src="/img/icon_camera.png">
+                </div>
+                <input type="file" class="hidden ng-pristine ng-valid" name="photos" id="photos-input" ng-model="photoPath" ng-change="uploadPhoto()">
             </div>
         </div>
 
