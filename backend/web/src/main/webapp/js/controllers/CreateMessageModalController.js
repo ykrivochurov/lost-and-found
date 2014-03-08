@@ -42,7 +42,8 @@ function CreateMessageModalController($scope, $modalInstance, $timeout, AuthServ
   };
 
   $scope.isMessageOwner = function (message) {
-    return $scope.authService.currentUserHolder.id == message.sender;
+    return $scope.authService.currentUserHolder != null
+      && $scope.authService.currentUserHolder.id == message.sender;
   };
 
   $scope.saveMessage = function () {

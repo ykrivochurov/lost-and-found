@@ -21,7 +21,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   $scope.dateFormat = 'dd/MM/yyyy';
   $scope.isCollapsed = false;
   $scope.categoriesListType = 'LOST';
-  $scope.whatDict = ['ключи', 'телефон', 'кошелек', 'сумку', 'варежку'];
   $scope.tagsIcons = TAGS_ICONS;
   $scope.pinIcons = PIN_ICONS;
   $scope.searchQuery = null;
@@ -397,7 +396,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.editItem = function (laf, item) {
     var modalInstance = $modal.open({
-      templateUrl: 'modify-item-modal.html',
+      templateUrl: 'modify-item-modal',
       controller: ItemModifyModalController,
       resolve: {
         item: function () {
@@ -427,7 +426,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.createItem = function (itemType) {
     var modalInstance = $modal.open({
-      templateUrl: 'create-item-modal.html',
+      templateUrl: 'create-item-modal',
       controller: ItemCreateModalController,
       scope: $scope,
       resolve: {
@@ -450,7 +449,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.createMessage = function (item) {
     $modal.open({
-      templateUrl: 'create-message-modal.html',
+      templateUrl: 'create-message-modal',
       controller: CreateMessageModalController,
       windowClass: 'create-message-modal',
       scope: $scope,
@@ -465,7 +464,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   $scope.showFullSIzeImage = function (item) {
     if (UtilsService.isNotEmpty(item.photoId)) {
       $modal.open({
-        templateUrl: 'full-size-image.html',
+        templateUrl: 'full-size-image',
         controller: ImageViewModalController,
         windowClass: 'full-size-image-modal',
         resolve: {
@@ -482,7 +481,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       $scope.authService.currentUserHolder = $scope.authService.currentUserHolder;
     } else {
       $modal.open({
-        templateUrl: 'login-win.html',
+        templateUrl: 'login-win',
         controller: LoginModalController,
         windowClass: 'login-modal',
         scope: $scope
@@ -492,7 +491,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.showComplaintModal = function (item) {
     $modal.open({
-      templateUrl: 'complaint-modal.html',
+      templateUrl: 'complaint-modal',
       controller: ComplaintModalController,
       windowClass: 'complaint-modal',
       resolve: {
@@ -585,17 +584,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.loadAndOpenItemByNumber();
   });
 
-}
-
-function joinTagsObjects(tags) {
-  if (angular.isArray(tags) && tags.length > 0) {
-    return tags.join(', ');
-  }
-  return null;
-}
-
-function goToClear() {
-  return window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/#/home';
 }
 
 function generateUrl(item) {

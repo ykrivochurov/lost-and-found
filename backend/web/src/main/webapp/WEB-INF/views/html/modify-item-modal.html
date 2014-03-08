@@ -1,0 +1,105 @@
+<div class="ci-popup creation-form {{itemType == 'LOST' ? 'lost' : 'found'}}">
+    <div class="creation-date">
+        <span class="day">{{laf.creationDate | date:'dd'}}</span>
+        <span class="month">{{laf.creationDate | date:'MMMM'}}</span>
+        <span class="year">{{laf.creationDate | date:'yyyy'}}</span>
+    </div>
+    <div class="clearfix">
+        <div class="what">
+            <textarea ng-model="laf.what" placeholder="Что"></textarea>
+        </div>
+        <div class="picture-block">
+            <span><label for="photos-input">Загрузить фото</label></span>
+
+            <div class="picture">
+                <span class="img-va-helper"></span>
+                <img id="photo-preview-m" src="/img/icon_camera.png">
+            </div>
+            <input type="file" class="hidden" name="photos" id="photos-input" ng-model="photoPath"
+                   ng-change="uploadPhoto()">
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="where">
+            <span>где {{itemType == 'LOST' ? 'утеряно' : 'найдено'}}</span>
+
+            <div>
+                <input type="text" ng-model="laf.where" placeholder="Где" ng-click="showMap()">
+                <img src="/img/pin_map.png" ng-click="showMap()">
+            </div>
+        </div>
+        <div class="when">
+            <span>когда {{itemType == 'LOST' ? 'утеряно' : 'найдено'}}</span>
+
+            <div>
+                <input type="text" ng-model="laf.when" placeholder="Когда" datepicker-popup="{{dateFormat}}"
+                       show-button-bar="false"
+                       show-weeks="false" datepicker-append-to-body="true">
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="refund-info">
+            <label>
+                <input type="checkbox" ng-model="laf.money">
+                <span>{{itemType == 'LOST' ? 'Верните за вознаграждение' : 'Верну за вознаграждение'}}</span>
+            </label>
+        </div>
+    </div>
+    <div class="tags clearfix">
+        <div class="tags-wrapper" ng-show="laf.tags.length > 0">
+            <span class="tags-label">Категории:</span>
+                <span ng-repeat="tag in laf.tags" class="tag-value">
+                    <span>{{tag}}<img src="/img/close.png" ng-click="removeTag(tag)"></span>
+                </span>
+        </div>
+        <div class="add-tag-button dropdown-toggle">
+            Добавить тег
+        </div>
+        <ul class="dropdown-menu">
+            <li ng-repeat="category in categories">
+                {{category.name}}
+                <a ng-repeat="tag in category.tags" ng-click="addTag(tag)">{{tag}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-show="authService.currentUserHolder.id">
+        <div class="private-info">
+            <label>
+                <input type="checkbox" ng-model="laf.showPrivateInfo">
+                <span>Публикация контактов</span>
+            </label>
+        </div>
+        <div class="clearfix">
+            <div class="user-name">
+                <span>контактное лицо</span>
+
+                <div>
+                    <input type="text" ng-model="laf.user.name">
+                </div>
+            </div>
+            <div class="email">
+                <span>Емэйл</span>
+
+                <div>
+                    <input type="text" ng-model="laf.user.email">
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="phone">
+                <span>контактный телефон</span>
+
+                <div>
+                    <input type="text" ng-model="laf.user.phone" class="phone-mask">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix login-buttons" ng-show="authService.currentUserHolder.id">
+        <button ng-click="cancel()" class="c-button colored-button">Отмена</button>
+        <button ng-click="saveItem()" class="s-button colored-button">Сохранить</button>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="simple-login">
+    <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
+        <button class="vk-login button-base" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
+            <img src="/img/button_vk.png">
+            Войти через аккаунт Vkontakte
+        </button>
+        <button class="fb-login button-base" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
+            <img src="/img/button_facebook.png">
+            Войти через аккаунт Facebook
+        </button>
+    </div>
+</div>

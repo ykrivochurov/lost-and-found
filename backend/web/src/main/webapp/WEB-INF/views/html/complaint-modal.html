@@ -1,0 +1,32 @@
+<div class="ci-popup complaint-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
+    <span class="complaint-header">Это объявление некорректно? Пожалуйста, укажите, почему:</span>
+
+    <div class="complaint-reason clearfix">
+        <span><label for="complainReason">Выберите причину</label></span>
+
+        <div>
+            <div class="dropdown-toggle custom-select">
+                <span class="caret"></span>
+                {{complaint.reason}}
+            </div>
+            <ul class="dropdown-menu custom-select">
+                <li ng-repeat="reason in reasons" ng-click="complaint.reason = reason">{{reason}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="complaint-text clearfix">
+        <span><label for="complainText">Подробности</label></span>
+
+        <div>
+            <textarea id="complainText" ng-model="complaint.text"></textarea>
+        </div>
+    </div>
+
+    <div class="clearfix complaint-buttons">
+        <button ng-click="cancel()" class="button-base float-left complaint-cancel">Отмена</button>
+        <button ng-click="save()" class="button-base float-right complaint-send">
+            <img src="/img/ok.png">
+            Отправить
+        </button>
+    </div>
+</div>
