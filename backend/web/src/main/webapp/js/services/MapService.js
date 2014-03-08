@@ -1,5 +1,5 @@
 angular.module('laf').
-  factory('MapService', function ($q, $timeout, $sce, UtilsService, GeoLocationService, ItemsService) {
+  factory('MapService', function ($q, $timeout, $sce, $http, UtilsService, GeoLocationService, ItemsService) {
     moment.lang('ru');
     var defaultGroupName = 'default_markers';
     var controllerScope;
@@ -276,6 +276,54 @@ angular.module('laf').
           });
       },
 
+      getPointByAddress: function (address, callback) {
+        console.log('address: ' + address);
+        var self = this;
+        controllerScope.DGisMap.geocoder.get(address,
+          {
+            types: ['house', 'street', 'city', 'district', 'living_area', 'place', 'station_platform', 'settlement'],
+            radius: 200,
+            limit: 4,
+            success: function (geocoderObjects) {
+              controllerScope.hideBusy();
+              for (var i = 0; i < geocoderObjects.length; i++) {
+                var geocoderObject = geocoderObjects[i];
+
+                var geoPoint = geocoderObject.getCenterGeoPoint();
+                if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+                  controllerScope.activeBallon.hide();
+                }
+                controllerScope.DGisMap.setCenter(geoPoint, 15);
+                //перемещение маркера в новое место
+                controllerScope.currentLocationMarker.setPosition(geoPoint);
+
+                controllerScope.laf.location = self.getLocationObject();
+                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                  controllerScope.middleStateItem.location = controllerScope.laf.location;
+                }
+                if (!controllerScope.$$phase) {
+                  controllerScope.$apply();
+                }
+                break;
+              }
+              if (UtilsService.isFunction(callback)) {
+                callback();
+              }
+            },
+            failure: function (code, message) {
+              console.log('Unable to get point: ' + message);
+              controllerScope.hideBusy();
+              controllerScope.laf.location = self.getLocationObject();
+              if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                controllerScope.middleStateItem.location = controllerScope.laf.location;
+              }
+              if (!controllerScope.$$phase) {
+                controllerScope.$apply();
+              }
+            }
+          });
+      },
+
       activateMiddleStatePanel: function (item, isCreation) {
         controllerScope.middleStateItem = item;
         controllerScope.middleStateItem_loc = item.location;
@@ -288,6 +336,49 @@ angular.module('laf').
         controllerScope.middleStateItem_loc = null;
         controllerScope.middleStateItem_where = null;
         controllerScope.isItemCreation = null;
+      },
+
+      whereTypeahead: function (val) {
+        return $http({method: 'POST', url: 'https://dadata.ru/api/v1/suggest/address', headers: {
+          'Authorization': 'Token 8e5f640a855aaa1afb4f2ae651528faacbeee155',
+          'Content-Type': 'application/json'
+        }, data: {
+          query: controllerScope.cities[0].name + ' ' + val
+        }}).then(function (data) {
+          var addresses = [];
+          angular.forEach(data.data.suggestions, function (item) {
+            var address = '';
+//            if (item.data.city_type) {
+//              address = address.concat(item.data.city_type).concat(' ');
+//            }
+            if (item.data.city) {
+              address = address.concat(item.data.city);
+            }
+//            if (item.data.street_type) {
+//              address = address.concat(item.data.street_type).concat(' ');
+//            }
+            if (item.data.street) {
+              if (address.length > 0) {
+                address = address.concat(', ');
+              }
+              address = address.concat(item.data.street);
+            }
+//            if (item.data.house_type) {
+//              address = address.concat(item.data.house_type).concat(' ');
+//            }
+            if (item.data.house) {
+              if (address.length > 0) {
+                address = address.concat(', ');
+              }
+              address = address.concat(item.data.house);
+            }
+            if (UtilsService.isNotBlank(address.trim())) {
+              addresses.push(address);
+            }
+          });
+
+          return addresses
+        });
       }
     };
   });

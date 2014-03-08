@@ -12,7 +12,14 @@
                 <span class="city">{{currentCity.name}}</span>
             </div>
             <div class="start-form clearfix">
-                <input type="text" name="where" placeholder="Где, укажите на карте" ng-model="laf.where">
+                <div class="where">
+                    <input type="text" name="where" placeholder="Где" ng-model="laf.where"
+                           typeahead="address for address in mapService.whereTypeahead($viewValue) | filter:$viewValue | limitTo:8"
+                           typeahead-on-select="mapService.getPointByAddress(laf.where, null)"
+                           typeahead-loading="dadataSearchIndicator" tooltip="Укажите на карте или выберите из списка"
+                           tooltip-placement="right" tooltip-append-to-body="true">
+                    <img ng-show="dadataSearchIndicator" src="img/li_mini.gif">
+                </div>
                 <div class="what">
                     <div class="dropdown-toggle input-color">{{laf.tags[0] ? laf.tags[0] : 'Что'}}</div>
                     <ul class="dropdown-menu">
@@ -40,7 +47,12 @@
         </div>
         <div class="on-map-panel marker-edit-mode {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
             <div class="where">
-                <input type="text" ng-model="middleStateItem.where" placeholder="Где">
+                <input type="text" ng-model="middleStateItem.where" placeholder="Где"
+                       typeahead="address for address in mapService.whereTypeahead($viewValue) | filter:$viewValue | limitTo:8"
+                       typeahead-on-select="mapService.getPointByAddress(middleStateItem.where, null)"
+                       typeahead-loading="dadataMiddleStateItemSearchIndicator" tooltip="Укажите на карте или выберите из списка"
+                       tooltip-placement="top" tooltip-append-to-body="true" tooltip-popup-delay="500" >
+                <img ng-show="dadataMiddleStateItemSearchIndicator" src="img/li_mini.gif">
             </div>
             <button ng-click="setNewPlace(false)" tooltip-html-unsafe="Вернуться к <br/>редактированию объявления" tooltip-placement="top" tooltip-popup-delay="500" tooltip-append-to-body="true"
                     class="button-base-small {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}">Выбрать</button>
@@ -398,7 +410,7 @@
                 <span>где {{itemType == 'LOST' ? 'утеряно' : 'найдено'}}</span>
 
                 <div>
-                    <input type="text" ng-model="laf.where" placeholder="Где">
+                    <input type="text" ng-model="laf.where" placeholder="Где" ng-click="showMap()">
                     <img src="/img/pin_map.png" ng-click="showMap()">
                 </div>
             </div>
@@ -513,7 +525,7 @@
                 <span>где {{itemType == 'LOST' ? 'утеряно' : 'найдено'}}</span>
 
                 <div>
-                    <input type="text" ng-model="laf.where" placeholder="Где">
+                    <input type="text" ng-model="laf.where" placeholder="Где" ng-click="showMap()">
                     <img src="/img/pin_map.png" ng-click="showMap()">
                 </div>
             </div>

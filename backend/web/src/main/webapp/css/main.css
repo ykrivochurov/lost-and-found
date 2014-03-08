@@ -298,6 +298,22 @@ button:focus {
     position: relative;
 }
 
+.home-wrapper .start-form .where {
+    position: relative;
+}
+
+.home-wrapper .start-form .where img {
+    position: absolute;
+    top: 15px;
+    right: 60px;
+}
+
+.home-wrapper .start-form .where .dropdown-menu a:hover,
+.home-wrapper .start-form .where .dropdown-menu a:focus
+.home-wrapper .start-form .where .dropdown-menu a:visited {
+    color: rgb(38, 38, 38);
+}
+
 .home-wrapper .start-form .what {
     width: 253px;
     display: block;
@@ -319,8 +335,8 @@ button:focus {
 
 .home-wrapper .start-form .what .dropdown-menu {
     top: inherit;
-    left: 43px;
-    width: 260px;
+    left: 48px;
+    width: 253px;
     z-index: 2000;
 }
 
@@ -384,6 +400,7 @@ button:focus {
     bottom: 20px;
     width: 100%;
 }
+
 .app-wrapper .left-panel .copyright a:visited,
 .app-wrapper .left-panel .copyright a:focus,
 .app-wrapper .left-panel .copyright a:hover,
@@ -1021,11 +1038,17 @@ button:focus {
 
 .home-wrapper .marker-edit-mode {
     position: absolute;
-    /*top: 13px;*/
-    bottom: 20px;
-    left: 450px;
+    top: 70px;
+    /*bottom: 20px;*/
+    left: 373px;
     padding-top: 8px;
     width: 643px;
+}
+
+.home-wrapper .marker-edit-mode .where img {
+    position: absolute;
+    top: 22px;
+    right: 219px;
 }
 
 .home-wrapper .marker-edit-mode .button-base-small {
