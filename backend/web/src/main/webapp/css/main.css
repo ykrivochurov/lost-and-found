@@ -697,7 +697,7 @@ button:focus {
 }
 
 .home-wrapper .details-block .settings-button {
-    margin-top: 7px;
+    margin-top: 11px;
     margin-left: 10px;
     float: right;
 }
@@ -964,7 +964,7 @@ button:focus {
     height: 26px;
     width: 26px;
     float: right;
-    margin-top: 2px;
+    margin-top: 6px;
     margin-left: 10px;
 }
 
@@ -979,7 +979,7 @@ button:focus {
     color: rgb(255, 255, 255);
     padding: 1px 5px 0px;
     border-radius: 4px;
-    margin-top: 7px;
+    margin-top: 12px;
     margin-left: 10px;
     text-decoration: none;
 }
@@ -989,7 +989,7 @@ button:focus {
     color: rgb(196, 196, 196);
     padding-top: 1px;
     border-radius: 4px;
-    margin-top: 7px;
+    margin-top: 12px;
     margin-left: 7px;
     text-decoration: none;
 }
@@ -997,11 +997,11 @@ button:focus {
 .app-wrapper .details-block .item-number:hover,
 .app-wrapper .details-block .item-number:visited,
 .app-wrapper .details-block .item-number {
-    margin-top: 8px;
+    margin-top: 13px;
 }
 
 .home-wrapper .details-block .item-closed {
-    margin-top: 8px;
+    margin-top: 13px;
 }
 
 .app-wrapper .item-number.closed:visited,

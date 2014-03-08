@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05676ae-78b2-47fc-916f-9dbbfc489c72" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/complaint-modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/create-item-modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/create-message-modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/full-size-image.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/login-win.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/modify-item-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/CreateMessageModalController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/CreateMessageModalController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/controllers/HomeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lost-and-found.iws" afterPath="$PROJECT_DIR$/lost-and-found.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/web/src/main/webapp/css/main.css" />
     </list>
@@ -112,7 +103,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="39" selection-start="9098" selection-end="9098" vertical-scroll-proportion="-11.833333" vertical-offset="1741" max-vertical-offset="4275">
+            <state line="134" column="40" selection-start="8958" selection-end="8958" vertical-scroll-proportion="-11.208333" vertical-offset="1741" max-vertical-offset="4275">
               <folding />
             </state>
           </provider>
@@ -130,7 +121,7 @@
       <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="989" column="20" selection-start="22616" selection-end="22616" vertical-scroll-proportion="0.39252338" vertical-offset="14541" max-vertical-offset="26385">
+            <state line="966" column="17" selection-start="22163" selection-end="22163" vertical-scroll-proportion="0.39252338" vertical-offset="14196" max-vertical-offset="26385">
               <folding />
             </state>
           </provider>
@@ -1807,7 +1798,7 @@
       <workItem from="1393755846897" duration="20769000" />
       <workItem from="1393857975973" duration="18975000" />
       <workItem from="1393944224487" duration="20764000" />
-      <workItem from="1394115444590" duration="25180000" />
+      <workItem from="1394115444590" duration="26046000" />
     </task>
     <task id="LOCAL-00001" summary="Renaming.&#10;Base core model and configuration.">
       <created>1387996907187</created>
@@ -2049,11 +2040,15 @@
       <created>1394280817808</created>
       <updated>1394280817808</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Небольшие фиксы внешнего вида.&#10;Модальные окна в отдельные файлы&#10;">
+      <created>1394282926615</created>
+      <updated>1394282926615</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278076000" />
+    <option name="totallyTimeSpent" value="278942000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -2155,7 +2150,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Открытие детальной информации об объявлении после создания" />
     <MESSAGE value="refs #24 номер объявления&#10;refs #26 прямая ссылка на объявление&#10;refs #15 публикация в соц сетях&#10;" />
     <MESSAGE value="refs #16 Именование категорий&#10;" />
     <MESSAGE value="refs #11 Мои объявления&#10;refs #19 Написать сообщение&#10;" />
@@ -2180,7 +2174,8 @@
     <MESSAGE value="loading-indicator&#10;refs #33 копирайт&#10;правки в верстке&#10;&#10;" />
     <MESSAGE value="refs #12 Возможность писать улицу и дом на форме создания" />
     <MESSAGE value="Небольшие фиксы внешнего вида&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Небольшие фиксы внешнего вида&#10;" />
+    <MESSAGE value="Небольшие фиксы внешнего вида.&#10;Модальные окна в отдельные файлы&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Небольшие фиксы внешнего вида.&#10;Модальные окна в отдельные файлы&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2542,14 +2537,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/html/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="39" selection-start="9098" selection-end="9098" vertical-scroll-proportion="-11.833333" vertical-offset="1741" max-vertical-offset="4275">
+        <state line="134" column="40" selection-start="8958" selection-end="8958" vertical-scroll-proportion="-11.208333" vertical-offset="1741" max-vertical-offset="4275">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="989" column="20" selection-start="22616" selection-end="22616" vertical-scroll-proportion="0.39252338" vertical-offset="14541" max-vertical-offset="26385">
+        <state line="966" column="17" selection-start="22163" selection-end="22163" vertical-scroll-proportion="0.39252338" vertical-offset="14196" max-vertical-offset="26385">
           <folding />
         </state>
       </provider>
