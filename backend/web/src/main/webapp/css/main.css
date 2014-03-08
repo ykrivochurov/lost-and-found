@@ -12,6 +12,7 @@
 body {
     overflow: hidden;
     font-family: 'NeoSansCyr', Arial, sans-serif !important;
+    width: 100%;
 }
 
 .app-wrapper .input-color {
@@ -235,6 +236,10 @@ button:focus {
 /* end Buttons */
 
 /* Home page */
+.home-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
 
 #map-panel {
     width: 100%;
@@ -268,7 +273,7 @@ button:focus {
 
 .home-wrapper .left-panel .top-logo {
     padding-bottom: 25px;
-    padding-top: 35px;
+    padding-top: 25px;
 }
 
 .home-wrapper .left-panel .img-logo {
@@ -797,22 +802,23 @@ button:focus {
     border-bottom: 1px solid rgb(225, 225, 225);
 }
 
-.home-wrapper .details-block .prev-laf-item.no-items,
-.home-wrapper .details-block .next-laf-item.no-items {
+.home-wrapper .navigation-bar .prev-laf-item.no-items,
+.home-wrapper .navigation-bar .next-laf-item.no-items {
     cursor: default;
 }
 
-.home-wrapper .details-block .navigation-bar {
+.home-wrapper .navigation-bar {
     background-color: rgb(255, 255, 255);
     border-top: 1px solid rgb(227, 227, 227);
     padding: 15px 0;
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    right: 45px;
     width: 400px;
 }
 
-.home-wrapper .details-block .next-laf-item,
-.home-wrapper .details-block .prev-laf-item {
+.home-wrapper .navigation-bar .next-laf-item,
+.home-wrapper .navigation-bar .prev-laf-item {
     border: 1px solid rgb(255, 255, 255);
     float: left;
     cursor: pointer;
@@ -821,20 +827,20 @@ button:focus {
     color: rgb(220, 220, 220);
 }
 
-.home-wrapper .details-block .prev-laf-item {
+.home-wrapper .navigation-bar .prev-laf-item {
     float: left;
     text-align: right;
 }
 
-.home-wrapper .details-block .next-laf-item {
+.home-wrapper .navigation-bar .next-laf-item {
     float: right;
 }
 
-.home-wrapper .details-block .prev-laf-item img {
+.home-wrapper .navigation-bar .prev-laf-item img {
     margin-left: 10px;
 }
 
-.home-wrapper .details-block .next-laf-item img {
+.home-wrapper .navigation-bar .next-laf-item img {
     margin-right: 10px;
 }
 
