@@ -37,7 +37,7 @@ public class LostAndFoundServiceTest extends AbstractTestNGSpringContextTests {
 
     @BeforeMethod
     public void before() throws Exception {
-        mongoTemplate.remove(new Query(Criteria.where("id").exists(true)), Item.COLLECTION);
+        mongoTemplate.remove(new Query(Criteria.where("id").exists(true)), Item.class);
     }
 
     @Test

@@ -9,10 +9,14 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.mvc.WebContentInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import ru.poteriashki.laf.core.config.PropHolderConfig;
+
+import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
@@ -44,4 +48,18 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         configurer.enable();
     }
 
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        super.addInterceptors(registry);
+        WebContentInterceptor interceptor = new WebContentInterceptor();
+        interceptor.setCacheSeconds(10);
+        interceptor.setUseExpiresHeader(true);
+        interceptor.setUseCacheControlHeader(true);
+        interceptor.setUseCacheControlNoStore(true);
+        Properties properties = new Properties();
+        properties.put("/api/items/\\d", "10000");
+        properties.put("api/items/\\d", "10000");
+        interceptor.setCacheMappings(properties);
+        registry.addInterceptor(interceptor);
+    }
 }

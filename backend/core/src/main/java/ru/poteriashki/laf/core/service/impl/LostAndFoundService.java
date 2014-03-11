@@ -245,7 +245,6 @@ public class LostAndFoundService implements ILostAndFoundService {
         Pageable pageable = new PageRequest(pageNumber, pageSize, sort);
         Page<Item> byAuthor = itemRepository.findByAuthor(user.getId(), pageable);
         for (Item item : byAuthor) {
-            item.setMessages(messageService.loadByItemId(item.getId(), user));
             if (!item.isShowPrivateInfo()) {
                 item.setUser(null);
             }

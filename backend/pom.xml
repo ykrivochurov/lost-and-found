@@ -84,10 +84,6 @@
             </snapshots>
         </repository>
         <repository>
-            <id>maven-kungfuters</id>
-            <url>http://maven.kungfuters.org/content/groups/public</url>
-        </repository>
-        <repository>
             <id>spring-libs-snapshot</id>
             <name>Spring Snapshot Repository</name>
             <url>http://repo.springsource.org/snapshot</url>

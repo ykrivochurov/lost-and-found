@@ -1,11 +1,13 @@
 function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService) {
   $scope.shareService = ShareService;
+
   $scope.authService = AuthService;
   $scope.authService.applyCallback = function () {
     if (!$scope.$$phase) {
       $scope.$apply();
     }
   };
+  $scope.authService.refresh(null);
 
   $scope.mapService = MapService;
   $scope.messagesService = MessagesService;
@@ -200,16 +202,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
         deferred.promise.then(function () {
           $scope.isCollapsed = true;
           $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false).then(function () {
-            // get item from db if exists
-            for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
-              var dbItem = $scope.itemsList.lostAndFoundItems[i];
-              if (dbItem.id == item.id) {
-                item = dbItem;
-                break;
-              }
-            }
             $scope.openItem(item);
-            $scope.hideBusy();
           });
         });
         $scope.setCategoriesListType(item.itemType).then(function () {
@@ -227,14 +220,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     deferred.promise.then(function () {
       $scope.isCollapsed = true;
       $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false).then(function () {
-        // get item from db if exists
-        for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
-          var dbItem = $scope.itemsList.lostAndFoundItems[i];
-          if (dbItem.id == item.id) {
-            item = dbItem;
-            break;
-          }
-        }
         $scope.openItem(item);
       });
     });
@@ -275,13 +260,33 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 
   $scope.openItem = function (item) {
     console.log('Item: ' + JSON.stringify(item));
-    $scope.mapService.hideBalloonForItem($scope.selectedItem);
-    $scope.setSelectedItem(item);
-    $scope.showSelectedCategory = false;
-    $scope.mapService.showBalloonForItem(item);
+    $scope.showBusy('Загрузка объявления...');
+    ItemsService.crud.getByNumber({numberOrId: item.number}, function (item) {
+      if (UtilsService.isEmpty(item.id)) {
+        $scope.hideBusy();
+        alert('Объявление с номером ' + item.number + ' не существует!');
+        return;
+      }
+      $scope.hideBusy();
+      $scope.mapService.hideBalloonForItem($scope.selectedItem);
+      $scope.showSelectedCategory = false;
+      $scope.mapService.showBalloonForItem(item);
+      if (item != null) {
+        $location.search({number: item.number});
+      }
+      $scope.selectedItem = item;
+      $timeout(function () {
+        // recalculate scroll heights
+        $scope.calcScrollHeights();
+        $('.details-block-scroll').nanoScroller();
+      });
+    }, function (e) {
+      console.log(e);
+      alert('Объявление с номером ' + item.number + ' не существует!');
+    });
   };
 
-  $scope.closeItem = function (item) {
+  $scope.markItemAsClosed = function (item) {
     ItemsService.crud.close({numberOrId: item.id}, function (item) {
       $scope.goBackToSelectedCategory();
       $scope.itemClosed(item);
@@ -289,7 +294,16 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   };
 
   $scope.hasNextItem = function (item, prev) {
-    var indexOf = $scope.itemsList.lostAndFoundItems.indexOf(item);
+    if (UtilsService.isEmpty(item)) {
+      return false;
+    }
+    var indexOf;
+    for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
+      var itemFromCollection = $scope.itemsList.lostAndFoundItems[i];
+      if (itemFromCollection.id == item.id) {
+        indexOf = i;
+      }
+    }
     if (indexOf == 0 && prev) {
       return false;
     }
@@ -301,7 +315,13 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   };
 
   $scope.openNextItem = function (selectedItem, prev) {
-    var indexOf = $scope.itemsList.lostAndFoundItems.indexOf(selectedItem);
+    var indexOf;
+    for (var i = 0; i < $scope.itemsList.lostAndFoundItems.length; i++) {
+      var itemFromCollection = $scope.itemsList.lostAndFoundItems[i];
+      if (itemFromCollection.id == selectedItem.id) {
+        indexOf = i;
+      }
+    }
     if (prev) {
       $scope.openItem($scope.itemsList.lostAndFoundItems[indexOf - 1]);
     } else {
@@ -346,18 +366,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.selectedItem = null;
   };
 
-  $scope.setSelectedItem = function (item) {
-    if (item != null) {
-      $location.search({number: item.number});
-    }
-    $scope.selectedItem = item;
-    $timeout(function () {
-      // recalculate scroll heights
-      $scope.calcScrollHeights();
-      $('.details-block-scroll').nanoScroller();
-    });
-  };
-
   $scope.isSelectedItemOpened = function (number) {
     return $scope.selectedItem != null && $scope.selectedItem.number == number;
   };
@@ -378,7 +386,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
         $scope.middleStateItem.location = $scope.middleStateItem_loc;
         $scope.middleStateItem.where = $scope.middleStateItem_where;
       }
-      $scope.createItem($scope.middleStateItem.itemType);
+      $scope.createItemModal($scope.middleStateItem.itemType);
       $scope.deactivateMiddleStatePanel();
     } else {
       if (cancel) {
@@ -387,14 +395,69 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       } else {
         $scope.middleStateItem.location = $scope.mapService.getLocationObject();
       }
-      $scope.editItem($scope.middleStateItem, $scope.middleStateItem.item);
+      $scope.editItemModal($scope.middleStateItem, $scope.middleStateItem.item);
       $scope.mapService.deactivateMiddleStatePanel();
     }
   };
 
+  $scope.collapse = function () {
+    $scope.isCollapsed = !$scope.isCollapsed;
+  };
+
+  $scope.joinTags = function (tags) {
+    if (angular.isArray(tags) && tags.length > 0) {
+      return tags.join(', ');
+    }
+    return null;
+  };
+
+  $scope.search = function () {
+    if ($scope.searchSpinner) {
+      $scope.searchSpinner.addClass('hidden');
+    }
+    if ($scope.searchProimse) {
+      $timeout.cancel($scope.searchProimse);
+    }
+    $scope.searchProimse = $timeout(function () {
+      if ($scope.searchSpinner) {
+        $scope.searchSpinner.removeClass('hidden');
+      } else {
+        $scope.searchSpinner = angular.element('.search-block img');
+        $scope.searchSpinner.removeClass('hidden');
+      }
+      $scope.isCollapsed = true;
+      MapService.hideAllBalloons();
+      $scope.clearSelectedItem();
+      $scope.showSelectedCategory = true;
+      $scope.selectCategoryAndTag({name: $scope.searchItemsCategory}, null, false, true);
+      $scope.searchItemsMode = true;
+      console.log($scope.searchQuery);
+    }, 1000);
+  };
+
+
+//  Busy indicator
+  $scope.showBusy = function (message) {
+    if (!$scope.lafBusy) {
+      $scope.lafBusyMessage = $sce.trustAsHtml(message);
+      $scope.lafBusy = true;
+    }
+  };
+
+  $scope.hideBusy = function () {
+    $scope.lafBusy = false;
+    if (!$scope.$$phase) {
+      $scope.$apply();
+    }
+    console.log($scope.lafBusy);
+  };
+
+// end  Busy indicator
+
+
 //  Modals part
 
-  $scope.editItem = function (laf, item) {
+  $scope.editItemModal = function (laf, item) {
     var modalInstance = $modal.open({
       templateUrl: 'modify-item-modal',
       controller: ItemModifyModalController,
@@ -424,7 +487,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     });
   };
 
-  $scope.createItem = function (itemType) {
+  $scope.createItemModal = function (itemType) {
     var modalInstance = $modal.open({
       templateUrl: 'create-item-modal',
       controller: ItemCreateModalController,
@@ -447,10 +510,13 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     });
   };
 
-  $scope.createMessage = function (item) {
+  $scope.createMessageModal = function (item) {
+    var owner = $scope.authService.currentUserHolder != null
+      && $scope.authService.currentUserHolder.id == item.author;
+
     $modal.open({
-      templateUrl: 'create-message-modal',
-      controller: CreateMessageModalController,
+      templateUrl: owner ?  'create-message-owner-modal' : 'create-message-modal',
+      controller: owner ? CreateMessageOwnerModalController : CreateMessageModalController,
       windowClass: 'create-message-modal',
       scope: $scope,
       resolve: {
@@ -461,7 +527,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     });
   };
 
-  $scope.showFullSIzeImage = function (item) {
+  $scope.showFullSIzeImageModal = function (item) {
     if (UtilsService.isNotEmpty(item.photoId)) {
       $modal.open({
         templateUrl: 'full-size-image',
@@ -503,57 +569,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   }
 
 //  Modals part end
-
-  $scope.showBusy = function (message) {
-    if (!$scope.lafBusy) {
-      $scope.lafBusyMessage = $sce.trustAsHtml(message);
-      $scope.lafBusy = true;
-    }
-  };
-
-  $scope.hideBusy = function () {
-    $scope.lafBusy = false;
-    if (!$scope.$$phase) {
-      $scope.$apply();
-    }
-    console.log($scope.lafBusy);
-  };
-
-  $scope.collapse = function () {
-    $scope.isCollapsed = !$scope.isCollapsed;
-  };
-
-  $scope.joinTags = function (tags) {
-    if (angular.isArray(tags) && tags.length > 0) {
-      return tags.join(', ');
-    }
-    return null;
-  };
-
-
-  $scope.search = function () {
-    if ($scope.searchSpinner) {
-      $scope.searchSpinner.addClass('hidden');
-    }
-    if ($scope.searchProimse) {
-      $timeout.cancel($scope.searchProimse);
-    }
-    $scope.searchProimse = $timeout(function () {
-      if ($scope.searchSpinner) {
-        $scope.searchSpinner.removeClass('hidden');
-      } else {
-        $scope.searchSpinner = angular.element('.search-block img');
-        $scope.searchSpinner.removeClass('hidden');
-      }
-      $scope.isCollapsed = true;
-      MapService.hideAllBalloons();
-      $scope.clearSelectedItem();
-      $scope.showSelectedCategory = true;
-      $scope.selectCategoryAndTag({name: $scope.searchItemsCategory}, null, false, true);
-      $scope.searchItemsMode = true;
-      console.log($scope.searchQuery);
-    }, 1000);
-  }
 
 
   $scope.calcScrollHeights = function () {

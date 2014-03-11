@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ru.poteriashki.laf.core.model.Message;
+import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.service.IMessageService;
 import ru.poteriashki.laf.core.service.ServiceException;
 import ru.poteriashki.laf.web.security.UserContext;
@@ -32,8 +34,15 @@ public class MessageController {
 
     @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
     @ResponseBody
-    public List<Message> allByItemId(@PathVariable("itemId") String itemId) throws ServiceException {
-        return messageService.loadByItemId(itemId, userContext.getUser());
+    public List<Message> allByItemId(@PathVariable("itemId") String itemId,
+                                     @RequestParam("nonOwner") String nonOwner) throws ServiceException {
+        return messageService.loadItemChat(itemId, nonOwner, userContext.getUser());
+    }
+
+    @RequestMapping(value = "/{itemId}/nonOwners", method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> nonOwners(@PathVariable("itemId") String itemId) throws ServiceException {
+        return messageService.nonOwners(itemId, userContext.getUser());
     }
 
 }

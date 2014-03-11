@@ -143,7 +143,10 @@ angular.module('laf').
       } else {
         resultObject.user.get(function (user) {
           resultObject.currentUserHolder = user;
-        })
+          if (user == null) {
+            vk.init();
+          }
+        });
       }
     };
     resultObject.fb = fb;

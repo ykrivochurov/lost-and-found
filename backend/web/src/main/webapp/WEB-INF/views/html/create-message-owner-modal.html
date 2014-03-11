@@ -1,11 +1,15 @@
 <div class="ci-popup create-message-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
+    <!-- todo tabs -->
+    <div ng-repeat="user in users" ng-click="selectUser(user)">
+        {{user.name ? user.name : 'Anonim'}}
+    </div>
     <div class="item-m-panel">
         <span class="item-number {{item.closed ? 'closed' : item.itemType == 'LOST' ? 'lost' : 'found'}}">#&nbsp;{{selectedItem.number}}</span>
         <span>{{item.what|truncate:65}}</span>
     </div>
     <div class="messages-panel nano clearfix" ng-if="utilsService.isNotEmptyArray(messages)">
         <div class="content clearfix">
-            <div class="message-panel clearfix {{!$last ? 'with-border' : ''}}" ng-repeat="message in messages">
+            <div class="message-panel clearfix {{!$last ? 'with-border' : ''}}" ng-repeat="message in filterMessages()">
                 <img src="{{isMessageOwner(message) ? 'img/message/ia.png' : 'img/message/ia_on.png'}}">
                 <span>{{message.text}}</span>
             </div>

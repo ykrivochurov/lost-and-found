@@ -51,6 +51,12 @@ public class Item extends BaseEntity {
     private boolean closed = false;
 
     @Transient
+    private Long countOfNewMessages = 0l;
+
+    @Transient
+    private Long countOfMessages = 0l;
+
+    @Transient
     private List<Message> messages = new ArrayList<>();
 
     private User user;
@@ -205,5 +211,21 @@ public class Item extends BaseEntity {
 
     public void setModificationDate(Date modificationDate) {
         this.modificationDate = modificationDate;
+    }
+
+    public Long getCountOfNewMessages() {
+        return countOfNewMessages;
+    }
+
+    public void setCountOfNewMessages(Long countOfNewMessages) {
+        this.countOfNewMessages = countOfNewMessages;
+    }
+
+    public Long getCountOfMessages() {
+        return countOfMessages;
+    }
+
+    public void setCountOfMessages(Long countOfMessages) {
+        this.countOfMessages = countOfMessages;
     }
 }
