@@ -9,7 +9,7 @@ function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsServic
   } else {
     $scope.laf = {
       id: item.id,
-//      what: item.what,
+      what: item.what,
       where: item.where,
       when: item.when,
       creationDate: item.creationDate,

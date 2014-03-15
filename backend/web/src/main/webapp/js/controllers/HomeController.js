@@ -22,7 +22,8 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   $scope.currentCountry = 'Россия';
   $scope.currentCity = $scope.cities[0];
   $scope.dateFormat = 'dd/MM/yyyy';
-  $scope.isCollapsed = false;
+  $scope.rightPanelVisible = false;
+  $scope.mapFullScreen = false;
   $scope.categoriesListType = 'LOST';
   $scope.tagsIcons = TAGS_ICONS;
   $scope.pinIcons = PIN_ICONS;
@@ -180,7 +181,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
         }
         var deferred = $q.defer();
         deferred.promise.then(function () {
-          $scope.isCollapsed = true;
+          $scope.rightPanelVisible = true;
           $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false).then(function () {
             $scope.openItem(item);
           });
@@ -264,7 +265,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
 
   $scope.showMyItems = function () {
     var selectedCategory = {name: $scope.myItemsCategory};
-    $scope.isCollapsed = true;
+    $scope.rightPanelVisible = true;
     if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)
       && UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
       $scope.mapService.hideAllBalloons();
@@ -297,7 +298,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
         $scope.middleStateItem.where = $scope.middleStateItem_where;
       }
       $scope.createItemModal($scope.middleStateItem.itemType);
-      $scope.deactivateMiddleStatePanel();
+      $scope.mapService.deactivateMiddleStatePanel();
     } else {
       if (cancel) {
         $scope.middleStateItem.location = $scope.middleStateItem_loc;
@@ -324,7 +325,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
         $scope.searchSpinner = angular.element('.search-block img');
         $scope.searchSpinner.removeClass('hidden');
       }
-      $scope.isCollapsed = true;
+      $scope.rightPanelVisible = true;
       $scope.mapService.hideAllBalloons();
       $scope.clearSelectedItem();
       $scope.showSelectedCategory = true;
@@ -502,7 +503,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   };
 
   $scope.collapse = function () {
-    $scope.isCollapsed = !$scope.isCollapsed;
+    $scope.rightPanelVisible = !$scope.rightPanelVisible;
   };
 
   $scope.joinTags = function (tags) {

@@ -1,8 +1,21 @@
 <div class="home-wrapper animate-switch-container clearfix">
-    <div class="left-panel animate-show" ng-show="!isCollapsed">
-        <div class="right-panel-show on-map-panel" ng-click="collapse()">
-            <img src="img/left.png" ng-show="!isCollapsed">
-            <img src="img/search.png" ng-show="isCollapsed">
+    <div class="on-map-panel marker-edit-mode animate-show {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
+    <div class="where">
+        <input type="text" ng-model="middleStateItem.where" placeholder="Где"
+               typeahead="address for address in mapService.whereTypeahead($viewValue) | filter:$viewValue | limitTo:8"
+               typeahead-on-select="mapService.getPointByAddress(middleStateItem.where, null)"
+               typeahead-loading="dadataMiddleStateItemSearchIndicator" tooltip="Укажите на карте или выберите из списка"
+               tooltip-placement="top" tooltip-append-to-body="true" tooltip-popup-delay="500" >
+        <img ng-show="dadataMiddleStateItemSearchIndicator" src="img/li_mini.gif">
+    </div>
+    <button ng-click="setNewPlace(false)" tooltip-html-unsafe="Вернуться к <br/>редактированию объявления" tooltip-placement="top" tooltip-popup-delay="500" tooltip-append-to-body="true"
+            class="button-base-small {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}">Выбрать</button>
+    <button ng-click="setNewPlace(true)" class="button-base-small cancel">Отмена</button>
+</div>
+    <div class="left-panel animate-show" ng-show="!rightPanelVisible && !mapFullScreen">
+        <div class="right-panel-show on-map-panel" ng-click="collapse()" ng-show="!mapFullScreen">
+            <img src="img/left.png" ng-show="!rightPanelVisible">
+            <img src="img/search.png" ng-show="rightPanelVisible">
         </div>
         <div class="v-align-table">
             <div class="v-align-cell">
@@ -45,23 +58,10 @@
             </div>
         </div>
         </div>
-        <div class="on-map-panel marker-edit-mode {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
-            <div class="where">
-                <input type="text" ng-model="middleStateItem.where" placeholder="Где"
-                       typeahead="address for address in mapService.whereTypeahead($viewValue) | filter:$viewValue | limitTo:8"
-                       typeahead-on-select="mapService.getPointByAddress(middleStateItem.where, null)"
-                       typeahead-loading="dadataMiddleStateItemSearchIndicator" tooltip="Укажите на карте или выберите из списка"
-                       tooltip-placement="top" tooltip-append-to-body="true" tooltip-popup-delay="500" >
-                <img ng-show="dadataMiddleStateItemSearchIndicator" src="img/li_mini.gif">
-            </div>
-            <button ng-click="setNewPlace(false)" tooltip-html-unsafe="Вернуться к <br/>редактированию объявления" tooltip-placement="top" tooltip-popup-delay="500" tooltip-append-to-body="true"
-                    class="button-base-small {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}">Выбрать</button>
-            <button ng-click="setNewPlace(true)" class="button-base-small cancel">Отмена</button>
-        </div>
     </div>
     <div id="map-panel" class="map-panel"></div>
-    <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed" ng-click="showSettings = false">
-        <div class="user-panel on-map-panel">
+    <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="rightPanelVisible && !mapFullScreen" ng-click="showSettings = false">
+        <div class="user-panel on-map-panel" ng-show="!mapFullScreen">
             <div class="back-block on-map-panel hidden">
                 <img src="img/li_max.gif">
             </div>
@@ -74,9 +74,9 @@
                 </div>
             </div>
         </div>
-        <div class="right-panel-hide on-map-panel" ng-click="collapse()">
-            <img src="img/right.png" ng-show="isCollapsed">
-            <img src="img/icon_menu.png" ng-show="!isCollapsed">
+        <div class="right-panel-hide on-map-panel" ng-click="collapse()" ng-show="!mapFullScreen">
+            <img src="img/right.png" ng-show="rightPanelVisible">
+            <img src="img/icon_menu.png" ng-show="!rightPanelVisible">
         </div>
         <div class="top-buttons clearfix">
             <button ng-click="setCategoriesListType('LOST'); urlBuildingService.deselectItem();" class="lost-b active">

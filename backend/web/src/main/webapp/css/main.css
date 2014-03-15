@@ -1006,11 +1006,10 @@ button:focus {
 
 .home-wrapper .marker-edit-mode {
     position: absolute;
-    top: 70px;
-    /*bottom: 20px;*/
-    left: 373px;
+    top: 13px;
+    /*left: 103px;*/
     padding-top: 8px;
-    width: 643px;
+    width: 603px;
 }
 
 .home-wrapper .marker-edit-mode .where img {
@@ -1042,10 +1041,10 @@ button:focus {
 }
 
 .app-wrapper .marker-edit-mode .where input {
-    width: 396px;
+    width: 356px;
     background-color: rgb(255, 255, 255);
     background-image: url('../img/pin_map.png');
-    background-position: 390px 4px;
+    background-position: 350px 4px;
     background-repeat: no-repeat;
     cursor: pointer;
 }

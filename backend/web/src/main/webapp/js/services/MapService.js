@@ -40,6 +40,11 @@ angular.module('laf').
           //выкл стандартных балунов
           controllerScope.DGisMap.geoclicker.disable();
           controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
+          var zoomControl = new DG.Controls.Zoom();
+          controllerScope.DGisMap.zoomControl = zoomControl;
+          controllerScope.DGisMap.controls.add(zoomControl);
+          var zoomControlPosition = new DG.ControlPosition(DG.ControlPosition.TOP_LEFT, new DG.Point(54, 80));
+          zoomControlPosition.apply(zoomControl.getContainer());
           controllerScope.currentLocationMarker = new DG.Markers.Common({
             geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]),
             icon: new DG.Icon('/img/pins/P-ia_poterial_mini.png', new DG.Size(46, 68)),
@@ -355,13 +360,19 @@ angular.module('laf').
       },
 
       activateMiddleStatePanel: function (item, isCreation) {
+        var middleStatePanel = angular.element('.marker-edit-mode');
+        var middleStatePanelLeft = angular.element('body').outerWidth(true) / 2 -
+          middleStatePanel.outerWidth(true) / 2;
+        middleStatePanel.css('left', middleStatePanelLeft + 'px');
         controllerScope.middleStateItem = item;
+        controllerScope.mapFullScreen = true;
         controllerScope.middleStateItem_loc = item.location;
         controllerScope.middleStateItem_where = item.where;
         controllerScope.isItemCreation = isCreation;
       },
 
       deactivateMiddleStatePanel: function () {
+        controllerScope.mapFullScreen = false;
         controllerScope.middleStateItem = null;
         controllerScope.middleStateItem_loc = null;
         controllerScope.middleStateItem_where = null;

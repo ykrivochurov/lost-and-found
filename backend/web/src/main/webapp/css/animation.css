@@ -56,9 +56,21 @@
     right: 0;
 }
 
+.marker-edit-mode.animate-switch.ng-leave.ng-leave-active,
+.marker-edit-mode.animate-switch.ng-enter {
+    top: -70px;
+}
+
+.marker-edit-mode.animate-switch.ng-leave,
+.marker-edit-mode.animate-switch.ng-enter.ng-enter-active {
+    top: 13px;
+}
+
 /* SHOW/HIDE */
 .animate-show {
     -webkit-transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+    -o-transition: all linear 0.5s;
     transition: all linear 0.5s;
 }
 
@@ -81,4 +93,8 @@
 
 .right-panel.animate-show.ng-hide {
     right: -470px;
+}
+
+.marker-edit-mode.animate-show.ng-hide {
+    top: -70px;
 }
