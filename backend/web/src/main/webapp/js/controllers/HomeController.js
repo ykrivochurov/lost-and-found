@@ -74,7 +74,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   $scope.setCategoriesListType = function (value) {
     var deferred = $q.defer();
     $scope.myItemsMode = false;
-    $scope.searchItemsMode = false;
+    $scope.searchReset();
     $scope.categoriesListType = value;
     angular.element('.lost-b').toggleClass('active', angular.equals(value, 'LOST'));
     angular.element('.found-b').toggleClass('active', angular.equals(value, 'FOUND'));
@@ -325,6 +325,10 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
         $scope.searchSpinner = angular.element('.search-block img');
         $scope.searchSpinner.removeClass('hidden');
       }
+      if (UtilsService.isBlank($scope.searchQuery)) {
+        $scope.setCategoriesListType($scope.categoriesListType);
+        return;
+      }
       $scope.rightPanelVisible = true;
       $scope.mapService.hideAllBalloons();
       $scope.clearSelectedItem();
@@ -333,6 +337,14 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
       $scope.searchItemsMode = true;
       console.log($scope.searchQuery);
     }, 1000);
+  };
+
+  $scope.searchReset = function () {
+    $scope.searchQuery = null;
+    if ($scope.searchSpinner) {
+      $scope.searchSpinner.addClass('hidden');
+    }
+    $scope.searchItemsMode = false;
   };
 
 

@@ -44,7 +44,7 @@ body {
 
 .app-wrapper textarea.ng-invalid,
 .app-wrapper input.ng-invalid {
-    background-color: #ebcccc;
+    background-color: rgb(255, 232, 215);
     /*border-color: #e6c1c7;*/
 }
 

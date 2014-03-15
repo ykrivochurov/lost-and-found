@@ -306,7 +306,7 @@ public class LostAndFoundService implements ILostAndFoundService {
         String searchPattern = ".*" + searchString + ".*";
         List<Item> items = mongoTemplate.find(Query.query(Criteria.where("itemType").is(itemType)
                 .orOperator(Criteria.where("what").regex(searchPattern, "i"), Criteria.where("where").regex(searchPattern, "i"))
-        ), Item.class);
+        ).limit(100), Item.class);
 
         for (Item item : items) {
             if (!item.isShowPrivateInfo()) {

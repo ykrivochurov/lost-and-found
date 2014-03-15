@@ -106,7 +106,7 @@
             <div class="clearfix">
                 <span class="back" ng-if="selectedItem == null" ng-click="goBackToCategories();">К списку категорий</span>
                 <span class="back" ng-if="selectedItem != null" ng-click="goBackToSelectedCategory(); urlBuildingService.deselectItem();">К списку объявлений</span>
-                <span class="name-tag">
+                <span class="name-tag" ng-show="!searchItemsMode || searchItemsMode && itemsList.lostAndFoundItems.length > 0">
                     {{selectedCategory.name}}
                     <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
                     <span ng-show="searchItemsMode">&nbsp;&nbsp;{{itemsList.lostAndFoundItems.length}}</span>
