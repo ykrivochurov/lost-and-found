@@ -1,0 +1,52 @@
+.home-wrapper .settings-button {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    float: right;
+}
+
+.home-wrapper .details-block .settings-button {
+    margin-top: 11px;
+}
+
+.home-wrapper .popover.settings-block.bottom .arrow {
+    left: inherit;
+    right: 18px;
+}
+
+.home-wrapper .popover.settings-block {
+    border-radius: 0;
+    top: 40px;
+    right: 0;
+    left: inherit;
+    display: block;
+}
+
+.home-wrapper .settings-block .popover-content {
+    padding: 15px 20px;
+}
+
+/*
+.home-wrapper .settings-block .edit-button:hover,
+.home-wrapper .settings-block .close-button:hover {
+    outline-offset: 2px;
+    outline: rgb(237, 170, 46) auto 5px;
+}
+*/
+
+.home-wrapper .settings-block .edit-button {
+    background: url('../img/edit3.png') no-repeat transparent 0 3px;
+    border-bottom: 1px solid rgb(234, 234, 234);
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.home-wrapper .settings-block .close-button {
+    background: url('../img/ok2.png') no-repeat transparent 0 10px;
+    height: 30px;
+    padding-top: 12px;
+    padding-left: 35px;
+    cursor: pointer;
+}

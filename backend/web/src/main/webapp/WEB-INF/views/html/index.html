@@ -11,7 +11,7 @@
     <link href="webjars/bootstrap/3.0.3/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"/>
     <link href="css/jquery.scrollbars.min.css" media="all" rel="stylesheet" type="text/css"/>
 </head>
-<body data-ng-controller="RootController" class="ng-cloak app-wrapper clearfix">
+<body data-ng-controller="RootController" class="ng-cloak app-wrapper clearfix" ng-click="bodyClick()">
 <div ng-view class="ng-cloak clearfix"></div>
 <script type="text/javascript" src="//connect.facebook.net/ru_RU/all.js"></script>
 <script type="text/javascript" src="//vkontakte.ru/js/api/openapi.js"></script>
@@ -56,6 +56,7 @@
 <script src="js/services/MapService.js"></script>
 <script src="js/services/UsersService.js"></script>
 <script src="js/services/CityService.js"></script>
+<script src="js/services/UrlBuildingService.js"></script>
 <script src="webjars/angularjs/1.2.6/angular-resource.js"></script>
 </body>
 </html>

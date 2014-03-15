@@ -1,6 +1,7 @@
 function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, laf, item, categories, mapServiceInstance) {
 
   $scope.authService = AuthService;
+  $scope.utilsService = UtilsService;
   $scope.categories = categories;
   $scope.itemType = item.itemType;
   if (UtilsService.isNotEmpty(laf)) {
@@ -8,7 +9,7 @@ function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsServic
   } else {
     $scope.laf = {
       id: item.id,
-      what: item.what,
+//      what: item.what,
       where: item.where,
       when: item.when,
       creationDate: item.creationDate,
@@ -56,7 +57,10 @@ function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsServic
     }
   };
 
-  $scope.saveItem = function () {
+  $scope.saveItem = function (isValid) {
+    if (!isValid || UtilsService.isEmptyArray($scope.laf.tags)) {
+      alert('Не все поля в форме заполнены ' + isValid);
+    }
     delete $scope.laf.item;
     ItemsService.crud.update($scope.laf, function (updatedItem) {
       console.log('Item updated: ' + JSON.stringify(updatedItem));
@@ -73,6 +77,8 @@ function ItemModifyModalController($scope, $modalInstance, $timeout, UtilsServic
       item.mainCategory = updatedItem.mainCategory;
       item.closed = updatedItem.closed;
       item.user = updatedItem.user;
+
+      $scope.mapServiceInstance.updateMarkerBalloon(item);
 
       $modalInstance.close(item);
     });

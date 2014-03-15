@@ -45,38 +45,6 @@ public class MessageService implements IMessageService {
         return messageRepository.save(message);
     }
 
-//    @Override
-//    public Long countOfNewMessagesByUser(User user) {
-//        Assert.hasText(itemId);
-//        Assert.notNull(user);
-//
-//        return messageRepository.countByItemIdAndReceiverAndReceiverNew(itemId, user.getId(), true);
-//    }
-//
-//    @Override
-//    public Long countOfMessagesByUser(User user) {
-//        Assert.hasText(itemId);
-//        Assert.notNull(user);
-//
-//        return messageRepository.countByItemIdAndReceiverOrItemIdAndSender(itemId, user.getId(), user.getId());
-//    }
-
-    @Override
-    public Long countOfNewMessages(String itemId, User user) {
-        Assert.hasText(itemId);
-        Assert.notNull(user);
-
-        return messageRepository.countByItemIdAndReceiverAndReceiverNew(itemId, user.getId(), true);
-    }
-
-    @Override
-    public Long countOfMessages(String itemId, User user) {
-        Assert.hasText(itemId);
-        Assert.notNull(user);
-
-        return messageRepository.countByItemIdAndReceiverOrItemIdAndSender(itemId, user.getId(), user.getId());
-    }
-
     @Override
     public List<User> nonOwners(String itemId, User user) throws ServiceException {
         Assert.hasText(itemId);

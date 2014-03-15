@@ -10,14 +10,6 @@ angular.module('laf').
           processData: false,
           type: 'POST'
         }).done(success).fail(fail);
-
-//        $http({
-//          method: 'POST',
-//          url: "api/items/photo",
-//          data: formData,
-////          contentType: false
-//          headers: { 'Content-Type': 'application/json' }
-//        }).success(success).error(fail);
       },
       crud: $resource('api/items/:numberOrId:markers', {numberOrId: '@numberOrId', markers: '@markers'},
         {

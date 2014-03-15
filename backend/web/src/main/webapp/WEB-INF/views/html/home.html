@@ -1,8 +1,8 @@
 <div class="home-wrapper animate-switch-container clearfix">
     <div class="left-panel animate-show" ng-show="!isCollapsed">
         <div class="right-panel-show on-map-panel" ng-click="collapse()">
-            <img src="img/left.png" ng-show="isCollapsed">
-            <img src="img/search.png" ng-show="!isCollapsed">
+            <img src="img/left.png" ng-show="!isCollapsed">
+            <img src="img/search.png" ng-show="isCollapsed">
         </div>
         <div class="v-align-table">
             <div class="v-align-cell">
@@ -62,7 +62,7 @@
     <div id="map-panel" class="map-panel"></div>
     <div class="right-panel animate-show {{categoriesListType == 'LOST' ? 'lost-list' : 'found-list'}}" ng-show="isCollapsed" ng-click="showSettings = false">
         <div class="user-panel on-map-panel">
-            <div class="back-block on-map-panel">
+            <div class="back-block on-map-panel hidden">
                 <img src="img/li_max.gif">
             </div>
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
@@ -79,7 +79,7 @@
             <img src="img/icon_menu.png" ng-show="!isCollapsed">
         </div>
         <div class="top-buttons clearfix">
-            <button ng-click="setCategoriesListType('LOST')" class="lost-b active">
+            <button ng-click="setCategoriesListType('LOST'); urlBuildingService.deselectItem();" class="lost-b active">
                 <span>У</span>
                 <span>Т</span>
                 <span>Е</span>
@@ -88,7 +88,7 @@
                 <span>Н</span>
                 <span>О</span>
             </button>
-            <button ng-click="setCategoriesListType('FOUND')" class="found-b">
+            <button ng-click="setCategoriesListType('FOUND'); urlBuildingService.deselectItem();" class="found-b">
                 <span>Н</span>
                 <span>А</span>
                 <span>Й</span>
@@ -104,7 +104,8 @@
         </div>
         <div class="selected-category left-margin clearfix" ng-show="selectedCategory != null">
             <div class="clearfix">
-                <span class="back" ng-click="selectedItem != null ? goBackToSelectedCategory() : clearCategorySelection()">{{selectedItem != null ? 'К списку объявлений' : 'К списку категорий'}}</span>
+                <span class="back" ng-if="selectedItem == null" ng-click="goBackToCategories();">К списку категорий</span>
+                <span class="back" ng-if="selectedItem != null" ng-click="goBackToSelectedCategory(); urlBuildingService.deselectItem();">К списку объявлений</span>
                 <span class="name-tag">
                     {{selectedCategory.name}}
                     <span ng-show="selectedTag != null">&nbsp;&nbsp;/&nbsp;&nbsp;{{selectedTag}}&nbsp;&nbsp;{{getCountByTag(selectedTag)}}</span>
@@ -122,8 +123,8 @@
                         <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
                         <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.closed ? 'closed' : selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
                            tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
-                        <img class="settings-button" src="img/settings.png" ng-show="selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author" ng-click="showItemSettings(); $event.stopPropagation();">
-                        <div class="popover settings-block bottom fade in" ng-show="showSettings" ng-class="{ in: isOpen(), fade: animation() }">
+                        <img class="settings-button" src="img/settings.png" ng-show="selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author" ng-click="showItemSettings($event); $event.stopPropagation();">
+                        <div class="popover settings-block bottom fade in" ng-class="{ in: isOpen(), fade: animation() }" style="display: none;">
                             <div class="arrow"></div>
                             <div class="popover-inner">
                                 <div class="popover-content">
@@ -138,7 +139,7 @@
                     <div class="clearfix">
                         <div class="picture">
                             <span class="img-va-helper"></span>
-                            <img class="thumbnail-img" src="api/items/photo/{{selectedItem.thumbnailId}}" ng-show="selectedItem.thumbnailId" ng-click="showFullSIzeImageModal(selectedItem)">
+                            <img class="thumbnail-img" ng-src="api/items/photo/{{selectedItem.thumbnailId}}" ng-if="selectedItem && selectedItem.thumbnailId" ng-click="showFullSIzeImageModal(selectedItem)">
                             <img src="/img/icon_camera.png" ng-show="!selectedItem.photoId">
                         </div>
                         <div class="what">{{selectedItem.what}}</div>
@@ -215,13 +216,22 @@
                         <span class="month">{{item.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{item.creationDate | date:'yyyy'}}</span>
                         <a href="/#/home?number={{item.number}}" class="item-number   {{item.closed ? 'closed' : item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{item.number}}</a>
+                        <img class="settings-button" src="img/settings.png" ng-show="item.myItem || authService.currentUserHolder.id == item.author" ng-click="showItemSettings($event); $event.stopPropagation();">
+                        <div class="popover settings-block bottom fade in" ng-class="{ in: isOpen(), fade: animation() }" style="display: none;">
+                            <div class="arrow"></div>
+                            <div class="popover-inner">
+                                <div class="popover-content">
+                                    <div class="edit-button" ng-click="editItemModal(null, item); $event.stopPropagation();">Редактировать</div>
+                                    <div class="close-button" ng-click="markItemAsClosed(item); $event.stopPropagation();">{{item.closed ? 'Открыть' : 'Закрыть'}}</div>
+                                </div>
+                            </div>
+                        </div>
                         <span class="money" ng-show="item.money" tooltip="За вознаграждение!" tooltip-placement="left">&nbsp;</span>
                         <span class="item-closed" ng-show="item.closed">Закрыто</span>
                     </div>
                     <div class="what" ng-click="openItem(item)">{{item.what}}</div>
                     <!--todo каждый тэг отдельно кликабельный!!-->
-                    <div><span class="tags-label" ng-show="item.tags.length > 1">Категории:</span><span class="tags {{item.itemType == 'LOST' ? 'lost' : 'found'}}"
-                                                                                                   ng-show="item.tags.length > 1">{{joinTags(item.tags)}}</span>
+                    <div ng-if="item.tags.length > 1 || myItemsMode"><span class="tags-label">Категории:</span><span class="tags {{item.itemType == 'LOST' ? 'lost' : 'found'}}">{{joinTags(item.tags)}}</span>
                     </div>
                     <div ng-click="showMessages(item)"><span class="messages-label" ng-show="item.messages.length > 0">Сообщения:&nbsp;&nbsp;{{item.messages.length}}</span>
                     </div>
@@ -239,7 +249,7 @@
                          ng-click="selectCategoryAndTag(category, tag)">
                     <span class="tag-icon">
                         <span class="tag-icon-tc">
-                            <img src="{{getIconByTag(tag)}}" alt="">
+                            <img ng-src="{{tagsIcons[tag]}}" alt="">
                         </span>
                     </span>
                     <span class="tag-name-container">

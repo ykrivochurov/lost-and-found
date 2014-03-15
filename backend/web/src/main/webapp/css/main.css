@@ -8,6 +8,7 @@
 @import "on-map-panel.css";
 @import "messages.css";
 @import "picture-block.css";
+@import "settings-block.css";
 
 body {
     overflow: hidden;
@@ -39,6 +40,12 @@ body {
     color: rgb(82, 82, 82);
     padding: 8px;
     height: 16px;
+}
+
+.app-wrapper textarea.ng-invalid,
+.app-wrapper input.ng-invalid {
+    background-color: #ebcccc;
+    /*border-color: #e6c1c7;*/
 }
 
 .ng-cloak {
@@ -696,54 +703,6 @@ button:focus {
     position: relative;
 }
 
-.home-wrapper .details-block .settings-button {
-    margin-top: 11px;
-    margin-left: 10px;
-    float: right;
-}
-
-.home-wrapper .details-block .popover.settings-block.bottom .arrow {
-    left: inherit;
-    right: 18px;
-}
-
-.home-wrapper .details-block .popover.settings-block {
-    border-radius: 0;
-    top: 40px;
-    right: 0;
-    left: inherit;
-    display: block;
-}
-
-.home-wrapper .details-block .settings-block .popover-content {
-    padding: 15px 20px;
-}
-
-/*
-.home-wrapper .details-block .settings-block .edit-button:hover,
-.home-wrapper .details-block .settings-block .close-button:hover {
-    outline-offset: 2px;
-    outline: rgb(237, 170, 46) auto 5px;
-}
-*/
-
-.home-wrapper .details-block .settings-block .edit-button {
-    background: url('../img/edit3.png') no-repeat transparent 0 3px;
-    border-bottom: 1px solid rgb(234, 234, 234);
-    height: 35px;
-    padding-top: 5px;
-    padding-left: 35px;
-    cursor: pointer;
-}
-
-.home-wrapper .details-block .settings-block .close-button {
-    background: url('../img/ok2.png') no-repeat transparent 0 10px;
-    height: 30px;
-    padding-top: 12px;
-    padding-left: 35px;
-    cursor: pointer;
-}
-
 .app-wrapper .creation-form .picture,
 .home-wrapper .details-block .picture {
     float: left;
@@ -751,7 +710,7 @@ button:focus {
     height: 102px;
     border: 1px solid rgb(205, 206, 206);
     margin-right: 25px;
-    margin-top: 9px;
+    margin-top: 10px;
     vertical-align: middle;
     background-color: rgb(245, 245, 245);
     text-align: center;
@@ -968,10 +927,6 @@ button:focus {
     margin-left: 10px;
 }
 
-.home-wrapper .settings-button {
-    cursor: pointer;
-}
-
 .app-wrapper .item-number:hover,
 .app-wrapper .item-number:visited,
 .app-wrapper .item-number {
@@ -1002,6 +957,10 @@ button:focus {
 
 .home-wrapper .details-block .item-closed {
     margin-top: 13px;
+}
+
+.home-wrapper .details-block .money {
+    margin-top: 7px;
 }
 
 .app-wrapper .item-number.closed:visited,

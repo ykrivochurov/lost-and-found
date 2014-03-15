@@ -48,6 +48,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         configurer.enable();
     }
 
+/*
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         super.addInterceptors(registry);
@@ -57,9 +58,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         interceptor.setUseCacheControlHeader(true);
         interceptor.setUseCacheControlNoStore(true);
         Properties properties = new Properties();
-        properties.put("/api/items/\\d", "10000");
-        properties.put("api/items/\\d", "10000");
+        properties.put("/api/items/([0-9]*)", "10000");//todo only * supported
+        properties.put("api/items/([0-9]*)", "10000");
         interceptor.setCacheMappings(properties);
         registry.addInterceptor(interceptor);
     }
+*/
 }

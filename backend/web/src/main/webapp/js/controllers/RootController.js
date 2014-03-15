@@ -4,4 +4,9 @@ function RootController($scope) {
       $scope.$apply();
     }
   }
+
+  $scope.bodyClick = function() {
+    angular.element('.settings-block').hide();
+  }
+
 }

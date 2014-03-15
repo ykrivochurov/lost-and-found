@@ -1,6 +1,7 @@
-function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsService, AuthService, ItemsService, UsersService, mapServiceInstance, itemType) {
+function ItemCreateModalController($scope, $modalInstance, $timeout, $location, UtilsService, AuthService, ItemsService, UsersService, mapServiceInstance, itemType) {
 
   $scope.authService = AuthService;
+  $scope.utilsService = UtilsService;
   $scope.itemType = itemType;
   if (UtilsService.isNotEmptyArray($scope.laf.tags)) {
     $scope.laf.what = WHAT_PREFFIX[$scope.itemType] + WHAT_PREDEF[$scope.laf.tags[0]];
@@ -28,14 +29,19 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, UtilsServic
     }
   };
 
-  $scope.saveItem = function () {
+  $scope.saveItem = function (isValid) {
+    if (!isValid || UtilsService.isEmptyArray($scope.laf.tags)) {
+      alert('Не все поля в форме заполнены ' + isValid);
+    }
     $scope.laf.cityId = $scope.currentCity.id;
     $scope.laf.location = $scope.mapServiceInstance.getLocationObject();
     UsersService.crud.update($scope.authService.currentUserHolder, function (user) {
       $scope.authService.refresh(user);
       ItemsService.crud.create($scope.laf, function (item) {
         console.log('Item created: ' + JSON.stringify(item));
-        $scope.itemAdded(item);
+        if (item != null) {
+          $location.search({number: item.number});
+        }
         $scope.renewLaf();
         $modalInstance.dismiss('cancel');
       });

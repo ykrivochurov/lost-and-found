@@ -4,6 +4,27 @@ angular.module('laf').
     var defaultGroupName = 'default_markers';
     var controllerScope;
     var markersMap = {};
+
+    function createBalloonContent(item) {
+      var container = angular.element('<div></div>');
+      container.append();
+
+      var wrapper = angular.element('<a href="' + generateUrl(item) + '" class="clear-link"></a>');
+      container.append(wrapper);
+
+      angular.element('.balloon-content').removeClass('lost');
+      angular.element('.balloon-content').removeClass('found');
+      if (item.itemType == 'LOST') {
+        angular.element('.balloon-content').addClass('lost');
+      } else {
+        angular.element('.balloon-content').addClass('found');
+      }
+      angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
+      angular.element('.balloon-content .what').text(item.what);
+      wrapper.append(angular.element('.balloon-content-wrapper').html());
+      return container.html();
+    }
+
     return {
       init: function (scope) {
         controllerScope = scope;
@@ -136,6 +157,15 @@ angular.module('laf').
         }
       },
 
+      updateMarkerBalloon: function (item) {
+        this.hideBalloonForItem(item);
+        var marker = markersMap[item.id];
+        if (UtilsService.isNotEmpty(marker)) {
+          marker.setBalloonContent(createBalloonContent(item));
+          this.showBalloonForItem(item);
+        }
+      },
+
       createMarker: function (item) {
         if (UtilsService.isEmpty(item.location)) {
           console.log('Unable create marker for item.id = ' + item.id);
@@ -163,7 +193,7 @@ angular.module('laf').
           icon: new DG.Icon(controllerScope.pinIcons[item.tags[0]], new DG.Size(46, 68)),
           balloonOptions: {
             geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
-            contentHtml: container.html(),
+            contentHtml: createBalloonContent(item),
             showLatestOnly: true,
             isClosed: false
           }

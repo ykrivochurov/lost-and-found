@@ -14,9 +14,9 @@ angular.module('laf').
       init: function () {
         VK.init({apiId: vk.appID});
 
-        $timeout(function () {
-          VK.Auth.getLoginStatus(vk.auth, true);
-        });
+//        $timeout(function () {
+//          VK.Auth.getLoginStatus(vk.auth, true);
+//        });
       },
 
       auth: function (response) {
@@ -36,16 +36,20 @@ angular.module('laf').
             }
 
             $timeout(function () {
-              angular.element('.user-panel .back-block').remove();
+              angular.element('.user-panel .back-block').addClass('hidden');
             });
           });
         } else {
-          fb.init();
+          if (UtilsService.isNotEmpty(applyCallback)) {
+            applyCallback();
+          }
+          angular.element('.user-panel .back-block').addClass('hidden');
         }
       },
 
       login: function (callback) {
         authCallback = callback;
+        angular.element('.user-panel .back-block').removeClass('hidden');
         VK.Auth.login(vk.auth, 1027);
       },
 
@@ -72,10 +76,10 @@ angular.module('laf').
       init: function () {
         FB.init({appId: fb.appID, xfbml: true, cookie: true, oauth: true});
 
-        FB.Event.subscribe('auth.statusChange', fb.auth);
-        $timeout(function () {
-          angular.element('.user-panel .back-block').remove();
-        }, 2000);
+//        FB.Event.subscribe('auth.statusChange', fb.auth);
+//        $timeout(function () {
+//          angular.element('.user-panel .back-block').remove();
+//        }, 2000);
       },
 
       auth: function (response) {
@@ -93,20 +97,20 @@ angular.module('laf').
             }
 
             $timeout(function () {
-              angular.element('.user-panel .back-block').remove();
+              angular.element('.user-panel .back-block').addClass('hidden');
             });
           })
-        }
-
-        angular.element('.user-panel .back-block').remove();
-
-        if (UtilsService.isNotEmpty(applyCallback)) {
-          applyCallback();
+        } else {
+          if (UtilsService.isNotEmpty(applyCallback)) {
+            applyCallback();
+          }
+          angular.element('.user-panel .back-block').addClass('hidden');
         }
       },
 
       login: function (callback) {
         authCallback = callback;
+        angular.element('.user-panel .back-block').removeClass('hidden');
         FB.login(function () {
         }, {scope: 'user_relationships,publish_stream,offline_access,email'});
       },
@@ -134,7 +138,7 @@ angular.module('laf').
       }
     };
     vk.init();
-//    fb.init();
+    fb.init();
 
     resultObject.user = $resource('api/auth/user', {}, {get: {method: 'GET'}});
     resultObject.refresh = function (existingUser) {
@@ -143,9 +147,6 @@ angular.module('laf').
       } else {
         resultObject.user.get(function (user) {
           resultObject.currentUserHolder = user;
-          if (user == null) {
-            vk.init();
-          }
         });
       }
     };

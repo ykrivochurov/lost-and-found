@@ -1,5 +1,6 @@
-function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocationService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService) {
+function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService) {
   $scope.shareService = ShareService;
+  $scope.urlBuildingService = UrlBuildingService;
 
   $scope.authService = AuthService;
   $scope.authService.applyCallback = function () {
@@ -40,27 +41,23 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   $scope.myItemsMode = false;
   $scope.searchItemsMode = false;
 
+  $scope.rightPanelStates = {
+    my: {},
+    search: {},
+    categoryAndTag: {},
+    itemDetails: {
+      category: '',
+      tag: '',
+
+    }
+  };
+
   $scope.itemsList = {
     page: null,
     lostAndFoundItems: []
   };
 
-  $scope.getCategoryByName = function (name) {
-    for (var i = 0; i < $scope.categories.length; i++) {
-      var category = $scope.categories[i];
-      if (category.name == name) {
-        return category;
-      }
-    }
-  };
-
-  $scope.renewLaf = function () {
-    $scope.laf = {when: '', where: '', what: '', creationDate: new Date().getTime(), tags: []};
-  };
-
-  $scope.renewLaf();
-
-  $scope.refreshCategories = function () {
+  $scope.loadCategoriesAndCounts = function () {
     var deferred = $q.defer();
     $scope.categoriesCounts = CategoriesService.crud.counts({itemType: $scope.categoriesListType}, function (counts) {
       if (UtilsService.isEmptyArray($scope.categories)) {
@@ -71,23 +68,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     return deferred.promise;
   };
 
-  $scope.refreshCategories();
-
-  $scope.categoriesRedraw = function () {
-    $scope.categories = $scope.categories;
-  };
-
-  $scope.getCountByTag = function (tag) {
-    var count = $scope.categoriesCounts[tag];
-    if (UtilsService.isEmpty(count)) {
-      return 0;
-    }
-    return count;
-  };
-
-  $scope.getIconByTag = function (tagName) {
-    return $scope.tagsIcons[tagName];
-  };
+  $scope.loadCategoriesAndCounts();
 
   $scope.setCategoriesListType = function (value) {
     var deferred = $q.defer();
@@ -96,11 +77,11 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.categoriesListType = value;
     angular.element('.lost-b').toggleClass('active', angular.equals(value, 'LOST'));
     angular.element('.found-b').toggleClass('active', angular.equals(value, 'FOUND'));
-    $scope.refreshCategories().then(function () {
-      MapService.hideBalloonForItem($scope.selectedItem);
-      MapService.rebuildMarkers().then(function () {
+    $scope.loadCategoriesAndCounts().then(function () {
+      $scope.mapService.hideBalloonForItem($scope.selectedItem);
+      $scope.mapService.rebuildMarkers().then(function () {
         $scope.clearCategorySelection();
-        MapService.hideAllBalloons();
+        $scope.mapService.hideAllBalloons();
         deferred.resolve();
       });
     });
@@ -152,7 +133,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   };
 
   $scope.goBackToSelectedCategory = function () {
-    MapService.hideAllBalloons();
+    $scope.mapService.hideAllBalloons();
     $scope.clearSelectedItem();
     $scope.showSelectedCategory = true;
     $scope.selectCategoryAndTag(
@@ -163,18 +144,17 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     );
   };
 
+  $scope.goBackToCategories = function () {
+    $scope.setCategoriesListType($scope.categoriesListType);
+  };
+
   $scope.clearCategorySelection = function () {
-    if ($scope.myItemsMode || $scope.searchItemsMode) {
-      //total reload needed after my mode
-      $scope.setCategoriesListType($scope.categoriesListType);
-      return;
-    }
     $scope.searchQuery = null;
     $scope.showSelectedCategory = false;
     $scope.showCategoriesList = true;
     $scope.selectedCategory = null;
     $scope.selectedTag = null;
-    MapService.hideAllBalloons();
+    $scope.mapService.hideAllBalloons();
     $scope.clearSelectedItem();
     $scope.mapService.showMarkersForCategory();
   };
@@ -187,7 +167,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     } else {
       return;
     }
-    if ($scope.isSelectedItemOpened(number)) {
+    if ($scope.selectedItem != null && $scope.selectedItem.number == number) {
       return;
     }
     $scope.showBusy('Загрузка объявления...');
@@ -211,50 +191,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       });
     } catch (e) {
       $scope.hideBusy();
-    }
-  }
-
-  $scope.itemAdded = function (item) {
-    var deferred = $q.defer();
-    $scope.authService.refresh();
-    deferred.promise.then(function () {
-      $scope.isCollapsed = true;
-      $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false).then(function () {
-        $scope.openItem(item);
-      });
-    });
-    if ($scope.categoriesListType == item.itemType) {
-      var firstTag = item.tags[0];
-      var countForTag = $scope.categoriesCounts[firstTag];
-      if (UtilsService.isNotEmpty(countForTag)) {
-        countForTag++;
-        $scope.categoriesCounts[firstTag] = countForTag;
-        console.log('+1');
-        $scope.categoriesRedraw();
-      } else {
-        $scope.categoriesCounts[firstTag] = 1;
-        $scope.categoriesRedraw();
-      }
-      MapService.createMarker(item);
-      deferred.resolve();
-    } else {
-      $scope.setCategoriesListType(item.itemType).then(function () {
-        deferred.resolve();
-      });
-    }
-  };
-
-  $scope.itemClosed = function (item) {
-    $scope.authService.refresh();
-    if ($scope.categoriesListType == item.itemType) {
-      var firstTag = item.tags[0];
-      var countForTag = $scope.categoriesCounts[firstTag];
-      if (UtilsService.isNotEmpty(countForTag)) {
-        countForTag--;
-        $scope.categoriesCounts[firstTag] = countForTag;
-        $scope.categoriesRedraw();
-      }
-      MapService.removeMarker(item);
     }
   };
 
@@ -289,7 +225,8 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   $scope.markItemAsClosed = function (item) {
     ItemsService.crud.close({numberOrId: item.id}, function (item) {
       $scope.goBackToSelectedCategory();
-      $scope.itemClosed(item);
+      $scope.authService.refresh();
+      $scope.mapService.removeMarker(item);
     });
   };
 
@@ -307,11 +244,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     if (indexOf == 0 && prev) {
       return false;
     }
-    if (indexOf + 1 == $scope.itemsList.lostAndFoundItems.length && !prev) {
-      return false;
-//      return UtilsService.isNotEmpty($scope.itemsList.page) && $scope.itemsList.page.lastPage;
-    }
-    return true;
+    return !(indexOf + 1 == $scope.itemsList.lostAndFoundItems.length && !prev);
   };
 
   $scope.openNextItem = function (selectedItem, prev) {
@@ -334,50 +267,27 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     $scope.isCollapsed = true;
     if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)
       && UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
-      MapService.hideAllBalloons();
+      $scope.mapService.hideAllBalloons();
       $scope.clearSelectedItem();
       $scope.showSelectedCategory = true;
       $scope.selectCategoryAndTag(selectedCategory, null, true, false);
       $scope.myItemsMode = true;
-    } else {
-      var modalInstance = $modal.open({
-        templateUrl: 'login-win.html',
-        controller: LoginModalController,
-        windowClass: 'login-modal',
-        scope: $scope
-      });
-
-      modalInstance.result.then(function () {
-        MapService.hideAllBalloons();
-        $scope.clearSelectedItem();
-        $scope.showSelectedCategory = true;
-        $scope.selectCategoryAndTag(selectedCategory, null, true, false);
-        $scope.myItemsMode = true;
-      }, function () {
-        console.log('Modal dismissed at: ' + new Date());
-      });
     }
   };
 
   $scope.clearSelectedItem = function () {
-    if ($scope.selectedItem != null) {
-      $location.search('');
-    }
     $scope.selectedItem = null;
   };
 
-  $scope.isSelectedItemOpened = function (number) {
-    return $scope.selectedItem != null && $scope.selectedItem.number == number;
-  };
-
-
-  $scope.showItemSettings = function () {
-    var buttonLeft = angular.element('.settings-button').position().left;
-    var buttonWidth = angular.element('.settings-button').outerWidth(true);
-    var panelWidth = angular.element('.details-block .creation-date').outerWidth(true);
+  $scope.showItemSettings = function (e) {
+    var selector = angular.element(e.target).parent();
+    var buttonLeft = selector.find('.settings-button').position().left;
+    var buttonWidth = selector.find('.settings-button').outerWidth(true);
+    var panelWidth = selector.outerWidth(true);
     var widthFix = 1;
-    angular.element('.settings-block .arrow').css('right', (panelWidth - buttonLeft - buttonWidth - widthFix) + 'px');
-    $scope.showSettings = !$scope.showSettings;
+    selector.find('.settings-block .arrow').css('right', (panelWidth - buttonLeft - buttonWidth - widthFix) + 'px');
+    angular.element('.settings-block').hide();
+    selector.find('.settings-block').show();
   };
 
   $scope.setNewPlace = function (cancel) {
@@ -400,17 +310,6 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     }
   };
 
-  $scope.collapse = function () {
-    $scope.isCollapsed = !$scope.isCollapsed;
-  };
-
-  $scope.joinTags = function (tags) {
-    if (angular.isArray(tags) && tags.length > 0) {
-      return tags.join(', ');
-    }
-    return null;
-  };
-
   $scope.search = function () {
     if ($scope.searchSpinner) {
       $scope.searchSpinner.addClass('hidden');
@@ -426,7 +325,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
         $scope.searchSpinner.removeClass('hidden');
       }
       $scope.isCollapsed = true;
-      MapService.hideAllBalloons();
+      $scope.mapService.hideAllBalloons();
       $scope.clearSelectedItem();
       $scope.showSelectedCategory = true;
       $scope.selectCategoryAndTag({name: $scope.searchItemsCategory}, null, false, true);
@@ -458,6 +357,9 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
 //  Modals part
 
   $scope.editItemModal = function (laf, item) {
+    //hide tooltip
+    angular.element('.settings-block').hide();
+
     var modalInstance = $modal.open({
       templateUrl: 'modify-item-modal',
       controller: ItemModifyModalController,
@@ -478,8 +380,9 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
     });
 
     modalInstance.result.then(function (item) {
-      $scope.refreshCategories();
-      $scope.mapService.moveMarker(item);
+      $scope.loadCategoriesAndCounts().then(function () {
+        $scope.mapService.moveMarker(item);
+      });
       if ($scope.selectedCategory != $scope.myItemsCategory) {
       }
     }, function () {
@@ -515,7 +418,7 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
       && $scope.authService.currentUserHolder.id == item.author;
 
     $modal.open({
-      templateUrl: owner ?  'create-message-owner-modal' : 'create-message-modal',
+      templateUrl: owner ? 'create-message-owner-modal' : 'create-message-modal',
       controller: owner ? CreateMessageOwnerModalController : CreateMessageModalController,
       windowClass: 'create-message-modal',
       scope: $scope,
@@ -569,6 +472,47 @@ function HomeController($q, $scope, $modal, $timeout, $animate, $sce, GeoLocatio
   }
 
 //  Modals part end
+
+  //utils methods
+  $scope.getCategoryByName = function (name) {
+    for (var i = 0; i < $scope.categories.length; i++) {
+      var category = $scope.categories[i];
+      if (category.name == name) {
+        return category;
+      }
+    }
+  };
+
+  $scope.renewLaf = function () {
+    $scope.laf = {when: '', where: '', what: '', creationDate: new Date().getTime(), tags: []};
+  };
+
+  $scope.renewLaf();
+
+  $scope.categoriesRedraw = function () {
+    $scope.categories = $scope.categories;
+  };
+
+  $scope.getCountByTag = function (tag) {
+    var count = $scope.categoriesCounts[tag];
+    if (UtilsService.isEmpty(count)) {
+      return 0;
+    }
+    return count;
+  };
+
+  $scope.collapse = function () {
+    $scope.isCollapsed = !$scope.isCollapsed;
+  };
+
+  $scope.joinTags = function (tags) {
+    if (angular.isArray(tags) && tags.length > 0) {
+      return tags.join(', ');
+    }
+    return null;
+  };
+
+  //utils methods end
 
 
   $scope.calcScrollHeights = function () {
