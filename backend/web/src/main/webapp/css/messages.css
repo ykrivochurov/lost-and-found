@@ -40,6 +40,8 @@
 
 .app-wrapper .chats-panel-title {
     margin-left: 12px;
+    color: rgb(64, 64, 64);
+    font-size: 160%;
 }
 
 .app-wrapper .chats-panel {

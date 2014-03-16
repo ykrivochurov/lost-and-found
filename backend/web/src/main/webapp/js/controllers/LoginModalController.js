@@ -16,4 +16,7 @@ function LoginModalController($scope, $modalInstance, AuthService, UtilsService)
     $modalInstance.close();
   };
 
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 }

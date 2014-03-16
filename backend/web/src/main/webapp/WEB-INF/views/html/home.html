@@ -1,5 +1,6 @@
 <div class="home-wrapper animate-switch-container clearfix">
-    <!--<div style="position: absolute;left: 500px;z-index: 200;background-color: white;">
+<!--
+    <div style="position: absolute;left: 500px;z-index: 200;background-color: white;">
         <div ng-repeat="testUser in testUsers">
             <div ng-click="authService.testLogin(testUser)">{{testUser.name}}</div>
         </div>
@@ -11,7 +12,7 @@
                typeahead="address for address in mapService.whereTypeahead($viewValue) | filter:$viewValue | limitTo:8"
                typeahead-on-select="mapService.getPointByAddress(middleStateItem.where, null)"
                typeahead-loading="dadataMiddleStateItemSearchIndicator" tooltip="Укажите на карте или выберите из списка"
-               tooltip-placement="top" tooltip-append-to-body="true" tooltip-popup-delay="500" >
+               tooltip-placement="left" tooltip-append-to-body="true" tooltip-popup-delay="500" >
         <img ng-show="dadataMiddleStateItemSearchIndicator" src="img/li_mini.gif">
     </div>
     <button ng-click="setNewPlace(false)" tooltip-html-unsafe="Вернуться к <br/>редактированию объявления" tooltip-placement="top" tooltip-popup-delay="500" tooltip-append-to-body="true"
