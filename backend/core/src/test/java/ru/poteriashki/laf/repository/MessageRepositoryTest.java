@@ -1,13 +1,11 @@
 package ru.poteriashki.laf.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.eastbanctech.resources.config.MongoConnectionConfig;
@@ -19,7 +17,6 @@ import ru.poteriashki.laf.core.model.Message;
 import ru.poteriashki.laf.core.repositories.MessageRepository;
 
 import java.util.Date;
-import java.util.List;
 
 @ContextConfiguration(classes = {TestPropHolderConfig.class, PersistenceMongoConfig.class, BaseConfiguration.class, MongoConnectionConfig.class, MongoResourceServiceConfig.class})
 public class MessageRepositoryTest extends AbstractTestNGSpringContextTests {
@@ -40,27 +37,18 @@ public class MessageRepositoryTest extends AbstractTestNGSpringContextTests {
         Message message1 = new Message();
         message1.setSender("s1");
         message1.setCreationDate(new Date());
-        message1.setItemId("1");
-        message1.setReceiverNew(true);
-        message1.setSenderNew(true);
         message1.setText("from s1 to r1");
         messageRepository.save(message1);
 
         Message message2 = new Message();
         message2.setSender("r1");
         message2.setCreationDate(new Date());
-        message2.setItemId("1");
-        message2.setReceiverNew(true);
-        message2.setSenderNew(true);
         message2.setText("from r1 to s1");
         messageRepository.save(message2);
 
         Message message3 = new Message();
         message3.setSender("r1");
         message3.setCreationDate(new Date());
-        message3.setItemId("1");
-        message3.setReceiverNew(true);
-        message3.setSenderNew(true);
         message3.setText("from r1 to s2");
         messageRepository.save(message3);
 

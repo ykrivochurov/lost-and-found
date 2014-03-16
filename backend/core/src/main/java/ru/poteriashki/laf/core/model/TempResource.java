@@ -9,7 +9,7 @@ import java.util.Date;
 @JsonDeserialize
 public class TempResource extends BaseEntity {
 
-    public static final String COLLECTION = "tempResource";
+    public static final String COLLECTION = "temp_resource";
 
     private String fileId;
 

@@ -142,8 +142,10 @@ angular.module('laf').
         console.log('Remove markers');
         this.hideAllBalloons();
         var groupNames = controllerScope.categories;
-        for (var i = 0; i < groupNames.length; i++) {
-          controllerScope.DGisMap.markers.removeGroup(groupNames[i].name);
+        if (UtilsService.isNotEmptyArray(groupNames)) {
+          for (var i = 0; i < groupNames.length; i++) {
+            controllerScope.DGisMap.markers.removeGroup(groupNames[i].name);
+          }
         }
       },
 

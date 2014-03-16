@@ -1,4 +1,4 @@
-function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService) {
+function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService, UsersService) {
   $scope.shareService = ShareService;
   $scope.urlBuildingService = UrlBuildingService;
 
@@ -41,6 +41,10 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   $scope.showCategoriesList = true;
   $scope.myItemsMode = false;
   $scope.searchItemsMode = false;
+
+  UsersService.crud.loadAll(function (users) {
+    $scope.testUsers = users;
+  });
 
   $scope.rightPanelStates = {
     my: {},
@@ -427,20 +431,23 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   };
 
   $scope.createMessageModal = function (item) {
-    var owner = $scope.authService.currentUserHolder != null
-      && $scope.authService.currentUserHolder.id == item.author;
-
-    $modal.open({
-      templateUrl: owner ? 'create-message-owner-modal' : 'create-message-modal',
-      controller: owner ? CreateMessageOwnerModalController : CreateMessageModalController,
-      windowClass: 'create-message-modal',
-      scope: $scope,
-      resolve: {
-        item: function () {
-          return item;
+    if (UtilsService.isEmpty($scope.authService.currentUserHolder)) {
+      $scope.showLoginModal(function () {
+        $scope.createMessageModal(item);
+      });
+    } else {
+      $modal.open({
+        templateUrl: 'create-message-modal',
+        controller: CreateMessageModalController,
+        windowClass: 'create-message-modal',
+        scope: $scope,
+        resolve: {
+          item: function () {
+            return item;
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   $scope.showFullSIzeImageModal = function (item) {
@@ -458,15 +465,22 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
     }
   };
 
-  $scope.showLoginModal = function () {
+  $scope.showLoginModal = function (callback) {
     if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)) {
       $scope.authService.currentUserHolder = $scope.authService.currentUserHolder;
     } else {
-      $modal.open({
+      var modalInstance = $modal.open({
         templateUrl: 'login-win',
         controller: LoginModalController,
         windowClass: 'login-modal',
         scope: $scope
+      });
+      modalInstance.result.then(function () {
+        if (UtilsService.isFunction(callback)) {
+          callback();
+        }
+      }, function () {
+        console.log('Modal dismissed at: ' + new Date());
       });
     }
   };

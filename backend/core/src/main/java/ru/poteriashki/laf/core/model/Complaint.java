@@ -9,7 +9,7 @@ import java.util.Date;
 @JsonDeserialize
 public class Complaint {
 
-    public static final String COLLECTION = "complaints";
+    public static final String COLLECTION = "complaint";
 
     private String itemId;
 

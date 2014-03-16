@@ -1,6 +1,8 @@
 package ru.poteriashki.laf.web.controllers;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,12 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import ru.poteriashki.laf.core.model.Chat;
 import ru.poteriashki.laf.core.model.Message;
-import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.service.IMessageService;
 import ru.poteriashki.laf.core.service.ServiceException;
 import ru.poteriashki.laf.web.security.UserContext;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -28,21 +31,24 @@ public class MessageController {
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    public Message create(@RequestBody Message message) {
+    public Message create(@RequestBody Message message) throws InterruptedException, ru.eastbanctech.resources.services.ServiceException, IOException {
         return messageService.create(message, userContext.getUser());
     }
 
-    @RequestMapping(value = "/{itemId}", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<Message> allByItemId(@PathVariable("itemId") String itemId,
-                                     @RequestParam("nonOwner") String nonOwner) throws ServiceException {
-        return messageService.loadItemChat(itemId, nonOwner, userContext.getUser());
+    public Page<Chat> getChats(@RequestParam(value = "itemId", required = false) String itemId) throws ServiceException {
+        if (StringUtils.isBlank(itemId)) {
+            return messageService.getChats(userContext.getUser());
+        } else {
+            return messageService.getChatsByItemId(itemId, userContext.getUser());
+        }
     }
 
-    @RequestMapping(value = "/{itemId}/nonOwners", method = RequestMethod.GET)
+    @RequestMapping(value = "/{chatId}", method = RequestMethod.GET)
     @ResponseBody
-    public List<User> nonOwners(@PathVariable("itemId") String itemId) throws ServiceException {
-        return messageService.nonOwners(itemId, userContext.getUser());
+    public List<Message> getMessagesByChat(@PathVariable("chatId") String chatId) throws ServiceException {
+        return messageService.getMessagesByChat(chatId, userContext.getUser());
     }
 
 }

@@ -36,6 +36,10 @@ public class User extends BaseEntity {
     @Transient
     private Long closedCount;
 
+    private Long newMessagesCount = 0l;
+
+    private Long chatsCount = 0l;
+
     public UserType getType() {
         return type;
     }
@@ -130,5 +134,35 @@ public class User extends BaseEntity {
 
     public void setClosedCount(Long closedCount) {
         this.closedCount = closedCount;
+    }
+
+    public Long getNewMessagesCount() {
+        return newMessagesCount;
+    }
+
+    public void setNewMessagesCount(Long newMessagesCount) {
+        this.newMessagesCount = newMessagesCount;
+    }
+
+    public Long getChatsCount() {
+        return chatsCount;
+    }
+
+    public void setChatsCount(Long chatsCount) {
+        this.chatsCount = chatsCount;
+    }
+
+    public void incChatsCount() {
+        if (chatsCount == null) {
+            chatsCount = 0l;
+        }
+        chatsCount++;
+    }
+
+    public void incNewMessagesCount() {
+        if (newMessagesCount == null) {
+            newMessagesCount = 0l;
+        }
+        newMessagesCount++;
     }
 }

@@ -43,6 +43,7 @@ function ItemCreateModalController($scope, $modalInstance, $timeout, $location, 
           $location.search({number: item.number});
         }
         $scope.renewLaf();
+        $scope.authService.refresh();
         $modalInstance.dismiss('cancel');
       });
     });

@@ -1,11 +1,12 @@
 angular.module('laf').
   factory('MessagesService', function ($resource) {
     return {
-      crud: $resource('api/messages/:itemId/:nonOwners', {itemId: '@itemId', nonOwners: '@nonOwners'},
+      crud: $resource('api/messages/:chatId', {chatId: '@chatId'},
         {
-          create: {method: 'PUT', params: {itemId: ''}},
-          getByItemId: {method: 'GET', params: {itemId: '@itemId'}, isArray: true},
-          getNonOwners: {method: 'GET', params: {itemId: '@itemId', nonOwners: '@nonOwners'}, isArray: true}
+          create: {method: 'PUT', params: {chatId: ''}},
+          getChats: {method: 'GET', params: {chatId: ''}},
+          getChatsByItemId: {method: 'GET', params: {chatId: '', itemId: '@itemId'}},
+          getMessagesByChat: {method: 'GET', params: {chatId: '@chatId'}, isArray: true}
         })
     };
   });

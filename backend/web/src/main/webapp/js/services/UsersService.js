@@ -3,7 +3,8 @@ angular.module('laf').
     return {
       crud: $resource('api/users', {},
         {
-          update: {method: 'POST'}
+          update: {method: 'POST'},
+          loadAll: {method: 'GET', isArray: true}
         })
     };
   });

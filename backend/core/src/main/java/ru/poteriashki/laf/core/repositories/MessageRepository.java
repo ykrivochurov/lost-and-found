@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface MessageRepository extends PagingAndSortingRepository<Message, String> {
 
-    List<Message> findByItemIdAndItemOwner(String itemId, String itemOwner, Sort sort);
-
-    List<Message> findByItemIdAndNonOwner(String itemId, String nonOwner, Sort sort);
+    List<Message> findByChatId(String chatId, Sort sort);
 
 }

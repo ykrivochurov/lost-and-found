@@ -16,17 +16,18 @@ import org.springframework.web.multipart.MultipartFile;
 import ru.eastbanctech.resources.services.ImageResourceInfo;
 import ru.eastbanctech.resources.services.impl.ResourceService;
 import ru.poteriashki.laf.core.model.Category;
+import ru.poteriashki.laf.core.model.Chat;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
 import ru.poteriashki.laf.core.model.TempResource;
 import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.repositories.CategoryRepository;
+import ru.poteriashki.laf.core.repositories.ChatRepository;
 import ru.poteriashki.laf.core.repositories.ICounterDao;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.repositories.TempResourceRepository;
 import ru.poteriashki.laf.core.service.ErrorType;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
-import ru.poteriashki.laf.core.service.IMessageService;
 import ru.poteriashki.laf.core.service.ServiceException;
 
 import java.io.IOException;
@@ -55,10 +56,10 @@ public class LostAndFoundService implements ILostAndFoundService {
     private TempResourceRepository tempResourceRepository;
 
     @Autowired
-    private IMessageService messageService;
+    private MongoTemplate mongoTemplate;
 
     @Autowired
-    private MongoTemplate mongoTemplate;
+    private ChatRepository chatRepository;
 
     @Override
     public Item loadByNumber(Integer number, User user) throws ServiceException {
@@ -72,6 +73,24 @@ public class LostAndFoundService implements ILostAndFoundService {
                 (user == null || !item.getAuthor().equals(user.getId()))) {
             item.setUser(null);
         }
+
+        if (user != null) {
+            Long totalCount = 0l;
+            Long newCount = 0l;
+            Page<Chat> chats = chatRepository.findByItemAndOwnerOrItemAndNonOwner(item, user, item, user,
+                    new PageRequest(0, 100000, new Sort(Sort.Direction.DESC, "modificationDate")));
+            for (Chat chat : chats) {
+                totalCount += chat.getCount();
+                if (chat.getOwner().getId().equals(user.getId())) {
+                    newCount += chat.getOwnerNew();
+                } else {
+                    newCount += chat.getNonOwnerNew();
+                }
+            }
+            item.setCountOfMessages(totalCount);
+            item.setCountOfNewMessages(newCount);
+        }
+
         return item;
     }
 

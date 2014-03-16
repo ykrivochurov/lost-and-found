@@ -1,50 +1,81 @@
-<div class="ci-popup create-message-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
-    <div class="item-m-panel">
-        <span class="item-number {{item.closed ? 'closed' : item.itemType == 'LOST' ? 'lost' : 'found'}}">#&nbsp;{{selectedItem.number}}</span>
-        <span>{{item.what|truncate:65}}</span>
-    </div>
-    <div class="messages-panel nano clearfix" ng-if="utilsService.isNotEmptyArray(messages)">
-        <div class="content clearfix">
-            <div class="message-panel clearfix {{!$last ? 'with-border' : ''}}" ng-repeat="message in messages">
-                <img src="{{isMessageOwner(message) ? 'img/message/ia.png' : 'img/message/ia_on.png'}}">
-                <span>{{message.text}}</span>
+<div class="ci-popup {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
+    <div ng-if="!selectedChat">
+        <span class="chats-panel-title">Обсуждения</span>
+        <div class="chats-panel nano clearfix">
+            <div class="content clearfix">
+                <div class="wrapper-for-height clearfix">
+                    <div class="item-m-panel" ng-repeat="chat in chats" ng-click="selectChat(chat)">
+                        <span class="item-number {{chat.item.closed ? 'closed' : chat.item.itemType == 'LOST' ? 'lost' : 'found'}}">#&nbsp;{{chat.item.number}}</span>
+                        <span>{{chat.item.what|truncate:65}}</span>
+                        <span class="chat-count"><span>{{authService.currentUserHolder.id == chat.owner.id ? chat.ownerNew : chat.nonOwnerNew}}</span>&nbsp;<span class="total">({{chat.count}})</span> <img src="/img/mesage_2.png"></span>
+                        <span class="chat-person-name">{{authService.currentUserHolder.id == chat.owner.id ? chat.nonOwner.name : chat.item.showPrivateInfo ? chat.owner.name : 'Имя скрыто'}}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="message-text clearfix">
-        <span><label for="messageText">Сообщение</label></span>
-
-        <div>
-            <textarea id="messageText" ng-model="message.text"></textarea>
+    <div class="create-message-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}"
+         ng-if="selectedChat">
+        <div class="item-m-panel" ng-click="deSelectChat()">
+            <span class="item-number {{selectedChat.item.closed ? 'closed' : selectedChat.item.itemType == 'LOST' ? 'lost' : 'found'}}">#&nbsp;{{selectedChat.item.number}}</span>
+            <span>{{selectedChat.item.what|truncate:65}}</span>
+            <span class="chat-person-name">{{authService.currentUserHolder.id == selectedChat.owner.id ? selectedChat.nonOwner.name : selectedChat.item.showPrivateInfo ? selectedChat.owner.name : 'Имя скрыто'}}</span>
         </div>
-
-        <div class="picture-block">
-            <span><label for="photos-input">Загрузить фото</label></span>
-
-            <div class="picture">
-                <span class="img-va-helper"></span>
-                <img id="photo-preview" src="/img/icon_camera.png">
+        <div class="messages-panel nano clearfix" ng-if="utilsService.isNotEmptyArray(messages)">
+            <div class="content clearfix">
+                <div class="message-panel clearfix {{!$last ? 'with-border' : ''}}" ng-repeat="message in messages">
+                    <img src="{{isMessageOwner(message) ? 'img/message/ia.png' : 'img/message/ia_on.png'}}">
+                    <div class="message-content clearfix">
+                        <div class="creation-date">
+                            <span class="day">{{message.creationDate | date:'dd'}}</span>
+                            <span class="month">{{message.creationDate | date:'MMMM'}}</span>
+                            <span class="year">{{message.creationDate | date:'yyyy'}}</span>
+                            <span class="time">{{message.creationDate | date:'HH:mm'}}</span>
+                        </div>
+                        <span class="chat-message">{{message.text}}</span>
+                        <div>
+                            <img class="thumbnail-img" ng-src="api/items/photo/{{message.thumbnailId}}" ng-if="message && message.thumbnailId" ng-click="showFullSIzeImageModal(message)">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <input type="file" class="hidden ng-pristine ng-valid" name="photos" id="photos-input" ng-model="photoPath"
-                   ng-change="uploadPhoto()">
         </div>
-    </div>
+        <div class="message-text clearfix">
+            <span><label for="messageText">Сообщение</label></span>
 
-    <div class="clearfix login-buttons" ng-show="authService.currentUserHolder.id">
-        <button ng-click="cancel()" class="button-base message-cancel">Отмена</button>
-        <button ng-click="saveMessage()" class="button-base message-send">
-            <img src="{{item.itemType == 'LOST' ? '/img/ok2.png' : '/img/ok3.png'}}">
-            Отправить
-        </button>
-    </div>
-    <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
-        <button class="button-base vk-login" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
-            <img src="/img/button_vk.png">
-            Войти через Vkontakte
-        </button>
-        <button class="button-base fb-login" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
-            <img src="/img/button_facebook.png">
-            Войти через Facebook
-        </button>
+            <div>
+                <textarea id="messageText" ng-model="message.text"></textarea>
+            </div>
+
+            <div class="picture-block">
+                <span><label for="photos-input">Загрузить фото</label></span>
+
+                <div class="picture">
+                    <span class="img-va-helper"></span>
+                    <img id="photo-preview" src="/img/icon_camera.png">
+                </div>
+                <input type="file" class="hidden ng-pristine ng-valid" name="photos" id="photos-input"
+                       ng-model="photoPath"
+                       ng-change="uploadPhoto()">
+            </div>
+        </div>
+
+        <div class="clearfix login-buttons" ng-show="authService.currentUserHolder.id">
+            <button ng-click="cancel()" class="button-base message-cancel">Отмена</button>
+            <button ng-click="saveMessage()" class="button-base message-send">
+                <img src="{{item.itemType == 'LOST' ? '/img/ok2.png' : '/img/ok3.png'}}">
+                Отправить
+            </button>
+        </div>
+        <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
+            <button class="button-base vk-login" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
+                <img src="/img/button_vk.png">
+                Войти через Vkontakte
+            </button>
+            <button class="button-base fb-login" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
+                <img src="/img/button_facebook.png">
+                Войти через Facebook
+            </button>
+        </div>
     </div>
 </div>

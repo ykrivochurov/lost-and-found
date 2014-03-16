@@ -140,7 +140,10 @@ angular.module('laf').
     vk.init();
     fb.init();
 
-    resultObject.user = $resource('api/auth/user', {}, {get: {method: 'GET'}});
+    resultObject.user = $resource('api/auth/:suffix', {suffix: '@suffix'}, {
+      get: {method: 'GET', params: {suffix: 'user'}},
+      login: {method: 'GET', params: {id: '@id', suffix: 'login'}}
+    });
     resultObject.refresh = function (existingUser) {
       if (UtilsService.isNotEmpty(existingUser)) {
         resultObject.currentUserHolder = existingUser;
@@ -150,6 +153,13 @@ angular.module('laf').
         });
       }
     };
+    resultObject.testLogin = function (user) {
+      resultObject.user.login(
+        {id: user.id}, function () {
+          resultObject.refresh();
+        });
+    };
+
     resultObject.fb = fb;
     resultObject.vk = vk;
     return  resultObject;

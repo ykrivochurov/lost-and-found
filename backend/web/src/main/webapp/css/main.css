@@ -916,6 +916,27 @@ button:focus {
     background: url('../img/icon_07_0.png') no-repeat transparent 0 3px;
 }
 
+.home-wrapper .pen-b {
+    cursor: pointer;
+}
+
+.home-wrapper .pen-b .chat-count {
+    float: right;
+}
+
+.home-wrapper .pen-b .chat-count img {
+    margin-left: 3px;
+}
+
+.home-wrapper .pen-b .chat-count .total {
+    color: rgb(196, 196, 196);
+}
+
+.home-wrapper .pen-b .text-b {
+    display: inline-block;
+}
+
+
 /* end icon label block */
 
 .home-wrapper .money {
@@ -1081,13 +1102,16 @@ button:focus {
 }
 
 .home-wrapper .user-panel .info-panel .my-messages-button {
-    background: url('../img/user-panel/mesage.png') no-repeat transparent 33px 5px;
     display: inline-block;
-    padding-right: 45px;
+    padding-right: 5px;
     border-right: 1px solid rgb(232, 232, 232);
     padding-top: 5px;
     padding-bottom: 2px;
     cursor: pointer;
+}
+
+.home-wrapper .user-panel .info-panel .my-messages-button img {
+    margin-left: 5px;
 }
 
 .home-wrapper .user-panel .info-panel .my-items-button {
@@ -1146,7 +1170,7 @@ button:focus {
 /* Create message popup */
 
 .app-wrapper .create-message-form {
-    width: 640px;
+    width: 570px;
     padding-top: 20px;
 }
 
@@ -1159,6 +1183,7 @@ button:focus {
 .app-wrapper .create-message-form.found .message-text {
     background: url('../img/mesage_2.png') no-repeat transparent 0 30px;
     padding-left: 30px;
+    position: relative;
 }
 
 .app-wrapper .create-message-form textarea {

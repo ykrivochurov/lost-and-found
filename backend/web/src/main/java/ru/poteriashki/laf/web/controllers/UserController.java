@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ru.poteriashki.laf.core.model.User;
+import ru.poteriashki.laf.core.repositories.UserRepository;
 import ru.poteriashki.laf.core.service.IUserService;
 import ru.poteriashki.laf.web.security.UserContext;
 
@@ -20,6 +21,9 @@ public class UserController {
     @Autowired
     private UserContext userContext;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public User update(@RequestBody User user) {
@@ -28,6 +32,12 @@ public class UserController {
         currentUser.setPhone(user.getPhone());
         currentUser.setEmail(user.getEmail());
         return userService.updateUser(currentUser);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<User> loadAll() {
+        return userRepository.findAll();
     }
 
 }

@@ -1,10 +1,11 @@
 .app-wrapper .item-m-panel {
     background-color: rgb(249, 252, 222);
-    padding: 12px 7px;
+    padding: 12px 14px 12px 7px;
     border-radius: 8px;
     margin-left: 12px;
     width: 550px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .app-wrapper .item-m-panel .item-number:hover,
@@ -16,10 +17,63 @@
     margin-right: 15px;
 }
 
-.messages-panel {
+.app-wrapper .item-m-panel .chat-person-name {
+    display: inline-block;
+    float: right;
+}
+
+.app-wrapper .item-m-panel .chat-count {
+    text-align: right;
+    display: inherit;
+    float: right;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.app-wrapper .item-m-panel .chat-count img {
+    margin-left: 3px;
+}
+
+.app-wrapper .item-m-panel .chat-count .total {
+    color: rgb(196, 196, 196);
+}
+
+.app-wrapper .chats-panel-title {
+    margin-left: 12px;
+}
+
+.app-wrapper .chats-panel {
+    min-height: 160px;
+}
+
+.app-wrapper .messages-panel {
     margin: 30px 14px 30px 28px;
     height: 160px;
     overflow: hidden;
+}
+
+.app-wrapper .messages-panel .creation-date {
+    margin-left: 0;
+    vertical-align: top;
+    margin-bottom: 5px;
+    color: rgb(65, 65, 65);
+}
+
+.app-wrapper .messages-panel .creation-date .day {
+    font-size: 160%;
+    margin-right: 5px;
+}
+
+.app-wrapper .messages-panel .creation-date .month {
+    margin-right: 5px;
+}
+
+.app-wrapper .messages-panel .creation-date .year {
+    margin-right: 10px;
+}
+
+.app-wrapper .messages-panel .creation-date .time {
+    color: rgb(175, 175, 175);
 }
 
 .messages-panel .message-panel {
@@ -33,13 +87,21 @@
 }
 
 .messages-panel .message-panel img {
-    margin-right: 25px;
+    margin-right: 15px;
+    vertical-align: top;
 }
 
-.messages-panel .message-panel span {
+.messages-panel .message-panel .chat-message {
     vertical-align: top;
-    margin-top: 5px;
-    display: inline-block;
-    max-width: 435px;
     overflow-x: hidden;
+}
+
+.messages-panel .message-panel .thumbnail-img {
+    cursor: pointer;
+}
+
+.messages-panel .message-content {
+    max-width: 435px;
+    display: inline-block;
+    vertical-align: top;
 }

@@ -44,6 +44,16 @@ public class AuthController {
     @ResponseBody
     public User user() {
         User user = userContext.getUser();
+        user = userService.getById(user.getId());
+        user = lostAndFoundService.itemsCountToUser(user);
+        userContext.setUser(user);
+        return user;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @ResponseBody
+    public User login(@RequestParam("id") String id) {
+        User user = userService.getById(id);
         user = lostAndFoundService.itemsCountToUser(user);
         userContext.setUser(user);
         return user;

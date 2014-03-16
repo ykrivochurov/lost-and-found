@@ -1,6 +1,7 @@
 package ru.poteriashki.laf.core.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -11,28 +12,27 @@ public class Message extends BaseEntity {
 
     public static final String COLLECTION = "message";
 
-    private String itemOwner;
-
-    private String nonOwner;
+    private String chatId;
 
     private String sender;
 
     private String text;
 
-    private String itemId;
-
     private Date creationDate;
 
-    private boolean senderNew = true;
+    private String photoId;
 
-    private boolean receiverNew = true;
+    private String thumbnailId;
 
-    public Date getCreationDate() {
-        return creationDate;
+    @Transient
+    private String itemId;
+
+    public String getChatId() {
+        return chatId;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setChatId(String chatId) {
+        this.chatId = chatId;
     }
 
     public String getSender() {
@@ -51,6 +51,14 @@ public class Message extends BaseEntity {
         this.text = text;
     }
 
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
     public String getItemId() {
         return itemId;
     }
@@ -59,47 +67,26 @@ public class Message extends BaseEntity {
         this.itemId = itemId;
     }
 
-    public boolean isSenderNew() {
-        return senderNew;
+    public String getPhotoId() {
+        return photoId;
     }
 
-    public void setSenderNew(boolean senderNew) {
-        this.senderNew = senderNew;
+    public void setPhotoId(String photoId) {
+        this.photoId = photoId;
     }
 
-    public boolean isReceiverNew() {
-        return receiverNew;
+    public String getThumbnailId() {
+        return thumbnailId;
     }
 
-    public void setReceiverNew(boolean receiverNew) {
-        this.receiverNew = receiverNew;
-    }
-
-    public String getItemOwner() {
-        return itemOwner;
-    }
-
-    public void setItemOwner(String itemOwner) {
-        this.itemOwner = itemOwner;
-    }
-
-    public String getNonOwner() {
-        return nonOwner;
-    }
-
-    public void setNonOwner(String nonOwner) {
-        this.nonOwner = nonOwner;
+    public void setThumbnailId(String thumbnailId) {
+        this.thumbnailId = thumbnailId;
     }
 
     public Message clone() {
         Message message = new Message();
-        message.setItemOwner(itemOwner);
-        message.setNonOwner(nonOwner);
         message.setSender(sender);
         message.setCreationDate(creationDate);
-        message.setItemId(itemId);
-        message.setReceiverNew(receiverNew);
-        message.setSenderNew(senderNew);
         message.setText(text);
         message.setId(getId());
         return message;

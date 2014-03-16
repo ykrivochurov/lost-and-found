@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.model.City;
+import ru.poteriashki.laf.core.model.User;
+import ru.poteriashki.laf.core.model.UserType;
 import ru.poteriashki.laf.core.repositories.CategoryRepository;
 import ru.poteriashki.laf.core.repositories.CityRepository;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
@@ -37,7 +39,7 @@ public class InitData {
     @Autowired
     private CityRepository cityRepository;
 
-    @PostConstruct
+        @PostConstruct
     public void init() {
         City city = new City();
         city.setName("Новосибирск");
@@ -59,6 +61,37 @@ public class InitData {
         priority = createCategory(priority, "Гаджеты", Lists.newArrayList("Мобильный телефон", "Флешкарта", "Планшет", "Ноутбук", "Плеер", "Видеокамера", "Фотоаппарат"));
         priority = createCategory(priority, "Украшения", Lists.newArrayList("Сережки", "Кольцо", "Браслет", "Цепочка", "Кулон", "Часы"));
         priority = createCategory(priority, "Другое", Lists.newArrayList("Другое"));
+
+        if (userRepository.findOneByUidAndType("tester1uid", UserType.VK) == null) {
+            User user = new User();
+            user.setName("Tester 1");
+            user.setUid("tester1uid");
+            user.setSid("tester1sid");
+            user.setType(UserType.VK);
+            user.setFirstName("Tester");
+            user.setLastName("1");
+            userRepository.save(user);
+        }
+        if (userRepository.findOneByUidAndType("tester2uid", UserType.VK) == null) {
+            User user = new User();
+            user.setName("Tester 2");
+            user.setUid("tester2uid");
+            user.setSid("tester2sid");
+            user.setType(UserType.VK);
+            user.setFirstName("Tester");
+            user.setLastName("2");
+            userRepository.save(user);
+        }
+        if (userRepository.findOneByUidAndType("tester3uid", UserType.VK) == null) {
+            User user = new User();
+            user.setName("Tester 3");
+            user.setUid("tester3uid");
+            user.setSid("tester3sid");
+            user.setType(UserType.VK);
+            user.setFirstName("Tester");
+            user.setLastName("3");
+            userRepository.save(user);
+        }
     }
 
     private Integer createCategory(Integer priority, String name, List<String> tags) {

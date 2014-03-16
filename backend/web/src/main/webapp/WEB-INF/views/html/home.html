@@ -1,4 +1,10 @@
 <div class="home-wrapper animate-switch-container clearfix">
+    <!--<div style="position: absolute;left: 500px;z-index: 200;background-color: white;">
+        <div ng-repeat="testUser in testUsers">
+            <div ng-click="authService.testLogin(testUser)">{{testUser.name}}</div>
+        </div>
+    </div>
+-->
     <div class="on-map-panel marker-edit-mode animate-show {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
     <div class="where">
         <input type="text" ng-model="middleStateItem.where" placeholder="Где"
@@ -67,7 +73,10 @@
             </div>
             <div class="login-panel" ng-click="showLoginModal()" ng-show="!authService.currentUserHolder">Войти</div>
             <div class="info-panel" ng-show="authService.currentUserHolder">
-                <div class="my-messages-button" ng-click="" tooltip-html-unsafe="Мои сообщения<br/> Новые (Все)" tooltip-placement="bottom">1<span>(3)</span></div>
+                <div class="my-messages-button" ng-click="createMessageModal()" tooltip-html-unsafe="Мои обсуждения<br/> Новые сообщения (Всего обсуждений)" tooltip-placement="bottom" tooltip-append-to-body="true">
+                    {{authService.currentUserHolder.newMessagesCount ? authService.currentUserHolder.newMessagesCount : 0}}<span>({{authService.currentUserHolder.chatsCount ? authService.currentUserHolder.chatsCount : 0}})</span>
+                    <img src="img/user-panel/mesage.png">
+                </div>
                 <div class="my-items-button" ng-click="showMyItems()" tooltip-html-unsafe="Мои объявления<br/> Активные (Закрытые)" tooltip-placement="bottom">
                     {{authService.currentUserHolder.itemsCount}}<span ng-show="authService.currentUserHolder.closedCount">({{authService.currentUserHolder.closedCount}})</span>
                     <img src="img/user-panel/my.png">
@@ -180,8 +189,9 @@
                                 <div class="text-b">{{selectedItem.user.email}}</div>
                             </div>
                         </div>
-                        <div class="icon-label-b pen-b" ng-click="createMessageModal(selectedItem)">
+                        <div class="icon-label-b pen-b clearfix" ng-click="createMessageModal(selectedItem)">
                             <div class="text-b">Написать личное сообщение</div>
+                            <div class="chat-count clearfix" ng-if="selectedItem.countOfMessages > 0"><span>{{selectedItem.countOfNewMessages}}</span>&nbsp;<span class="total">({{selectedItem.countOfMessages}})</span> <img src="/img/mesage_2.png"></div>
                         </div>
                     </div>
                     <div class="share-section">

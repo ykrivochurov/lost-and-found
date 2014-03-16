@@ -14,7 +14,7 @@ import java.util.Set;
 @JsonDeserialize
 public class Item extends BaseEntity {
 
-    public static final String COLLECTION = "items";
+    public static final String COLLECTION = "item";
 
     private String what;
 
