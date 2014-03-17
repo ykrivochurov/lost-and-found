@@ -1,9 +1,11 @@
 <div class="home-wrapper animate-switch-container clearfix">
+<!--
     <div style="position: absolute;left: 500px;z-index: 200;background-color: white;">
         <div ng-repeat="testUser in testUsers">
             <div ng-click="authService.testLogin(testUser)">{{testUser.name}}</div>
         </div>
     </div>
+-->
     <div class="on-map-panel marker-edit-mode animate-show {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
     <div class="where">
         <input type="text" ng-model="middleStateItem.where" placeholder="Где"
@@ -197,7 +199,9 @@
                         </div>
                         <div class="icon-label-b pen-b clearfix" ng-click="createMessageModal(selectedItem)">
                             <div class="text-b">Написать личное сообщение</div>
-                            <div class="chat-count clearfix" ng-if="selectedItem.countOfMessages > 0"><span>{{selectedItem.countOfNewMessages}}</span>&nbsp;<span class="total">({{selectedItem.countOfMessages}})</span> <img src="/img/mesage_2.png"></div>
+                            <div class="chat-count clearfix" ng-if="selectedItem.countOfMessages > 0"><span>{{selectedItem.countOfNewMessages}}</span>&nbsp;<span class="total">({{selectedItem.countOfMessages}})</span>
+                                <img src="/img/mesage_2a.png" ng-if="selectedItem.itemType == 'LOST'">
+                                <img src="/img/mesage_2.png" ng-if="selectedItem.itemType == 'FOUND'"></div>
                         </div>
                     </div>
                     <div class="share-section">

@@ -8,7 +8,10 @@
                     <div class="item-m-panel" ng-repeat="chat in chats" ng-click="selectChat(chat)">
                         <span class="item-number {{chat.item.closed ? 'closed' : chat.item.itemType == 'LOST' ? 'lost' : 'found'}}">#&nbsp;{{chat.item.number}}</span>
                         <span>{{chat.item.what|truncate:25}}</span>
-                        <span class="chat-count"><span>{{authService.currentUserHolder.id == chat.owner.id ? chat.ownerNew : chat.nonOwnerNew}}</span>&nbsp;<span class="total">({{chat.count}})</span> <img src="/img/mesage_2.png"></span>
+                        <span class="chat-count"><span>{{authService.currentUserHolder.id == chat.owner.id ? chat.ownerNew : chat.nonOwnerNew}}</span>&nbsp;<span class="total">({{chat.count}})</span>
+                            <img src="/img/mesage_2a.png" ng-if="chat.item.itemType == 'LOST'">
+                            <img src="/img/mesage_2.png" ng-if="chat.item.itemType == 'FOUND'">
+                        </span>
                         <span class="chat-person-name">{{authService.currentUserHolder.id == chat.owner.id ? chat.nonOwner.name : chat.item.showPrivateInfo ? chat.owner.name : 'Имя скрыто'}}</span>
                     </div>
                 </div>

@@ -42,6 +42,7 @@ body {
     height: 16px;
 }
 
+.app-wrapper div.ng-invalid,
 .app-wrapper textarea.ng-invalid,
 .app-wrapper input.ng-invalid {
     background-color: rgb(255, 232, 215);
@@ -1198,7 +1199,7 @@ button:focus {
 }
 
 .app-wrapper .create-message-form.lost .message-text {
-    background: url('../img/mesage.png') no-repeat transparent 0 30px;
+    background: url('../img/mesage_2a.png') no-repeat transparent 0 30px;
     padding-left: 30px;
     position: relative;
 }

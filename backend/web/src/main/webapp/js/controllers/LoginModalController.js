@@ -1,4 +1,4 @@
-function LoginModalController($scope, $modalInstance, AuthService, UtilsService) {
+function LoginModalController($scope, $modalInstance, AuthService, UtilsService, callback) {
 
   $scope.authService = AuthService;
 
@@ -7,6 +7,16 @@ function LoginModalController($scope, $modalInstance, AuthService, UtilsService)
   };
 
   $scope.setCurrentUser = function (user) {
+    if (UtilsService.isFunction(callback)) {
+      callback();
+    }
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+
+  $scope.close = function () {
     if (UtilsService.isNotEmpty($scope.spinner)) {
       $scope.spinner.stop();
     }
@@ -16,7 +26,4 @@ function LoginModalController($scope, $modalInstance, AuthService, UtilsService)
     $modalInstance.close();
   };
 
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
 }

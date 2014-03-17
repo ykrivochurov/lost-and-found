@@ -40,11 +40,13 @@ angular.module('laf').
           //выкл стандартных балунов
           controllerScope.DGisMap.geoclicker.disable();
           controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
+/*
           var zoomControl = new DG.Controls.Zoom();
           controllerScope.DGisMap.zoomControl = zoomControl;
           controllerScope.DGisMap.controls.add(zoomControl);
           var zoomControlPosition = new DG.ControlPosition(DG.ControlPosition.TOP_LEFT, new DG.Point(54, 80));
           zoomControlPosition.apply(zoomControl.getContainer());
+*/
           controllerScope.currentLocationMarker = new DG.Markers.Common({
             geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]),
             icon: new DG.Icon('/img/pins/P-ia_poterial_mini.png', new DG.Size(46, 68)),

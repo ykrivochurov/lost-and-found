@@ -514,12 +514,14 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
         templateUrl: 'login-win',
         controller: LoginModalController,
         windowClass: 'login-modal',
-        scope: $scope
+        scope: $scope,
+        resolve: {
+          callback: function () {
+            return callback;
+          }
+        }
       });
       modalInstance.result.then(function () {
-        if (UtilsService.isFunction(callback)) {
-          callback();
-        }
       }, function () {
         console.log('Modal dismissed at: ' + new Date());
       });

@@ -1,11 +1,11 @@
 <div class="modal-close" ng-click="cancel()"><img src="/img/close-modal_2.png"></div>
 <div class="simple-login">
     <div class="clearfix login-buttons" ng-show="!authService.currentUserHolder.id">
-        <button class="vk-login button-base" ng-click="startSpin(); authService.vk.login(setCurrentUser);">
+        <button class="vk-login button-base" ng-click="startSpin(); authService.vk.login(setCurrentUser); close();">
             <img src="/img/button_vk.png">
             Войти через аккаунт Vkontakte
         </button>
-        <button class="fb-login button-base" ng-click="startSpin(); authService.fb.login(setCurrentUser);">
+        <button class="fb-login button-base" ng-click="startSpin(); authService.fb.login(setCurrentUser); close();">
             <img src="/img/button_facebook.png">
             Войти через аккаунт Facebook
         </button>
