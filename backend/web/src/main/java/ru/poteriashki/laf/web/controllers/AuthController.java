@@ -46,6 +46,7 @@ public class AuthController {
         User user = userContext.getUser();
         user = userService.getById(user.getId());
         user = lostAndFoundService.itemsCountToUser(user);
+        user.setFavorite(lostAndFoundService.favoriteForUser(user));
         userContext.setUser(user);
         return user;
     }
@@ -81,6 +82,7 @@ public class AuthController {
             LOGGER.debug("Unable to get user data", e);
         }
         user = lostAndFoundService.itemsCountToUser(user);
+        user.setFavorite(lostAndFoundService.favoriteForUser(user));
         userContext.setUser(user);
         return user;
     }
@@ -113,6 +115,7 @@ public class AuthController {
             LOGGER.debug("Unable to get user data", e);
         }
         user = lostAndFoundService.itemsCountToUser(user);
+        user.setFavorite(lostAndFoundService.favoriteForUser(user));
         userContext.setUser(user);
         return user;
     }

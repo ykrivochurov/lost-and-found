@@ -1,11 +1,9 @@
 <div class="home-wrapper animate-switch-container clearfix">
-<!--
     <div style="position: absolute;left: 500px;z-index: 200;background-color: white;">
         <div ng-repeat="testUser in testUsers">
             <div ng-click="authService.testLogin(testUser)">{{testUser.name}}</div>
         </div>
     </div>
--->
     <div class="on-map-panel marker-edit-mode animate-show {{middleStateItem.itemType == 'LOST' ? 'lost' : 'found'}}" ng-show="middleStateItem">
     <div class="where">
         <input type="text" ng-model="middleStateItem.where" placeholder="Где"
@@ -82,6 +80,10 @@
                     {{authService.currentUserHolder.itemsCount}}<span ng-show="authService.currentUserHolder.closedCount">({{authService.currentUserHolder.closedCount}})</span>
                     <img src="img/user-panel/my.png">
                 </div>
+                <div class="favorites-button" ng-click="showFavoriteItems()">
+                    {{authService.currentUserHolder.favorite.favorites.length}}
+                    <img src="img/fav_on.png">
+                </div>
             </div>
         </div>
         <div class="right-panel-hide on-map-panel" ng-click="collapse()" ng-show="!mapFullScreen">
@@ -128,6 +130,9 @@
             <div class="content scroll-content left-margin">
                 <div class="details-block">
                     <div class="creation-date">
+                        <img src="/img/fav_on.png" class="fav-button" ng-if="authService.currentUserHolder && isInFavorite(selectedItem)" ng-click="favoriteOnOff(selectedItem)">
+                        <img src="/img/fav_off.png" class="fav-button" ng-if="authService.currentUserHolder && !isInFavorite(selectedItem)" ng-click="favoriteOnOff(selectedItem)">
+
                         <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
                         <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
@@ -223,6 +228,9 @@
             <div class="content scroll-content" ng-show="showSelectedCategory">
                 <div class="laf-item left-margin" ng-repeat="item in itemsList.lostAndFoundItems" ng-click="openItem(item)">
                     <div class="when">
+                        <img src="/img/fav_on.png" class="fav-button" ng-if="authService.currentUserHolder && isInFavorite(item)" ng-click="favoriteOnOff(item); $event.stopPropagation();">
+                        <img src="/img/fav_off.png" class="fav-button" ng-if="authService.currentUserHolder && !isInFavorite(item)" ng-click="favoriteOnOff(item); $event.stopPropagation();">
+
                         <span class="day">{{item.creationDate | date:'dd'}}</span>
                         <span class="month">{{item.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{item.creationDate | date:'yyyy'}}</span>

@@ -36,6 +36,9 @@ public class User extends BaseEntity {
     @Transient
     private Long closedCount;
 
+    @Transient
+    private Favorite favorite;
+
     private Long newMessagesCount = 0l;
 
     private Long chatsCount = 0l;
@@ -150,6 +153,14 @@ public class User extends BaseEntity {
 
     public void setChatsCount(Long chatsCount) {
         this.chatsCount = chatsCount;
+    }
+
+    public Favorite getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(Favorite favorite) {
+        this.favorite = favorite;
     }
 
     public void incChatsCount() {

@@ -1,5 +1,6 @@
 package ru.poteriashki.laf.web.controllers;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import ru.eastbanctech.resources.services.IResourceService;
+import ru.poteriashki.laf.core.model.Favorite;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
+import ru.poteriashki.laf.core.repositories.FavoriteRepository;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.service.ILostAndFoundService;
 import ru.poteriashki.laf.core.service.ServiceException;
@@ -39,6 +42,9 @@ public class ItemController {
 
     @Autowired
     private ItemRepository itemRepository;
+
+    @Autowired
+    private FavoriteRepository favoriteRepository;
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
@@ -113,4 +119,18 @@ public class ItemController {
         }
     }
 
+    @RequestMapping(value = "/favorite", method = RequestMethod.GET)
+    @ResponseBody
+    public Favorite favorite(@RequestParam(value = "itemId", required = false) String itemId) {
+        if (StringUtils.isBlank(itemId)) {
+            return favoriteRepository.findOneByUserId(userContext.getUser().getId());
+        }
+        return lostAndFoundService.favoriteOnOff(itemId, userContext.getUser());
+    }
+
+    @RequestMapping(value = "/favorite_items", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<Item> favoriteItems() {
+        return lostAndFoundService.favoriteItems(userContext.getUser());
+    }
 }

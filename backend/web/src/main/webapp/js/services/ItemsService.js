@@ -15,6 +15,8 @@ angular.module('laf').
         {
           getByNumber: {method: 'GET', params: {numberOrId: '@numberOrId'}},
           search: {method: 'GET', params: {markers: 'search', query: '@query', itemType: '@itemType'}, isArray: true},
+          favorite: {method: 'GET', params: {markers: 'favorite', itemId: '@itemId'}},
+          favoriteItems: {method: 'GET', params: {markers: 'favorite_items'}, isArray: true},
           create: {method: 'PUT'},
           update: {method: 'POST'},
           close: {method: 'DELETE', params: {numberOrId: '@numberOrId'}},

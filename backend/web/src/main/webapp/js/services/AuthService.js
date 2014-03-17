@@ -26,7 +26,7 @@ angular.module('laf').
           var sid = response.session.sid;
           var name = response.session.user.first_name + ' ' + response.session.user.last_name;
           $.get("/api/auth/vk?sid=" + sid + "&uid=" + uid + "&name=" + name, function (user, status) {
-            resultObject.currentUserHolder = user;
+            resultObject.refresh(user);
             if (UtilsService.isNotEmpty(authCallback)) {
               authCallback(user);
             }
@@ -87,7 +87,7 @@ angular.module('laf').
           var uid = response.authResponse.userID;
           var token = response.authResponse.accessToken;
           $.get("/api/auth/fb?token=" + token + "&uid=" + uid, function (user, status) {
-            resultObject.currentUserHolder = user;
+            resultObject.refresh(user);
 
             if (UtilsService.isNotEmpty(authCallback)) {
               authCallback(user);

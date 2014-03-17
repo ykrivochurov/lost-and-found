@@ -5,6 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.multipart.MultipartFile;
 import ru.eastbanctech.resources.services.ServiceException;
 import ru.poteriashki.laf.core.model.Category;
+import ru.poteriashki.laf.core.model.Favorite;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
 import ru.poteriashki.laf.core.model.User;
@@ -41,4 +42,10 @@ public interface ILostAndFoundService {
     void cleanupUselessPhotos() throws ru.eastbanctech.resources.services.ServiceException;
 
     List<Item> search(String searchString, ItemType itemType);
+
+    Favorite favoriteOnOff(String itemId, User user);
+
+    Favorite favoriteForUser(User user);
+
+    Iterable<Item> favoriteItems(User user);
 }

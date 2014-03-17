@@ -703,6 +703,13 @@ button:focus {
     position: relative;
 }
 
+.home-wrapper .laf-item .fav-button,
+.home-wrapper .details-block .fav-button {
+    margin-right: 10px;
+    vertical-align: baseline;
+    cursor: pointer;
+}
+
 .app-wrapper .creation-form .picture,
 .home-wrapper .details-block .picture {
     float: left;
@@ -1116,13 +1123,28 @@ button:focus {
 
 .home-wrapper .user-panel .info-panel .my-items-button {
     display: inline-block;
-    padding-right: 5px;
+    padding-right: 10px;
+    border-right: 1px solid rgb(232, 232, 232);
     margin-left: 6px;
     padding-top: 5px;
     cursor: pointer;
 }
 
 .home-wrapper .user-panel .info-panel .my-items-button img {
+    position: relative;
+    top: -1px;
+    margin-left: 8px;
+}
+
+.home-wrapper .user-panel .info-panel .favorites-button {
+    display: inline-block;
+    padding-right: 5px;
+    margin-left: 6px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.home-wrapper .user-panel .info-panel .favorites-button img {
     position: relative;
     top: -1px;
     margin-left: 8px;
@@ -1297,11 +1319,9 @@ button:focus {
 
 .app-wrapper .modal-close {
     position: absolute;
-    top: -6px;
-    right: -6px;
+    top: -11px;
+    right: -13px;
     cursor: pointer;
-    background-color: white;
-    border-radius: 9px;
 }
 
 .app-wrapper .modal-content {

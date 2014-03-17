@@ -32,6 +32,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   $scope.selectedTag = null;
   $scope.selectedItem = null;
 
+  $scope.favoriteCategory = 'Избранное';
   $scope.myItemsCategory = 'Мои объявления';
   $scope.searchItemsCategory = 'Результаты поиска';
 
@@ -41,6 +42,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   $scope.showCategoriesList = true;
   $scope.myItemsMode = false;
   $scope.searchItemsMode = false;
+  $scope.favoriteItemsMode = false;
 
   UsersService.crud.loadAll(function (users) {
     $scope.testUsers = users;
@@ -78,6 +80,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
   $scope.setCategoriesListType = function (value) {
     var deferred = $q.defer();
     $scope.myItemsMode = false;
+    $scope.favoriteItemsMode = false;
     $scope.searchReset();
     $scope.categoriesListType = value;
     angular.element('.lost-b').toggleClass('active', angular.equals(value, 'LOST'));
@@ -93,7 +96,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
     return deferred.promise;
   };
 
-  $scope.selectCategoryAndTag = function (category, tag, my, search) {
+  $scope.selectCategoryAndTag = function (category, tag, my, search, favorite) {
     var deferred = $q.defer();
     $scope.itemsList = {
       page: null,
@@ -125,6 +128,11 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
         callback({content: items});
         $scope.mapService.drawMarkersDirectly($scope.itemsList.lostAndFoundItems);
       });
+    } else if (favorite) {
+      ItemsService.crud.favoriteItems(function (items) {
+        callback({content: items});
+        $scope.mapService.drawMarkersDirectly($scope.itemsList.lostAndFoundItems);
+      });
     } else if (my) {
       ItemsService.crud.getMy({pageNumber: 0}, function (items) {
         callback(items);
@@ -145,7 +153,8 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
       $scope.selectedCategory,
       $scope.selectedTag,
       $scope.myItemsMode,
-      $scope.searchItemsMode
+      $scope.searchItemsMode,
+      $scope.favoriteItemsMode
     );
   };
 
@@ -186,7 +195,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
         var deferred = $q.defer();
         deferred.promise.then(function () {
           $scope.rightPanelVisible = true;
-          $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false).then(function () {
+          $scope.selectCategoryAndTag($scope.getCategoryByName(item.mainCategory), item.tags[0], false, false, false).then(function () {
             $scope.openItem(item);
           });
         });
@@ -275,7 +284,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
       $scope.mapService.hideAllBalloons();
       $scope.clearSelectedItem();
       $scope.showSelectedCategory = true;
-      $scope.selectCategoryAndTag(selectedCategory, null, true, false);
+      $scope.selectCategoryAndTag(selectedCategory, null, true, false, false);
       $scope.myItemsMode = true;
     }
   };
@@ -337,7 +346,7 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
       $scope.mapService.hideAllBalloons();
       $scope.clearSelectedItem();
       $scope.showSelectedCategory = true;
-      $scope.selectCategoryAndTag({name: $scope.searchItemsCategory}, null, false, true);
+      $scope.selectCategoryAndTag({name: $scope.searchItemsCategory}, null, false, true, false);
       $scope.searchItemsMode = true;
       console.log($scope.searchQuery);
     }, 1000);
@@ -351,6 +360,38 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
     $scope.searchItemsMode = false;
   };
 
+
+  $scope.showFavoriteItems = function () {
+    var selectedCategory = {name: $scope.favoriteCategory};
+    $scope.rightPanelVisible = true;
+    if (UtilsService.isNotEmpty($scope.authService.currentUserHolder)
+      && UtilsService.isNotEmpty($scope.authService.currentUserHolder.id)) {
+      $scope.mapService.hideAllBalloons();
+      $scope.clearSelectedItem();
+      $scope.showSelectedCategory = true;
+      $scope.selectCategoryAndTag(selectedCategory, null, false, false, true);
+      $scope.favoriteItemsMode = true;
+    }
+  };
+
+
+  $scope.favoriteOnOff = function (item) {
+    ItemsService.crud.favorite({itemId: item.id}, function (favorite) {
+      if ($scope.authService.currentUserHolder != null) {
+        $scope.authService.currentUserHolder.favorite = favorite;
+      }
+    });
+  };
+
+  $scope.isInFavorite = function (item) {
+    if ($scope.authService.currentUserHolder != null
+      && $scope.authService.currentUserHolder.id != null
+      && item != null
+      && $scope.authService.currentUserHolder.favorite != null) {
+      return $scope.authService.currentUserHolder.favorite.favorites.indexOf(item.id) > -1;
+    }
+    return false;
+  };
 
 //  Busy indicator
   $scope.showBusy = function (message) {

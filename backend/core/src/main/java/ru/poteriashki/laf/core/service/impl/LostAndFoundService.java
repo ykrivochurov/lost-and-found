@@ -17,12 +17,14 @@ import ru.eastbanctech.resources.services.ImageResourceInfo;
 import ru.eastbanctech.resources.services.impl.ResourceService;
 import ru.poteriashki.laf.core.model.Category;
 import ru.poteriashki.laf.core.model.Chat;
+import ru.poteriashki.laf.core.model.Favorite;
 import ru.poteriashki.laf.core.model.Item;
 import ru.poteriashki.laf.core.model.ItemType;
 import ru.poteriashki.laf.core.model.TempResource;
 import ru.poteriashki.laf.core.model.User;
 import ru.poteriashki.laf.core.repositories.CategoryRepository;
 import ru.poteriashki.laf.core.repositories.ChatRepository;
+import ru.poteriashki.laf.core.repositories.FavoriteRepository;
 import ru.poteriashki.laf.core.repositories.ICounterDao;
 import ru.poteriashki.laf.core.repositories.ItemRepository;
 import ru.poteriashki.laf.core.repositories.TempResourceRepository;
@@ -32,6 +34,7 @@ import ru.poteriashki.laf.core.service.ServiceException;
 
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -60,6 +63,9 @@ public class LostAndFoundService implements ILostAndFoundService {
 
     @Autowired
     private ChatRepository chatRepository;
+
+    @Autowired
+    private FavoriteRepository favoriteRepository;
 
     @Override
     public Item loadByNumber(Integer number, User user) throws ServiceException {
@@ -334,5 +340,62 @@ public class LostAndFoundService implements ILostAndFoundService {
         }
 
         return items;
+    }
+
+    @Override
+    public Favorite favoriteOnOff(String itemId, User user) {
+        Assert.hasText(itemId);
+        Assert.notNull(user);
+
+        Favorite favorite = favoriteRepository.findOneByUserId(user.getId());
+        if (favorite == null) {
+            favorite = new Favorite();
+            favorite.setUserId(user.getId());
+        }
+
+        if (favorite.getFavorites().contains(itemId)) {
+            favorite.getFavorites().remove(itemId);
+        } else {
+            favorite.getFavorites().add(itemId);
+        }
+
+        return favoriteRepository.save(favorite);
+    }
+
+    @Override
+    public Favorite favoriteForUser(User user) {
+        Assert.notNull(user);
+
+        Favorite favorite = favoriteRepository.findOneByUserId(user.getId());
+        if (favorite == null) {
+            favorite = new Favorite();
+            favorite.setUserId(user.getId());
+            favorite = favoriteRepository.save(favorite);
+        }
+
+        return favorite;
+    }
+
+    @Override
+    public Iterable<Item> favoriteItems(User user) {
+        Assert.notNull(user);
+
+        Favorite favorite = favoriteRepository.findOneByUserId(user.getId());
+        if (favorite == null) {
+            favorite = new Favorite();
+            favorite.setUserId(user.getId());
+            favoriteRepository.save(favorite);
+        }
+
+        if (!favorite.getFavorites().isEmpty()) {
+            Iterable<Item> all = itemRepository.findAll(favorite.getFavorites());
+            for (Item item : all) {
+                if (!item.isShowPrivateInfo()) {
+                    item.setUser(null);
+                }
+            }
+            return all;
+        }
+        return Collections.emptyList();
     }
 }
