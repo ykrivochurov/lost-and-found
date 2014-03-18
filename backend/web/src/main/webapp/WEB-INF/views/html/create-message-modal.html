@@ -1,7 +1,7 @@
 <div class="modal-close" ng-click="cancel()"><img src="/img/close-modal_2.png"></div>
 <div class="ci-popup {{item.itemType == 'LOST' ? 'lost' : 'found'}}">
+    <div class="chats-panel-title">{{!selectedChat ? 'Обсуждения' : 'Обсуждение'}}<span ng-if="selectedChat" ng-click="deSelectChat()">(вернуться к обсуждениям)</span></div>
     <div ng-if="!selectedChat">
-        <span class="chats-panel-title">Обсуждения</span>
         <div class="chats-panel nano clearfix">
             <div class="content clearfix">
                 <div class="wrapper-for-height clearfix">
@@ -20,9 +20,10 @@
     </div>
     <div class="create-message-form {{item.itemType == 'LOST' ? 'lost' : 'found'}}"
          ng-if="selectedChat">
-        <div class="item-m-panel" ng-click="deSelectChat()">
+
+        <div class="item-m-panel">
             <span class="item-number {{selectedChat.item.closed ? 'closed' : selectedChat.item.itemType == 'LOST' ? 'lost' : 'found'}}">#&nbsp;{{selectedChat.item.number}}</span>
-            <span>{{selectedChat.item.what|truncate:65}}</span>
+            <span>{{selectedChat.item.what|truncate:25}}</span>
             <span class="chat-person-name">{{authService.currentUserHolder.id == selectedChat.owner.id ? selectedChat.nonOwner.name : selectedChat.item.showPrivateInfo ? selectedChat.owner.name : 'Имя скрыто'}}</span>
         </div>
         <div class="messages-panel nano clearfix" ng-if="utilsService.isNotEmptyArray(messages)">

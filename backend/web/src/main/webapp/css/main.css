@@ -1195,7 +1195,6 @@ button:focus {
 
 .app-wrapper .create-message-form {
     width: 570px;
-    padding-top: 20px;
 }
 
 .app-wrapper .create-message-form.lost .message-text {
