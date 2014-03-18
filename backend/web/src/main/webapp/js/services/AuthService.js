@@ -66,7 +66,6 @@ angular.module('laf').
       logout: function () {
         VK.Auth.logout();
         this.data.user = {};
-        alert('До свидания!');
       }
     };
     var fb = {
@@ -134,15 +133,26 @@ angular.module('laf').
         FB.logout(function (response) {
         });
         this.data.user = {};
-        alert('До свидания!');
       }
     };
     vk.init();
     fb.init();
 
+    resultObject.logout = function () {
+      if (UtilsService.isNotEmpty(vk.data.user)) {
+        vk.logout();
+      }
+      if (UtilsService.isNotEmpty(fb.data.user)) {
+        fb.logout();
+      }
+      resultObject.user.logout();
+      resultObject.currentUserHolder = null;
+    };
+
     resultObject.user = $resource('api/auth/:suffix', {suffix: '@suffix'}, {
       get: {method: 'GET', params: {suffix: 'user'}},
-      login: {method: 'GET', params: {id: '@id', suffix: 'login'}}
+      login: {method: 'GET', params: {id: '@id', suffix: 'login'}},
+      logout: {method: 'GET', params: {suffix: 'logout'}}
     });
     resultObject.refresh = function (existingUser) {
       if (UtilsService.isNotEmpty(existingUser)) {

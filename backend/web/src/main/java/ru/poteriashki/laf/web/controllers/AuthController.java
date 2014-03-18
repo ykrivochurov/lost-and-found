@@ -60,6 +60,12 @@ public class AuthController {
         return user;
     }
 
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @ResponseBody
+    public void logout() {
+        userContext.setUser(null);
+    }
+
     @RequestMapping(value = "/fb", method = RequestMethod.GET)
     @ResponseBody
     public User facebook(@RequestParam("token") String token, @RequestParam("uid") String uid) {

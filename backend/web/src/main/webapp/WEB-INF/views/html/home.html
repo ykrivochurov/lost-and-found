@@ -86,6 +86,10 @@
                     {{authService.currentUserHolder.favorite.favorites.length}}
                     <img src="img/fav_on.png">
                 </div>
+                <div class="logout-button" ng-click="authService.logout(); goBackToCategories();">
+                    выход
+                    <img src="img/exit.png">
+                </div>
             </div>
         </div>
         <div class="right-panel-hide on-map-panel" ng-click="collapse()" ng-show="!mapFullScreen">

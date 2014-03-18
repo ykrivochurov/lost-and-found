@@ -1112,10 +1112,11 @@ button:focus {
 .home-wrapper .user-panel .info-panel .my-messages-button {
     display: inline-block;
     padding-right: 5px;
-    border-right: 1px solid rgb(232, 232, 232);
     padding-top: 5px;
     padding-bottom: 2px;
     cursor: pointer;
+    border-right: 1px solid rgb(232, 232, 232);
+    height: 100%;
 }
 
 .home-wrapper .user-panel .info-panel .my-messages-button img {
@@ -1125,10 +1126,11 @@ button:focus {
 .home-wrapper .user-panel .info-panel .my-items-button {
     display: inline-block;
     padding-right: 10px;
-    border-right: 1px solid rgb(232, 232, 232);
     margin-left: 6px;
     padding-top: 5px;
     cursor: pointer;
+    border-right: 1px solid rgb(232, 232, 232);
+    height: 100%;
 }
 
 .home-wrapper .user-panel .info-panel .my-items-button img {
@@ -1139,13 +1141,29 @@ button:focus {
 
 .home-wrapper .user-panel .info-panel .favorites-button {
     display: inline-block;
+    padding-right: 10px;
+    margin-left: 6px;
+    padding-top: 5px;
+    cursor: pointer;
+    border-right: 1px solid rgb(232, 232, 232);
+    height: 100%;
+}
+
+.home-wrapper .user-panel .info-panel .favorites-button img {
+    position: relative;
+    top: -1px;
+    margin-left: 8px;
+}
+
+.home-wrapper .user-panel .info-panel .logout-button {
+    display: inline-block;
     padding-right: 5px;
     margin-left: 6px;
     padding-top: 5px;
     cursor: pointer;
 }
 
-.home-wrapper .user-panel .info-panel .favorites-button img {
+.home-wrapper .user-panel .info-panel .logout-button img {
     position: relative;
     top: -1px;
     margin-left: 8px;
