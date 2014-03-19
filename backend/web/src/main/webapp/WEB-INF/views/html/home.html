@@ -260,8 +260,6 @@
                     <!--todo каждый тэг отдельно кликабельный!!-->
                     <div ng-if="item.tags.length > 1 || myItemsMode"><span class="tags-label">Категории:</span><span class="tags {{item.itemType == 'LOST' ? 'lost' : 'found'}}">{{joinTags(item.tags)}}</span>
                     </div>
-                    <div ng-click="showMessages(item)"><span class="messages-label" ng-show="item.messages.length > 0">Сообщения:&nbsp;&nbsp;{{item.messages.length}}</span>
-                    </div>
                 </div>
                 <!--todo кнопка исчо или безконечный скролл-->
             </div>

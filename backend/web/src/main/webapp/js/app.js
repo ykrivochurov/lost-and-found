@@ -3,6 +3,7 @@ var app = angular.module('laf', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAni
     $routeProvider.
       when('/', {templateUrl: 'landing-page'}).
       when('/home', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
+      when('/home_y', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
       otherwise({redirectTo: '/'});
   }]);
 app.filter('truncate', function () {
