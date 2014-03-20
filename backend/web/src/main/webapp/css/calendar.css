@@ -1,0 +1,46 @@
+.app-wrapper ul[datepicker-popup-wrap] {
+    width: 254px;
+}
+
+.app-wrapper ul[datepicker-popup-wrap] table {
+    margin: auto;
+}
+
+.app-wrapper ul[datepicker-popup-wrap] .btn {
+    border: none;
+}
+
+.app-wrapper ul[datepicker-popup-wrap] .btn-info {
+    background-color: rgb(235, 235, 235);
+    color: rgb(51, 51, 51);
+}
+
+.app-wrapper ul[datepicker-popup-wrap] .text-muted {
+    color: rgb(207, 207, 207);
+}
+
+.app-wrapper ul[datepicker-popup-wrap] th {
+    vertical-align: middle;
+}
+
+.app-wrapper ul[datepicker-popup-wrap] th[colspan] .btn {
+    font-size: 120%;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: rgb(7, 7, 7);
+}
+
+.app-wrapper ul[datepicker-popup-wrap] th[colspan] strong {
+    font-weight: normal;
+}
+
+.app-wrapper ul[datepicker-popup-wrap] th[colspan] .btn:hover {
+    background-color: transparent;
+}
+
+.app-wrapper ul[datepicker-popup-wrap] tr.h6 th {
+    padding-top: 10px;
+    font-weight: normal;
+    color: rgb(13, 13, 13);
+}
+

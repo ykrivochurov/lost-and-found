@@ -9,6 +9,7 @@
 @import "messages.css";
 @import "picture-block.css";
 @import "settings-block.css";
+@import "calendar.css";
 
 body {
     overflow: hidden;
