@@ -2,6 +2,7 @@
 .balloon-content {
     border-radius: 4px;
     border: 10px solid rgba(255, 255, 255, 0.6);
+    margin-bottom: 50px;
 }
 .balloon-content span {
     display: block;
@@ -61,4 +62,18 @@
     border: none;
     border-radius: 0;
     background: none;
+}
+
+.app-wrapper .ymaps-b-balloon__content {
+    border: none;
+    background-color: transparent;
+}
+
+.app-wrapper .ymaps-shadows-pane,
+.app-wrapper .ymaps-b-balloon__close,
+.app-wrapper .ymaps-b-balloon__tr,
+.app-wrapper .ymaps-b-balloon__tl,
+.app-wrapper .ymaps-b-balloon__br,
+.app-wrapper .ymaps-b-balloon__bl {
+    display: none;
 }

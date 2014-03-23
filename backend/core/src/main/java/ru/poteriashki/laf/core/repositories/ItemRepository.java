@@ -30,5 +30,5 @@ public interface ItemRepository extends PagingAndSortingRepository<Item, String>
 
     Page<Item> findByClosed(Pageable pageable, boolean closed);
 
-    Item findOneByNumberAndClosed(Integer number, boolean closed);
+    Item findOneByNumber(Integer number);
 }

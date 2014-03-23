@@ -1,6 +1,22 @@
 angular.module('laf').
-  factory('UtilsService', function () {
+  factory('UtilsService', function ($location, $route) {
     return {
+      getCurrentPath: function () {
+        if ($location.url().indexOf('yandex') > -1) {
+          return '/#/yandex';
+        } else {
+          return '/#/home';
+        }
+      },
+      generateUrl: function (item) {
+        if ($location.url().indexOf('yandex') > -1) {
+          return window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/#/yandex?number=' + item.number;
+        }
+        return window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/#/home?number=' + item.number;
+      },
+      thumbUrl: function (item) {
+        return window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/api/items/photo/' + item.thumbnailId;
+      },
       isEmpty: function (variable) {
         return variable == null || typeof(variable) == 'undefined';
       },

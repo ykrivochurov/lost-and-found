@@ -9,7 +9,7 @@ angular.module('laf').
       var container = angular.element('<div></div>');
       container.append();
 
-      var wrapper = angular.element('<a href="' + generateUrl(item) + '" class="clear-link"></a>');
+      var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
       container.append(wrapper);
 
       angular.element('.balloon-content').removeClass('lost');
@@ -25,7 +25,7 @@ angular.module('laf').
       return container.html();
     }
 
-    if ($location.url().indexOf('home_y') == -1) {
+    if ($location.url().indexOf('yandex') == -1) {
       return {
         init: function (scope) {
           controllerScope = scope;
@@ -185,7 +185,7 @@ angular.module('laf').
           var container = angular.element('<div></div>');
           container.append();
 
-          var wrapper = angular.element('<a href="' + generateUrl(item) + '" class="clear-link"></a>');
+          var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
           container.append(wrapper);
 
           angular.element('.balloon-content').removeClass('lost');
@@ -444,7 +444,7 @@ angular.module('laf').
                 center: [controllerScope.currentCity.center[1], controllerScope.currentCity.center[0]],
                 zoom: 15
               });
-
+            controllerScope.DGisMap.behaviors.enable('scrollZoom');
             controllerScope.DGisMap.controls.add(
               new ymaps.control.ZoomControl()
             );
@@ -452,40 +452,61 @@ angular.module('laf').
               markers: {},
               add: function (marker, groupName) {
                 var markersForGroup = this.markers[groupName];
-                if (markersForGroup == null) {
+                if (UtilsService.isEmpty(markersForGroup)) {
+                  console.log('add new collection: ' + groupName);
                   markersForGroup = new ymaps.GeoObjectCollection({}, {});
-                  controllerScope.DGisMap.geoObjects.add(markersForGroup);
                 }
+                controllerScope.DGisMap.geoObjects.add(markersForGroup);
+                console.log('add marker ' + groupName);
                 markersForGroup.add(marker);
                 this.markers[groupName] = markersForGroup;
               },
               showGroup: function (groupName) {
+                console.log('show group ' + groupName);
                 controllerScope.DGisMap.geoObjects.add(this.markers[groupName]);
               },
               getGroup: function (groupName) {
+                console.log('get group ' + groupName);
                 return this.markers[groupName];
               },
               removeGroup: function (groupName) {
-                controllerScope.DGisMap.geoObjects.remove(this.markers[groupName]);
+                console.log('remove group ' + groupName);
+                var markersFromGroup = this.markers[groupName];
+                if (UtilsService.isNotEmpty(markersFromGroup)) {
+                  controllerScope.DGisMap.geoObjects.remove(markersFromGroup);
+                  this.markers[groupName] = null;
+                }
               },
               showAllGroups: function () {
+                console.log('show all groups');
                 for (var prop in this.markers) {
                   if (this.markers.hasOwnProperty(prop)) {
+                    console.log('show group: ' + prop);
                     var group = this.markers[prop];
-                    controllerScope.DGisMap.geoObjects.add(group);
+                    if (UtilsService.isNotEmpty(group)) {
+                      controllerScope.DGisMap.geoObjects.add(group);
+                    }
                   }
                 }
               },
-              removeAllGroups: function () {
+              hideAllGroups: function () {
+                console.log('remove all groups');
                 for (var prop in this.markers) {
                   if (this.markers.hasOwnProperty(prop)) {
                     var group = this.markers[prop];
-                    controllerScope.DGisMap.geoObjects.remove(group);
+                    if (UtilsService.isNotEmpty(group)) {
+                      controllerScope.DGisMap.geoObjects.remove(group);
+                    }
                   }
                 }
               }
             };
-            //выкл стандартных балунов
+
+            controllerScope.DGisMap.geoObjects.options.set({
+              zIndex: 1,
+              hintHideTimeout: 10000000
+            });
+
             controllerScope.DGisMap.events.add('click', function (e) {
               if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
                 controllerScope.activeBallon.hide();
@@ -551,10 +572,7 @@ angular.module('laf').
           var groupNames = controllerScope.categories;
           if (UtilsService.isNotEmptyArray(groupNames)) {
             for (var i = 0; i < groupNames.length; i++) {
-              var markersFromGroup = controllerScope.DGisMap.markers[groupNames[i].name];
-              if (UtilsService.isNotEmptyArray(markersFromGroup)) {
-                controllerScope.DGisMap.geoObjects.remove(markersFromGroup);
-              }
+              controllerScope.DGisMap.markers.removeGroup([groupNames[i].name]);
             }
           }
         },
@@ -563,9 +581,10 @@ angular.module('laf').
           this.hideBalloonForItem(item);
 //        controllerScope.DGisMap.markers.remove(markersMap[item.id]);
 
-          var markersFromGroup = controllerScope.DGisMap.markers[groupNames[i].name];
+          var markersFromGroup = controllerScope.DGisMap.markers.markers[item.mainCategory];
           if (UtilsService.isNotEmptyArray(markersFromGroup)) {
             markersFromGroup.remove(markersMap[item.id]);
+            controllerScope.DGisMap.markers.markers[item.mainCategory] = null;
           }
         },
 
@@ -573,7 +592,7 @@ angular.module('laf').
           this.hideBalloonForItem(item);
           var marker = markersMap[item.id];
           if (UtilsService.isNotEmpty(marker)) {
-            marker.geometry.setCoordinates(item.location[1], item.location[0]);
+            marker.geometry.setCoordinates([item.location[1], item.location[0]]);
             controllerScope.DGisMap.setCenter(marker.geometry.getCoordinates());
             this.showBalloonForItem(item);
           }
@@ -593,11 +612,11 @@ angular.module('laf').
             console.log('Unable create marker for item.id = ' + item.id);
             return;
           }
-
+          console.log('Create marker id = ' + item.id);
           var container = angular.element('<div></div>');
           container.append();
 
-          var wrapper = angular.element('<a href="' + generateUrl(item) + '" class="clear-link"></a>');
+          var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
           container.append(wrapper);
 
           angular.element('.balloon-content').removeClass('lost');
@@ -630,7 +649,7 @@ angular.module('laf').
           console.log('showMarkersForCategory');
 //        var defaultGroup = controllerScope.DGisMap.markers.getGroup(defaultGroupName);
           if (UtilsService.isNotEmpty(selectedCategory)) {
-            controllerScope.DGisMap.markers.removeAllGroups();
+            controllerScope.DGisMap.markers.hideAllGroups();
             if (UtilsService.isNotBlank(selectedCategory.name)) {
               controllerScope.DGisMap.markers.showGroup(selectedCategory.name);
             }
@@ -703,53 +722,40 @@ angular.module('laf').
           );
         },
 
-        //todo !!
         getPointByAddress: function (address, callback) {
           console.log('address: ' + address);
           var self = this;
-          controllerScope.DGisMap.geocoder.get(address,
-            {
-              types: ['house', 'street', 'city', 'district', 'living_area', 'place', 'station_platform', 'settlement'],
-              radius: 200,
-              limit: 4,
-              success: function (geocoderObjects) {
-                controllerScope.hideBusy();
-                for (var i = 0; i < geocoderObjects.length; i++) {
-                  var geocoderObject = geocoderObjects[i];
+          ymaps.geocode(address, {
+            results: 1
+          }).then(function (result) {
+            var geocoderObject = result.geoObjects.get(0);
 
-                  var geoPoint = geocoderObject.getCenterGeoPoint();
-                  if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
-                    controllerScope.activeBallon.hide();
-                  }
-                  controllerScope.DGisMap.setCenter(geoPoint, 15);
-                  //перемещение маркера в новое место
-                  controllerScope.currentLocationMarker.setPosition(geoPoint);
+            var geoPoint = geocoderObject.geometry.getCoordinates();
+            if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+              controllerScope.activeBallon.hide();
+            }
+            controllerScope.DGisMap.setCenter(geoPoint);
+            //перемещение маркера в новое место
+            controllerScope.currentLocationMarker.geometry.setCoordinates(geoPoint);
 
-                  controllerScope.laf.location = self.getLocationObject();
-                  if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
-                    controllerScope.middleStateItem.location = controllerScope.laf.location;
-                  }
-                  if (!controllerScope.$$phase) {
-                    controllerScope.$apply();
-                  }
-                  break;
-                }
-                if (UtilsService.isFunction(callback)) {
-                  callback();
-                }
-              },
-              failure: function (code, message) {
-                console.log('Unable to get point: ' + message);
-                controllerScope.hideBusy();
-                controllerScope.laf.location = self.getLocationObject();
-                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
-                  controllerScope.middleStateItem.location = controllerScope.laf.location;
-                }
-                if (!controllerScope.$$phase) {
-                  controllerScope.$apply();
-                }
-              }
-            });
+            controllerScope.laf.location = self.getLocationObject();
+            if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+              controllerScope.middleStateItem.location = controllerScope.laf.location;
+            }
+            if (!controllerScope.$$phase) {
+              controllerScope.$apply();
+            }
+          }, function (message) {
+            console.log('Unable to get point: ' + message);
+            controllerScope.hideBusy();
+            controllerScope.laf.location = self.getLocationObject();
+            if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+              controllerScope.middleStateItem.location = controllerScope.laf.location;
+            }
+            if (!controllerScope.$$phase) {
+              controllerScope.$apply();
+            }
+          });
         },
 
         activateMiddleStatePanel: function (item, isCreation) {

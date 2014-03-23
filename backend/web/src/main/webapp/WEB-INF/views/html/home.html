@@ -142,7 +142,7 @@
                         <span class="day">{{selectedItem.creationDate | date:'dd'}}</span>
                         <span class="month">{{selectedItem.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{selectedItem.creationDate | date:'yyyy'}}</span>
-                        <a href="/#/home?number={{selectedItem.number}}" class="item-number {{selectedItem.closed ? 'closed' : selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
+                        <a href="{{utilsService.getCurrentPath()}}?number={{selectedItem.number}}" class="item-number {{selectedItem.closed ? 'closed' : selectedItem.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление"
                            tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{selectedItem.number}}</a>
                         <img class="settings-button" src="img/settings.png" ng-show="selectedItem.myItem || authService.currentUserHolder.id == selectedItem.author" ng-click="showItemSettings($event); $event.stopPropagation();">
                         <div class="popover settings-block bottom fade in" ng-class="{ in: isOpen(), fade: animation() }" style="display: none;">
@@ -242,7 +242,7 @@
                         <span class="day">{{item.creationDate | date:'dd'}}</span>
                         <span class="month">{{item.creationDate | date:'MMMM'}}</span>
                         <span class="year">{{item.creationDate | date:'yyyy'}}</span>
-                        <a href="/#/home?number={{item.number}}" class="item-number   {{item.closed ? 'closed' : item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{item.number}}</a>
+                        <a href="{{utilsService.getCurrentPath()}}?number={{item.number}}" class="item-number   {{item.closed ? 'closed' : item.itemType == 'LOST' ? 'lost' : 'found'}}" tooltip="Ссылка на объявление" tooltip-placement="bottom" ng-click="$event.stopPropagation();">#&nbsp;{{item.number}}</a>
                         <img class="settings-button" src="img/settings.png" ng-show="item.myItem || authService.currentUserHolder.id == item.author" ng-click="showItemSettings($event); $event.stopPropagation();">
                         <div class="popover settings-block bottom fade in" ng-class="{ in: isOpen(), fade: animation() }" style="display: none;">
                             <div class="arrow"></div>

@@ -9,7 +9,7 @@ angular.module('laf').
       var container = angular.element('<div></div>');
       container.append();
 
-      var wrapper = angular.element('<a href="' + generateUrl(item) + '" class="clear-link"></a>');
+      var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
       container.append(wrapper);
 
       angular.element('.balloon-content').removeClass('lost');
@@ -194,7 +194,7 @@ angular.module('laf').
         var container = angular.element('<div></div>');
         container.append();
 
-        var wrapper = angular.element('<a href="' + generateUrl(item) + '" class="clear-link"></a>');
+        var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
         container.append(wrapper);
 
         angular.element('.balloon-content').removeClass('lost');

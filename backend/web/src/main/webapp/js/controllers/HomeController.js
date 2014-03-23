@@ -1,6 +1,7 @@
 function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService, UsersService) {
   $scope.shareService = ShareService;
   $scope.urlBuildingService = UrlBuildingService;
+  $scope.utilsService = UtilsService;
 
   $scope.authService = AuthService;
   $scope.authService.applyCallback = function () {
@@ -613,12 +614,4 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
     $scope.loadAndOpenItemByNumber();
   });
 
-}
-
-function generateUrl(item) {
-  return window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/#/home?number=' + item.number;
-}
-
-function thumbUrl(item) {
-  return window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + '/api/items/photo/' + item.thumbnailId;
 }

@@ -71,8 +71,8 @@ public class LostAndFoundService implements ILostAndFoundService {
     public Item loadByNumber(Integer number, User user) throws ServiceException {
         Assert.notNull(number);
 
-        Item item = itemRepository.findOneByNumberAndClosed(number, false);
-        if (item == null) {
+        Item item = itemRepository.findOneByNumber(number);
+        if (item.isClosed() && (user == null || !item.getAuthor().equals(user.getId()))) {
             return null;
         }
         if (!item.isShowPrivateInfo() &&
