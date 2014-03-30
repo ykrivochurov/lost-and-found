@@ -236,8 +236,10 @@ angular.module('laf').
         showBalloonForItem: function (item) {
           if (UtilsService.isNotEmpty(item)) {
             var marker = markersMap[item.id];
-            controllerScope.DGisMap.setCenter(marker.getPosition());
-            marker.showBalloon();
+            if (UtilsService.isNotEmpty(marker)) {
+              controllerScope.DGisMap.setCenter(marker.getPosition());
+              marker.showBalloon();
+            }
           }
         },
 

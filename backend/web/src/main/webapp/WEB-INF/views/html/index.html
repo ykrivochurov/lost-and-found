@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en" ng-app="laf">
 <head>
     <title>Потеряшки</title>
@@ -10,14 +11,36 @@
     <link href="webjars/angular-ui/0.4.0/angular-ui.min.css" media="all" rel="stylesheet" type="text/css"/>
     <link href="webjars/bootstrap/3.0.3/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"/>
     <link href="css/jquery.scrollbars.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <!--[if lt IE 9]>
+    <style>
+        .ng-cloak {
+            display: block !important;
+        }
+    </style>
+    <![endif]-->
 </head>
 <body data-ng-controller="RootController" class="ng-cloak app-wrapper clearfix" ng-click="bodyClick()">
-<div ng-view class="ng-cloak clearfix"></div>
+<!--[if lt IE 9]>
+<table class="lp-body">
+    <tbody>
+    <tr><td style="height: 20px"></td></tr>
+    <tr>
+        <td class="laf-logo-cell">
+            <img class="img-logo" src="/img/logos/02_ico.png"><br>
+            <img class="text-logo" src="/img/logos/02_b.png">
+            <p class="chromeframe">Вы используете устаревший браузер. <a href="http://browsehappy.com/">Обновите ваш браузер</a> для правильной работы данного сайта.</p>
+        </td>
+    </tr>
+    <tr><td style="height: 60px"></td></tr>
+    </tbody>
+</table>
+<![endif]-->
+<div ng-view class="ng-view-class ng-cloak clearfix"></div>
 <script type="text/javascript" src="//connect.facebook.net/ru_RU/all.js"></script>
 <script type="text/javascript" src="//vkontakte.ru/js/api/openapi.js"></script>
 <script type="text/javascript" src="http://maps.api.2gis.ru/1.0"></script>
 <script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"></script>
-<script src="webjars/jquery/2.0.3/jquery.min.js"></script>
+<script src="webjars/jquery/2.0.3/jquery.js"></script>
 <script src="webjars/jquery-ui/1.10.3/ui/minified/jquery-ui.min.js"></script>
 <script src="webjars/jquery-maskedinput/1.3.1/jquery.maskedinput.min.js"></script>
 <script src="webjars/underscorejs/1.4.4/underscore.min.js"></script>
@@ -32,6 +55,7 @@
 <script src="webjars/nanoScrollerJS/0.7.6/jquery.nanoscroller.js"></script>
 <script src="webjars/spin-js/1.3.3/spin.js"></script>
 
+<script src="js/angular-google-analytics.js"></script>
 <script src="js/libs/sonic.js"></script>
 <script src="js/libs/jquery.scrollbars.min.js"></script>
 <script src="js/db.js"></script>
@@ -54,7 +78,6 @@
 <script src="js/services/GeoLocationService.js"></script>
 <script src="js/services/ItemsService.js"></script>
 <script src="js/services/CategoriesService.js"></script>
-<!--<script src="js/services/YMapService.js"></script>-->
 <script src="js/services/MapService.js"></script>
 <script src="js/services/UsersService.js"></script>
 <script src="js/services/CityService.js"></script>

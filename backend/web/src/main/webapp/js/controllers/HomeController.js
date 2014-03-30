@@ -1,4 +1,4 @@
-function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService, UsersService) {
+function HomeController($q, $scope, $modal, $timeout, $sce, Analytics, UrlBuildingService, UtilsService, ItemsService, CategoriesService, MapService, AuthService, CityService, $location, ShareService, MessagesService, UsersService) {
   $scope.shareService = ShareService;
   $scope.urlBuildingService = UrlBuildingService;
   $scope.utilsService = UtilsService;
@@ -174,12 +174,19 @@ function HomeController($q, $scope, $modal, $timeout, $sce, UrlBuildingService, 
     $scope.mapService.showMarkersForCategory();
   };
 
-  $scope.loadAndOpenItemByNumber = function () {
+  $scope.getNumberFromUrl = function () {
     var searchObj = $location.search();
-    var number;
     if (UtilsService.isNotEmpty(searchObj.number)) {
-      number = searchObj.number;
+      return searchObj.number;
     } else {
+      return null;
+    }
+  };
+
+  $scope.loadAndOpenItemByNumber = function () {
+    Analytics.trackPage($location.url());
+    var number = $scope.getNumberFromUrl();
+    if (number == null) {
       return;
     }
     if ($scope.selectedItem != null && $scope.selectedItem.number == number) {

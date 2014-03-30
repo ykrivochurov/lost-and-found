@@ -1,4 +1,4 @@
-var app = angular.module('laf', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate']).
+var app = angular.module('laf', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate', 'angular-google-analytics']).
   config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
       when('/', {templateUrl: 'landing-page'}).
@@ -6,6 +6,14 @@ var app = angular.module('laf', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAni
       when('/yandex', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
       otherwise({redirectTo: '/'});
   }]);
+app.config(function (AnalyticsProvider) {
+  AnalyticsProvider.setAccount('UA-49430073-1');
+  AnalyticsProvider.trackPages(true);
+  AnalyticsProvider.trackPrefix('lost-and-find');
+  AnalyticsProvider.useAnalytics(true);
+  AnalyticsProvider.ignoreFirstPageLoad(true);
+  AnalyticsProvider.setPageEvent('$stateChangeSuccess');
+});
 app.filter('truncate', function () {
   return function (text, length) {
     if (isNaN(length)) {
