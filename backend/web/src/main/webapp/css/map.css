@@ -4,13 +4,16 @@
     border: 10px solid rgba(255, 255, 255, 0.6);
     margin-bottom: 50px;
 }
-.balloon-content span {
-    display: block;
-    overflow: hidden;
+
+.balloon-content .substrate.short {
+    width: 250px;
 }
 
-.balloon-content > div {
-    width: 250px;
+.balloon-content .substrate.long {
+    width: 350px;
+}
+
+.balloon-content .substrate {
     padding: 11px;
     border-radius: 4px;
     border: 1px solid rgb(213, 213, 213);
@@ -19,6 +22,38 @@
     background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
     background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
     background-image: linear-gradient(top, rgb(255, 255, 255), rgb(242, 242, 242));
+    white-space: nowrap;
+}
+
+.balloon-content .item-info {
+    max-width: 200px;
+    display: inline-block;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.app-wrapper .balloon-content .picture {
+    float: left;
+    width: 102px;
+    height: 102px;
+    border: 1px solid rgb(205, 206, 206);
+    margin-right: 20px;
+    margin-top: 0;
+    vertical-align: middle;
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+}
+
+.balloon-content .picture {
+    border-radius: 4px;
+}
+
+.balloon-content .picture img {
+    max-width: 90px;
+    max-height: 90px;
+    vertical-align: middle;
+    margin-left: -4px;
 }
 
 .balloon-content .when {

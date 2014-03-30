@@ -19,6 +19,19 @@ angular.module('laf').
       } else {
         angular.element('.balloon-content').addClass('found');
       }
+
+      if (UtilsService.isNotEmpty(item.thumbnailId)) {
+        angular.element('.balloon-content .substrate').removeClass('short');
+        angular.element('.balloon-content .substrate').addClass('long');
+        angular.element('.balloon-content .picture').removeClass('hidden');
+        angular.element('.balloon-content img').attr('src', 'api/items/photo/' + item.thumbnailId);
+      } else {
+        angular.element('.balloon-content .substrate').removeClass('long');
+        angular.element('.balloon-content .substrate').addClass('short');
+        angular.element('.balloon-content .picture').addClass('hidden');
+      }
+      angular.element('.balloon-content .what').text(item.what);
+
       angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
       angular.element('.balloon-content .what').text(item.what);
       wrapper.append(angular.element('.balloon-content-wrapper').html());
@@ -182,22 +195,6 @@ angular.module('laf').
             return;
           }
 
-          var container = angular.element('<div></div>');
-          container.append();
-
-          var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
-          container.append(wrapper);
-
-          angular.element('.balloon-content').removeClass('lost');
-          angular.element('.balloon-content').removeClass('found');
-          if (item.itemType == 'LOST') {
-            angular.element('.balloon-content').addClass('lost');
-          } else {
-            angular.element('.balloon-content').addClass('found');
-          }
-          angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
-          angular.element('.balloon-content .what').text(item.what);
-          wrapper.append(angular.element('.balloon-content-wrapper').html());
           var marker = new DG.Markers.MarkerWithBalloon({
             geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
             icon: new DG.Icon(controllerScope.pinIcons[item.tags[0]], new DG.Size(46, 68)),
@@ -614,23 +611,6 @@ angular.module('laf').
             console.log('Unable create marker for item.id = ' + item.id);
             return;
           }
-          console.log('Create marker id = ' + item.id);
-          var container = angular.element('<div></div>');
-          container.append();
-
-          var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
-          container.append(wrapper);
-
-          angular.element('.balloon-content').removeClass('lost');
-          angular.element('.balloon-content').removeClass('found');
-          if (item.itemType == 'LOST') {
-            angular.element('.balloon-content').addClass('lost');
-          } else {
-            angular.element('.balloon-content').addClass('found');
-          }
-          angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
-          angular.element('.balloon-content .what').text(item.what);
-          wrapper.append(angular.element('.balloon-content-wrapper').html());
 
           var marker = new ymaps.Placemark([item.location[1], item.location[0]], {
               balloonContentBody: createBalloonContent(item)
