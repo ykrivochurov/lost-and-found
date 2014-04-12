@@ -39,6 +39,8 @@
         <commons-collections.version>3.2.1</commons-collections.version>
         <mongo.java.driver.version>2.11.0</mongo.java.driver.version>
 
+        <im4java>1.4.0</im4java>
+
         <!--Testing-->
         <testng.version>6.8.7</testng.version>
         <easymock.version>3.2</easymock.version>
@@ -364,6 +366,11 @@
                 <version>${commons-io.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.im4java</groupId>
+                <artifactId>im4java</artifactId>
+                <version>${im4java}</version>
+            </dependency>
 
             <!-- AspectJ -->
             <dependency>

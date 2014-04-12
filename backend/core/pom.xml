@@ -261,6 +261,11 @@
             <artifactId>easymock</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.im4java</groupId>
+            <artifactId>im4java</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

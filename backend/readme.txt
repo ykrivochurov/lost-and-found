@@ -46,3 +46,11 @@ URL панели управления : https://82.146.47.1/manager/dnsmgr
 В поле "Серверы имён" должны быть указано значение "ns1.firstvds.ru. ns2.firstvds.ru."
 (обратите внимание на "." после имён - это важно)
 ______________________________________________
+https://mail.yandex.ru/for/find.nsk.ru/
+support@find.nsk.ru
+1qaz2WSX
+
+https://pdd.yandex.ru/domain/find.nsk.ru/
+krivochurov
+9213433161
+
