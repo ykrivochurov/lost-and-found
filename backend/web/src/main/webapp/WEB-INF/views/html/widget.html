@@ -1,0 +1,26 @@
+<script type="text/javascript" charset="utf-8" src="http://maps.api.2gis.ru/1.0/dg-js/dg.js?v=177"></script>
+<script>
+    DG.autoload(function () {
+        var DGisMap = new DG.Map('map');
+        DGisMap.setCenter(new DG.GeoPoint(82.967, 55.008), 11);
+        var item = {
+            location: [82.967, 55.008],
+            mainCategory: 'Животные',
+            tags: ['Кошка']
+        };
+        var marker = new DG.Markers.MarkerWithBalloon({
+            geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+            icon: new DG.Icon(PIN_ICONS[item.tags[0]], new DG.Size(46, 68)),
+            balloonOptions: {
+                geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+                contentHtml: createBalloonContent(item),
+                showLatestOnly: true,
+                isClosed: false
+            }
+        });
+        DGisMap.markers.add(marker, item.mainCategory);
+    });
+
+
+</script>
+<div id="map" style="width: 600px; height: 500px;"></div>

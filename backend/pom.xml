@@ -37,6 +37,7 @@
         <commons-io.version>2.4</commons-io.version>
         <commons-lang3.version>3.1</commons-lang3.version>
         <commons-collections.version>3.2.1</commons-collections.version>
+        <mongo.java.driver.version>2.11.0</mongo.java.driver.version>
 
         <!--Testing-->
         <testng.version>6.8.7</testng.version>
@@ -326,6 +327,12 @@
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
                 <version>${hsqldb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>${mongo.java.driver.version}</version>
             </dependency>
 
             <dependency>

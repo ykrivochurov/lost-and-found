@@ -38,7 +38,7 @@ public interface ILostAndFoundService {
 
     String createPhoto(MultipartFile fileData) throws IOException, ServiceException;
 
-    @Scheduled(cron = "")
+    @Scheduled(cron = "0 0 1 * * *")
     void cleanupUselessPhotos() throws ru.eastbanctech.resources.services.ServiceException;
 
     List<Item> search(String searchString, ItemType itemType);

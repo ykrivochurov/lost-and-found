@@ -1,0 +1,3 @@
+function WidgetController($scope) {
+
+}
