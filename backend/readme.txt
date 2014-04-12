@@ -4,6 +4,11 @@ ssh -i ~/Documents/projects/keys/ykey2_amazon.pem ubuntu@54.201.73.198
 
 Информация о cервере
 
+Оплата
+https://my.firstvds.ru/manager/billmgr
+krivochurov
+921343ask
+
 Тарифный план : VDS-KVM-Отрыв
 Дата открытия : 2014-04-11
 Доменное имя : find.nsk.ru

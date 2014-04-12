@@ -80,7 +80,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="44" selection-start="1625" selection-end="1625" vertical-scroll-proportion="1.1989796" vertical-offset="0" max-vertical-offset="855">
+            <state line="12" column="46" selection-start="433" selection-end="433" vertical-scroll-proportion="0.30612245" vertical-offset="0" max-vertical-offset="930">
               <folding />
             </state>
           </provider>
@@ -1018,7 +1018,7 @@
       <workItem from="1395128042162" duration="89693000" />
       <workItem from="1396858286619" duration="1731000" />
       <workItem from="1396927307773" duration="10675000" />
-      <workItem from="1397123867848" duration="5677000" />
+      <workItem from="1397123867848" duration="5965000" />
     </task>
     <task id="LOCAL-00001" summary="Renaming.&#10;Base core model and configuration.">
       <created>1387996907187</created>
@@ -1336,11 +1336,15 @@
       <created>1397286798481</created>
       <updated>1397286798481</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="readme&#10;">
+      <created>1397288484467</created>
+      <updated>1397288484467</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509984000" />
+    <option name="totallyTimeSpent" value="510272000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1442,7 +1446,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="spinner для логина&#10;" />
     <MESSAGE value="Кнопки для открытия панелей" />
     <MESSAGE value="Сообщения wip" />
     <MESSAGE value="loading-indicator&#10;refs #33 копирайт&#10;правки в верстке&#10;&#10;" />
@@ -1467,7 +1470,8 @@
     <MESSAGE value="Иконка в балуне на карте" />
     <MESSAGE value="readme и зависимости" />
     <MESSAGE value="readme и зависимости&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme и зависимости&#10;" />
+    <MESSAGE value="readme&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1977,7 +1981,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="44" selection-start="1625" selection-end="1625" vertical-scroll-proportion="1.1989796" vertical-offset="0" max-vertical-offset="855">
+        <state line="12" column="46" selection-start="433" selection-end="433" vertical-scroll-proportion="0.30612245" vertical-offset="0" max-vertical-offset="930">
           <folding />
         </state>
       </provider>
