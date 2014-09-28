@@ -1,9 +1,9 @@
 var app = angular.module('laf', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate', 'angular-google-analytics']).
   config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
-      when('/', {templateUrl: 'landing-page'}).
+//      when('/', {templateUrl: 'landing-page'}).
+      when('/', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
       when('/widget', {templateUrl: 'widget', controller: WidgetController, reloadOnSearch: false}).
-      when('/home', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
       when('/yandex', {templateUrl: 'home', controller: HomeController, reloadOnSearch: false}).
       otherwise({redirectTo: '/'});
   }]);

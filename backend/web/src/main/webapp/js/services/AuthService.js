@@ -159,7 +159,11 @@ angular.module('laf').
         resultObject.currentUserHolder = existingUser;
       } else {
         resultObject.user.get(function (user) {
-          resultObject.currentUserHolder = user;
+          if (UtilsService.isBlank(user.id)) {
+            resultObject.currentUserHolder = null;
+          } else {
+            resultObject.currentUserHolder = user;
+          }
         });
       }
     };

@@ -44,10 +44,12 @@ public class AuthController {
     @ResponseBody
     public User user() {
         User user = userContext.getUser();
-        user = userService.getById(user.getId());
-        user = lostAndFoundService.itemsCountToUser(user);
-        user.setFavorite(lostAndFoundService.favoriteForUser(user));
-        userContext.setUser(user);
+        if (user != null) {
+            user = userService.getById(user.getId());
+            user = lostAndFoundService.itemsCountToUser(user);
+            user.setFavorite(lostAndFoundService.favoriteForUser(user));
+            userContext.setUser(user);
+        }
         return user;
     }
 
