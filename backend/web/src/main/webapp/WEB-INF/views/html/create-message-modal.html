@@ -29,7 +29,7 @@
         <div class="messages-panel nano clearfix" ng-if="utilsService.isNotEmptyArray(messages)">
             <div class="content clearfix">
                 <div class="message-panel clearfix {{!$last ? 'with-border' : ''}}" ng-repeat="message in messages">
-                    <img src="{{isMessageOwner(message) ? 'img/message/ia.png' : 'img/message/ia_on.png'}}">
+                    <img ng-src="{{isMessageOwner(message) ? 'img/message/ia.png' : 'img/message/ia_on.png'}}">
                     <div class="message-content clearfix">
                         <div class="creation-date">
                             <span class="day">{{message.creationDate | date:'dd'}}</span>
@@ -68,7 +68,7 @@
         <div class="clearfix login-buttons" ng-show="authService.currentUserHolder.id">
             <button ng-click="cancel()" class="button-base message-cancel">Отмена</button>
             <button ng-click="saveMessage()" class="button-base message-send">
-                <img src="{{item.itemType == 'LOST' ? '/img/ok2.png' : '/img/ok3.png'}}">
+                <img ng-src="{{item.itemType == 'LOST' ? '/img/ok2.png' : '/img/ok3.png'}}">
                 Отправить
             </button>
         </div>

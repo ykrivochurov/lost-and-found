@@ -1,0 +1,1217 @@
+<h2>О чем эта статья?</h2>
+Эта статья о проекте "Потеряшки" - бюро находок с возможностью создать и привязать объявление к месту на карте или адресу и о том куда приводят мечты<br/>
+
+<img src="//habrastorage.org/files/8e9/79f/28a/8e979f28a0274f1eaeeb8fa1fe2787a6.png"/>
+<br/>
+Путь не стартапера, а разработчика. Или куда приводят мечты.
+Всегда хотелось сделать что-то социальное, без идей монетизации и зарабатывания денег, на голом энтузиазме. Хотели, получите
+<habracut />
+<h2>Часть 1. Повествовательно-развлекательная</h2>
+<h3>Цель статьи или "О чем эта статья?"</h3>
+Это статья обо всем и сразу. Статья о проекте "Потеряшки". Статья о людях и проблемах, которые их ждали при создании прототипа этого проекта. Статья о попытках продвижения. Статья немного о технологиях.
+Что ценного в этой статье, почему ее будут читать, почему она может быть интересна.
+
+Мы хотим поделиться нашим опытом, мы хотим услышать советы. Это опыт, который может кому-то пригодиться. Хоть он и не очень удачный пока. Я попробую рассказать, как мы прошли путь от идеи до результата.
+Социальная составляющая и извечные вопросы о том как продвигать социальные проекты.
+
+<h3>Зачем все это?</h3>
+Чтобы помочь хорошим людям. Тем кто потерял - найти утерянное, а нашедшим найти потерявших.
+
+<h3>Немного сказочного, что было в проекте</h3>
+Живет в новосибирском академ-городке прекрасная девушка, которая работает вместе со мной дизайнером, а по совместительству является мамой умницы сына.
+История гласит, что однажды гуляя по “лесам” академ городка с сыном она в очередной раз увидела потрепанное объявление о пропаже часов, примотанное на скотч к дереву. Кто-то на этой тропинке потерял часы. Человек она очень творческий и профессиональный, “пазл” в ее голове очень быстро сложился и она его принесла мне.
+Мы обговорили идею и дальше уже началась другая история.
+
+В начале было “слово”, а именно идея - создавать объявления с привязкой к геолокации. Идея лежит “на поверхности”, но не в социальном контексте что-ли.
+
+<h3>Поиск аналогов. Рассказать про дела в России и про зарубежные аналоги</h3>
+Первое, что естественно напросилось на ум - это поискать нет ли уже подобного в рунете и в мире. Беглый поиск показал, что есть несколько сайтов в рунете, которые организованы как текстовая доска объявлений http://buro.nahodok.ru. И есть большое множество разделов на порталах и групп в социальных сетях http://vk.com/nsknahodka.
+
+Следующим шагом был поиск аналогов в мире. И они конечно же нашлись. Есть очень хорошие порталы и комплексные решения, где есть портал и мобильные приложения, вот один из таких примеров https://www.crowdfynd.com.
+Поразмыслив немного было решено не расстраиваться из-за того, что есть "зарубежные аналоги" и сделать "отечественную" разработку с мыслью о том, что подобные сайты все-таки должны быть скорее национальные, чем международные со спецификой языка и прочего.
+
+Изучив конкурентов пришли выработали какое-то понимание, что именно мы хотим сделать. Основная наша идея лежит на поверхности - это привязка к геолокации, скорость подачи объявления и удобство подачи объявления. Что у нас получилось в итоге судить конечным пользователям, но мы старались. Также для такой информации как потери и находки очень важно, чтобы ее прочитало как можно большее количество человек, поэтому мы добавили шаринг в наиболее популярные социальные сети в рунете.
+
+Итого наш план минимум выглядел так:
+<ul>
+    <li>Подача объявлений о пропаже/находке с привязкой к карте и как можно проще</li>
+    <li>Шаринг в соц сети</li>
+    <li>Логин через соц сети</li>
+    <li>Навигация по категориям</li>
+    <li>Поиск по ключевым словам</li>
+    <li>Загрузка изображения</li>
+    <li>Разбивка по категориям</li>
+</ul>
+Все просто, неправда-ли?
+
+<h3>Выбор технологий для разработки</h3>
+Почти всю свою сознательную профессиональную жизнь в разработке любых приложений всем телом опирались на великий и могучий Spring и иже с ним. Поэтому вопрос о бэкенде и в этот раз для нас тоже не стоял.
+
+Еще немного о серверной части.
+<ul>
+    <li>В качестве базы данных использовали NoSQL MongoDB. Причин несколько. Основная в том, что в MongoDB есть геоиндексы и файловое хранилище. Что есть очень богатый опыт работы с ней. Скорость, простота, расширяемость и прочие плюсы, которые они сами себе приписывают. Также есть очень тесная интеграция со Spring, которая облегчает разработку.</li>
+    <li>Краткий список используемых библиотек, я думаю мало кого удивит, но все же: guava, jackson-core, joda-time, spring-core, spring-webmvc, spring-web, spring-data-mongodb, mongodb-driver, jsoup, webjars, testng, easymock</li>
+</ul>
+Клиентскую часть написали на хорошо изученной за последнее время связке AngularJS + Bootstrap.
+
+<h3>Процесс разработки</h3>
+Сразу скажу, что эта часть статьи не очень техническая получается, поэтому сильно про разработку писать и не хочется.
+Никаких ноу-хау мы не использовали при разработке.
+<ul>
+    <li>GIT и приватный репозиторий на github там же багтрекер</li>
+    <li>Intellij IDEA 13. Помню свою радость от покупки в двенадцатом году лицензии за 50$ в связи с концем света, спасибо ребятам из Intellij</li>
+    <li>JETTY контейнер сервлетов</li>
+    <li>Тестовый хостинг на http://firstvds.ru (не реклама!)</li>
+</ul>
+Дальше все по канонам:
+<ul>
+    <li>Продумали объектную модель</li>
+    <li>DAO layer. Использовали Respositories из spring-data-mongodb</li>
+    <li>Дальше разработка велась по сценариям.</li>
+    <li>Сценарий создания объявления</li>
+    <li>Сценарий создания различных типов объявления</li>
+    <li>Список объявлений</li>
+    <li>Расширенная работа с картой</li>
+    <li>Поиск</li>
+    <li>Интеграция с базой данных адресов</li>
+    <li>и т.д. полный спискок очень большой…..</li>
+</ul>
+
+<h3>Рассказать про идею с платформой, что сайт есть платформа</h3>
+Тут стоит сказать, что наш проект это на самом деле платформа для подачи объявлений с привязкой к геолокации. Чтобы изменить тематику, нужно изменить набор категорий и возможно дизайн. Ядро системы может быть переиспользовано.
+
+<h3>Как мы хотим развивать проект? Планы/Перспективы?</h3>
+<ul>
+    <li>Чаще всего люди не знают где именно потерянна вещь. По крайней мере я всегда брожу по маршруту в поисках ключей и прочей утвари. Отсюда истекает желание сделать возможности при создании объявления указывать маршрут и полигон, не только точку.</li>
+    <li>В мечтах о светлом будущем я видел, что человек сможет не отчаиваться, а сразу подать объявление о пропаже сразу на месте пропажи, и тут нам очень пригодится мобильная версия сайта. Мы отказались от отдельных приложений, потому что это не то, что постоянно нужно на телефоне.</li>
+    <li>Расширить возможности поиска. Не только текстовый поиск но и поиск на карте, внутри полигона.</li>
+    <li>Идея о доступности информации более широкой публике породила техническую идею создать набор виджетов, которые можно репостить в другие форумы и порталы с подобной тематикой, чтобы не забивать объявление каждый раз по новой. Виджет должен содержать информацию об объявлении, карту и ссылку на подробную информации на нашем портале.</li>
+    <li>Продвижение платформы как таковой. Создание порталов с геолокацией и другой тематикой, одной из идей было создать портал по поиску на карте свидетелей тех или иных событий.</li>
+    <li>Поисковая оптимизация. Под вопросом</li>
+
+</ul>
+
+<h3>Наше спасибо</h3>
+<ul>
+    <li>Спасибо ребятам из 2Гис и Яндекс.Карт за то, что они предоставили возможность работать с картами и за то, что API удобный</li>
+    <li>Большое спасибо ребятам из DaData за сервис с подсказками адерсов</li>
+    <li>Спасибо ВКонтакту с Фейсбуком просто за то, что они есть</li>
+
+</ul>
+
+<h3>Пара фактов</h3>
+<ul>
+    <li>На разработку прототипа данного проекта вместе с дизайном было потрачено 350 часов.</li>
+    <li>В разработке участвовали всего два человека мальчик-программист и девочка-дизайнер.</li>
+    <li>Было три версии полных дизайна. И это вполне нормальная ситуация для настоящих проектов.</li>
+    <li>Хостинг медленный, но всего 700 рублей в месяц.</li>
+
+</ul>
+<h3>Пара ошибок</h3>
+<ul>
+    <li>Очень богатый опыт разработки корпоративных приложений и не большой опыт разработки общедоступных порталов. Как следствие нет опыта поискового продвижения и оптимизации портала и контента под поисковики. Дело осложнилось тем, что это Single Page Application.</li>
+    <li>Рассказать вам все это.. Конечно же шучу. И по большому счету, будет круто, если кто-то возьмет и сделает такой портал живым и им будут пользоваться люди.</li>
+
+</ul>
+<h3>Модель продвижения</h3>
+Имея на руках прототип и не имея в головах понимания как продвигать такой проект мы решили обратиться за помощью. Собрали наиболее сведующих коллег и устроили небольшое размышление как можно дать жизнь нашему дитю. Исходные предпосылки были такими, проект социальный и не задумывался для монетизации, проект будет жить только если у него будет большая аудитория, что у подобных проектов должна быть серьезная модерация, что возможно мошенничество, возвращаемость пользователей на сайт. Один из коллег предложил идею, которая сможет покрыть все предпосылки и проблемы и может быть выгодна. Идея заключалась в том, чтобы стать частью большого портала, чтобы сервис был не самостоятельной единицей, а разделом информационно-развлекательного портала, с большой аудиторией и форумами и модераторами. Выгодой для держателя Потеряшек мы видели привлечение пользователей и как еще одно место для рекламы или контекстной рекламы. Нам казалось, что картина светлого будущего сложилась, что мы предлагаем выгодное сотрудничество, которое порталу не стоило бы ничего на начальном этапе, а в будущем стоило бы только поддержки. При этом мы хотели оставить за собой авторские права на данный ресурс.
+
+Мы ударили по рукам между собой и начали делать "коммерческое предложение", читай красивую презентацию с мотивами, целями и предложениями. Получилась она очень хорошей и для нас привлекательной. Внимательный читатель уже уловил тонкий запах неудачи читая все предыдущие слова.
+
+Имея на руках презентацию и прототип с хостингом мы начали искать потенциальные жертвы. Так получилось, что почти у всех интернет провайдеров города Новосибирска есть крупные порталы и в них даже есть подразделы со схожей тематикой. Мы выбрали несколько порталов, узнали контакты и начали обзванивать и рассылать наше предложение. Все это длилось какое-то время, месяц или два. В большинстве случаев нам не отвечали. В одном месте нахамили. И в одно пригласили.
+
+На встрече мы обсудили наше предложение и рассказали чем оно грозит порталу и вроде-бы все со всем согласились и мы даже по этому поводу порадовались. Но на следующий день пришел отказ в письменной форме, с предложением прийти через пол года. На этом у нас совсем руки опустились....
+
+Пока длилась эпопея со звонками и рассылками мы не сидели и не теряли времени даром и решили замахнуться на конкурс стартапов от Яндекс.Для этого мы оперативно переделали интерфейс с 2Гис на Яндекс.карты, вернее не переделали, а добавили поддержку яндекс карт. Большое спасибо ребятам, что API у обоих систем очень схожи и переделка не заняла слишком много времени. Переделали сайт под Яндекс, написали сопроводительное письмо, все по форме, как полагается и ..... ничего, пустота... Как говорится "От нас пули вылетели..."
+
+А дальше мы немного сдались, за что можем быть биты всеми стартаперами мира.
+<h2>Часть 2. Техническая</h2>
+<h3>Работа с картой</h3>
+Из всего что у нас есть самым полезным будет небольшая часть для работы с картой и мы хотим ею поделиться, это не ноу-хау, но пусть статья будет полезной не только с точки зрения житейского опыта, но и технического.
+
+Данная часть статьи будет чисто технической и в ней я расскажу о том как мы реализовали работу с картой, а именно работу с 2Gis API. Я не претендую на правильность подхода, даже больше, я знаю, что некоторые вещи я сейчас сделал бы по другому.
+
+Тезисно всю работу с картой можно описать так:
+<ul>
+    <li>Создание карты и настройка;</li>
+    <li>Создание, удаление и перемещение маркеров на карте;</li>
+    <li>Создание, скрытие, отображение и изменение балунов;</li>
+    <li>Определение точки на карте по адресу и определение адреса по точке на карте.</li>
+</ul>
+Основной проблемой была невозможность стилизации балуна.
+
+На бэкенде мы использовали MongoDB Geospatial Indexes для хранения координат с местоположением объявления.
+
+Пара слов о том как оформлена работа с картой.
+Все методы по работе с картой завернуты в angular сервис. В главной html файле подключен 2Gis API javascript (http://maps.api.2gis.ru/1.0). Это все что нужно для начала работы с картой.
+
+Теперь немного кода.
+Итак, у нас есть несколько задач, которые мы должны решить.
+
+<b>Инициализация</b>
+Первым шагом мы подгружаем на клиентскую часть приложения текущий город, в нашем случае мы не дошли до выбора городов, поэтому это был один единственный и родной Новосибирск. На callback после загрузки города вызывается инициализация карты.
+<spoiler title="Инициализация карты">
+<pre>
+        initMap: function (mapContainerSelector) {
+          var self = this;
+            controllerScope.DGisMap = new DG.Map(mapContainerSelector);
+            //выкл стандартных балунов
+            controllerScope.DGisMap.geoclicker.disable();
+            controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
+            //Поисковый маркер для создания объявления
+            controllerScope.currentLocationMarker = new DG.Markers.Common({
+              geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]),
+              icon: new DG.Icon('/img/pins/P-ia_poterial_mini.png', new DG.Size(46, 68)),
+              hoverIcon: new DG.Icon('/img/pins/P-ia_poterial.png', new DG.Size(80, 128))
+            });
+            controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker, defaultGroupName);
+
+            //обработка клика по карте
+            controllerScope.DGisMap.addEventListener(controllerScope.DGisMap.getContainerId(), 'DgClick', function (e) {
+              var geoPoint = e.getGeoPoint();
+              if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+                controllerScope.activeBallon.hide();
+              }
+              //определение нового адреса
+              self.getAddress(controllerScope.DGisMap, geoPoint.lon, geoPoint.lat, function () {
+                self.hideAllBalloons();
+                angular.element('.balloon-content .what').text(controllerScope.laf.where);
+                if (UtilsService.isEmpty(controllerScope.activeBallon)) {
+                  controllerScope.activeBallon = new DG.Balloons.Common({
+                    geoPoint: geoPoint,
+                    contentHtml: angular.element('.active-balloon-content-wrapper').html(),
+                    isClosed: false
+                  });
+                } else {
+                  controllerScope.activeBallon.setContent(angular.element('.active-balloon-content-wrapper').html());
+                  controllerScope.activeBallon.setPosition(geoPoint);
+                }
+                geoPoint.where = controllerScope.laf.where;
+              });
+              //перемещение маркера в новое место клика
+              controllerScope.currentLocationMarker.setPosition(geoPoint);
+            });
+
+            self.rebuildMarkers();
+        }
+</pre>
+</spoiler>
+
+<b>Создание, удаление и перемещение маркеров на карте</b>
+Сразу после отрисовки карты мы создаем маркеры текущих объявлений на карте.
+Также эта перерисовка возникает при изменении критериев отображения. Метод используется при переключении отображения потерянных / найденных вещей (объявлений) (если мы выбрали другую категорию или изменился поисковый запрос)
+<spoiler title="Массовое создание маркеров">
+<pre>
+        rebuildMarkers: function () {
+          var self = this;
+          if (UtilsService.isNotEmpty(controllerScope.rebuildMarkersPromise)) {
+            $timeout.cancel(controllerScope.rebuildMarkersPromise);
+          }
+
+          var deferred = $q.defer();
+          controllerScope.rebuildMarkersPromise = $timeout(function () {
+            self.removeMarkers();
+            ItemsService.crud.getMarkers({itemType: controllerScope.categoriesListType, cityId: controllerScope.currentCity.id},
+              function (items) {
+                for (var i = 0; i < items.length; i++) {
+                  self.createMarker(items[i]);
+                }
+                deferred.resolve();
+              });
+          }, 100);
+          return deferred.promise;
+        },
+</pre>
+</spoiler>
+
+Как можно увидеть мы запрашиваем список маркеров для текущего типа объявлений ( Потерянные / Найденные ) и текущего города. Все обернуто в таймаут, для того чтобы дождаться отрисовки карты, это требует определенного времени.
+Метод простой и основан на двух других. Удаление маркеров и создание новых.
+<spoiler title="Создание и удаление маркеров">
+<pre>
+        createMarker: function (item) {
+          if (UtilsService.isEmpty(item.location)) {
+            return;
+          }
+
+          var marker = new DG.Markers.MarkerWithBalloon({
+            geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+            icon: new DG.Icon(controllerScope.pinIcons[item.tags[0]], new DG.Size(46, 68)),
+            balloonOptions: {
+              geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+              contentHtml: createBalloonContent(item),
+              showLatestOnly: true,
+              isClosed: false
+            }
+          });
+          markersMap[item.id] = marker;
+          controllerScope.DGisMap.markers.add(marker, item.mainCategory);
+        }
+</pre>
+</spoiler>
+<spoiler title="Методы для группового и поштучного удаления маркеров с карты">
+<pre>
+        removeMarkers: function () {
+          this.hideAllBalloons();
+          var groupNames = controllerScope.categories;
+          if (UtilsService.isNotEmptyArray(groupNames)) {
+            for (var i = 0; i < groupNames.length; i++) {
+              controllerScope.DGisMap.markers.removeGroup(groupNames[i].name);
+            }
+          }
+        },
+
+        removeMarker: function (item) {
+          this.hideBalloonForItem(item);
+          controllerScope.DGisMap.markers.remove(markersMap[item.id]);
+        }
+</pre>
+</spoiler>
+
+2Gis api позволяет группировать маркеры и совершать операции сразу над всей группой маркеров - удаление/скрытие/отображение. В нашем случае группами служат категории (Документы/Кошик/Собаки и т.д.). Также у нас есть dictionary для прямого соответствия маркера и объявления.
+
+При редактировании объявления или при задании местоположения с помощью текстового адреса нам необходимо
+переместить маркер объявления в новую позицию, для этого служит метод moveMarker.
+<spoiler title="Перемещение маркеров">
+<pre>
+        moveMarker: function (item) {
+          this.hideBalloonForItem(item);
+          var marker = markersMap[item.id];
+          if (UtilsService.isNotEmpty(marker)) {
+            marker.setPosition(new DG.GeoPoint(item.location[0], item.location[1]));
+            controllerScope.DGisMap.setCenter(marker.getPosition());
+            this.showBalloonForItem(item);
+          }
+        }
+</pre>
+</spoiler>
+
+Следующие несколько методов используются для работы с балунами. В балуне отображается подробная информация об объявлении. При различных событиях нам необходимо Открывать балун, Скрывать балун, Скрывать все балуны, Обновлять содержимое балуна.
+<spoiler title="Работа с балунами">
+<pre>
+        showBalloonForItem: function (item) {
+          if (UtilsService.isNotEmpty(item)) {
+            var marker = markersMap[item.id];
+            if (UtilsService.isNotEmpty(marker)) {
+              controllerScope.DGisMap.setCenter(marker.getPosition());
+              marker.showBalloon();
+            }
+          }
+        },
+
+        hideBalloonForItem: function (item) {
+          if (UtilsService.isNotEmpty(item)) {
+            var marker = markersMap[item.id];
+            controllerScope.DGisMap.setCenter(marker.getPosition());
+            marker.hideBalloon();
+          }
+        },
+
+        hideAllBalloons: function () {
+          var all = controllerScope.DGisMap.markers.getAll();
+          for (var i = 0; i < all.length; i++) {
+            if (UtilsService.isNotEmpty(all[i]) && UtilsService.isFunction(all[i].hideBalloon)) {
+              all[i].hideBalloon();
+            }
+          }
+        },
+
+        updateMarkerBalloon: function (item) {
+          this.hideBalloonForItem(item);
+          var marker = markersMap[item.id];
+          if (UtilsService.isNotEmpty(marker)) {
+            marker.setBalloonContent(createBalloonContent(item));
+            this.showBalloonForItem(item);
+          }
+        },
+
+    createBalloonContent: function(item) {
+      var container = angular.element('<div></div>');
+      container.append();
+
+      var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
+      container.append(wrapper);
+
+      angular.element('.balloon-content').removeClass('lost');
+      angular.element('.balloon-content').removeClass('found');
+      if (item.itemType == 'LOST') {
+        angular.element('.balloon-content').addClass('lost');
+      } else {
+        angular.element('.balloon-content').addClass('found');
+      }
+
+      if (UtilsService.isNotEmpty(item.thumbnailId)) {
+        angular.element('.balloon-content .substrate').removeClass('short');
+        angular.element('.balloon-content .substrate').addClass('long');
+        angular.element('.balloon-content .picture').removeClass('hidden');
+        angular.element('.balloon-content img').attr('src', 'api/items/photo/' + item.thumbnailId);
+      } else {
+        angular.element('.balloon-content .substrate').removeClass('long');
+        angular.element('.balloon-content .substrate').addClass('short');
+        angular.element('.balloon-content .picture').addClass('hidden');
+      }
+      angular.element('.balloon-content .what').text(item.what);
+
+      angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
+      angular.element('.balloon-content .what').text(item.what);
+      wrapper.append(angular.element('.balloon-content-wrapper').html());
+      return container.html();
+    }
+</pre>
+</spoiler>
+
+
+Тут небольшое отступление про сами балуны. В процессе интеграции с картой мы столкнулись с проблемой, что очень сложно сделать кастомный балун, т.е. можно относительно легко задать контент, но переделать стили для всего балуна довольно сложно. В итоге то что получилось у нас оставляет желать лучшего, балун немного оторвался от маркера и подвинуть его ближе к маркеру не представляется возможным.
+
+<b>Определение точки на карте по адресу и определение адреса по точке на карте.</b>
+
+Очень важной частью для нас было определение адреса по координатам и обратная операция - определение координат по адресу. При создании объявления пользователь может ввести адрес вручную или указать кликнув на карте. Следующие методы используются именно для этих операций.
+<spoiler title="Определение точки на карте по адресу и определение адреса по точке на карте">
+<pre>
+        getAddress: function (mapObj, lng, lat, callback) {
+          var unknownWhere = 'Неизвестное место на карте';
+          mapObj.geocoder.get(new DG.GeoPoint(lng, lat),
+            {
+              types: ['house', 'street', 'city', 'district', 'living_area', 'place', 'station_platform', 'settlement'],
+              radius: 200,
+              limit: 4,
+              success: function (geocoderObjects) {
+                controllerScope.hideBusy();
+                var geocoderObject;
+                for (var i = 0; i < geocoderObjects.length; i++) {
+                  var obj = geocoderObjects[i];
+                  if (UtilsService.isEmpty(geocoderObject) && UtilsService.isNotBlank(obj.getName())) {
+                    geocoderObject = obj;
+                  }
+                  if (UtilsService.isNotEmpty(geocoderObject)
+                    && geocoderObject.getType() != 'house'
+                    && obj.getType() == 'house'
+                    && UtilsService.isNotBlank(obj.getName())) {
+                    geocoderObject = obj;
+                  }
+                }
+                var showBalloon = false;
+                if (UtilsService.isNotEmpty(geocoderObject) && UtilsService.isNotBlank(geocoderObject.getName())) {
+                  controllerScope.laf.where = geocoderObject.getName();
+                  showBalloon = true;
+                } else {
+                  controllerScope.laf.where = unknownWhere;
+                }
+                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                  controllerScope.middleStateItem.where = controllerScope.laf.where;
+                }
+                if (!controllerScope.$$phase) {
+                  controllerScope.$apply();
+                }
+
+                if (showBalloon && UtilsService.isFunction(callback)) {
+                  callback();
+                }
+              },
+              failure: function (code, message) {
+                controllerScope.hideBusy();
+                controllerScope.laf.where = unknownWhere;
+                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                  controllerScope.middleStateItem.where = controllerScope.laf.where;
+                }
+                if (!controllerScope.$$phase) {
+                  controllerScope.$apply();
+                }
+              }
+            });
+        },
+
+        getPointByAddress: function (address, callback) {
+          var self = this;
+          controllerScope.DGisMap.geocoder.get(address,
+            {
+              types: ['house', 'street', 'city', 'district', 'living_area', 'place', 'station_platform', 'settlement'],
+              radius: 200,
+              limit: 4,
+              success: function (geocoderObjects) {
+                controllerScope.hideBusy();
+                for (var i = 0; i < geocoderObjects.length; i++) {
+                  var geocoderObject = geocoderObjects[i];
+
+                  var geoPoint = geocoderObject.getCenterGeoPoint();
+                  if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+                    controllerScope.activeBallon.hide();
+                  }
+                  controllerScope.DGisMap.setCenter(geoPoint, 15);
+                  //перемещение маркера в новое место
+                  controllerScope.currentLocationMarker.setPosition(geoPoint);
+
+                  controllerScope.laf.location = self.getLocationObject();
+                  if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                    controllerScope.middleStateItem.location = controllerScope.laf.location;
+                  }
+                  if (!controllerScope.$$phase) {
+                    controllerScope.$apply();
+                  }
+                  break;
+                }
+                if (UtilsService.isFunction(callback)) {
+                  callback();
+                }
+              },
+              failure: function (code, message) {
+                controllerScope.hideBusy();
+                controllerScope.laf.location = self.getLocationObject();
+                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                  controllerScope.middleStateItem.location = controllerScope.laf.location;
+                }
+                if (!controllerScope.$$phase) {
+                  controllerScope.$apply();
+                }
+              }
+            });
+        }
+</pre>
+</spoiler>
+Я прошу прощение за столь пресное изложение без выкладок из 2gis API, которые были бы полезны. В любом случае данный сервис может стать хорошей отправной точкой для интеграции angular приложения с картами 2Гис. Ниже я привел полный текст сервиса и в нем вы также найдете реализацию тех же методов, но уже с использованием Яндекс.Карт.
+<spoiler title="Сервис по работе с картой">
+<pre>
+angular.module('laf').
+  factory('MapService', function ($q, $timeout, $sce, $http, $location, UtilsService, GeoLocationService, ItemsService) {
+    moment.lang('ru');
+    var defaultGroupName = 'default_markers';
+    var controllerScope;
+    var markersMap = {};
+
+    function createBalloonContent(item) {
+      var container = angular.element('<div></div>');
+      container.append();
+
+      var wrapper = angular.element('<a href="' + UtilsService.generateUrl(item) + '" class="clear-link"></a>');
+      container.append(wrapper);
+
+      angular.element('.balloon-content').removeClass('lost');
+      angular.element('.balloon-content').removeClass('found');
+      if (item.itemType == 'LOST') {
+        angular.element('.balloon-content').addClass('lost');
+      } else {
+        angular.element('.balloon-content').addClass('found');
+      }
+
+      if (UtilsService.isNotEmpty(item.thumbnailId)) {
+        angular.element('.balloon-content .substrate').removeClass('short');
+        angular.element('.balloon-content .substrate').addClass('long');
+        angular.element('.balloon-content .picture').removeClass('hidden');
+        angular.element('.balloon-content img').attr('src', 'api/items/photo/' + item.thumbnailId);
+      } else {
+        angular.element('.balloon-content .substrate').removeClass('long');
+        angular.element('.balloon-content .substrate').addClass('short');
+        angular.element('.balloon-content .picture').addClass('hidden');
+      }
+      angular.element('.balloon-content .what').text(item.what);
+
+      angular.element('.balloon-content .when').text(moment(item.when).format("DD MMM YYYY"));
+      angular.element('.balloon-content .what').text(item.what);
+      wrapper.append(angular.element('.balloon-content-wrapper').html());
+      return container.html();
+    }
+
+    if ($location.url().indexOf('yandex') == -1) {
+      return {
+        init: function (scope) {
+          controllerScope = scope;
+        },
+        getLocationObject: function () {
+          var position = controllerScope.currentLocationMarker.getPosition();
+          return [position.lon, position.lat];
+        },
+        initMap: function (mapContainerSelector) {
+          var self = this;
+          $(function () {
+            controllerScope.DGisMap = new DG.Map(mapContainerSelector);
+            //выкл стандартных балунов
+            controllerScope.DGisMap.geoclicker.disable();
+            controllerScope.DGisMap.setCenter(new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]), 15);
+            controllerScope.currentLocationMarker = new DG.Markers.Common({
+              geoPoint: new DG.GeoPoint(controllerScope.currentCity.center[0], controllerScope.currentCity.center[1]),
+              icon: new DG.Icon('/img/pins/P-ia_poterial_mini.png', new DG.Size(46, 68)),
+              hoverIcon: new DG.Icon('/img/pins/P-ia_poterial.png', new DG.Size(80, 128))
+            });
+            controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker, defaultGroupName);
+
+            controllerScope.DGisMap.onCurrentLocation = function (longitude, latitude) {
+              if (UtilsService.isNotEmpty(longitude) && UtilsService.isNotEmpty(latitude)) {
+                controllerScope.currentLocationMarker.setPosition(new DG.GeoPoint(longitude, latitude));
+                self.getAddress(controllerScope.DGisMap, longitude, latitude)
+              } else {
+                controllerScope.hideBusy();
+                console.log('hide busy');
+              }
+            };
+            //обработка клика по карте
+            controllerScope.DGisMap.addEventListener(controllerScope.DGisMap.getContainerId(), 'DgClick', function (e) {
+              var geoPoint = e.getGeoPoint();
+              if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+                controllerScope.activeBallon.hide();
+              }
+              //определение нового адреса
+              self.getAddress(controllerScope.DGisMap, geoPoint.lon, geoPoint.lat, function () {
+                self.hideAllBalloons();
+                angular.element('.balloon-content .what').text(controllerScope.laf.where);
+                if (UtilsService.isEmpty(controllerScope.activeBallon)) {
+                  controllerScope.activeBallon = new DG.Balloons.Common({
+                    geoPoint: geoPoint,
+                    contentHtml: angular.element('.active-balloon-content-wrapper').html(),
+                    isClosed: false
+                  });
+                } else {
+                  controllerScope.activeBallon.setContent(angular.element('.active-balloon-content-wrapper').html());
+                  controllerScope.activeBallon.setPosition(geoPoint);
+                }
+                geoPoint.where = controllerScope.laf.where;
+              });
+              //перемещение маркера в новое место клика
+              controllerScope.currentLocationMarker.setPosition(geoPoint);
+            });
+
+            self.rebuildMarkers();
+          });
+
+        },
+
+        rebuildMarkers: function () {
+          var self = this;
+          if (UtilsService.isNotEmpty(controllerScope.rebuildMarkersPromise)) {
+            $timeout.cancel(controllerScope.rebuildMarkersPromise);
+          }
+
+          var deferred = $q.defer();
+          controllerScope.rebuildMarkersPromise = $timeout(function () {
+            self.removeMarkers();
+            ItemsService.crud.getMarkers({itemType: controllerScope.categoriesListType, cityId: controllerScope.currentCity.id},
+              function (items) {
+                for (var i = 0; i < items.length; i++) {
+                  self.createMarker(items[i]);
+                }
+                deferred.resolve();
+              });
+          }, 100);
+          return deferred.promise;
+        },
+
+        drawMarkersDirectly: function (items) {
+          this.removeMarkers();
+          for (var i = 0; i < items.length; i++) {
+            this.createMarker(items[i]);
+          }
+        },
+
+        removeMarkers: function () {
+          this.hideAllBalloons();
+          var groupNames = controllerScope.categories;
+          if (UtilsService.isNotEmptyArray(groupNames)) {
+            for (var i = 0; i < groupNames.length; i++) {
+              controllerScope.DGisMap.markers.removeGroup(groupNames[i].name);
+            }
+          }
+        },
+
+        removeMarker: function (item) {
+          this.hideBalloonForItem(item);
+          controllerScope.DGisMap.markers.remove(markersMap[item.id]);
+        },
+
+        moveMarker: function (item) {
+          this.hideBalloonForItem(item);
+          var marker = markersMap[item.id];
+          if (UtilsService.isNotEmpty(marker)) {
+            marker.setPosition(new DG.GeoPoint(item.location[0], item.location[1]));
+            controllerScope.DGisMap.setCenter(marker.getPosition());
+            this.showBalloonForItem(item);
+          }
+        },
+
+        updateMarkerBalloon: function (item) {
+          this.hideBalloonForItem(item);
+          var marker = markersMap[item.id];
+          if (UtilsService.isNotEmpty(marker)) {
+            marker.setBalloonContent(createBalloonContent(item));
+            this.showBalloonForItem(item);
+          }
+        },
+
+        createMarker: function (item) {
+          if (UtilsService.isEmpty(item.location)) {
+            return;
+          }
+
+          var marker = new DG.Markers.MarkerWithBalloon({
+            geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+            icon: new DG.Icon(controllerScope.pinIcons[item.tags[0]], new DG.Size(46, 68)),
+            balloonOptions: {
+              geoPoint: new DG.GeoPoint(item.location[0], item.location[1]),
+              contentHtml: createBalloonContent(item),
+              showLatestOnly: true,
+              isClosed: false
+            }
+          });
+          markersMap[item.id] = marker;
+          controllerScope.DGisMap.markers.add(marker, item.mainCategory);
+        },
+
+        showMarkersForCategory: function (selectedCategory) {
+          var defaultGroup = controllerScope.DGisMap.markers.getGroup(defaultGroupName);
+          var allGroupsNames = controllerScope.DGisMap.markers.getAllGroupsNames();
+          if (UtilsService.isNotEmpty(selectedCategory)) {
+            var selectedGroup = controllerScope.DGisMap.markers.getGroup(selectedCategory.name);
+            for (var i = 0; i < allGroupsNames.length; i++) {
+              var groupName = allGroupsNames[i];
+              controllerScope.DGisMap.markers.getGroup(groupName).hide();
+            }
+            if (UtilsService.isNotEmpty(selectedGroup)) {
+              selectedGroup.show();
+            }
+            defaultGroup.show();
+          } else {
+            for (var i = 0; i < allGroupsNames.length; i++) {
+              var groupName = allGroupsNames[i];
+              controllerScope.DGisMap.markers.getGroup(groupName).show();
+            }
+          }
+        },
+
+        showBalloonForItem: function (item) {
+          if (UtilsService.isNotEmpty(item)) {
+            var marker = markersMap[item.id];
+            if (UtilsService.isNotEmpty(marker)) {
+              controllerScope.DGisMap.setCenter(marker.getPosition());
+              marker.showBalloon();
+            }
+          }
+        },
+
+        hideBalloonForItem: function (item) {
+          if (UtilsService.isNotEmpty(item)) {
+            var marker = markersMap[item.id];
+            controllerScope.DGisMap.setCenter(marker.getPosition());
+            marker.hideBalloon();
+          }
+        },
+
+        hideAllBalloons: function () {
+          var all = controllerScope.DGisMap.markers.getAll();
+          for (var i = 0; i < all.length; i++) {
+            if (UtilsService.isNotEmpty(all[i]) && UtilsService.isFunction(all[i].hideBalloon)) {
+              all[i].hideBalloon();
+            }
+          }
+        },
+
+        getAddress: function (mapObj, lng, lat, callback) {
+          var unknownWhere = 'Неизвестное место на карте';
+          mapObj.geocoder.get(new DG.GeoPoint(lng, lat),
+            {
+              types: ['house', 'street', 'city', 'district', 'living_area', 'place', 'station_platform', 'settlement'],
+              radius: 200,
+              limit: 4,
+              success: function (geocoderObjects) {
+                controllerScope.hideBusy();
+                var geocoderObject;
+                for (var i = 0; i < geocoderObjects.length; i++) {
+                  var obj = geocoderObjects[i];
+                  if (UtilsService.isEmpty(geocoderObject) && UtilsService.isNotBlank(obj.getName())) {
+                    geocoderObject = obj;
+                  }
+                  if (UtilsService.isNotEmpty(geocoderObject)
+                    && geocoderObject.getType() != 'house'
+                    && obj.getType() == 'house'
+                    && UtilsService.isNotBlank(obj.getName())) {
+                    geocoderObject = obj;
+                  }
+                }
+                var showBalloon = false;
+                if (UtilsService.isNotEmpty(geocoderObject) && UtilsService.isNotBlank(geocoderObject.getName())) {
+                  controllerScope.laf.where = geocoderObject.getName();
+                  showBalloon = true;
+                } else {
+                  controllerScope.laf.where = unknownWhere;
+                }
+                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                  controllerScope.middleStateItem.where = controllerScope.laf.where;
+                }
+                if (!controllerScope.$$phase) {
+                  controllerScope.$apply();
+                }
+
+                if (showBalloon && UtilsService.isFunction(callback)) {
+                  callback();
+                }
+              },
+              failure: function (code, message) {
+                controllerScope.hideBusy();
+                controllerScope.laf.where = unknownWhere;
+                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                  controllerScope.middleStateItem.where = controllerScope.laf.where;
+                }
+                if (!controllerScope.$$phase) {
+                  controllerScope.$apply();
+                }
+              }
+            });
+        },
+
+        getPointByAddress: function (address, callback) {
+          var self = this;
+          controllerScope.DGisMap.geocoder.get(address,
+            {
+              types: ['house', 'street', 'city', 'district', 'living_area', 'place', 'station_platform', 'settlement'],
+              radius: 200,
+              limit: 4,
+              success: function (geocoderObjects) {
+                controllerScope.hideBusy();
+                for (var i = 0; i < geocoderObjects.length; i++) {
+                  var geocoderObject = geocoderObjects[i];
+
+                  var geoPoint = geocoderObject.getCenterGeoPoint();
+                  if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+                    controllerScope.activeBallon.hide();
+                  }
+                  controllerScope.DGisMap.setCenter(geoPoint, 15);
+                  //перемещение маркера в новое место
+                  controllerScope.currentLocationMarker.setPosition(geoPoint);
+
+                  controllerScope.laf.location = self.getLocationObject();
+                  if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                    controllerScope.middleStateItem.location = controllerScope.laf.location;
+                  }
+                  if (!controllerScope.$$phase) {
+                    controllerScope.$apply();
+                  }
+                  break;
+                }
+                if (UtilsService.isFunction(callback)) {
+                  callback();
+                }
+              },
+              failure: function (code, message) {
+                controllerScope.hideBusy();
+                controllerScope.laf.location = self.getLocationObject();
+                if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                  controllerScope.middleStateItem.location = controllerScope.laf.location;
+                }
+                if (!controllerScope.$$phase) {
+                  controllerScope.$apply();
+                }
+              }
+            });
+        },
+
+        activateMiddleStatePanel: function (item, isCreation) {
+          var middleStatePanel = angular.element('.marker-edit-mode');
+          var middleStatePanelLeft = angular.element('body').outerWidth(true) / 2 -
+            middleStatePanel.outerWidth(true) / 2;
+          middleStatePanel.css('left', middleStatePanelLeft + 'px');
+          controllerScope.middleStateItem = item;
+          controllerScope.mapFullScreen = true;
+          controllerScope.middleStateItem_loc = item.location;
+          controllerScope.middleStateItem_where = item.where;
+          controllerScope.isItemCreation = isCreation;
+        },
+
+        deactivateMiddleStatePanel: function () {
+          controllerScope.mapFullScreen = false;
+          controllerScope.middleStateItem = null;
+          controllerScope.middleStateItem_loc = null;
+          controllerScope.middleStateItem_where = null;
+          controllerScope.isItemCreation = null;
+        },
+
+        whereTypeahead: function (val) {
+          return $http({method: 'POST', url: 'https://dadata.ru/api/v1/suggest/address', headers: {
+            'Authorization': 'Token *************',
+            'Content-Type': 'application/json'
+          }, data: {
+            query: controllerScope.cities[0].name + ' ' + val
+          }}).then(function (data) {
+            var addresses = [];
+            angular.forEach(data.data.suggestions, function (item) {
+              var address = '';
+              if (item.data.city) {
+                address = address.concat(item.data.city);
+              }
+              if (item.data.street) {
+                if (address.length > 0) {
+                  address = address.concat(', ');
+                }
+                address = address.concat(item.data.street);
+              }
+              if (item.data.house) {
+                if (address.length > 0) {
+                  address = address.concat(', ');
+                }
+                address = address.concat(item.data.house);
+              }
+              if (UtilsService.isNotBlank(address.trim())) {
+                addresses.push(address);
+              }
+            });
+
+            return addresses
+          });
+        }
+      };
+    } else {
+      return {
+        init: function (scope) {
+          controllerScope = scope;
+        },
+        getLocationObject: function () {
+          var position = controllerScope.currentLocationMarker.geometry.getCoordinates();
+          return [position[1], position[0]];
+        },
+        initMap: function (mapContainerSelector) {
+          var self = this;
+          ymaps.ready(function () {
+            controllerScope.DGisMap = new ymaps.Map(mapContainerSelector,
+              {
+                center: [controllerScope.currentCity.center[1], controllerScope.currentCity.center[0]],
+                zoom: 15
+              });
+            controllerScope.DGisMap.behaviors.enable('scrollZoom');
+            controllerScope.DGisMap.controls.add(
+              new ymaps.control.ZoomControl()
+            );
+            controllerScope.DGisMap.markers = {
+              markers: {},
+              add: function (marker, groupName) {
+                var markersForGroup = this.markers[groupName];
+                if (UtilsService.isEmpty(markersForGroup)) {
+                  markersForGroup = new ymaps.GeoObjectCollection({}, {});
+                }
+                controllerScope.DGisMap.geoObjects.add(markersForGroup);
+                markersForGroup.add(marker);
+                this.markers[groupName] = markersForGroup;
+              },
+              showGroup: function (groupName) {
+                controllerScope.DGisMap.geoObjects.add(this.markers[groupName]);
+              },
+              getGroup: function (groupName) {
+                return this.markers[groupName];
+              },
+              removeGroup: function (groupName) {
+                var markersFromGroup = this.markers[groupName];
+                if (UtilsService.isNotEmpty(markersFromGroup)) {
+                  controllerScope.DGisMap.geoObjects.remove(markersFromGroup);
+                  this.markers[groupName] = null;
+                }
+              },
+              showAllGroups: function () {
+                for (var prop in this.markers) {
+                  if (this.markers.hasOwnProperty(prop)) {
+                    var group = this.markers[prop];
+                    if (UtilsService.isNotEmpty(group)) {
+                      controllerScope.DGisMap.geoObjects.add(group);
+                    }
+                  }
+                }
+              },
+              hideAllGroups: function () {
+                for (var prop in this.markers) {
+                  if (this.markers.hasOwnProperty(prop)) {
+                    var group = this.markers[prop];
+                    if (UtilsService.isNotEmpty(group)) {
+                      controllerScope.DGisMap.geoObjects.remove(group);
+                    }
+                  }
+                }
+              }
+            };
+
+            controllerScope.DGisMap.geoObjects.options.set({
+              zIndex: 1,
+              hintHideTimeout: 10000000
+            });
+
+            controllerScope.DGisMap.events.add('click', function (e) {
+              if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+                controllerScope.activeBallon.hide();
+              }
+
+              self.getAddress(controllerScope.DGisMap, e.get('coordPosition')[0], e.get('coordPosition')[1], function () {
+                self.hideAllBalloons();
+              });
+
+              controllerScope.currentLocationMarker.geometry.setCoordinates(e.get('coordPosition'));
+              e.preventDefault();
+            });
+
+            controllerScope.currentLocationMarker = new ymaps.Placemark(controllerScope.DGisMap.getCenter(), {},
+              {
+                iconImageHref: '/img/pins/P-ia_poterial_mini.png',
+                iconImageSize: [46, 68],
+                iconImageOffset: [-23, -68],
+                draggable: false,
+                hideIconOnBalloonOpen: false
+              }
+            );
+
+            controllerScope.DGisMap.markers.add(controllerScope.currentLocationMarker, defaultGroupName);
+            controllerScope.DGisMap.geoObjects.add(controllerScope.currentLocationMarker);
+
+            self.rebuildMarkers();
+          });
+        },
+
+        rebuildMarkers: function () {
+          var self = this;
+          if (UtilsService.isNotEmpty(controllerScope.rebuildMarkersPromise)) {
+            $timeout.cancel(controllerScope.rebuildMarkersPromise);
+          }
+          var deferred = $q.defer();
+          controllerScope.rebuildMarkersPromise = $timeout(function () {
+            self.removeMarkers();
+            ItemsService.crud.getMarkers({itemType: controllerScope.categoriesListType, cityId: controllerScope.currentCity.id},
+              function (items) {
+                for (var i = 0; i < items.length; i++) {
+                  self.createMarker(items[i]);
+                }
+                deferred.resolve();
+              });
+          }, 100);
+          return deferred.promise;
+        },
+
+        drawMarkersDirectly: function (items) {
+          this.removeMarkers();
+          for (var i = 0; i < items.length; i++) {
+            this.createMarker(items[i]);
+          }
+        },
+
+        removeMarkers: function () {
+          this.hideAllBalloons();
+          var groupNames = controllerScope.categories;
+          if (UtilsService.isNotEmptyArray(groupNames)) {
+            for (var i = 0; i < groupNames.length; i++) {
+              controllerScope.DGisMap.markers.removeGroup([groupNames[i].name]);
+            }
+          }
+        },
+
+        removeMarker: function (item) {
+          this.hideBalloonForItem(item);
+          var markersFromGroup = controllerScope.DGisMap.markers.markers[item.mainCategory];
+          if (UtilsService.isNotEmptyArray(markersFromGroup)) {
+            markersFromGroup.remove(markersMap[item.id]);
+            controllerScope.DGisMap.markers.markers[item.mainCategory] = null;
+          }
+        },
+
+        moveMarker: function (item) {
+          this.hideBalloonForItem(item);
+          var marker = markersMap[item.id];
+          if (UtilsService.isNotEmpty(marker)) {
+            marker.geometry.setCoordinates([item.location[1], item.location[0]]);
+            controllerScope.DGisMap.setCenter(marker.geometry.getCoordinates());
+            this.showBalloonForItem(item);
+          }
+        },
+
+        updateMarkerBalloon: function (item) {
+          this.hideBalloonForItem(item);
+          var marker = markersMap[item.id];
+          if (UtilsService.isNotEmpty(marker)) {
+            marker.properties.set('balloonContentBody', createBalloonContent(item));
+            this.showBalloonForItem(item);
+          }
+        },
+
+        createMarker: function (item) {
+          if (UtilsService.isEmpty(item.location)) {
+            return;
+          }
+
+          var marker = new ymaps.Placemark([item.location[1], item.location[0]], {
+              balloonContentBody: createBalloonContent(item)
+            },
+            {
+              iconImageHref: controllerScope.pinIcons[item.tags[0]],
+              iconImageSize: [46, 68],
+              iconImageOffset: [-23, -68],
+              draggable: false,
+              hideIconOnBalloonOpen: false
+            }
+          );
+          markersMap[item.id] = marker;
+          controllerScope.DGisMap.markers.add(marker, item.mainCategory);
+        },
+
+        showMarkersForCategory: function (selectedCategory) {
+          if (UtilsService.isNotEmpty(selectedCategory)) {
+            controllerScope.DGisMap.markers.hideAllGroups();
+            if (UtilsService.isNotBlank(selectedCategory.name)) {
+              controllerScope.DGisMap.markers.showGroup(selectedCategory.name);
+            }
+          } else {
+            controllerScope.DGisMap.markers.showAllGroups();
+          }
+        },
+
+        showBalloonForItem: function (item) {
+          if (UtilsService.isNotEmpty(item)) {
+            var marker = markersMap[item.id];
+            controllerScope.DGisMap.setCenter(marker.geometry.getCoordinates());
+            marker.balloon.open();
+          }
+        },
+
+        hideBalloonForItem: function (item) {
+          if (UtilsService.isNotEmpty(item)) {
+            var marker = markersMap[item.id];
+            controllerScope.DGisMap.setCenter(marker.geometry.getCoordinates());
+            marker.balloon.close();
+          }
+        },
+
+        hideAllBalloons: function () {
+          var all = controllerScope.DGisMap.markers;
+          for (var i = 0; i < all.length; i++) {
+            if (UtilsService.isNotEmpty(all[i]) && UtilsService.isFunction(all[i].balloon.close)) {
+              all[i].balloon.close();
+            }
+          }
+        },
+
+        getAddress: function (mapObj, lng, lat, callback) {
+          var unknownWhere = 'Неизвестное место на карте';
+          ymaps.geocode([lng, lat])
+            .then(function (res) {
+              var result = res.geoObjects.get(0);
+              controllerScope.hideBusy();
+
+              var showBalloon = false;
+              if (UtilsService.isNotEmpty(result) && UtilsService.isNotBlank(result.properties.get('name'))) {
+                controllerScope.laf.where = result.properties.get('name');
+                showBalloon = true;
+              } else {
+                controllerScope.laf.where = unknownWhere;
+              }
+              if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                controllerScope.middleStateItem.where = controllerScope.laf.where;
+              }
+              if (!controllerScope.$$phase) {
+                controllerScope.$apply();
+              }
+
+              if (showBalloon && UtilsService.isFunction(callback)) {
+                callback();
+              }
+            }, function () {
+              controllerScope.hideBusy();
+              controllerScope.laf.where = unknownWhere;
+              if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+                controllerScope.middleStateItem.where = controllerScope.laf.where;
+              }
+              if (!controllerScope.$$phase) {
+                controllerScope.$apply();
+              }
+            }
+          );
+        },
+
+        getPointByAddress: function (address, callback) {
+          var self = this;
+          ymaps.geocode(address, {
+            results: 1
+          }).then(function (result) {
+            var geocoderObject = result.geoObjects.get(0);
+
+            var geoPoint = geocoderObject.geometry.getCoordinates();
+            if (UtilsService.isNotEmpty(controllerScope.activeBallon)) {
+              controllerScope.activeBallon.hide();
+            }
+            controllerScope.DGisMap.setCenter(geoPoint);
+            //перемещение маркера в новое место
+            controllerScope.currentLocationMarker.geometry.setCoordinates(geoPoint);
+
+            controllerScope.laf.location = self.getLocationObject();
+            if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+              controllerScope.middleStateItem.location = controllerScope.laf.location;
+            }
+            if (!controllerScope.$$phase) {
+              controllerScope.$apply();
+            }
+          }, function (message) {
+            controllerScope.hideBusy();
+            controllerScope.laf.location = self.getLocationObject();
+            if (UtilsService.isNotEmpty(controllerScope.middleStateItem)) {
+              controllerScope.middleStateItem.location = controllerScope.laf.location;
+            }
+            if (!controllerScope.$$phase) {
+              controllerScope.$apply();
+            }
+          });
+        },
+
+        activateMiddleStatePanel: function (item, isCreation) {
+          var middleStatePanel = angular.element('.marker-edit-mode');
+          var middleStatePanelLeft = angular.element('body').outerWidth(true) / 2 -
+            middleStatePanel.outerWidth(true) / 2;
+          middleStatePanel.css('left', middleStatePanelLeft + 'px');
+          controllerScope.middleStateItem = item;
+          controllerScope.mapFullScreen = true;
+          controllerScope.middleStateItem_loc = item.location;
+          controllerScope.middleStateItem_where = item.where;
+          controllerScope.isItemCreation = isCreation;
+        },
+
+        deactivateMiddleStatePanel: function () {
+          controllerScope.mapFullScreen = false;
+          controllerScope.middleStateItem = null;
+          controllerScope.middleStateItem_loc = null;
+          controllerScope.middleStateItem_where = null;
+          controllerScope.isItemCreation = null;
+        },
+
+        whereTypeahead: function (val) {
+          return $http({method: 'POST', url: 'https://dadata.ru/api/v1/suggest/address', headers: {
+            'Authorization': '*********',
+            'Content-Type': 'application/json'
+          }, data: {
+            query: controllerScope.cities[0].name + ' ' + val
+          }}).then(function (data) {
+            var addresses = [];
+            angular.forEach(data.data.suggestions, function (item) {
+              var address = '';
+              if (item.data.city) {
+                address = address.concat(item.data.city);
+              }
+              if (item.data.street) {
+                if (address.length > 0) {
+                  address = address.concat(', ');
+                }
+                address = address.concat(item.data.street);
+              }
+              if (item.data.house) {
+                if (address.length > 0) {
+                  address = address.concat(', ');
+                }
+                address = address.concat(item.data.house);
+              }
+              if (UtilsService.isNotBlank(address.trim())) {
+                addresses.push(address);
+              }
+            });
+
+            return addresses
+          });
+        }
+      }
+    }
+  });
+</pre>
+</spoiler>
+
+Посмотреть на то, что получилось можно вот тут http://find.nsk.ru
+
+Пара скриншотов того, что получилось
+<img src="//habrastorage.org/files/ccb/fa1/a4f/ccbfa1a4fb6045a5ba6fe6068d288a30.png"/>
+<br/>
+&nbsp;
+<br/>
+<img src="//habrastorage.org/files/3af/118/e13/3af118e13c73456ab5d046dde1dc79f1.png"/>
+

@@ -110,8 +110,7 @@ angular.module('laf').
       login: function (callback) {
         authCallback = callback;
         angular.element('.user-panel .back-block').removeClass('hidden');
-        FB.login(function () {
-        }, {scope: 'user_relationships,publish_stream,offline_access,email'});
+        FB.login(fb.auth, {scope: 'user_relationships,publish_stream,offline_access,email'});
       },
 
       access: function (callback) {

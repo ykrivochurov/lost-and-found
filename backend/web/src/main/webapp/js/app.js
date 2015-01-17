@@ -55,7 +55,37 @@ app.directive('dndList', function () {
     })
   }
 });
+app.directive('resize', function ($window) {
+  return function (scope, element, attr) {
 
+    var w = angular.element($window);
+    scope.$watch(function () {
+      return {
+        'h': window.innerHeight,
+        'w': window.innerWidth
+      };
+    }, function (newValue, oldValue) {
+      console.log(newValue, oldValue);
+      scope.windowHeight = newValue.h;
+      scope.windowWidth = newValue.w;
+
+      scope.hideOnMinHeight = function (minHeight) {
+        if (newValue.h < minHeight) {
+          return {
+            'display': 'none'
+          };
+        } else {
+          return {};
+        }
+      };
+
+    }, true);
+
+    w.bind('resize', function () {
+      scope.$apply();
+    });
+  }
+});
 //locale for date picker
 angular.module('$strap.config', []).value('$strapConfig', {
   datepicker: {

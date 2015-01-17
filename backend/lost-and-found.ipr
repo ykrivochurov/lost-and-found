@@ -918,6 +918,7 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.2.0.RC2/spring-security-web-3.2.0.RC2-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.ideaLibSources/spring-security-web-3.2.0.RC2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.springframework:spring-aop:3.2.5.RELEASE">
@@ -1283,6 +1284,8 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/ru/eastbanctech/mongo-resource-management/1.2.0/mongo-resource-management-1.2.0-sources.jar!/" />
+        <root url="file://$PROJECT_DIR$/../../mongo-resourse-management/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../../mongo-resourse-management/src/test/java" />
       </SOURCES>
     </library>
   </component>
