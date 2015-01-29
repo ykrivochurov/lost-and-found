@@ -86,7 +86,7 @@ angular.module('laf').
               //определение нового адреса
               self.getAddress(controllerScope.DGisMap, geoPoint.lon, geoPoint.lat, function () {
                 self.hideAllBalloons();
-                angular.element('.balloon-content .what').text(controllerScope.laf.where);
+//                angular.element('.balloon-content .what').text(controllerScope.laf.where);
                 if (UtilsService.isEmpty(controllerScope.activeBallon)) {
                   controllerScope.activeBallon = new DG.Balloons.Common({
                     geoPoint: geoPoint,
